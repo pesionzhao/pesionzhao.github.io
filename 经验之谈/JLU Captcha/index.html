@@ -156,15 +156,11 @@
   
 
 
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
-        Home
-      </a>
-    </li>
-  
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
 
       
         
@@ -271,37 +267,10 @@
   
   
   
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
-      
-      <label class="md-nav__link" for="__nav_1">
-        Home
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Home" data-md-level="1">
-        <label class="md-nav__title" for="__nav_1">
-          <span class="md-nav__icon md-icon"></span>
-          Home
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        start
+        Home
       </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -382,9 +351,80 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          吉林大学教务管理系统验证码识别
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         吉林大学教务管理系统验证码识别
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    前言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    图像分析
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    思路
+  </a>
+  
+    <nav class="md-nav" aria-label="思路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    踩坑思路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    最终方案
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    最终效果
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -754,6 +794,62 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    前言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    图像分析
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    思路
+  </a>
+  
+    <nav class="md-nav" aria-label="思路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    踩坑思路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    最终方案
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    最终效果
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -767,6 +863,96 @@
                 
                 <h1 id="_1">吉林大学教务系统验证码识别方案<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>verification code classification</p>
+<h2 id="_2">前言<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>每次登录吉林大学教务系统时，谷歌浏览器可以保存账号密码不用再次输入，可是验证码却每次都要输入一次，很麻烦，这我某个大佬学长网站的需求的，我正好当时也在做视觉就想着能不能做一个出来，然后他把数据集发给我，</p>
+<h2 id="_3">图像分析<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../img/7241.jpg" />   <img alt="" src="../img/4449.jpg" />   <img alt="" src="../img/6700.jpg" />   <img alt="" src="../img/7955.jpg" /></p>
+<p>首先观察图像特征：
+- 每个数字的高度都是一样的，且无形变。(很重要！！)
+- 每个数字颜色都一样
+- 背景噪声无序，放大观察后严重干扰数字的整体性</p>
+<h2 id="_4">思路<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_5">踩坑思路<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>借鉴之前学习opencv时的车牌识别思路：即将图像进行二值化-&gt;进行腐蚀，直到四个数字合并到一个连通域中，然后在原图等间隔分割出来，进行滤波去噪，最后遍历模板匹配得到数字</p>
+<p><strong>缺点</strong>
+数字仅仅高度相同，宽度却不相同，分割后的数字还会有很多噪声会导致模板匹配正确率下降，这里可能采取机器学习会更好，但是最麻烦的是标注，学长给我的数据集都是没有标注过的,所以我干脆放弃了这个方案<img alt="😂" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f602.svg" title=":joy:" /></p>
+<h3 id="_6">最终方案<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>既然标注不现实，我也就放弃了深度学习这个方案，这时候我发现了这些数字的字形是不变的！！也就是说我不需要电脑自己去学习这个模型，我可以自己把这个数字的模板构建出来，之后遍历进行匹配就可以的，我看<img alt="⭐️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2b50.svg" title=":star:" /></p>
+<p>使用opencv自带的鼠标回调可以很方便的构建模板，接下来就是绘画环节</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">mark</span><span class="p">()</span><span class="c1">//抠图，左键变白右键变黑</span>
+<span class="p">{</span>
+    <span class="kt">void</span> <span class="n">onMouseCallBack</span><span class="p">(</span><span class="kt">int</span> <span class="n">event</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flags</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">pUserData</span><span class="p">);</span>
+    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">namedWindow</span><span class="p">(</span><span class="n">windowName</span><span class="p">,</span> <span class="n">WINDOW_NORMAL</span><span class="p">);</span>
+        <span class="n">imshow</span><span class="p">(</span><span class="n">windowName</span><span class="p">,</span> <span class="n">src</span><span class="p">);</span>
+        <span class="n">cv</span><span class="o">::</span><span class="n">setMouseCallback</span><span class="p">(</span><span class="n">windowName</span><span class="p">,</span> <span class="n">onMouseCallBack</span><span class="p">,</span> <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">*&gt;</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">src</span><span class="p">));</span>
+        <span class="kt">char</span> <span class="n">q</span> <span class="o">=</span> <span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">q</span> <span class="o">==</span> <span class="mi">27</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">cv</span><span class="o">::</span><span class="n">destroyWindow</span><span class="p">(</span><span class="n">windowName</span><span class="p">);</span>
+            <span class="n">imwrite</span><span class="p">(</span><span class="s">&quot;H:</span><span class="se">\\</span><span class="s">深度学习源码学习</span><span class="se">\\</span><span class="s">moban</span><span class="se">\\</span><span class="s">8.jpg&quot;</span><span class="p">,</span> <span class="n">src</span><span class="p">);</span><span class="c1">//保存抠图完成的模板</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">q</span> <span class="o">==</span> <span class="sc">&#39;q&#39;</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">cv</span><span class="o">::</span><span class="n">destroyWindow</span><span class="p">(</span><span class="n">windowName</span><span class="p">);</span><span class="c1">//不保存退出</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">onMouseCallBack</span><span class="p">(</span><span class="kt">int</span> <span class="n">event</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flags</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">pUserData</span><span class="p">)</span><span class="c1">//鼠标事件回调</span>
+<span class="p">{</span>
+    <span class="c1">//创建保存像素值的3字节容器</span>
+    <span class="n">cv</span><span class="o">::</span><span class="n">Vec3b</span> <span class="n">pixel</span><span class="p">;</span>
+    <span class="c1">//空指针强制类型装换成图片指针pMat</span>
+    <span class="n">cv</span><span class="o">::</span><span class="n">Mat</span><span class="o">*</span> <span class="n">pMat</span> <span class="o">=</span> <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">cv</span><span class="o">::</span><span class="n">Mat</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">pUserData</span><span class="p">);</span>
+
+    <span class="c1">//鼠标左键按下时，返回坐标和RGB值，将其变白</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">event</span> <span class="o">==</span> <span class="n">CV_EVENT_LBUTTONDOWN</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">channels</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">pixel1</span><span class="p">;</span>
+            <span class="c1">//获取像素值</span>
+            <span class="n">pixel1</span> <span class="o">=</span> <span class="n">pMat</span><span class="o">-&gt;</span><span class="n">at</span><span class="o">&lt;</span><span class="n">uchar</span><span class="o">&gt;</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span><span class="c1">//y是row，x是col</span>
+                                          <span class="c1">//输出像素值的（R，G，B）</span>
+                                          <span class="c1">//cv重载了&lt;&lt;运算符，可以输出Vec3b类型，但是按B,G,R输出</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;at(&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;,&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;)--&gt;pixel(1)=&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">pixel1</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+            <span class="n">src</span><span class="p">.</span><span class="n">at</span><span class="o">&lt;</span><span class="n">uchar</span><span class="o">&gt;</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="mi">255</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">//鼠标右键按下时，返回坐标和RGB值，将其变黑</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">event</span> <span class="o">==</span> <span class="n">CV_EVENT_RBUTTONDOWN</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">channels</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">pixel1</span><span class="p">;</span>
+            <span class="c1">//获取像素值</span>
+            <span class="n">pixel1</span> <span class="o">=</span> <span class="n">pMat</span><span class="o">-&gt;</span><span class="n">at</span><span class="o">&lt;</span><span class="n">uchar</span><span class="o">&gt;</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span><span class="c1">//y是row，x是col</span>
+                                          <span class="c1">//输出像素值的（R，G，B）</span>
+                                          <span class="c1">//cv重载了&lt;&lt;运算符，可以输出Vec3b类型，但是按B,G,R输出</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;at(&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;,&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;)--&gt;pixel(1)=&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">pixel1</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+            <span class="n">src</span><span class="p">.</span><span class="n">at</span><span class="o">&lt;</span><span class="n">uchar</span><span class="o">&gt;</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>抠图结束后得到9个模板
+<img alt="" src="../img/o_template.png" /></p>
+<p>之后就是debug环节</p>
+<p>过程中我发现了数字的高度是一样的，而且在图像中的高度位置也是固定的，而且每个数字也有10像素左右的宽度，所以我缩小了循环范围，只在相同高度进行遍历，且识别到一个数字之后跳跃8个像素识别下一个数字</p>
+<p>匹配思路为：
+- 将图像进行灰度处理，由于<strong>每个数字颜色都是一样的</strong>，所以在灰度图像中灰度级是连续的
+- 遍历套用模板，求在模板的位置像素的方差与极差，并以其作为阈值进行筛选，极差低于阈值就判定为该模板所代表的数字，极差高于阈值则继续遍历</p>
+<p>进过20张图左右的debug，对模板模板进行了一些改动</p>
+<p>以下为新的9个模板
+<img alt="" src="../img/n_template.png" /></p>
+<p>之后就是验证环节，对数据集一一验证，如果遇到问题就拿图进行debug，基本没什么大问题</p>
+<p>值得注意的是 <strong>3</strong> 和 <strong>8</strong> 字形有一半是相同的，因为我的遍历顺序是1-2-3-4-5-6-7-8-9-0，所以如果先拿3的模板去匹配8这个数字的话，很容易会误识别，我将模板的遍历顺序反转，以及就是先进行8的识别，如果匹配就认为该数字是8，不匹配的话再进行3的匹配</p>
+<p>最终大功告成，数据集进行了2000张验证都没有误识别或错识别的情况，我将源代码发给学长，学长整合了网站上获得了很丝滑的效果！！</p>
+<h2 id="_7">最终效果<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../img/code.gif" /></p>
                 
               
               
