@@ -318,8 +318,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E8%8D%A7%E5%85%89%E9%98%B5%E5%88%97%E7%9F%AB%E6%AD%A3%E8%AE%A1%E6%95%B0/" class="md-nav__link">
-        蛋白质荧光阵列矫正与计数
+      <a href="../%E5%8D%95%E7%9B%B8%E6%9C%BA%E5%8F%8C%E5%85%89%E6%BA%90%E8%A7%86%E7%BA%BF%E4%BC%B0%E8%AE%A1/" class="md-nav__link">
+        基于单相机双光源的眼动交互
       </a>
     </li>
   
@@ -330,8 +330,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E7%99%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9B%E5%88%92%E6%B0%B4%E8%AE%B0%E5%BD%95/" class="md-nav__link">
-        百度车载影像检测与分割
+      <a href="../%E8%8D%A7%E5%85%89%E9%98%B5%E5%88%97%E7%9F%AB%E6%AD%A3%E8%AE%A1%E6%95%B0/" class="md-nav__link">
+        蛋白质荧光阵列矫正与计数
       </a>
     </li>
   
@@ -447,6 +447,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../%E7%99%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9B%E5%88%92%E6%B0%B4%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+        百度车载影像检测与分割
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../%E5%A4%B4%E9%83%A8%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1/" class="md-nav__link">
         头部姿态估计
       </a>
@@ -536,6 +548,18 @@
     <li class="md-nav__item">
       <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8A%E6%89%93%E4%B8%80%E5%88%87%E7%9A%84yolox/" class="md-nav__link">
         吊打一切的yoloX
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/CascadeRCNN/" class="md-nav__link">
+        CascadeRCNN永远滴神
       </a>
     </li>
   
@@ -864,13 +888,15 @@
                 <h1 id="_1">吉林大学教务系统验证码识别方案<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>verification code classification</p>
 <h2 id="_2">前言<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>每次登录吉林大学教务系统时，谷歌浏览器可以保存账号密码不用再次输入，可是验证码却每次都要输入一次，很麻烦，这我某个大佬学长网站的需求的，我正好当时也在做视觉就想着能不能做一个出来，然后他把数据集发给我，</p>
+<p>每次登录吉林大学教务系统时，谷歌浏览器可以保存账号密码不用再次输入，可是验证码却每次都要输入一次，很麻烦，这我某个大佬学长网站的需求，我正好当时也在做视觉,就想着能不能做一个出来，然后他把数据集发给我，我开始了尝试</p>
 <h2 id="_3">图像分析<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="../img/7241.jpg" />   <img alt="" src="../img/4449.jpg" />   <img alt="" src="../img/6700.jpg" />   <img alt="" src="../img/7955.jpg" /></p>
-<p>首先观察图像特征：
-- 每个数字的高度都是一样的，且无形变。(很重要！！)
-- 每个数字颜色都一样
-- 背景噪声无序，放大观察后严重干扰数字的整体性</p>
+<p>首先观察图像特征：</p>
+<ul>
+<li>每个数字的高度都是一样的，且无形变。(很重要！！)</li>
+<li>每个数字颜色都一样</li>
+<li>背景噪声无序，放大观察后严重干扰数字的整体性</li>
+</ul>
 <h2 id="_4">思路<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="_5">踩坑思路<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>借鉴之前学习opencv时的车牌识别思路：即将图像进行二值化-&gt;进行腐蚀，直到四个数字合并到一个连通域中，然后在原图等间隔分割出来，进行滤波去噪，最后遍历模板匹配得到数字</p>
@@ -942,9 +968,11 @@
 <img alt="" src="../img/o_template.png" /></p>
 <p>之后就是debug环节</p>
 <p>过程中我发现了数字的高度是一样的，而且在图像中的高度位置也是固定的，而且每个数字也有10像素左右的宽度，所以我缩小了循环范围，只在相同高度进行遍历，且识别到一个数字之后跳跃8个像素识别下一个数字</p>
-<p>匹配思路为：
-- 将图像进行灰度处理，由于<strong>每个数字颜色都是一样的</strong>，所以在灰度图像中灰度级是连续的
-- 遍历套用模板，求在模板的位置像素的方差与极差，并以其作为阈值进行筛选，极差低于阈值就判定为该模板所代表的数字，极差高于阈值则继续遍历</p>
+<p>匹配思路为：</p>
+<ul>
+<li>将图像进行灰度处理，由于<strong>每个数字颜色都是一样的</strong>，所以在灰度图像中灰度级是连续的</li>
+<li>遍历套用模板，求在模板的位置像素的方差与极差，并以其作为阈值进行筛选，极差低于阈值就判定为该模板所代表的数字，极差高于阈值则继续遍历</li>
+</ul>
 <p>进过20张图左右的debug，对模板模板进行了一些改动</p>
 <p>以下为新的9个模板
 <img alt="" src="../img/n_template.png" /></p>
@@ -972,7 +1000,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../%E7%99%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9B%E5%88%92%E6%B0%B4%E8%AE%B0%E5%BD%95/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 百度车载影像检测与分割" rel="prev">
+        <a href="../%E8%8D%A7%E5%85%89%E9%98%B5%E5%88%97%E7%9F%AB%E6%AD%A3%E8%AE%A1%E6%95%B0/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 蛋白质荧光阵列矫正与计数" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -981,7 +1009,7 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              百度车载影像检测与分割
+              蛋白质荧光阵列矫正与计数
             </div>
           </div>
         </a>
