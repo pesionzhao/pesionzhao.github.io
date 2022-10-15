@@ -1,0 +1,1271 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>蛋白质荧光阵列矫正与计数 - ZPSJLU</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#546d78">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,400,400i,700%7CSource+Code+Pro&display=fallback">
+        <style>:root{--md-text-font-family:"Noto Sans";--md-code-font-family:"Source Code Pro"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="red">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ZPSJLU" class="md-header__button md-logo" aria-label="ZPSJLU" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ZPSJLU
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              蛋白质荧光阵列矫正与计数
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        经验之谈
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" class="md-tabs__link">
+        论文笔记
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="md-tabs__link">
+        踩坑记录
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E5%9C%B0%E9%9C%87%E5%8F%8D%E6%BC%94/" class="md-tabs__link">
+        地震反演
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ZPSJLU" class="md-nav__button md-logo" aria-label="ZPSJLU" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+
+    </a>
+    ZPSJLU
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        经验之谈
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="经验之谈" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          经验之谈
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8D%95%E7%9B%B8%E6%9C%BA%E5%8F%8C%E5%85%89%E6%BA%90%E8%A7%86%E7%BA%BF%E4%BC%B0%E8%AE%A1/" class="md-nav__link">
+        基于单相机双光源的眼动交互
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          蛋白质荧光阵列矫正与计数
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        蛋白质荧光阵列矫正与计数
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    前期准备
+  </a>
+  
+    <nav class="md-nav" aria-label="前期准备">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    思路：深度学习（舍弃）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    图像预处理（实操开始）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    旋转矫正
+  </a>
+  
+    <nav class="md-nav" aria-label="旋转矫正">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#116" class="md-nav__link">
+    裁剪1/16
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    傅里叶变换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    计算旋转角
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    网格划分
+  </a>
+  
+    <nav class="md-nav" aria-label="网格划分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1 仅使用间隔线分割成的格子
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2 正六边形网格
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3 正方形网格
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    荧光检测与计数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    最终前后处理对比
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    注释
+  </a>
+  
+    <nav class="md-nav" aria-label="注释">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    傅里叶变换 （转载自各大网页原谅我记不清楚了）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../JLU%20Captcha/" class="md-nav__link">
+        吉林大学教务管理系统验证码识别
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../robomaster%E5%B7%A5%E7%A8%8B%E7%9F%BF%E7%9F%B3%E8%AF%86%E5%88%AB/" class="md-nav__link">
+        robomaster工程矿石识别
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%99%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9B%E5%88%92%E6%B0%B4%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+        百度车载影像检测与分割
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        论文笔记
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="论文笔记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          论文笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        网络解读
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="网络解读" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          网络解读
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/Transformer/" class="md-nav__link">
+        屠榜的transformer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8A%E6%89%93%E4%B8%80%E5%88%87%E7%9A%84yolox/" class="md-nav__link">
+        吊打一切的yoloX
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/CascadeRCNN/" class="md-nav__link">
+        CascadeRCNN永远滴神
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/HR-Net%20%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/" class="md-nav__link">
+        高分辨网络HR-Net
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%B0%8F%E7%9B%AE%E6%A0%87%E5%B0%81%E7%A5%9ETPH-YOLOV5/" class="md-nav__link">
+        小目标检测王者TPH-YOLOV5
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/YOLOP/" class="md-nav__link">
+        嵌入式同时完成三大视觉任务YOLOP
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        理论基础
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="理论基础" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          理论基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%9F%BA%E7%A1%80%E7%90%86%E8%A7%A3/Soft%20label/" class="md-nav__link">
+        从标签平滑和知识蒸馏看Soft Label
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      <label class="md-nav__link" for="__nav_3_4">
+        即插即用
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="即插即用" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          即插即用
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%8D%B3%E6%8F%92%E5%8D%B3%E7%94%A8/UMOP/" class="md-nav__link">
+        百度开源UMOP解决特征层gt不匹配
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        踩坑记录
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="踩坑记录" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          踩坑记录
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/nano%E9%83%A8%E7%BD%B2yolov5/" class="md-nav__link">
+        nano部署yolov5
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/LibtorchInWindows/" class="md-nav__link">
+        windows下配置libtorch(vs/cmake)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/vscode%E9%85%8D%E7%BD%AEopencv/" class="md-nav__link">
+        windows+vscode配置opencv4.1.1
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        地震反演
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="地震反演" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          地震反演
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9C%B0%E9%9C%87%E5%8F%8D%E6%BC%94/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9C%B0%E9%9C%87%E5%8F%8D%E6%BC%94/%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        基础
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9C%B0%E9%9C%87%E5%8F%8D%E6%BC%94/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        论文笔记
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9C%B0%E9%9C%87%E5%8F%8D%E6%BC%94/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        数学基础
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    前期准备
+  </a>
+  
+    <nav class="md-nav" aria-label="前期准备">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    思路：深度学习（舍弃）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    图像预处理（实操开始）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    旋转矫正
+  </a>
+  
+    <nav class="md-nav" aria-label="旋转矫正">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#116" class="md-nav__link">
+    裁剪1/16
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    傅里叶变换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    计算旋转角
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    网格划分
+  </a>
+  
+    <nav class="md-nav" aria-label="网格划分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1 仅使用间隔线分割成的格子
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2 正六边形网格
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3 正方形网格
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    荧光检测与计数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    最终前后处理对比
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    注释
+  </a>
+  
+    <nav class="md-nav" aria-label="注释">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    傅里叶变换 （转载自各大网页原谅我记不清楚了）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">蛋白质荧光阵列矫正与识别计数方案<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">前期准备<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">思路：深度学习（舍弃）<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>目标特征：</p>
+<p>小目标，密集，图像分辩率高</p>
+<p>适用网络：yolov5</p>
+<p>1，该网络可以规定输入图像大小，可以保持高分辨率输入</p>
+<p>2，训练之前会进行kmeans对锚框聚类，荧光点大小变化不大</p>
+<p>3，有FPN,SPP多特征融合以防损失信息</p>
+<p>修改：</p>
+<p>预测时将原图分成256份送入网络进行预测，边缘点进行删除</p>
+<p>将训练时的mocias策略删除</p>
+<p>思路：</p>
+<p>1图像校正，使图像与固定模板匹配或者学习得到一个模板。同时得到一个变换矩阵，用于后期坐标映射</p>
+<p>2裁剪图像，模板匹配对齐，将每个网格化为5x5或3x3或1*1降低图像像素，转化方法可以考虑高斯均值</p>
+<p>3（1）如果为1*1则进行二值化，然后直接得到点的坐标和计数</p>
+<p>（2）如果为3*3可选择卷积学习</p>
+<p>图像校正:</p>
+<ul>
+<li>radon变换（斜投影）</li>
+<li>FFT傅里叶转化到频域后求解</li>
+</ul>
+<p>划分网格：</p>
+<ul>
+<li>六边形网格，网格大小有细微差别，且为小数</li>
+<li>正方形网格，类似砖墙</li>
+</ul>
+<p>网格定位算法</p>
+<ul>
+<li>爬山法</li>
+<li>遗传算法</li>
+<li>数学形态学</li>
+<li>马尔科夫随机球场</li>
+<li>贝叶斯网格定位</li>
+<li>启发式规则算法</li>
+</ul>
+<p>修正像素</p>
+<p>问题：</p>
+<ul>
+<li>
+<p>旋转角度修正，得到6个角度怎么得到最佳旋转角度</p>
+</li>
+<li>
+<p>投影边界得到的分割线有问题，要怎么利用中间得到的间隔。a:求平均投影值</p>
+</li>
+<li>
+<p>分割后在小块内做自适应阈值处理</p>
+</li>
+</ul>
+<hr />
+<h2 id="_4">图像预处理（实操开始）<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>本身图片质量较高，采取预处理策略是<strong>中值滤波+otsu自适应阈值二值化</strong></p>
+<h2 id="_5">旋转矫正<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="116">裁剪1/16<a class="headerlink" href="#116" title="Permanent link">&para;</a></h3>
+<p>由于整张图尺寸过大，所以进行裁剪，选取最易识别的一小块进行旋转矫正，进而反应整张图像的倾斜角。</p>
+<h3 id="_6">傅里叶变换<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>矫正策略采取二维傅里叶变换，功率谱中<strong>最亮的点</strong>代表包含<strong>成分最多的平面波</strong>，<strong>与原点所构成的向量</strong>即为该平面<strong>波传播方向</strong>，<strong>与原点距离</strong>即为<strong>频率</strong>。频移后的功率谱呈中心对称</p>
+<p><img alt="img" src="../img/TTF.png" /> </p>
+<h3 id="_7">计算旋转角<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>由于噪声影响或者点分布影响会造成无法准确定位正确平面波位置，我采取了先归一化原图，后以60°为间隔，每个间隔找到最亮的点</p>
+<p><img alt="img" src="../img/%E6%89%BE%E5%88%B0%E4%BA%AE%E7%82%B9.png" /> </p>
+<p>但是我们要进行旋转就要挑选最小角度，所以我们把范围规定在中间六十度，找到的点，再以其自身为参考点，加入周围的一部分点<strong>求取质心位置</strong>进行修正。<strong>该点与原点构成的向量与y轴的夹角即为倾斜角</strong>。用<strong>最邻近插值法</strong>进行旋转</p>
+<p><img alt="img" src="../img/%E6%89%BE%E5%88%B0%E6%97%8B%E8%BD%AC%E8%A7%92%E5%BA%A6.png" /> </p>
+<p>校正后为：</p>
+<p><img alt="img" src="../img/%E6%A0%A1%E6%AD%A3%E5%90%8E.png" /> </p>
+<h2 id="_8">网格划分<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<ul>
+<li>使用间隔线分割成的格子</li>
+<li>正六边形网格</li>
+<li>正方形网格</li>
+</ul>
+<h3 id="1">1 仅使用间隔线分割成的格子<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>分割：图像点呈正六边形蜂窝状排布，我们规定他有3条轴，将原图进行旋转到3个轴的方向沿轴的方向进行投影，由于点间隔很小，利用二阶导数找出峰谷即可判定其为分割线，</p>
+<p><img alt="img" src="../img/peak.png" />画出并进行逆旋转到原图（边缘的处理还有待处理)</p>
+<p><img alt="img" src="../img/line_grid.png" /> </p>
+<h3 id="2">2 正六边形网格<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>因为<strong>功率谱的频率可反应出周期</strong>，又因为点的间隔很小，所以可以采取<strong>定值计算</strong>的方法，</p>
+<p>根据功率谱所含频率最高的6个点求得<strong>周期</strong>，计算平均值，此值固定为<strong>网格间距</strong>。并根据<strong>投影法</strong>找到一个基准点定为原点，根据正六边形几何关系，画出网格。</p>
+<p><img alt="img" src="../img/hex_grid.png" /> </p>
+<h3 id="3">3 正方形网格<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>水平投影一次找到横向间隔，<strong>奇数偶数行分开</strong>重新合并，再进行开操作去除分割瑕疵，纵向投影找到纵向分割线。根据几何关系映射到原图后画出网格即可</p>
+<p><img alt="img" src="../img/square_grid.png" /> </p>
+<h2 id="_9">荧光检测与计数<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>本方法采用分割以后的检测每个子格进行荧光检测，因为正方形网格易分割，所以检测基于都基于正方形网格。</p>
+<p>将网格分割成每个子格，因为分割采取的遍历投影，可能分割线会偏小，所以划分子格时分别向下和向右延伸一个像素，并对每个子格基于大津算法求出自适应阈值和最大类间方差，以最大类间方差为阈值进行第一次的筛选，方差小的认为无荧光，之后进行二值化，再在网格中央3*3区域进行白色检测，并规定阈值，如果小于阈值就判定为发生此格被串扰，无荧光。（之后为了提高精度应该要加更多判断条件，如连通域面积和连通域质心等等...）</p>
+<p>下图为识别效果：（蓝色划线代表此网格有荧光）</p>
+<p><img alt="img" src="../img/final.png" /> </p>
+<h2 id="_10">最终前后处理对比<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../img/dot.jpg" /></p>
+<h2 id="_11">注释<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="_12">傅里叶变换 （转载自各大网页原谅我记不清楚了<img alt="😢" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f622.svg" title=":cry:" />）<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>傅立叶变换使我们能通过频率成分来分析一个函数。图像傅立叶变换的物理意义图像的频率是表征<strong>图像中灰度变化剧烈程度的指标</strong>，是灰度在平面空间上的梯度。如：大面积的沙漠在图像中是一片灰度变化缓慢的区域，对应的频率值很低；而对于地表属性变换剧烈的边缘区域在图像中是一片灰度变化剧烈的区域，对应的频率值较高。</p>
+<p>傅立叶变换在实际中有非常明显的物理意义，设f是一个能量有限的模拟信号，则其傅立叶变换就表示f的谱。从纯粹的数学意义上看，傅立叶变换是将一个函数转换为一系列周期函数来处理的。从物理效果看，傅立叶变换是将图像从空间域转换到频率域，其逆变换是将图像从频率域转换到空间域。换句话说，<strong>傅立叶变换的物理意义是将图像的灰度分布函数变换为图像的频率分布函数，傅立叶逆变换是将图像的频率分布函数变换为灰度分布函数傅立叶变换以前</strong>，图像（未压缩的位图）是由对在连续空间（现实空间）上的采样得到一系列点的集合，我们习惯用一个二维矩阵表示空间上各点，则图像可由z=f(x,y)来表示。</p>
+<p>由于空间是三维的，图像是二维的，因此空间中物体在另一个维度上的关系就由梯度来表示，这样我们可以通过观察图像得知物体在三维空间中的对应关系。为什么要提梯度？因为实际上对图像进行二维傅立叶变换得到频谱图，就是图像梯度的分布图，当然频谱图上的各点与图像上各点并不存在一一对应的关系，即使在不移频的情况下也是没有。<strong>傅立叶频谱图上我们看到的明暗不一的亮点，实际上图像上某一点与邻域点差异的强弱，即梯度的大小，也即该点的频率的大小（可以这么理解，图像中的低频部分指低梯度的点，高频部分相反）</strong>。一般来讲，<strong>梯度大则该点的亮度强，否则该点亮度弱</strong>。</p>
+<p>这样通过观察傅立叶变换后的频谱图，也叫功率图，我们首先就可以看出，图像的能量分布。<strong>如果频谱图中暗的点数更多，那么实际图像是比较柔和的（因为各点与邻域差异都不大，梯度相对较小），反之，如果频谱图中亮的点数多，那么实际图像一定是尖锐的，边界分明且边界两边像素差异较大的。</strong>对频谱移频到原点以后，可以看出图像的频率分布是以原点为圆心，对称分布的。将频谱移频到圆心除了可以清晰地看出图像频率分布以外，还有一个好处，<strong>它可以分离出有周期性规律的干扰信号</strong>，比如正弦干扰，一副带有正弦干扰，移频到原点的频谱图上可以看出除了中心以外还存在以某一点为中心，对称分布的亮点集合，这个集合就是干扰噪音产生的，这时可以很直观的通过在该位置放置带阻滤波器消除干扰</p>
+<p>另外我还想说明以下几点：1、图像经过二维傅立叶变换后，其变换系数矩阵表明：若变换矩阵Fn原点设在中心，其频谱能量集中分布在变换系数短阵的中心附近(图中阴影区)。若所用的二维傅立叶变换矩阵Fn的原点设在左上角，那么图像信号能量将集中在系数矩阵的四个角上。这是由二维傅立叶变换本身性质决定的。同时也表明一股图像能量集中低频区域。2 、变换之后的图像在原点平移之前四角是低频，最亮，平移之后中间部分是低频，最亮，亮度大说明低频的能量大（幅角比较大）</p>
+<p>类比一维中，幅度和相位可以用一个复数表示，它可以作为我们存储的内容。但是还有两个：<strong>频率和方向</strong>。这时想到向量是有方向的，也是有长度的。所以我们用一个二维的矩阵的来保存分解之后得到的信息。这个矩阵就是K空间。（一般用k来表示空间频率，单位是1/m）</p>
+<p>什么意思呢？<strong>就是说一个二维矩阵点代表这个平面波的法向量，这个向量的模代表这个平面波的频率，这个点里面保存的内容复数就是此平面波的幅度和相位。</strong></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../%E5%8D%95%E7%9B%B8%E6%9C%BA%E5%8F%8C%E5%85%89%E6%BA%90%E8%A7%86%E7%BA%BF%E4%BC%B0%E8%AE%A1/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 基于单相机双光源的眼动交互" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              基于单相机双光源的眼动交互
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../JLU%20Captcha/" class="md-footer__link md-footer__link--next" aria-label="下一页: 吉林大学教务管理系统验证码识别" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              吉林大学教务管理系统验证码识别
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+        <script src="../../mathjax-config.js"></script>
+      
+        <script src="../../js/tongji.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

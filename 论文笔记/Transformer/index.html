@@ -1,0 +1,1109 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>屠榜的transformer - ZPSJLU</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#546d78">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,400,400i,700%7CSource+Code+Pro&display=fallback">
+        <style>:root{--md-text-font-family:"Noto Sans";--md-code-font-family:"Source Code Pro"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="red">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#transformer" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ZPSJLU" class="md-header__button md-logo" aria-label="ZPSJLU" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ZPSJLU
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              屠榜的transformer
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/" class="md-tabs__link">
+        经验之谈
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        论文笔记
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="md-tabs__link">
+        踩坑记录
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E5%9C%B0%E9%9C%87%E5%8F%8D%E6%BC%94/" class="md-tabs__link">
+        地震反演
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ZPSJLU" class="md-nav__button md-logo" aria-label="ZPSJLU" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+
+    </a>
+    ZPSJLU
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        经验之谈
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="经验之谈" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          经验之谈
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/%E5%8D%95%E7%9B%B8%E6%9C%BA%E5%8F%8C%E5%85%89%E6%BA%90%E8%A7%86%E7%BA%BF%E4%BC%B0%E8%AE%A1/" class="md-nav__link">
+        基于单相机双光源的眼动交互
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/%E8%8D%A7%E5%85%89%E9%98%B5%E5%88%97%E7%9F%AB%E6%AD%A3%E8%AE%A1%E6%95%B0/" class="md-nav__link">
+        蛋白质荧光阵列矫正与计数
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/JLU%20Captcha/" class="md-nav__link">
+        吉林大学教务管理系统验证码识别
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/robomaster%E5%B7%A5%E7%A8%8B%E7%9F%BF%E7%9F%B3%E8%AF%86%E5%88%AB/" class="md-nav__link">
+        robomaster工程矿石识别
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/%E7%99%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9B%E5%88%92%E6%B0%B4%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+        百度车载影像检测与分割
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        论文笔记
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="论文笔记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          论文笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        网络解读
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="网络解读" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          网络解读
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          屠榜的transformer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        屠榜的transformer
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#transformer_1" class="md-nav__link">
+    Transformer简介
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vision-transformer" class="md-nav__link">
+    VIsion Transformer（屠榜视觉领域）
+  </a>
+  
+    <nav class="md-nav" aria-label="VIsion Transformer（屠榜视觉领域）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#self-attention" class="md-nav__link">
+    self-attention
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-head-self-attention" class="md-nav__link">
+    Multi-head self-attention
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positional-encoding" class="md-nav__link">
+    Positional Encoding： 位置编码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformer_2" class="md-nav__link">
+    Transformer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-vit-tokenvit" class="md-nav__link">
+    Dynamic ViT ：动态Token稀疏化ViT 论文解读
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%90%8A%E6%89%93%E4%B8%80%E5%88%87%E7%9A%84yolox/" class="md-nav__link">
+        吊打一切的yoloX
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CascadeRCNN/" class="md-nav__link">
+        CascadeRCNN永远滴神
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HR-Net%20%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/" class="md-nav__link">
+        高分辨网络HR-Net
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%B0%8F%E7%9B%AE%E6%A0%87%E5%B0%81%E7%A5%9ETPH-YOLOV5/" class="md-nav__link">
+        小目标检测王者TPH-YOLOV5
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../YOLOP/" class="md-nav__link">
+        嵌入式同时完成三大视觉任务YOLOP
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        理论基础
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="理论基础" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          理论基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%9F%BA%E7%A1%80%E7%90%86%E8%A7%A3/Soft%20label/" class="md-nav__link">
+        从标签平滑和知识蒸馏看Soft Label
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      <label class="md-nav__link" for="__nav_3_4">
+        即插即用
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="即插即用" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          即插即用
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8D%B3%E6%8F%92%E5%8D%B3%E7%94%A8/UMOP/" class="md-nav__link">
+        百度开源UMOP解决特征层gt不匹配
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        踩坑记录
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="踩坑记录" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          踩坑记录
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/nano%E9%83%A8%E7%BD%B2yolov5/" class="md-nav__link">
+        nano部署yolov5
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/LibtorchInWindows/" class="md-nav__link">
+        windows下配置libtorch(vs/cmake)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/vscode%E9%85%8D%E7%BD%AEopencv/" class="md-nav__link">
+        windows+vscode配置opencv4.1.1
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        地震反演
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="地震反演" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          地震反演
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9C%B0%E9%9C%87%E5%8F%8D%E6%BC%94/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9C%B0%E9%9C%87%E5%8F%8D%E6%BC%94/%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        基础
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9C%B0%E9%9C%87%E5%8F%8D%E6%BC%94/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        论文笔记
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9C%B0%E9%9C%87%E5%8F%8D%E6%BC%94/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        数学基础
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#transformer_1" class="md-nav__link">
+    Transformer简介
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vision-transformer" class="md-nav__link">
+    VIsion Transformer（屠榜视觉领域）
+  </a>
+  
+    <nav class="md-nav" aria-label="VIsion Transformer（屠榜视觉领域）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#self-attention" class="md-nav__link">
+    self-attention
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-head-self-attention" class="md-nav__link">
+    Multi-head self-attention
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positional-encoding" class="md-nav__link">
+    Positional Encoding： 位置编码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformer_2" class="md-nav__link">
+    Transformer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-vit-tokenvit" class="md-nav__link">
+    Dynamic ViT ：动态Token稀疏化ViT 论文解读
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="transformer">屠榜的Transformer<a class="headerlink" href="#transformer" title="Permanent link">&para;</a></h1>
+<hr />
+<p>7.17</p>
+<h2 id="transformer_1">Transformer简介<a class="headerlink" href="#transformer_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>应用了自注意力机制来建模全局的上下文信息，缺点：计算量大，改进方法通常为轻量化的注意力，分治法</p>
+</li>
+<li>
+<p>架构灵活，很难应用在小规模数据集上进行训练，缺乏泛化性能</p>
+</li>
+<li>
+<p>模型自适应性</p>
+</li>
+</ol>
+<p>原生Transformer模型由编码器和解码器组成的序列到序列模型解码器端的自注意力模块作用是用于避免当前位置关注到后续位置的信息。</p>
+<p>Transformer采用了带有<strong>Query-Key-Value</strong>(QKV)的自<strong>注意力模块</strong>。其中，Q指的是查询向量，K指的是关键字向量，而V指的是内容向量。Q与K点积可得到关联矩阵，经过<strong>SoftMax</strong>得到权重图，权重图叠加到V可得到不同区域加权。</p>
+<p>采取多头注意力，多头注意力结果拼接作为MSA最终的输出，</p>
+<ul>
+<li><strong>Self-attention</strong>. 在Transformer的编码器中，我们设置，这里为上一层的输出。</li>
+<li><strong>Masked Self-attention</strong>. 在Transformer的解码器中，自注意力受到限制，使得每个位置的查询只能关注到包括该位置及之前位置的所有键值对。常规做法是将掩码矩阵(mask matrix)添加到注意力分数上，其中非法位置采用进行遮挡。这一类注意力方法也经常被称为自回归(autogressive)或者因果(causal)注意力。</li>
+<li><strong>Cross-attetnion</strong>. 查询是从前一个（解码器）层的输出投影所获得的，而键和值是使用编码器的输出投影得到的。</li>
+</ul>
+<p><strong>位置编码</strong></p>
+<blockquote>
+<p>由于Tranformer完全摒弃了RNN和CNN结构，导致它对位置信息是一无所知的（尤其是编码器）。因此，需要额外的位置表示来对Token的排序进行建模。</p>
+</blockquote>
+<p>Transformer可使用以下三种方式</p>
+<ul>
+<li>
+<p>Encoder-Deocder</p>
+</li>
+<li>
+<p>Encoder only</p>
+</li>
+<li>
+<p>Decoder only</p>
+</li>
+</ul>
+<p>影响Transformer的复杂度的两个因素为隐藏层D的维度和输入序列长度T</p>
+<hr />
+<p>7.20</p>
+<h2 id="vision-transformer">VIsion Transformer（屠榜视觉领域）<a class="headerlink" href="#vision-transformer" title="Permanent link">&para;</a></h2>
+<h3 id="self-attention"><strong>self-attention</strong><a class="headerlink" href="#self-attention" title="Permanent link">&para;</a></h3>
+<p><img alt="self-attention" src="../img/self-attention1.jpg" /></p>
+<p>Xn 乘一个矩阵得到embedding ai，在将ai 乘三个不同的Wq,Wk,Wv得到q，k，v，q与v做attention即qk点积除以维度的根号</p>
+<p><img alt="self-attention" src="../img/self-attention2.jpg" /></p>
+<p>进行softmax操作</p>
+<p><img alt="self-attention" src="../img/self-attention3.jpg" /></p>
+<p>与vi相乘得到bi，此时bi用到了整个sequence的信息</p>
+<blockquote>
+<p>如果要考虑<strong>local</strong>的information，则只需要学习出相应的a1,i = 0，b1 就不再带有那个对应分支的信息了；如果要考虑<strong>global</strong>的information，则只需要学习出相应的a1,i != 0，b1 就带有全部的对应分支的信息了。</p>
+</blockquote>
+<p>self-attention就是一堆矩阵乘法，可以实现GPU加速</p>
+<p>处理Sequence:RNN可以考虑到全局，但不能做到并行化</p>
+<p>cnn可以并行化，但不能考虑全局，堆叠filter可以解决</p>
+<p>一种新的layer，叫<strong>self-attention</strong>，它的输入和输出和RNN是一模一样的，输入一个sequence，输出一个sequence，它的每一个输出都看过了整个的输入sequence，这一点与bi-directional RNN相同。但是神奇的地方是：它的每一个输出可以并行化计算。</p>
+<p>Embedding 是一个将离散变量转为连续向量表示的一个方式。有以下三个主要目的</p>
+<ol>
+<li>在 embedding 空间中<strong>查找最近邻</strong>，这可以很好的用于根据用户的兴趣来进行推荐。</li>
+<li>作为监督性学习任务的<strong>输入</strong>。</li>
+<li>用于<strong>可视化</strong>不同离散变量之间的关系。</li>
+</ol>
+<p>与one-hot对比：one-hot由N-1个0与单个1组成的vector，所显现的缺点有</p>
+<ol>
+<li>对于具有非常多类型的类别变量，变换后的向量维数过于巨大，且过于稀疏。</li>
+<li>映射之间完全独立，并不能表示出不同类别之间的关系。</li>
+</ol>
+<p>考虑到这两个问题，表示类别变量的理想解决方案则是我们是否可以通过较少的维度表示出每个类别，并且还可以一定的表现出不同类别变量之间的关系，这也就是 embedding 出现的目的。</p>
+<p>embedding最酷的一点是可视化，当然要我们能够观察，需要通过降维技术来达到 2 维或 3 维。最流行的降维技术是：t-Distributed Stochastic Neighbor Embedding (TSNE)。</p>
+<h3 id="multi-head-self-attention"><strong>Multi-head self-attention</strong><a class="headerlink" href="#multi-head-self-attention" title="Permanent link">&para;</a></h3>
+<p><img alt="图片" src="../img/Mutli%20self-attention.jpg" /></p>
+<h3 id="positional-encoding"><strong>Positional Encoding：</strong> 位置编码<a class="headerlink" href="#positional-encoding" title="Permanent link">&para;</a></h3>
+<p>给每一个位置规定一个表示位置信息的向量ei，让它与ai加在一起之后作为新的ai参与后面的运算过程，但是这个向量ei是由人工设定的，而不是神经网络学习出来的。每一个位置都有一个不同的ei。</p>
+<h3 id="transformer_2"><strong>Transformer</strong><a class="headerlink" href="#transformer_2" title="Permanent link">&para;</a></h3>
+<p><img alt="transformer" src="../img/transformer.jpg" /></p>
+<p>Masked Multi-Head Self-attention，masked的意思是使attention只会attend on已经产生的sequence，</p>
+<h2 id="dynamic-vit-tokenvit">Dynamic ViT ：动态Token稀疏化ViT 论文解读<a class="headerlink" href="#dynamic-vit-tokenvit" title="Permanent link">&para;</a></h2>
+<p>论文地址: Transformer Interpretability Beyond Attention Visualization</p>
+<p><a href="https://github.com/hila-chefer/Transformer-Explainability">源码地址</a></p>
+<p><strong>point:</strong> 动态token稀疏化视觉transformer， 分层剪枝 VIT</p>
+<p>待解决：交叉验证，mix up， </p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="上一页: 专栏介绍" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              专栏介绍
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../%E5%90%8A%E6%89%93%E4%B8%80%E5%88%87%E7%9A%84yolox/" class="md-footer__link md-footer__link--next" aria-label="下一页: 吊打一切的yoloX" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              吊打一切的yoloX
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+        <script src="../../mathjax-config.js"></script>
+      
+        <script src="../../js/tongji.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

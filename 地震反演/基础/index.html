@@ -1,0 +1,1265 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>基础 - ZPSJLU</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#546d78">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,400,400i,700%7CSource+Code+Pro&display=fallback">
+        <style>:root{--md-text-font-family:"Noto Sans";--md-code-font-family:"Source Code Pro"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="red">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ZPSJLU" class="md-header__button md-logo" aria-label="ZPSJLU" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ZPSJLU
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              基础
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/" class="md-tabs__link">
+        经验之谈
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" class="md-tabs__link">
+        论文笔记
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="md-tabs__link">
+        踩坑记录
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        地震反演
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ZPSJLU" class="md-nav__button md-logo" aria-label="ZPSJLU" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+
+    </a>
+    ZPSJLU
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        经验之谈
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="经验之谈" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          经验之谈
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/%E5%8D%95%E7%9B%B8%E6%9C%BA%E5%8F%8C%E5%85%89%E6%BA%90%E8%A7%86%E7%BA%BF%E4%BC%B0%E8%AE%A1/" class="md-nav__link">
+        基于单相机双光源的眼动交互
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/%E8%8D%A7%E5%85%89%E9%98%B5%E5%88%97%E7%9F%AB%E6%AD%A3%E8%AE%A1%E6%95%B0/" class="md-nav__link">
+        蛋白质荧光阵列矫正与计数
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/JLU%20Captcha/" class="md-nav__link">
+        吉林大学教务管理系统验证码识别
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/robomaster%E5%B7%A5%E7%A8%8B%E7%9F%BF%E7%9F%B3%E8%AF%86%E5%88%AB/" class="md-nav__link">
+        robomaster工程矿石识别
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/%E7%99%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9B%E5%88%92%E6%B0%B4%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+        百度车载影像检测与分割
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        论文笔记
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="论文笔记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          论文笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        网络解读
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="网络解读" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          网络解读
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/Transformer/" class="md-nav__link">
+        屠榜的transformer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8A%E6%89%93%E4%B8%80%E5%88%87%E7%9A%84yolox/" class="md-nav__link">
+        吊打一切的yoloX
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/CascadeRCNN/" class="md-nav__link">
+        CascadeRCNN永远滴神
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/HR-Net%20%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/" class="md-nav__link">
+        高分辨网络HR-Net
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%B0%8F%E7%9B%AE%E6%A0%87%E5%B0%81%E7%A5%9ETPH-YOLOV5/" class="md-nav__link">
+        小目标检测王者TPH-YOLOV5
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/YOLOP/" class="md-nav__link">
+        嵌入式同时完成三大视觉任务YOLOP
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        理论基础
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="理论基础" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          理论基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%9F%BA%E7%A1%80%E7%90%86%E8%A7%A3/Soft%20label/" class="md-nav__link">
+        从标签平滑和知识蒸馏看Soft Label
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      <label class="md-nav__link" for="__nav_3_4">
+        即插即用
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="即插即用" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          即插即用
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%8D%B3%E6%8F%92%E5%8D%B3%E7%94%A8/UMOP/" class="md-nav__link">
+        百度开源UMOP解决特征层gt不匹配
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        踩坑记录
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="踩坑记录" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          踩坑记录
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/nano%E9%83%A8%E7%BD%B2yolov5/" class="md-nav__link">
+        nano部署yolov5
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/LibtorchInWindows/" class="md-nav__link">
+        windows下配置libtorch(vs/cmake)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/vscode%E9%85%8D%E7%BD%AEopencv/" class="md-nav__link">
+        windows+vscode配置opencv4.1.1
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        地震反演
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="地震反演" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          地震反演
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          基础
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        基础
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    反演的概念
+  </a>
+  
+    <nav class="md-nav" aria-label="反演的概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seismic-inversion" class="md-nav__link">
+    反演(Seismic inversion)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deterministic-inversion" class="md-nav__link">
+    确定性反演(Deterministic Inversion)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simultaneous-inversion" class="md-nav__link">
+    联合反演(Simultaneous Inversion)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eeiextended-elastic-impedance-inversion" class="md-nav__link">
+    EEI(Extended Elastic impedance) Inversion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stochastic-inversion" class="md-nav__link">
+    随机反演(Stochastic Inversion)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    建模
+  </a>
+  
+    <nav class="md-nav" aria-label="建模">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    调谐问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    分辨率不一致问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    错误的趋势问题
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    相关概念
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    相关性质
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    反演问题
+  </a>
+  
+    <nav class="md-nav" aria-label="反演问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    疑问1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    疑问2（怎么推导⬆）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        论文笔记
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        数学基础
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    反演的概念
+  </a>
+  
+    <nav class="md-nav" aria-label="反演的概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seismic-inversion" class="md-nav__link">
+    反演(Seismic inversion)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deterministic-inversion" class="md-nav__link">
+    确定性反演(Deterministic Inversion)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simultaneous-inversion" class="md-nav__link">
+    联合反演(Simultaneous Inversion)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eeiextended-elastic-impedance-inversion" class="md-nav__link">
+    EEI(Extended Elastic impedance) Inversion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stochastic-inversion" class="md-nav__link">
+    随机反演(Stochastic Inversion)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    建模
+  </a>
+  
+    <nav class="md-nav" aria-label="建模">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    调谐问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    分辨率不一致问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    错误的趋势问题
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    相关概念
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    相关性质
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    反演问题
+  </a>
+  
+    <nav class="md-nav" aria-label="反演问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    疑问1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    疑问2（怎么推导⬆）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">地震信号反演<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>参考：
+<a href="https://www.geoexpro.com/articles/2013/08/geophysics-a-simple-guide-to-seismic-inversion">https://www.geoexpro.com/articles/2013/08/geophysics-a-simple-guide-to-seismic-inversion</a></p>
+<h2 id="_2">反演的概念<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>正演</strong> 通过已知的地质模型来得到参数</li>
+<li><strong>反演</strong> 通过测量到的数值来估计实际模型，基于声波测量的反演，经常用作校准岩石属性。</li>
+</ul>
+<h3 id="seismic-inversion">反演(Seismic inversion)<a class="headerlink" href="#seismic-inversion" title="Permanent link">&para;</a></h3>
+<p>即通过测量的反射数据得到岩石的属性（称为阻抗，声速和体积密度的乘积）
+强振幅与岩石边界有关，在反向数据集中，振幅代表岩石内部性质。</p>
+<h3 id="deterministic-inversion">确定性反演(Deterministic Inversion)<a class="headerlink" href="#deterministic-inversion" title="Permanent link">&para;</a></h3>
+<p>将缺失的低频信号引入反演，从而得到趋势。但是低频这一部分只是简单建模并加入相对阻抗中。<strong>注意</strong>有可能这个趋势不是由于地震反射波引起的，而是平滑的模型带来的，所以要注意解释的是地震数据，而不是模型。
+<strong>deterministic inversion = relative inversion + model</strong></p>
+<h3 id="simultaneous-inversion">联合反演(Simultaneous Inversion)<a class="headerlink" href="#simultaneous-inversion" title="Permanent link">&para;</a></h3>
+<p>地震数据包含有关地球岩石性质的附加信息，可以使用几种不同的方法对这些信息进行反演。它利用pre-stack gather(或该数据的部分叠加，如<strong>角度叠加</strong>)同时反演多个岩石属性参数。也是一种确定性反演，所以也要<strong>注意</strong>上面的问题。最后通过高通滤波把模型滤掉更安全。</p>
+<h3 id="eeiextended-elastic-impedance-inversion">EEI(Extended Elastic impedance) Inversion<a class="headerlink" href="#eeiextended-elastic-impedance-inversion" title="Permanent link">&para;</a></h3>
+<p>反演前执行某种类型的校准，使用特殊角度项<span class="arithmatex">\(\chi\)</span>，它的投影范围从-90<span class="arithmatex">\(\degree\)</span>到+90<span class="arithmatex">\(\degree\)</span>。可为数据找到两个特征角，最大振幅代表岩体立方，最小振幅代表流体立方</p>
+<h3 id="stochastic-inversion">随机反演(Stochastic Inversion)<a class="headerlink" href="#stochastic-inversion" title="Permanent link">&para;</a></h3>
+<p>它消除了调谐效应，对不确定性建模，可以在细尺度上进行计算;但是有更高的成本和大量数据。</p>
+<h2 id="_3">建模<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">调谐问题<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>反演振幅不仅与岩石性质有关，还与地层厚度有关。如果厚度接近特定地震的“调谐”频率，那么振幅可能会比实际情况明显，可能导致地层厚度的变化被误解为岩石性质的变化，所以要进行去除调谐效应。</p>
+<h3 id="_5">分辨率不一致问题<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>模型和地震阻抗之间在垂直分辨率上的巨大差异，模型分辨率高，会产生误导性的流体流动特征。</p>
+<h3 id="_6">错误的趋势问题<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>之前确定性反演有提到，可能会产生遵循模型的错误趋势，因此要将模型去除。</p>
+<h2 id="_7">相关概念<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>相对阻抗(relative impedance)：是直接从没有模型输入的地震数据中估计出来的，是一种鲁棒的地震特性。数据不记录低频，故<strong>无趋势</strong>
+<img alt="" src="https://assets.geoexpro.com/uploads/54e343c2-e708-4245-9aca-7eb612c1382a/fig-1-b.jpg" />
+<center>彩色反演(colored inversion)</center></p>
+</li>
+<li>
+<p>p wave: primary or pressure wave 主波
+参考：<a href="https://en.wikipedia.org/wiki/P_wave">https://en.wikipedia.org/wiki/P_wave</a>
+平行于波传播方向的质点运动传播(声波)，传播速度比其他地震波快，当它们通过半固态地幔和液态外核之间的过渡时，会发生轻微的折射。因此，在距离震源103°到142°之间有一个P波“阴影区”，无法记录。</p>
+</li>
+</ul>
+<p>速度计算：</p>
+<div class="arithmatex">\[v_p=\sqrt{\frac{K+\frac{4}{3}\mu}{\rho}}=\sqrt{\frac{\lambda+2\mu}{\rho}}=\sqrt{\frac{M}{\rho}}\]</div>
+<p>由于密度变化很小，所以主要由<span class="arithmatex">\(K和\mu\)</span>决定
+- s wave: secondary or shear wave 次波 
+参考：<a href="https://en.wikipedia.org/wiki/S_wave">https://en.wikipedia.org/wiki/S_wave</a>
+垂直于波传播方向的质点运动传播,p波在非正入射时撞击界面会产生s波,波速仅次于P波，S波无法穿越外地核，因为流体不支持剪切，所以S波的阴影区正对着地震的震源。
+粒子运动与传播方向在垂直面内为SV-wave,粒子运动与传播方向在水平面进行为SH-wave
+<img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Speeds_of_seismic_waves.PNG/1024px-Speeds_of_seismic_waves.PNG" />
+以上两种阻抗可通过结合得到另外两种属性, <span class="arithmatex">\(\lambda\rho\)</span> 与 <span class="arithmatex">\(\mu\rho\)</span>
+p波阻抗(IP)和<span class="arithmatex">\(\lambda\rho\)</span> 性质告诉我们孔隙空间的影响，如孔隙度和碳氢化合物(存在或饱和度)。s波阻抗(SI)和μρ可以在去除孔隙空间和流体的影响后，为我们提供有关岩性的信息。通过比较每种产出类型之间的岩石性质异常，就有可能更好地了解异常是否可能是由孔隙度/饱和度变化或岩性变化引起的。
+- 三项反演：得到IP，SP,体密度（sonic,shear,bulk density),体密度很难得到，对地震幅度影响很小且只存在于大角度情况下(&gt;40°)</p>
+<h2 id="_8">相关性质<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p><strong>更冷、密度更大、更硬</strong>的岩石，<strong>波速更快,阻抗越高</strong>，因此它们勾勒出了向下的构造板块</p>
+<h2 id="_9">反演问题<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p><span class="arithmatex">\({d = Lm}\)</span></p>
+<p><strong>m</strong>: model, <strong>d</strong>: recorded data, <strong>L</strong>: forward-modeling operator</p>
+<p>性质：
+- 有解，由于噪声会导致方程过度确定或不不一致导致无解：<strong>残差加权和，惩罚函数</strong>
+- 唯一解：<strong>正则化</strong>
+- 解持续依赖于数据：<strong>正则化</strong></p>
+<p>traveltime tomography
+- 1. 离散化模型m，每个网格对应slowness Nx1
+- 2. 离散化数据d Mx1
+- 3. 离散化运算符L MxN</p>
+<p>故： </p>
+<div class="arithmatex">\[\displaystyle\sum_{j}l_{ij}m_j=d_i\tag {1.1}\]</div>
+<ul>
+<li>
+<ol>
+<li>线性化：<strong>由于L取决于m</strong> 令 <span class="arithmatex">\(m^{(0)}=m_o\)</span> (<span class="arithmatex">\(m_o\)</span>指预测值), 使其接近真实模型并线性化数据与模型之间的关系进行迭代收敛
+利用泰勒展开式
+(<span class="arithmatex">\(d_i随着\pmb m变化， \pmb m 为真实模型，\pmb m_o为预测值\)</span>)</li>
+</ol>
+</li>
+</ul>
+<div class="arithmatex">\[d_i(\pmb m)\approx d_i(\pmb m_o) + \displaystyle\sum_j\left.\left[\frac{\partial {d_i(\pmb m)}}{\partial m_j}\right]\right|_{m_o}\delta m_j\tag{1.2} \]</div>
+<p>化简得</p>
+<div class="arithmatex">\[\delta\pmb d(\pmb m) = \pmb L\delta\pmb m\tag{1.3}\]</div>
+<div class="arithmatex">\[l_{ij}=\frac{\partial d_i(\pmb m_o)}{\partial m_j} 代表第i个数据对模型第j个cell的扰动\]</div>
+<h3 id="1">疑问1<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[\displaystyle\sum_j\left.\left[\frac{\partial {d_i(\pmb m)}}{\partial m_j}\right]\right|_{m_o}\delta m_j 与 \left.\left[\frac{\partial {d_i(\pmb m)}}{\partial \pmb m}\right]\right|_{m_o}\delta\pmb m 相等吗？\]</div>
+<ul>
+<li>
+<ol>
+<li>正则化 不稳定解问题
+规定一个最小化目标函数：（数据残差的p范数与惩罚条件）</li>
+</ol>
+</li>
+</ul>
+<div class="arithmatex">\[\epsilon = \frac{1}{p}\parallel\pmb L\delta\pmb m-\delta\pmb d\parallel^p_p+\eta^2g(\pmb m)\tag{1.4}\]</div>
+<p>当p=2时,即二范数
+得</p>
+<div class="arithmatex">\[\delta\pmb m=\left[\pmb {L^TL}+\eta^2\pmb I\right]^{-1}\pmb{L^T}\delta\pmb d\tag{1.5}\]</div>
+<h3 id="2">疑问2（怎么推导⬆）<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<ol>
+<li>迭代化正则(具体见p30)
+为了减小计算量</li>
+</ol>
+</li>
+</ul>
+<div class="arithmatex">\[\left[\pmb{L^TL}\right]_{ij}\approx\left[\pmb{L^TL}\right]_{ii}\delta_{ij}\]</div>
+<p>规定正则化与步长参数<span class="arithmatex">\(\alpha\)</span></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="上一页: 专栏介绍" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              专栏介绍
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" class="md-footer__link md-footer__link--next" aria-label="下一页: 论文笔记" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              论文笔记
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+        <script src="../../mathjax-config.js"></script>
+      
+        <script src="../../js/tongji.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1147 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>小目标检测王者TPH-YOLOV5 - ZPSJLU</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#546d78">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,400,400i,700%7CSource+Code+Pro&display=fallback">
+        <style>:root{--md-text-font-family:"Noto Sans";--md-code-font-family:"Source Code Pro"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="red">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#914-tph-yolov5" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ZPSJLU" class="md-header__button md-logo" aria-label="ZPSJLU" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ZPSJLU
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              小目标检测王者TPH-YOLOV5
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/" class="md-tabs__link">
+        经验之谈
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        论文笔记
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="md-tabs__link">
+        踩坑记录
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E5%9C%B0%E9%9C%87%E5%8F%8D%E6%BC%94/" class="md-tabs__link">
+        地震反演
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ZPSJLU" class="md-nav__button md-logo" aria-label="ZPSJLU" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+
+    </a>
+    ZPSJLU
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        经验之谈
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="经验之谈" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          经验之谈
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/%E5%8D%95%E7%9B%B8%E6%9C%BA%E5%8F%8C%E5%85%89%E6%BA%90%E8%A7%86%E7%BA%BF%E4%BC%B0%E8%AE%A1/" class="md-nav__link">
+        基于单相机双光源的眼动交互
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/%E8%8D%A7%E5%85%89%E9%98%B5%E5%88%97%E7%9F%AB%E6%AD%A3%E8%AE%A1%E6%95%B0/" class="md-nav__link">
+        蛋白质荧光阵列矫正与计数
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/JLU%20Captcha/" class="md-nav__link">
+        吉林大学教务管理系统验证码识别
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/robomaster%E5%B7%A5%E7%A8%8B%E7%9F%BF%E7%9F%B3%E8%AF%86%E5%88%AB/" class="md-nav__link">
+        robomaster工程矿石识别
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/%E7%99%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9B%E5%88%92%E6%B0%B4%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+        百度车载影像检测与分割
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        论文笔记
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="论文笔记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          论文笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        网络解读
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="网络解读" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          网络解读
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Transformer/" class="md-nav__link">
+        屠榜的transformer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%90%8A%E6%89%93%E4%B8%80%E5%88%87%E7%9A%84yolox/" class="md-nav__link">
+        吊打一切的yoloX
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CascadeRCNN/" class="md-nav__link">
+        CascadeRCNN永远滴神
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HR-Net%20%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/" class="md-nav__link">
+        高分辨网络HR-Net
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          小目标检测王者TPH-YOLOV5
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        小目标检测王者TPH-YOLOV5
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#914-tph-yolov5" class="md-nav__link">
+    9.14 TPH-YOLOV5
+  </a>
+  
+    <nav class="md-nav" aria-label="9.14 TPH-YOLOV5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-data-augmentation" class="md-nav__link">
+    1. Data Augmentation:
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Data Augmentation:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 全局数据增强
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 特殊数据增强
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2multi-model-ensemble-method" class="md-nav__link">
+    2.Multi-Model Ensemble Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-object-detection" class="md-nav__link">
+    3. Object Detection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-details" class="md-nav__link">
+    4. Details
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    增加微小物体检测头
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformer-encoder-block" class="md-nav__link">
+    Transformer encoder block
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convolutional-block-attention-module-cbam" class="md-nav__link">
+    Convolutional block attention module (CBAM)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-trained-classifier" class="md-nav__link">
+    Self-trained classifier
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../YOLOP/" class="md-nav__link">
+        嵌入式同时完成三大视觉任务YOLOP
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        理论基础
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="理论基础" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          理论基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%9F%BA%E7%A1%80%E7%90%86%E8%A7%A3/Soft%20label/" class="md-nav__link">
+        从标签平滑和知识蒸馏看Soft Label
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      <label class="md-nav__link" for="__nav_3_4">
+        即插即用
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="即插即用" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          即插即用
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8D%B3%E6%8F%92%E5%8D%B3%E7%94%A8/UMOP/" class="md-nav__link">
+        百度开源UMOP解决特征层gt不匹配
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        踩坑记录
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="踩坑记录" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          踩坑记录
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/nano%E9%83%A8%E7%BD%B2yolov5/" class="md-nav__link">
+        nano部署yolov5
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/LibtorchInWindows/" class="md-nav__link">
+        windows下配置libtorch(vs/cmake)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/vscode%E9%85%8D%E7%BD%AEopencv/" class="md-nav__link">
+        windows+vscode配置opencv4.1.1
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        地震反演
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="地震反演" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          地震反演
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9C%B0%E9%9C%87%E5%8F%8D%E6%BC%94/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9C%B0%E9%9C%87%E5%8F%8D%E6%BC%94/%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        基础
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9C%B0%E9%9C%87%E5%8F%8D%E6%BC%94/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        论文笔记
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9C%B0%E9%9C%87%E5%8F%8D%E6%BC%94/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        数学基础
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#914-tph-yolov5" class="md-nav__link">
+    9.14 TPH-YOLOV5
+  </a>
+  
+    <nav class="md-nav" aria-label="9.14 TPH-YOLOV5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-data-augmentation" class="md-nav__link">
+    1. Data Augmentation:
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Data Augmentation:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 全局数据增强
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 特殊数据增强
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2multi-model-ensemble-method" class="md-nav__link">
+    2.Multi-Model Ensemble Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-object-detection" class="md-nav__link">
+    3. Object Detection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-details" class="md-nav__link">
+    4. Details
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    增加微小物体检测头
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformer-encoder-block" class="md-nav__link">
+    Transformer encoder block
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convolutional-block-attention-module-cbam" class="md-nav__link">
+    Convolutional block attention module (CBAM)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-trained-classifier" class="md-nav__link">
+    Self-trained classifier
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>小目标检测王者TPH-YOLOV5</h1>
+                
+                <h2 id="914-tph-yolov5">9.14 TPH-YOLOV5<a class="headerlink" href="#914-tph-yolov5" title="Permanent link">&para;</a></h2>
+<p>作者单位:  北京航空航天大学</p>
+<p>论文链接：<a href="https://arxiv.org/abs/2108.11539">https://arxiv.org/abs/2108.11539</a></p>
+<p>笔记参考公众号【集智书童】: <a href="https://mp.weixin.qq.com/s/1itG2bVUbuLC0g7mX5VLGA">https://mp.weixin.qq.com/s/1itG2bVUbuLC0g7mX5VLGA</a></p>
+<h3 id="1-data-augmentation">1. Data Augmentation:<a class="headerlink" href="#1-data-augmentation" title="Permanent link">&para;</a></h3>
+<h4 id="11">1.1 全局数据增强<a class="headerlink" href="#11" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Photometric</strong>：随机亮度、对比度、色调、饱和度、噪声</li>
+<li><strong>Geometric</strong>: 随机扩展、裁剪、翻转</li>
+</ul>
+<h4 id="12">1.2 特殊数据增强<a class="headerlink" href="#12" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Mixup</strong>：随机两张图片加权求和，标签也对应加权求和</li>
+<li><strong>CutMix</strong>： 使用另一个图像的区域覆盖被遮挡的区域</li>
+<li><strong>Mosaic</strong>：拼接4幅图像</li>
+</ul>
+<h3 id="2multi-model-ensemble-method">2.Multi-Model Ensemble Method<a class="headerlink" href="#2multi-model-ensemble-method" title="Permanent link">&para;</a></h3>
+<p>由于权重更新的随机性，每次训练都会带来一定偶然性，使得模型有了一个<strong>高方差</strong>。</p>
+<p>减少模型方差的一个成功方法是训练多个模型而不是单一模型，并结合这些模型的预测。</p>
+<p>针对不同的目标检测模型，有3种不同的<strong>ensemble boxes</strong>方法:</p>
+<ul>
+<li>NMS:非极大值抑制，对于重合的框给定重合度阈值IOU，大于阈值取最高置信度。</li>
+<li>Soft-NMS: 它根据IoU值对相邻边界box的置信度设置衰减函数</li>
+<li>Weighted Boxed Fusion(WBF):将所有框合并形成最终结果。</li>
+</ul>
+<h3 id="3-object-detection">3. Object Detection<a class="headerlink" href="#3-object-detection" title="Permanent link">&para;</a></h3>
+<ul>
+<li>BackBone： VGG,ResNet,DenseNet,MobileNet,EfficientNet,CSPDarkNet53,<strong>Swin-Transformer</strong></li>
+<li>Neck: FPN,PANet,NaS-FPN,BiFPN,ASFF,SAM,SPP,ASPP,RFB,CBAM</li>
+<li>Head: One-Stage Two-Stage</li>
+</ul>
+<h3 id="4-details">4. Details<a class="headerlink" href="#4-details" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../img/THP-YOLOV5.jpg" /></p>
+<p>架构：</p>
+<p><img alt="" src="../img/THP-YOLOV5%20arch.jpg" /></p>
+<h4 id="_1">增加微小物体检测头<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p>（head 1)由高分辨feature-map生成</p>
+<h4 id="transformer-encoder-block">Transformer encoder block<a class="headerlink" href="#transformer-encoder-block" title="Permanent link">&para;</a></h4>
+<p>与CSPDarknet53中原有的bottleneck blocks相比，作者认为Transformer encoder block可以捕获全局信息和丰富的上下文信息。</p>
+<p>每个Transformer encoder block包含2个子层。第1子层为multi-head attention layer，第2子层(MLP)为全连接层。每个子层之间使用残差连接。Transformer encoder block增加了捕获不同局部信息的能力。它还可以利用自注意力机制来挖掘特征表征潜能。</p>
+<h4 id="convolutional-block-attention-module-cbam">Convolutional block attention module (CBAM)<a class="headerlink" href="#convolutional-block-attention-module-cbam" title="Permanent link">&para;</a></h4>
+<h4 id="self-trained-classifier">Self-trained classifier<a class="headerlink" href="#self-trained-classifier" title="Permanent link">&para;</a></h4>
+<p>通过裁剪ground-truth边界框并将每个图像patch的大小调整为6464来构建训练集。然后选择ResNet18作为分类器网络。</p>
+<p>注：添加检测头增加计算量，采用transformer encoder blocks减少计算量。</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../HR-Net%20%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 高分辨网络HR-Net" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              高分辨网络HR-Net
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../YOLOP/" class="md-footer__link md-footer__link--next" aria-label="下一页: 嵌入式同时完成三大视觉任务YOLOP" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              嵌入式同时完成三大视觉任务YOLOP
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+        <script src="../../mathjax-config.js"></script>
+      
+        <script src="../../js/tongji.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
