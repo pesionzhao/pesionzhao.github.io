@@ -976,6 +976,7 @@
                 
                 
                 <h1 id="_1">百度大数据竞赛划水记录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p><em>所用代码均为主流深度学习框架，只是简单调参，故没有开源</em></p>
 <p>赛题为车载影像</p>
 <p>aistudio 平台，所以我最先使用paddle框架进行尝试，baseline给的模型为<strong>ppyolo</strong>,尝试的跑了一天，结果ap惊人的才0.02，交流群里很多人也是这样，所以我果断放弃，后来发现可能是因为锚框的大小选取有问题，先进行autoAnchor聚类得到最佳锚框可能会获得更好的结果，我懒得尝试了<img alt="😁" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f601.svg" title=":grin:" /></p>
 <p>之后转战<strong>faster-rcnn</strong> 因为提交结果对模型的大小有限制，必须在200m以内，而我这个还单单只是检测的模型，故我选用<strong>resnet-18</strong>作为骨干，head使用fpn提高感受野，验证集ap能达到0.18！此时提交f=0.2瞬间升到了前十，还有些小激动<img alt="😅" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f605.svg" title=":sweat_smile:" /></p>
@@ -1293,15 +1294,11 @@
     
       <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
       
-        <script src="../../mathjax-config.js"></script>
-      
         <script src="../../js/tongji.js"></script>
-      
-        <script src="../../js/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdnjs.loli.net/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
     
   </body>

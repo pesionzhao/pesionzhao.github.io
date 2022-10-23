@@ -979,17 +979,17 @@ $$
 <p>其中q<sub>i</sub>是每个类别输出的概率，z<sub>i</sub>是每个类别输出的 logits，T就是<strong>温度</strong>。当温度T=1时，这就是标准的 Softmax 公式。T越高，softmax的output probability distribution越趋于平滑，其分布的熵越大，负标签携带的信息会被相对地放大，模型训练将更加关注负标签。</p>
 <p>温度T有这样几个特点：</p>
 <ul>
-<li>原始的softmax函数是T=1时的特例；T&lt;1时，概率分布比原始更"陡峭"，也就是说，当 <span class="arithmatex">\(T\to0\)</span> 时，Softmax 的输出值会接近于 Hard-target；T&gt;1时，概率分布比原始更“平缓”。</li>
-<li>随着T的增加，Softmax 的输出分布越来越平缓，信息熵会越来越大。温度越高，softmax上各个值的分布就越平均，思考极端情况，当 <span class="arithmatex">\({T=\infty}\)</span> ，此时softmax的值是平均分布的。</li>
-<li>不管温度 <span class="arithmatex">\(T\)</span> 怎么取值，Soft-target都有忽略相对较小的 <span class="arithmatex">\(p_i\)</span>（Teacher模型在温度为T时softmax输出在第<span class="arithmatex">\(i\)</span>类上的值)携带的信息的倾向。</li>
+<li>原始的softmax函数是T=1时的特例；T&lt;1时，概率分布比原始更"陡峭"，也就是说，当 <span><span class="MathJax_Preview">T\to0</span><script type="math/tex">T\to0</script></span> 时，Softmax 的输出值会接近于 Hard-target；T&gt;1时，概率分布比原始更“平缓”。</li>
+<li>随着T的增加，Softmax 的输出分布越来越平缓，信息熵会越来越大。温度越高，softmax上各个值的分布就越平均，思考极端情况，当 <span><span class="MathJax_Preview">{T=\infty}</span><script type="math/tex">{T=\infty}</script></span> ，此时softmax的值是平均分布的。</li>
+<li>不管温度 <span><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 怎么取值，Soft-target都有忽略相对较小的 <span><span class="MathJax_Preview">p_i</span><script type="math/tex">p_i</script></span>（Teacher模型在温度为T时softmax输出在第<span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>类上的值)携带的信息的倾向。</li>
 </ul>
 <p>所以</p>
 <ul>
-<li>当想从负标签中学到一些信息量的时候，温度<span class="arithmatex">\(T\)</span>应调高一些；</li>
-<li>当想减少负标签的干扰的时候，温度<span class="arithmatex">\(T\)</span>应调低一些；</li>
+<li>当想从负标签中学到一些信息量的时候，温度<span><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span>应调高一些；</li>
+<li>当想减少负标签的干扰的时候，温度<span><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span>应调低一些；</li>
 </ul>
-<p>总的来说，<span class="arithmatex">\(T\)</span>的选择和Student模型的大小有关，Student模型参数量比较小的时候，相对比较低的温度就可以了。因为参数量小的模型不能学到所有Teacher模型的知识，所以可以适当忽略掉一些负标签的信息。</p>
-<p>最后，在整个知识蒸馏过程中，我们先让温度<span class="arithmatex">\(T\)</span>升高，然后在测试阶段恢复“低温“（<span class="arithmatex">\(T=1\)</span>)，从而将原模型中的知识提取出来，因此将其称为是蒸馏。</p>
+<p>总的来说，<span><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span>的选择和Student模型的大小有关，Student模型参数量比较小的时候，相对比较低的温度就可以了。因为参数量小的模型不能学到所有Teacher模型的知识，所以可以适当忽略掉一些负标签的信息。</p>
+<p>最后，在整个知识蒸馏过程中，我们先让温度<span><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span>升高，然后在测试阶段恢复“低温“（<span><span class="MathJax_Preview">T=1</span><script type="math/tex">T=1</script></span>)，从而将原模型中的知识提取出来，因此将其称为是蒸馏。</p>
 <h2 id="_4">特征蒸馏 未完待续.........<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
                 
               
@@ -1066,15 +1066,11 @@ $$
     
       <script src="../../../assets/javascripts/bundle.756773cc.min.js"></script>
       
-        <script src="../../../mathjax-config.js"></script>
-      
         <script src="../../../js/tongji.js"></script>
-      
-        <script src="../../../js/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdnjs.loli.net/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
     
   </body>

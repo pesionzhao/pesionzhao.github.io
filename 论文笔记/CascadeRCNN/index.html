@@ -919,8 +919,8 @@
 <p><img alt="" src="../img/Faster-rcnn.jpg" /></p>
 <p>关注其rpn网络架构</p>
 <ul>
-<li>先将feature map进行3<span class="arithmatex">\(\times\)</span>3卷积送入之后的两个分支</li>
-<li>上分支进行1<span class="arithmatex">\(\times\)</span>1卷积使维度变为18（9个anchor*二分类）</li>
+<li>先将feature map进行3<span><span class="MathJax_Preview">\times</span><script type="math/tex">\times</script></span>3卷积送入之后的两个分支</li>
+<li>上分支进行1<span><span class="MathJax_Preview">\times</span><script type="math/tex">\times</script></span>1卷积使维度变为18（9个anchor*二分类）</li>
 <li>reshape对二分类情况做softmax，再恢复原状</li>
 <li>由此生成Proposal</li>
 </ul>
@@ -1020,15 +1020,11 @@
     
       <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
       
-        <script src="../../mathjax-config.js"></script>
-      
         <script src="../../js/tongji.js"></script>
-      
-        <script src="../../js/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdnjs.loli.net/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
     
   </body>
