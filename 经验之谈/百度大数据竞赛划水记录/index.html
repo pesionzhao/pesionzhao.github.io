@@ -1066,19 +1066,18 @@
 
 
 <h1 id="_1">百度大数据竞赛划水记录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p><em>所用代码均为主流深度学习框架，只是简单调参，故没有开源</em></p>
+<p><em>所用代码均为主流深度学习模型架构，只是简单调参，故没有开源</em></p>
 <p>赛题为车载影像</p>
-<p>aistudio 平台，所以我最先使用paddle框架进行尝试，baseline给的模型为<strong>ppyolo</strong>,尝试的跑了一天，结果ap惊人的才0.02，交流群里很多人也是这样，所以我果断放弃，后来发现可能是因为锚框的大小选取有问题，先进行autoAnchor聚类得到最佳锚框可能会获得更好的结果，我懒得尝试了<img alt="😁" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f601.svg" title=":grin:" /></p>
-<p>之后转战<strong>faster-rcnn</strong> 因为提交结果对模型的大小有限制，必须在200m以内，而我这个还单单只是检测的模型，故我选用<strong>resnet-18</strong>作为骨干，head使用fpn提高感受野，验证集ap能达到0.18！此时提交f=0.2瞬间升到了前十，还有些小激动<img alt="😅" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f605.svg" title=":sweat_smile:" /></p>
+<p>aistudio 平台，所以我最先使用paddle框架进行尝试，baseline给的模型为<strong>ppyolo</strong>,尝试的跑了一天，结果ap惊人的才0.02，交流群里很多人也是这样，所以我果断放弃，后来发现可能是因为锚框的大小选取有问题，先进行autoAnchor聚类得到最佳锚框可能会获得更好的结果，但是我没有进行尝试</p>
+<p>之后转战<strong>faster-rcnn</strong> 因为提交结果对模型的大小有限制，必须在200m以内，而我这个还单单只是检测的模型，故我选用<strong>resnet-18</strong>作为骨干，head使用fpn提高感受野，验证集ap能达到0.18！此时提交f=0.2瞬间升到了前十</p>
 <p>之后便开始了无脑调参之旅。。。大无语事件接连发生</p>
 <ul>
-<li>拿默认配置文件训练一晚上直接报错，报错原因好像是验证的时候tensor出现了-1的情况，所以无法计算ap，程序就直接停止了，这个错误在相同代码第二次跑的时候就消失了，玄学<img alt="😵" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f635.svg" title=":dizzy_face:" /></li>
+<li>拿默认配置文件训练一晚上直接报错，报错原因好像是验证的时候tensor出现了-1的情况，所以无法计算ap，程序就直接停止了，这个错误在相同代码第二次跑的时候就消失了，玄学<img alt="😅" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f605.svg" title=":sweat_smile:" /></li>
 <li>默认学习率进行训练时，几个batch过后loss直接变为nan，只能降低学习率0.001<img alt="😅" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f605.svg" title=":sweat_smile:" /></li>
 <li><strong>cascade rcnn</strong> 的ap倒是可以稳步上升，但是模型导出超过了200m，paddle暂不支持rcnn模型的压缩<img alt="💔" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f494.svg" title=":broken_heart:" /></li>
 </ul>
 <p>所以就这样一次训练不如一次，干脆放弃了，如果有幸进复赛再好好搞</p>
 <hr />
-<p>就这？就这？</p>
 <p>就这一个草率的模型居然以30多名的成绩进了复赛（好水），复赛就不一样了</p>
 <p>复赛我毅然决然的放弃了paddle，用最火的yolov5尝试一下，因为之间经常跑yolov5，其性能和速度都是很不错的，接下来就开始跑了</p>
 <hr />
@@ -1309,6 +1308,8 @@
 <h2 id="mutilyolov5">大佬开源：mutilyolov5<a class="headerlink" href="#mutilyolov5" title="Permanent link">&para;</a></h2>
 <h2 id="_7">最终效果<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="../img/cityspace.jpg" /></p>
+<hr />
+<p>ps:能力有限，最终获得了22名，没能进前十，未能进入决赛。第一次竞赛到这里就结束啦</p>
 
 
 
