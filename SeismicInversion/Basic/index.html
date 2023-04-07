@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.7">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.472b142f.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.08040f6c.min.css">
         
           
           
@@ -56,7 +56,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="red">
+    <body dir="ltr" data-md-color-scheme="Slate" data-md-color-primary="Blue-Grey" data-md-color-accent="red">
   
     
     
@@ -958,27 +958,34 @@
         
           <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
-    叠加
+    子波
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_11" class="md-nav__link">
-    叠加道
+    叠加
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_12" class="md-nav__link">
-    叠后反演
+    叠加道
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_13" class="md-nav__link">
+    叠后反演
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
     叠前反演
   </a>
   
@@ -1006,6 +1013,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#l1l2-regularization" class="md-nav__link">
+    L1&amp;L2 Regularization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#avoamplitude-variation-with-offset" class="md-nav__link">
     AVO(amplitude variation with offset)
   </a>
@@ -1025,14 +1039,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     相关性质
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_16" class="md-nav__link">
     反演问题
   </a>
   
@@ -1254,27 +1268,34 @@
         
           <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
-    叠加
+    子波
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_11" class="md-nav__link">
-    叠加道
+    叠加
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_12" class="md-nav__link">
-    叠后反演
+    叠加道
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_13" class="md-nav__link">
+    叠后反演
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
     叠前反演
   </a>
   
@@ -1302,6 +1323,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#l1l2-regularization" class="md-nav__link">
+    L1&amp;L2 Regularization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#avoamplitude-variation-with-offset" class="md-nav__link">
     AVO(amplitude variation with offset)
   </a>
@@ -1321,14 +1349,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     相关性质
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_16" class="md-nav__link">
     反演问题
   </a>
   
@@ -1426,16 +1454,21 @@ p波阻抗(IP)和<span class="arithmatex"><span class="MathJax_Preview">\lambda\
 <p>表示反射波与入射波的振幅比，该参数决定垂直入射的地震波反射后的振幅变化，其大小与界面两侧声阻抗不同的地层的密度和速度相关。这样反射系数也表示为界面两侧地层声阻抗差与声阻抗和的比值。</p>
 <h3 id="_9"><strong>合成地震道</strong><a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>将地震脉冲信号合并到时间域模型上得到合成地震道。该过程在数学上称为<strong>褶积</strong>。地震脉冲信号或<strong>子波</strong>，表示来自某个震源的能量包。选择一个模型子波来匹配处理后的地震数据的振幅、相位和频率特征值。<strong>将该子波与反射系数模型进行褶积产生合成地震道，该地震道表示被模拟地层对输入地震脉冲信号的响应</strong>。如果模拟道上有<em>噪音干扰、信号衰减及多次反射</em>现象，还需要进行其他处理。</p>
-<h3 id="_10"><strong>叠加</strong><a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h3 id="_10">子波<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>参考: <a href="https://www.zhihu.com/question/363841019">褶积与反褶积是什么?</a></p>
+<p>可以认为是地震波的初始能量，地震波传播的过程就是这个子波通过地下介质的过程。</p>
+<h3 id="_11"><strong>叠加</strong><a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>是一种通过平均很多地震道达到信号加强目的的技术，参与平均处理的地震道代表着共反射中心点的不同偏移距集合的地震记录。产生的叠加道被认为是<a href="#cmp"><strong>共中心点CMP</strong></a>上垂直入射的反射响应。地震道叠加能够加强信号，降低噪音。</p>
-<h3 id="_11"><strong>叠加道</strong><a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<h3 id="_12"><strong>叠加道</strong><a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <p>因大偏移距地震波传播距离较远，需要对每一个道集进行时间校正，即<strong>正常时差校正（NMO）</strong>，拉平大偏移距到达波；将拉平后的地震道取平均值得到一条叠加道，该道代表<strong>垂直入射（零偏移距）地震道</strong>。</p>
-<h3 id="_12"><strong>叠后反演</strong><a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h3 id="_13"><strong>叠后反演</strong><a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <p>假设反射层上覆介质速度呈渐进变化，并且叠加道平均振幅与垂直入射道振幅相等，那么叠加就是相当合理的处理步骤。多数情况下，以上假设条件都能成立，这样就可以在叠加后的数据上进行反演。
 将<a href="#叠加道">叠加道</a>同<a href="#合成地震道">合成道</a>（反射系数模型和子波褶积后合成的地震道）进行对比，并用这两种道的误差修正反射系数模型，使合成道的下一次迭代更逼近叠加道。重复以上过程，直到合成道和叠加道达到最佳拟合。</p>
-<h3 id="_13"><strong>叠前反演</strong><a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
-<p>当地震道振幅随偏移距变化较为剧烈时，叠加不再适合，这样就只能在未叠加道上进行反演
-- 加权叠加：在叠加前对数据样本使用时间和偏移量变化的权重。</p>
+<h3 id="_14"><strong>叠前反演</strong><a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>当地震道振幅随偏移距变化较为剧烈时，叠加不再适合，这样就只能在未叠加道上进行反演</p>
+<ul>
+<li>加权叠加：在叠加前对数据样本使用时间和偏移量变化的权重。</li>
+</ul>
 <h3 id="cmp">共中心点(CMP)<a class="headerlink" href="#cmp" title="Permanent link">&para;</a></h3>
 <p><a href="https://glossary.slb.com/en/terms/c/cmp">Common Midpoint</a></p>
 <p>地震资料采集中，若地下界面为水平界面，则共反射点在地面的投影必为炮集中拥有共反射点接受距的中心点，因此称为共中心点。把不同炮集中拥有共中心点的道抽取出来，形成一个新的集合，称之为共中心点道集——CMP道集。在多道地震采集中，地表上位于震源和接收器中间的点，由多个震源-接收器对共用。公中心点垂直于<a href="#cdp">共深度点</a>或共反射点之上。</p>
@@ -1448,6 +1481,19 @@ p波阻抗(IP)和<span class="arithmatex"><span class="MathJax_Preview">\lambda\
 <p><center></p>
 <p><img alt="" src="https://glossary.slb.com/-/media/publicmedia/ogl98154.ashx?sc_lang=en" />
 </center></p>
+<h3 id="l1l2-regularization"><strong>L1&amp;L2 Regularization</strong><a class="headerlink" href="#l1l2-regularization" title="Permanent link">&para;</a></h3>
+<p>从数学上来讲，就是在损失函数中加个正则项（Regularization Term），来防止参数拟合得过好。</p>
+<p>参考链接：<a href="https://www.zhihu.com/question/26485586/answer/91420865">https://www.zhihu.com/question/26485586/answer/91420865</a></p>
+<ul>
+<li>
+<p>L1-Regularization
+  $$\lambda \sum_{i=0}^k|w_i| $$</p>
+</li>
+<li>
+<p>L2-Regularization
+  <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\lambda \sum_{i=0}^kw_i^2</span><script type="math/tex">\lambda \sum_{i=0}^kw_i^2</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\lambda \sum_{i=0}^kw_i^2</span><script type="math/tex">\lambda \sum_{i=0}^kw_i^2</script></span></script></span></p>
+</li>
+</ul>
 <h3 id="avoamplitude-variation-with-offset"><strong>AVO(amplitude variation with offset)</strong><a class="headerlink" href="#avoamplitude-variation-with-offset" title="Permanent link">&para;</a></h3>
 <p><em>Ostrander首次提出</em>
 地震道振幅随偏移距变化，此时叠加道振幅不等于<a href="#叠加道">垂直入射道</a>（即零偏移距道）的振幅，偏移距大小与入射角有关</p>
@@ -1459,7 +1505,7 @@ p波阻抗(IP)和<span class="arithmatex"><span class="MathJax_Preview">\lambda\
 </ul>
 <h3 id="zoepptriz-equation"><strong>Zoepptriz equation</strong><a class="headerlink" href="#zoepptriz-equation" title="Permanent link">&para;</a></h3>
 <p>描述平面波入射射线和离散振幅之间关系，但由于地下大量未知与地球的复杂性，应用在地震数据中有很大困难，所以提出了很多近似方法</p>
-<h2 id="_14">相关性质<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h2 id="_15">相关性质<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p><strong>更冷、密度更大、更硬</strong>的岩石，<strong>波速更快,阻抗越高</strong>，因此它们勾勒出了向下的构造板块。</p>
@@ -1468,7 +1514,7 @@ p波阻抗(IP)和<span class="arithmatex"><span class="MathJax_Preview">\lambda\
 <p><strong>孔隙度(porosity)增加</strong>会引起<strong>层速度和密度下降</strong>，因此导致相应的<strong>声阻抗下降</strong>。</p>
 </li>
 </ul>
-<h2 id="_15">反演问题<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<h2 id="_16">反演问题<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
 <p><span class="arithmatex"><span class="MathJax_Preview">{d = Lm}</span><script type="math/tex">{d = Lm}</script></span></p>
 <p><strong>m</strong>: model, <strong>d</strong>: recorded data, <strong>L</strong>: forward-modeling operator</p>
 <p>性质：
@@ -1619,7 +1665,7 @@ p波阻抗(IP)和<span class="arithmatex"><span class="MathJax_Preview">\lambda\
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.8492ddcf.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
       
         <script src="../../js/tongji.js"></script>
       

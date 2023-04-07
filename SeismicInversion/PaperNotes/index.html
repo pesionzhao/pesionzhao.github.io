@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.7">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.472b142f.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.08040f6c.min.css">
         
           
           
@@ -56,7 +56,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="red">
+    <body dir="ltr" data-md-color-scheme="Slate" data-md-color-primary="Blue-Grey" data-md-color-accent="red">
   
     
     
@@ -1101,6 +1101,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#paper5-nonlinear-multichannel-impedance-inversion-by-total-variation-regularization" class="md-nav__link">
+    PAPER5 Nonlinear multichannel impedance inversion by total-variation regularization
+  </a>
+  
+    <nav class="md-nav" aria-label="PAPER5 Nonlinear multichannel impedance inversion by total-variation regularization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    摘要
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1414,6 +1441,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#paper5-nonlinear-multichannel-impedance-inversion-by-total-variation-regularization" class="md-nav__link">
+    PAPER5 Nonlinear multichannel impedance inversion by total-variation regularization
+  </a>
+  
+    <nav class="md-nav" aria-label="PAPER5 Nonlinear multichannel impedance inversion by total-variation regularization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    摘要
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1589,7 +1643,7 @@ T_{ps}
 </div>
 <p>这种近似在小角度时准确，但角度增大时会变得不准确。</p>
 <h3 id="nonlinear-avo-inversion-avo">NONLINEAR AVO INVERSION 非线性AVO反演<a class="headerlink" href="#nonlinear-avo-inversion-avo" title="Permanent link">&para;</a></h3>
-<p><strong>推导疑问？</strong></p>
+<p>迭代，类似于最小二乘法</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">\bold X^{k+1}=\bold X^k+(\bold F^T\bold F+\lambda \bold I)^{-1}\bold F^T(\bold Y-f(e^{\bold X^k}))
 </div>
@@ -1616,6 +1670,19 @@ T_{ps}
 <p>In this paper, we have introduced a new algorithm for nonlinear seismic AVO inversion, <strong>using the exact Zoeppritz equations</strong>, for simultaneous estimation of the P-wave velocity, S-wave velocity, and density. Our strategy <strong>uses the traditional Aki and Richards equation to construct the Jacobian matrix</strong> for solving the original nonlinear problem. This allowed for developing a very efficient algorithm for the TV-regularized nonlinear AVO inversion that is difficult to carry out by other means. The synthetic and field data demonstrated that the proposed algorithm can accurately invert the P-wave velocity, S-wave velocity, and density from precritical reflection data. The accuracy and efficiency of this method make it a promising algorithm for inverting large-scale seismic data sets</p>
 </blockquote>
 <h2 id="paper4">PAPER4 基于叠前地震反演的流体识别方法研究进展<a class="headerlink" href="#paper4" title="Permanent link">&para;</a></h2>
+<h2 id="paper5-nonlinear-multichannel-impedance-inversion-by-total-variation-regularization">PAPER5 Nonlinear multichannel impedance inversion by total-variation regularization<a class="headerlink" href="#paper5-nonlinear-multichannel-impedance-inversion-by-total-variation-regularization" title="Permanent link">&para;</a></h2>
+<p>全变分正则化非线性多通道阻抗反演</p>
+<h3 id="_13">摘要<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>声阻抗(AI)分析能够使地震反射数据映射到岩性，反射率计算AI需要求解一个有约束的非线性反问题。针对多通道形式的非线性阻抗问题，在总变差(TV)约束下，提出了两种有效的算法来恢复具有块状结构的阻抗图。</p>
+<h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
+<p>从带限地震记录中获得AI需要两步</p>
+<ul>
+<li>deconvolution 反褶积，用于补偿由震源产生的子波的带限性质所造成的记录地震记录的缺失频率</li>
+<li>inversion 用AI反演该反射系数</li>
+</ul>
+<p>由于产生AI的递推公式是按迹进行的，所以不允许阻抗图的空间正则化。</p>
+<p>反射系数与阻抗参数呈非线性关系；因此，需要求解一个有约束的非线性反问题来从反射率剖面中恢复一个正则化的阻抗剖面。</p>
+<p>本文方法：从数据中提取反射率剖面。然后求解非线性阻抗问题，将生成的反射率模型反演为正则化的AI模型，使用全变分(TV)正则化来支持具有块状结构的AI模型。</p>
 
 
 
@@ -1692,7 +1759,7 @@ T_{ps}
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.8492ddcf.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
       
         <script src="../../js/tongji.js"></script>
       
