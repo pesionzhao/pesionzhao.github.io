@@ -13,7 +13,7 @@
     
     
       
-        <title>Util - ZPSJLU</title>
+        <title>反演基础 - ZPSJLU</title>
       
     
     
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Util
+              反演基础
             
           </span>
         </div>
@@ -219,13 +219,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
         地震反演
       </a>
     </li>
@@ -752,12 +754,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
@@ -795,7 +799,208 @@
   
     <li class="md-nav__item">
       <a href="../Basic/" class="md-nav__link">
-        基础
+        反演概念
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          反演基础
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        反演基础
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#segy" class="md-nav__link">
+    SEGY地震数据
+  </a>
+  
+    <nav class="md-nav" aria-label="SEGY地震数据">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    简介
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    存储格式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    具体代码
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avo" class="md-nav__link">
+    AVO建模
+  </a>
+  
+    <nav class="md-nav" aria-label="AVO建模">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avoab-method" class="md-nav__link">
+    两项AVO方程(AB method)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aki-richards" class="md-nav__link">
+    Aki-Richards方程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aki-richardswigginsabc-method" class="md-nav__link">
+    Aki-Richards方程的Wiggins形式(ABC method)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aki-richardsfatti" class="md-nav__link">
+    Aki-Richards方程的Fatti形式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aki-richards_1" class="md-nav__link">
+    对于Aki-Richards方程小结
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shueyavo" class="md-nav__link">
+    Shuey两项AVO方程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avo_1" class="md-nav__link">
+    AVO分析（估计截距与梯度）
+  </a>
+  
+    <nav class="md-nav" aria-label="AVO分析（估计截距与梯度）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    从偏移距道集数据转换到角度道集数据
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    拟合一个回归曲线来匹配振幅拾取值，这是一个角度平方的正弦函数关系.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    正演相关代码
+  </a>
+  
+    <nav class="md-nav" aria-label="正演相关代码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aki-richards_2" class="md-nav__link">
+    Aki-Richards线性近似
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zoeppritz" class="md-nav__link">
+    Zoeppritz方程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BasicMath/" class="md-nav__link">
+        数学基础
       </a>
     </li>
   
@@ -822,8 +1027,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../BasicMath/" class="md-nav__link">
-        数学基础
+      <a href="../Optimization/" class="md-nav__link">
+        优化方法笔记
       </a>
     </li>
   
@@ -976,6 +1181,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    正演相关代码
+  </a>
+  
+    <nav class="md-nav" aria-label="正演相关代码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aki-richards_2" class="md-nav__link">
+    Aki-Richards线性近似
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zoeppritz" class="md-nav__link">
+    Zoeppritz方程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -991,7 +1223,7 @@
                   
 
 
-  <h1>Util</h1>
+  <h1>反演基础</h1>
 
 <h2 id="segy">SEGY地震数据<a class="headerlink" href="#segy" title="Permanent link">&para;</a></h2>
 <h3 id="_1">简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
@@ -1230,6 +1462,288 @@ R_p(\theta) = A + (2.25\Delta\sigma-A)\sin^2\theta
 <li>剪切反射率: A-B 正比于剪切反射率</li>
 <li>流体因子</li>
 </ul>
+<h2 id="_6">正演相关代码<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="aki-richards_2">Aki-Richards线性近似<a class="headerlink" href="#aki-richards_2" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">
+<div class="MathJax_Preview">R_{pp}=\zeta(\theta)\varDelta\ln(\alpha)+\eta(\theta)\varDelta\ln(\beta)+\xi(\theta)\varDelta\ln(\rho)</div>
+<script type="math/tex; mode=display">R_{pp}=\zeta(\theta)\varDelta\ln(\alpha)+\eta(\theta)\varDelta\ln(\beta)+\xi(\theta)\varDelta\ln(\rho)</script>
+</div>
+<p>其中</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\zeta(\theta)=\frac{1}{\cos ^2 \theta}, b=-8 K \sin ^2 \theta,c=1-4 K \sin ^2 \theta \\
+其中 K=\frac12\left(\frac{\beta_1^2}{\alpha_1^2}+\frac{\beta_2^2}{\alpha_2^2}\right)\approx\frac{\beta^2}{\alpha^2}=\left(\frac{V_S}{V_P}\right)^2</div>
+<script type="math/tex; mode=display">\zeta(\theta)=\frac{1}{\cos ^2 \theta}, b=-8 K \sin ^2 \theta,c=1-4 K \sin ^2 \theta \\
+其中 K=\frac12\left(\frac{\beta_1^2}{\alpha_1^2}+\frac{\beta_2^2}{\alpha_2^2}\right)\approx\frac{\beta^2}{\alpha^2}=\left(\frac{V_S}{V_P}\right)^2</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">createOp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">theta</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        theta: 入射角</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        np.array([G1, G2, G3]): aki-richards方程的系数</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">vsvp</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">theta</span>
+    <span class="n">vsvp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vsvp</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span><span class="o">.</span><span class="n">T</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">vsvp</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">vsvp</span>
+
+    <span class="n">G1</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">*</span> <span class="n">vsvp</span>
+    <span class="n">G2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">4.0</span> <span class="o">*</span> <span class="n">vsvp</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="n">G3</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">-</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">vsvp</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">G1</span><span class="p">,</span> <span class="n">G2</span><span class="p">,</span> <span class="n">G3</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wav_mtx</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">nt0</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">t0</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        wav_mtx: 子波矩阵</span>
+<span class="sd">        theta: 入射角</span>
+<span class="sd">        nt0: 采样点</span>
+<span class="sd">        show: 是否显示合成后的地震数据</span>
+<span class="sd">        t0: 采样时间</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        cal_data: 正演得到的地震数据</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># 单道正演</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ntrace</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">m</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>  <span class="c1"># 注意是按行展平化，所以要先进行转置</span>
+        <span class="n">ntheta</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">createOp</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+        <span class="c1"># G= np.hstack([Gi for Gi in G])</span>
+        <span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">nt0</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">nt0</span><span class="p">),</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># 差分矩阵</span>
+        <span class="n">D</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">D</span> <span class="o">=</span> <span class="n">block_diag</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">D</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)])</span>  <span class="c1"># 用列表批量化diag</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">G_</span><span class="p">[</span><span class="n">itheta</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">nt0</span><span class="p">))</span> <span class="k">for</span> <span class="n">G_</span> <span class="ow">in</span> <span class="n">G</span><span class="p">])</span>
+                        <span class="k">for</span> <span class="n">itheta</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ntheta</span><span class="p">))</span>  <span class="c1"># 生成可以通过矩阵乘法进行卷积的矩阵</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">W</span> <span class="o">=</span> <span class="n">block_diag</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">wav_mtx</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ntheta</span><span class="p">)])</span>  <span class="c1"># 子波矩阵, * 表示遍历</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">G</span> <span class="o">=</span> <span class="n">G</span> <span class="o">@</span> <span class="n">D</span>  <span class="c1"># G in &quot;WGm = d&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">D</span> <span class="o">=</span> <span class="n">D</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">op</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">W</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">D</span><span class="p">))</span>  <span class="c1"># 得到&quot;Ax = b&quot;中的A</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">obs_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">op</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>  <span class="c1"># 计算&quot;Ax&quot;得到合成地震数据/仿真观测数据</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Rpp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">D</span><span class="p">),</span> <span class="n">m</span><span class="p">)</span>  <span class="c1"># 反射系数</span>
+        <span class="n">cal_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">obs_data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ntheta</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># 同样要注意rehsape的次序，所以要先reshpe再转置而不能直接reshape成指定维度</span>
+        <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cal_data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">theta</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">t0</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">t0</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+                        <span class="n">vmin</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">cal_data</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">vmax</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">cal_data</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;tight&quot;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;incident angle&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;seismic data from Aki-Ri&#39;</span><span class="p">)</span>
+
+    <span class="c1"># 多道正演 仅仅比单道正演多了一维，需要stack</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">m</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ntrace</span><span class="p">)])</span>
+        <span class="n">ntheta</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">createOp</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+        <span class="c1"># G= np.hstack([Gi for Gi in G])</span>
+        <span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">nt0</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">nt0</span><span class="p">),</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">D</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">D</span> <span class="o">=</span> <span class="n">block_diag</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">D</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)])</span>  <span class="c1"># 用列表批量化diag</span>
+        <span class="n">Garray</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ntrace</span><span class="p">):</span>
+            <span class="n">Gi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">G_</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">itheta</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">nt0</span><span class="p">))</span> <span class="k">for</span> <span class="n">G_</span> <span class="ow">in</span> <span class="n">G</span><span class="p">])</span>
+                            <span class="k">for</span> <span class="n">itheta</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ntheta</span><span class="p">))</span>
+            <span class="n">Garray</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Gi</span><span class="p">)</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Garray</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">W</span> <span class="o">=</span> <span class="n">block_diag</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">wav_mtx</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ntheta</span><span class="p">)])</span>  <span class="c1"># * 表示遍历</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">G</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">G_</span> <span class="o">@</span> <span class="n">D</span> <span class="k">for</span> <span class="n">G_</span> <span class="ow">in</span> <span class="n">G</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">D</span> <span class="o">=</span> <span class="n">D</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">op</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">W</span> <span class="o">@</span> <span class="n">G_</span> <span class="k">for</span> <span class="n">G_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">obs_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">op</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ntrace</span><span class="p">)])</span>
+        <span class="c1"># self.Rpp = np.dot(np.dot(G, D), m)</span>
+        <span class="n">cal_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ntheta</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">obs_data</span><span class="p">])</span>  <span class="c1"># 同样要注意rehsape的次序，所以要先reshpe再转置而不能直接reshape成指定维度</span>
+        <span class="k">if</span> <span class="n">show</span><span class="p">:</span>  <span class="c1"># 只显示一个剖面</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cal_data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">theta</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">t0</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">t0</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+                        <span class="n">vmin</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">cal_data</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">vmax</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">cal_data</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;tight&quot;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;incident angle&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;seismic data from Aki-Ri&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">cal_data</span>
+</code></pre></div>
+<h3 id="zoeppritz">Zoeppritz方程<a class="headerlink" href="#zoeppritz" title="Permanent link">&para;</a></h3>
+<p>精确Zoeppritz方程</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\begin{align}
+\left[\begin{matrix}
+R_{pp}\\
+R_{ps}\\
+T_{pp}\\
+T_{ps}
+\end{matrix}\right]
+=&amp;\left[ \begin{matrix}
+\cos(\theta)&amp;-\sin(\delta_r)&amp;\cos(\theta_t)&amp;\sin(\delta_t)\\
+\sin(\theta)&amp;\cos(\delta_r)&amp;-\sin(\theta_t)&amp;\cos(\delta_t)\\
+-\cos(2\delta_r)&amp;\frac{\beta_1}{\alpha_1}\sin(2\delta_r)&amp;\frac{\rho_2\alpha_2}{\rho_1\alpha_1}\cos(2\delta_t)&amp;\frac{\rho_2\beta_2}{\rho_1\alpha_1}\sin(2\delta_t)\\
+\sin(2\theta)&amp;\frac{\alpha_1}{\beta_1}\cos(2\delta_r)&amp;\frac{\rho_2\beta_2^2\alpha_2}{\rho_1\beta_1^2\alpha_1}\sin(2\theta_t)&amp;-\frac{\rho_2\beta_2\alpha_1}{\rho_1\beta_1\beta_1}\cos(2\delta_t)
+\end{matrix}\right]^{-1}\times\left[\begin{matrix}
+\cos(\theta)\\
+\sin(\theta)\\
+\cos(2\delta_r)\\
+\sin(2\theta)
+\end{matrix}\right]\notag\end{align}
+</div>
+<script type="math/tex; mode=display">
+\begin{align}
+\left[\begin{matrix}
+R_{pp}\\
+R_{ps}\\
+T_{pp}\\
+T_{ps}
+\end{matrix}\right]
+=&\left[ \begin{matrix}
+\cos(\theta)&-\sin(\delta_r)&\cos(\theta_t)&\sin(\delta_t)\\
+\sin(\theta)&\cos(\delta_r)&-\sin(\theta_t)&\cos(\delta_t)\\
+-\cos(2\delta_r)&\frac{\beta_1}{\alpha_1}\sin(2\delta_r)&\frac{\rho_2\alpha_2}{\rho_1\alpha_1}\cos(2\delta_t)&\frac{\rho_2\beta_2}{\rho_1\alpha_1}\sin(2\delta_t)\\
+\sin(2\theta)&\frac{\alpha_1}{\beta_1}\cos(2\delta_r)&\frac{\rho_2\beta_2^2\alpha_2}{\rho_1\beta_1^2\alpha_1}\sin(2\theta_t)&-\frac{\rho_2\beta_2\alpha_1}{\rho_1\beta_1\beta_1}\cos(2\delta_t)
+\end{matrix}\right]^{-1}\times\left[\begin{matrix}
+\cos(\theta)\\
+\sin(\theta)\\
+\cos(2\delta_r)\\
+\sin(2\theta)
+\end{matrix}\right]\notag\end{align}
+</script>
+</div>
+<p>这里我们计算反射系数只用到<span class="arithmatex"><span class="MathJax_Preview">R_{pp}</span><script type="math/tex">R_{pp}</script></span></p>
+<p>代码实现</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">rho1</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">rho2</span><span class="p">,</span> <span class="n">theta1</span><span class="p">):</span>  <span class="c1"># 单层的反射系数正演</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        a1: vp1</span>
+<span class="sd">        b1: vs1</span>
+<span class="sd">        rho1:</span>
+<span class="sd">        a2: vp2</span>
+<span class="sd">        b2: vs2</span>
+<span class="sd">        rho2:</span>
+<span class="sd">        irfwav:</span>
+<span class="sd">        ipol:</span>
+<span class="sd">        theta1: 入射角度集</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        当前层反射系数</span>
+<span class="sd">        [</span>
+<span class="sd">        [&quot;PdPu&quot;, &quot;SdPu&quot;, &quot;PuPu&quot;, &quot;SuPu&quot;],</span>
+<span class="sd">        [&quot;PdSu&quot;, &quot;SdSu&quot;, &quot;PuSu&quot;, &quot;SuSu&quot;],</span>
+<span class="sd">        [&quot;PdPd&quot;, &quot;SdPd&quot;, &quot;PuPd&quot;, &quot;SuPd&quot;],</span>
+<span class="sd">        [&quot;PdSd&quot;, &quot;SdSd&quot;, &quot;PuSd&quot;, &quot;SuSd&quot;],</span>
+<span class="sd">        ]</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Create theta1 array of angles in radiants</span>
+    <span class="n">theta1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">theta1</span><span class="p">)</span>  <span class="c1"># 转弧度</span>
+
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta1</span><span class="p">)</span> <span class="o">/</span> <span class="n">a1</span>
+    <span class="n">theta2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arcsin</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="n">a2</span><span class="p">)</span>  <span class="c1"># Trans. angle of P-wave</span>
+    <span class="n">phi1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arcsin</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="n">b1</span><span class="p">)</span>  <span class="c1"># Refl. angle of converted S-wave</span>
+    <span class="n">phi2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arcsin</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="n">b2</span><span class="p">)</span>  <span class="c1"># Trans. angle of converted S-wave</span>
+
+    <span class="c1"># Matrix form of Zoeppritz equation</span>
+
+    <span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>  <span class="c1"># shape:[4,4,theta]</span>
+        <span class="p">[</span>
+            <span class="p">[</span><span class="o">-</span><span class="n">sin</span><span class="p">(</span><span class="n">theta1</span><span class="p">),</span> <span class="o">-</span><span class="n">cos</span><span class="p">(</span><span class="n">phi1</span><span class="p">),</span> <span class="n">sin</span><span class="p">(</span><span class="n">theta2</span><span class="p">),</span> <span class="n">cos</span><span class="p">(</span><span class="n">phi2</span><span class="p">)],</span>
+            <span class="p">[</span><span class="n">cos</span><span class="p">(</span><span class="n">theta1</span><span class="p">),</span> <span class="o">-</span><span class="n">sin</span><span class="p">(</span><span class="n">phi1</span><span class="p">),</span> <span class="n">cos</span><span class="p">(</span><span class="n">theta2</span><span class="p">),</span> <span class="o">-</span><span class="n">sin</span><span class="p">(</span><span class="n">phi2</span><span class="p">)],</span>
+            <span class="p">[</span>
+                <span class="mi">2</span> <span class="o">*</span> <span class="n">rho1</span> <span class="o">*</span> <span class="n">b1</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">phi1</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">theta1</span><span class="p">),</span>
+                <span class="n">rho1</span> <span class="o">*</span> <span class="n">b1</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">phi1</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">),</span>
+                <span class="mi">2</span> <span class="o">*</span> <span class="n">rho2</span> <span class="o">*</span> <span class="n">b2</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">phi2</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">theta2</span><span class="p">),</span>
+                <span class="n">rho2</span> <span class="o">*</span> <span class="n">b2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">phi2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">),</span>
+            <span class="p">],</span>
+            <span class="p">[</span>
+                <span class="p">(</span><span class="o">-</span><span class="n">rho1</span><span class="p">)</span> <span class="o">*</span> <span class="n">a1</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">phi1</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">),</span>
+                <span class="n">rho1</span> <span class="o">*</span> <span class="n">b1</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">phi1</span><span class="p">),</span>
+                <span class="n">rho2</span> <span class="o">*</span> <span class="n">a2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">phi2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">),</span>
+                <span class="p">(</span><span class="o">-</span><span class="n">rho2</span><span class="p">)</span> <span class="o">*</span> <span class="n">b2</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">phi2</span><span class="p">),</span>
+            <span class="p">],</span>
+        <span class="p">],</span>
+        <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>  <span class="c1"># shape:[4,1,theta]</span>
+        <span class="p">[</span>
+            <span class="p">[</span><span class="n">sin</span><span class="p">(</span><span class="n">theta1</span><span class="p">),</span> <span class="n">cos</span><span class="p">(</span><span class="n">phi1</span><span class="p">),</span> <span class="o">-</span><span class="n">sin</span><span class="p">(</span><span class="n">theta2</span><span class="p">),</span> <span class="o">-</span><span class="n">cos</span><span class="p">(</span><span class="n">phi2</span><span class="p">)],</span>
+            <span class="p">[</span><span class="n">cos</span><span class="p">(</span><span class="n">theta1</span><span class="p">),</span> <span class="o">-</span><span class="n">sin</span><span class="p">(</span><span class="n">phi1</span><span class="p">),</span> <span class="n">cos</span><span class="p">(</span><span class="n">theta2</span><span class="p">),</span> <span class="o">-</span><span class="n">sin</span><span class="p">(</span><span class="n">phi2</span><span class="p">)],</span>
+            <span class="p">[</span>
+                <span class="mi">2</span> <span class="o">*</span> <span class="n">rho1</span> <span class="o">*</span> <span class="n">b1</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">phi1</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">theta1</span><span class="p">),</span>
+                <span class="n">rho1</span> <span class="o">*</span> <span class="n">b1</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">phi1</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">),</span>
+                <span class="mi">2</span> <span class="o">*</span> <span class="n">rho2</span> <span class="o">*</span> <span class="n">b2</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">phi2</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">theta2</span><span class="p">),</span>
+                <span class="n">rho2</span> <span class="o">*</span> <span class="n">b2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">phi2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">),</span>
+            <span class="p">],</span>
+            <span class="p">[</span>
+                <span class="p">(</span><span class="n">rho1</span><span class="p">)</span> <span class="o">*</span> <span class="n">a1</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">phi1</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">),</span>
+                <span class="o">-</span><span class="n">rho1</span> <span class="o">*</span> <span class="n">b1</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">phi1</span><span class="p">),</span>
+                <span class="o">-</span><span class="n">rho2</span> <span class="o">*</span> <span class="n">a2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">phi2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">rho2</span><span class="p">)</span> <span class="o">*</span> <span class="n">b2</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">phi2</span><span class="p">),</span>
+            <span class="p">],</span>
+        <span class="p">],</span>
+        <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Create Zoeppritz coefficient for all angles</span>
+    <span class="n">coef</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>  <span class="c1"># [4,4,theta]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>  <span class="c1"># 按角度数遍历</span>
+        <span class="n">Mi</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>  <span class="c1"># 第i个角度的所有</span>
+        <span class="n">Ni</span> <span class="o">=</span> <span class="n">N</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>
+        <span class="n">icoef</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">Mi</span><span class="p">),</span> <span class="n">Ni</span><span class="p">)</span>  <span class="c1"># M^-1 点乘 N</span>
+        <span class="n">coef</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">icoef</span>
+
+    <span class="k">return</span> <span class="n">coef</span>
+<span class="k">def</span> <span class="nf">forward_mutil</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">element</span><span class="o">=</span><span class="s2">&quot;PdPu&quot;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>  <span class="c1"># 多层反射系数正演</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        x0: 输入三参数模型</span>
+<span class="sd">        element: str</span>
+<span class="sd">        [&quot;PdPu&quot;, &quot;SdPu&quot;, &quot;PuPu&quot;, &quot;SuPu&quot;],</span>
+<span class="sd">        [&quot;PdSu&quot;, &quot;SdSu&quot;, &quot;PuSu&quot;, &quot;SuSu&quot;],</span>
+<span class="sd">        [&quot;PdPd&quot;, &quot;SdPd&quot;, &quot;PuPd&quot;, &quot;SuPd&quot;],</span>
+<span class="sd">        [&quot;PdSd&quot;, &quot;SdSd&quot;, &quot;PuSd&quot;, &quot;SuSd&quot;],</span>
+<span class="sd">        layer: 层数，即抽样点数</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        所有层反射系数</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">theta1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">theta</span>
+    <span class="n">layer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layer</span>
+    <span class="n">vp</span> <span class="o">=</span> <span class="n">x0</span><span class="p">[:</span><span class="n">layer</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">vs</span> <span class="o">=</span> <span class="n">x0</span><span class="p">[</span><span class="n">layer</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="n">layer</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">rho</span> <span class="o">=</span> <span class="n">x0</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">layer</span><span class="o">+</span><span class="mi">2</span><span class="p">:]</span>
+    <span class="n">ntheta</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">theta1</span><span class="p">)</span>
+    <span class="n">elements</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="p">[</span><span class="s2">&quot;PdPu&quot;</span><span class="p">,</span> <span class="s2">&quot;SdPu&quot;</span><span class="p">,</span> <span class="s2">&quot;PuPu&quot;</span><span class="p">,</span> <span class="s2">&quot;SuPu&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="s2">&quot;PdSu&quot;</span><span class="p">,</span> <span class="s2">&quot;SdSu&quot;</span><span class="p">,</span> <span class="s2">&quot;PuSu&quot;</span><span class="p">,</span> <span class="s2">&quot;SuSu&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="s2">&quot;PdPd&quot;</span><span class="p">,</span> <span class="s2">&quot;SdPd&quot;</span><span class="p">,</span> <span class="s2">&quot;PuPd&quot;</span><span class="p">,</span> <span class="s2">&quot;SuPd&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="s2">&quot;PdSd&quot;</span><span class="p">,</span> <span class="s2">&quot;SdSd&quot;</span><span class="p">,</span> <span class="s2">&quot;PuSd&quot;</span><span class="p">,</span> <span class="s2">&quot;SuSd&quot;</span><span class="p">],</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">coef</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">layer</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">ntheta</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">layer</span><span class="p">):</span>
+        <span class="n">a1</span> <span class="o">=</span> <span class="n">vp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">a2</span> <span class="o">=</span> <span class="n">vp</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">b1</span> <span class="o">=</span> <span class="n">vs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">b2</span> <span class="o">=</span> <span class="n">vs</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">rho1</span> <span class="o">=</span> <span class="n">rho</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">rho2</span> <span class="o">=</span> <span class="n">rho</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">icoef</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">rho1</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">rho2</span><span class="p">,</span> <span class="n">theta1</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">elements</span> <span class="o">==</span> <span class="n">element</span><span class="p">)</span>
+        <span class="n">coef</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">icoef</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ref</span> <span class="o">=</span> <span class="n">coef</span>
+    <span class="k">return</span> <span class="n">coef</span>
+</code></pre></div>
 
 
 
@@ -1245,6 +1759,42 @@ R_p(\theta) = A + (2.25\Delta\sigma-A)\sin^2\theta
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../Basic/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 反演概念" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              反演概念
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../BasicMath/" class="md-footer__link md-footer__link--next" aria-label="下一页: 数学基础" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              数学基础
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
