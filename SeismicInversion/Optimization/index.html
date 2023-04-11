@@ -1453,14 +1453,20 @@ m^{k+1} = m^k - \alpha_k \nabla f(m^k)
 </div>
 <p>对于<span class="arithmatex"><span class="MathJax_Preview">Ax=b</span><script type="math/tex">Ax=b</script></span>的问题，可以求出</p>
 <div class="arithmatex">
-<div class="MathJax_Preview">\min f(m) = ||Gm-d||^2_2$$
-$$f(m) = (Gm-d)^T(Gm-d)=m^TG^TGm-2(G^Td)^Tm+d^Td$$
-$$\nabla f(m)=2G^TG-2G^Td$$
-$$m^{k+1} = m^k - \alpha_k (2G^TG-2G^Td) </div>
-<script type="math/tex; mode=display">\min f(m) = ||Gm-d||^2_2$$
-$$f(m) = (Gm-d)^T(Gm-d)=m^TG^TGm-2(G^Td)^Tm+d^Td$$
-$$\nabla f(m)=2G^TG-2G^Td$$
-$$m^{k+1} = m^k - \alpha_k (2G^TG-2G^Td) </script>
+<div class="MathJax_Preview">\min f(m) = ||Gm-d||^2_2</div>
+<script type="math/tex; mode=display">\min f(m) = ||Gm-d||^2_2</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">f(m) = (Gm-d)^T(Gm-d)=m^TG^TGm-2(G^Td)^Tm+d^Td</div>
+<script type="math/tex; mode=display">f(m) = (Gm-d)^T(Gm-d)=m^TG^TGm-2(G^Td)^Tm+d^Td</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">\nabla f(m)=2G^TG-2G^Td</div>
+<script type="math/tex; mode=display">\nabla f(m)=2G^TG-2G^Td</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">m^{k+1} = m^k - \alpha_k (2G^TG-2G^Td) </div>
+<script type="math/tex; mode=display">m^{k+1} = m^k - \alpha_k (2G^TG-2G^Td) </script>
 </div>
 <p>步长的选取</p>
 <div class="arithmatex">
@@ -1472,29 +1478,29 @@ $$m^{k+1} = m^k - \alpha_k (2G^TG-2G^Td) </script>
 </script>
 </div>
 <p>代码实现</p>
-<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">GD_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">init_guess</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">Iter</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="n">pre</span> <span class="o">=</span> <span class="n">init_guess</span>
-        <span class="n">loss</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Iter</span><span class="p">):</span>
-            <span class="n">step</span> <span class="o">=</span> <span class="mi">1</span>
-            <span class="n">grad</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">G</span> <span class="o">@</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">obs</span>
-            <span class="n">residual</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">)</span>
-            <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">residual</span><span class="p">)</span>
-            <span class="c1"># 原定损失小于沿学习率迭代后的损失，说明步长较大，减小步长</span>
-            <span class="k">while</span> <span class="n">rmse</span> <span class="o">&lt;</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span> <span class="o">-</span> <span class="n">step</span> <span class="o">*</span> <span class="n">grad</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">)):</span>
-                <span class="n">step</span> <span class="o">=</span> <span class="n">step</span> <span class="o">*</span> <span class="mf">0.5</span>
-            <span class="n">pre</span> <span class="o">=</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">step</span> <span class="o">*</span> <span class="n">grad</span>
-            <span class="n">loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">GD_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">init_guess</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">Iter</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">pre</span> <span class="o">=</span> <span class="n">init_guess</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Iter</span><span class="p">):</span>
+        <span class="n">step</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">grad</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">G</span> <span class="o">@</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">obs</span>
+        <span class="n">residual</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">)</span>
+        <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">residual</span><span class="p">)</span>
+        <span class="c1"># 原定损失小于沿学习率迭代后的损失，说明步长较大，减小步长</span>
+        <span class="k">while</span> <span class="n">rmse</span> <span class="o">&lt;</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span> <span class="o">-</span> <span class="n">step</span> <span class="o">*</span> <span class="n">grad</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">)):</span>
+            <span class="n">step</span> <span class="o">=</span> <span class="n">step</span> <span class="o">*</span> <span class="mf">0.5</span>
+        <span class="n">pre</span> <span class="o">=</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">step</span> <span class="o">*</span> <span class="n">grad</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;GD Loss curve(final loss = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">loss</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iters&#39;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;res&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;GD Loss curve(final loss = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">loss</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iters&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;res&#39;</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">pre</span><span class="p">,</span> <span class="n">loss</span>
+    <span class="k">return</span> <span class="n">pre</span><span class="p">,</span> <span class="n">loss</span>
 </code></pre></div>
 <h3 id="_4">随机梯度下降<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>类似梯度下降，只不过不是求全部列的梯度，而是求其随机一列的梯度进行下降</p>
@@ -1509,29 +1515,29 @@ $$m^{k+1} = m^k - \alpha_k (2G^TG-2G^Td) </script>
 </script>
 </div>
 <p>代码实现(固定梯度) TODO 变梯度</p>
-<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">SGD_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">init_guess</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="nb">iter</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">init_guess</span> <span class="o">=</span> <span class="n">init_guess</span>
-        <span class="n">pre</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_guess</span>
-        <span class="n">rmse_prev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
-        <span class="n">loss</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">iter</span><span class="p">):</span>
-            <span class="n">step</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 步长 </span>
-            <span class="n">lossres</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>  <span class="c1"># 损失，如果未加正则化,self.A,self.b即为G,obs</span>
-            <span class="n">index</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>  <span class="c1"># 随机取行号</span>
-            <span class="n">grad</span> <span class="o">=</span> <span class="n">G</span><span class="p">[</span><span class="n">index</span><span class="p">:</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">G</span><span class="p">[</span><span class="n">index</span><span class="p">:</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">@</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">obs</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">*</span> <span class="n">G</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># 随机一行的梯度</span>
-            <span class="n">pre</span> <span class="o">=</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">step</span> <span class="o">*</span> <span class="n">grad</span>  <span class="c1"># 梯度下降</span>
-            <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">lossres</span><span class="p">)</span>
-            <span class="n">loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">SGD_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">init_guess</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="nb">iter</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">init_guess</span> <span class="o">=</span> <span class="n">init_guess</span>
+    <span class="n">pre</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_guess</span>
+    <span class="n">rmse_prev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">iter</span><span class="p">):</span>
+        <span class="n">step</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 步长 </span>
+        <span class="n">lossres</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>  <span class="c1"># 损失，如果未加正则化,self.A,self.b即为G,obs</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>  <span class="c1"># 随机取行号</span>
+        <span class="n">grad</span> <span class="o">=</span> <span class="n">G</span><span class="p">[</span><span class="n">index</span><span class="p">:</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">G</span><span class="p">[</span><span class="n">index</span><span class="p">:</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">@</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">obs</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">*</span> <span class="n">G</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># 随机一行的梯度</span>
+        <span class="n">pre</span> <span class="o">=</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">step</span> <span class="o">*</span> <span class="n">grad</span>  <span class="c1"># 梯度下降</span>
+        <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">lossres</span><span class="p">)</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;SGD Loss curve(final loss = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">loss</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iters&#39;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;res&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;SGD Loss curve(final loss = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">loss</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iters&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;res&#39;</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">pre</span><span class="p">,</span> <span class="n">loss</span>
+    <span class="k">return</span> <span class="n">pre</span><span class="p">,</span> <span class="n">loss</span>
 </code></pre></div>
 <h3 id="_5">高斯牛顿法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>参考链接: </p>
@@ -1558,25 +1564,25 @@ $$m^{k+1} = m^k - \alpha_k (2G^TG-2G^Td) </script>
 <script type="math/tex; mode=display">m^`(x) = 0 \quad \rightarrow \quad J(x)J(x)^T\Delta x = - J(x)f(x) \rightarrow \Delta x = \frac{- J(x)f(x)}{J(x)J(x)^T}</script>
 </div>
 <p>代码实现</p>
-<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">GN_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">init_guess</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="nb">iter</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="n">pre</span> <span class="o">=</span> <span class="n">init_guess</span>
-        <span class="n">loss</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">iter</span><span class="p">):</span>
-            <span class="n">residual</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">)</span>
-            <span class="n">lossres</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
-            <span class="n">jacobian</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_jacobian</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">10</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">))</span>
-            <span class="n">pre</span> <span class="o">=</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">jacobian</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">jacobian</span><span class="p">)</span> <span class="o">@</span> <span class="p">(</span><span class="n">jacobian</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">residual</span><span class="p">)</span>
-            <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">lossres</span><span class="p">)</span>
-            <span class="n">loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gauss-Newton Loss curve(final loss = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">loss</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iters&#39;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;res&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">GN_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">init_guess</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="nb">iter</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">pre</span> <span class="o">=</span> <span class="n">init_guess</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">iter</span><span class="p">):</span>
+        <span class="n">residual</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">)</span>
+        <span class="n">lossres</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
+        <span class="n">jacobian</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_jacobian</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">10</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">))</span>
+        <span class="n">pre</span> <span class="o">=</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">jacobian</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">jacobian</span><span class="p">)</span> <span class="o">@</span> <span class="p">(</span><span class="n">jacobian</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">residual</span><span class="p">)</span>
+        <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">lossres</span><span class="p">)</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gauss-Newton Loss curve(final loss = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">loss</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iters&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;res&#39;</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">pre</span><span class="p">,</span> <span class="n">loss</span>
+    <span class="k">return</span> <span class="n">pre</span><span class="p">,</span> <span class="n">loss</span>
 </code></pre></div>
 <h3 id="-levenbergmarquardt">列文伯格-马夸特方法(Levenberg–Marquardt)<a class="headerlink" href="#-levenbergmarquardt" title="Permanent link">&para;</a></h3>
 <p>基本原理与高斯牛顿法类似，在高斯牛顿法中，可以看到，损失曲线在后期会进入锯齿状，迭代的次数较长。所以，为了避免其步长过大导致的问题，该方法提出了信赖区域，动态调整步长减小迭代次数</p>
@@ -1609,27 +1615,27 @@ $$m^{k+1} = m^k - \alpha_k (2G^TG-2G^Td) </script>
 </div>
 <p>在实际使用中，通常将<span class="arithmatex"><span class="MathJax_Preview">I</span><script type="math/tex">I</script></span>代替<span class="arithmatex"><span class="MathJax_Preview">D^TD</span><script type="math/tex">D^TD</script></span></p>
 <p>代码实现</p>
-<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">LM_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">init_guess</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="nb">iter</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="n">pre</span> <span class="o">=</span> <span class="n">init_guess</span>
-        <span class="n">lam</span> <span class="o">=</span> <span class="mf">0.01</span>  <span class="c1"># todo 如何设定lambda</span>
-        <span class="n">loss</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">iter</span><span class="p">):</span>
-            <span class="n">residual</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">)</span>
-            <span class="n">lossres</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
-            <span class="n">jacobian</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_jacobian</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">10</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">))</span>
-            <span class="n">pre</span> <span class="o">=</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">jacobian</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">jacobian</span> <span class="o">+</span> <span class="n">lam</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="n">jacobian</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="o">@</span> <span class="p">(</span>
-                    <span class="n">jacobian</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">residual</span><span class="p">)</span>
-            <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">lossres</span><span class="p">)</span>
-            <span class="n">loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Levenberg-Marquardt Loss curve(final loss = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">loss</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iters&#39;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;res&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">LM_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">init_guess</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="nb">iter</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">pre</span> <span class="o">=</span> <span class="n">init_guess</span>
+    <span class="n">lam</span> <span class="o">=</span> <span class="mf">0.01</span>  <span class="c1"># todo 如何设定lambda</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">iter</span><span class="p">):</span>
+        <span class="n">residual</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">)</span>
+        <span class="n">lossres</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
+        <span class="n">jacobian</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_jacobian</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">10</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">))</span>
+        <span class="n">pre</span> <span class="o">=</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">jacobian</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">jacobian</span> <span class="o">+</span> <span class="n">lam</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="n">jacobian</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="o">@</span> <span class="p">(</span>
+                <span class="n">jacobian</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">residual</span><span class="p">)</span>
+        <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">lossres</span><span class="p">)</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Levenberg-Marquardt Loss curve(final loss = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">loss</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iters&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;res&#39;</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">pre</span><span class="p">,</span> <span class="n">loss</span>
+    <span class="k">return</span> <span class="n">pre</span><span class="p">,</span> <span class="n">loss</span>
 </code></pre></div>
 <p>LM方法是由牛顿法的基础上得到的，他们之间的联系主要取决于<span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>的取值</p>
 <p>对于迭代过程</p>
@@ -1657,7 +1663,7 @@ $$m^{k+1} = m^k - \alpha_k (2G^TG-2G^Td) </script>
 </li>
 <li>
 <p>L2-Regularization(二范数)
-  <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\lambda \sum_{i=0}^kw_i^2</span><script type="math/tex">\lambda \sum_{i=0}^kw_i^2</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\lambda \sum_{i=0}^kw_i^2</span><script type="math/tex">\lambda \sum_{i=0}^kw_i^2</script></span></script></span></p>
+  <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\lambda \sum_{i=0}^k w_i^2</span><script type="math/tex">\lambda \sum_{i=0}^k w_i^2</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\lambda \sum_{i=0}^k w_i^2</span><script type="math/tex">\lambda \sum_{i=0}^k w_i^2</script></span></script></span></p>
 </li>
 </ul>
 <p>对于地震反演，常用的就是TV正则化，即对模型的差分的一范数，提高模型的不连续性，可以形成稀疏解</p>
@@ -1699,72 +1705,72 @@ $$m^{k+1} = m^k - \alpha_k (2G^TG-2G^Td) </script>
 <script type="math/tex; mode=display">[\mathcal{T}_{\omega}(x)]_i=\begin{cases} \begin{array}{c} x_i-\omega ,\quad x_i>\omega\\\end{array}\\ \begin{array}{c} 0,\qquad \quad |x_i|\le \omega\\\end{array}\\ \begin{array}{c} x_i+\omega ,\quad x_i<-\omega\\\end{array}\\\end{cases} \\</script>
 </div>
 <p>代码实现</p>
-<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">Ista_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">init_guess</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="nb">iter</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="n">pre</span> <span class="o">=</span> <span class="n">init_guess</span>
-        <span class="n">lamb</span> <span class="o">=</span> <span class="mf">0.01</span>
-        <span class="n">tk</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">G</span><span class="p">)</span>  <span class="c1"># tk最大值</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">Ista_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">init_guess</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="nb">iter</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">pre</span> <span class="o">=</span> <span class="n">init_guess</span>
+    <span class="n">lamb</span> <span class="o">=</span> <span class="mf">0.01</span>
+    <span class="n">tk</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">G</span><span class="p">)</span>  <span class="c1"># tk最大值</span>
 
-        <span class="n">loss</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">iter</span><span class="p">):</span>
-            <span class="n">residual</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">)</span>
-            <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">residual</span><span class="p">)</span>
-            <span class="n">loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
-            <span class="n">grad</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">G</span> <span class="o">@</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">obs</span>
-            <span class="n">grad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">grad</span><span class="p">)</span>
-            <span class="n">zk</span> <span class="o">=</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">tk</span> <span class="o">*</span> <span class="n">grad</span>
-            <span class="n">pre</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_softThresh</span><span class="p">(</span><span class="n">lamb</span> <span class="o">*</span> <span class="n">tk</span><span class="p">,</span> <span class="n">zk</span><span class="p">)</span>
-            <span class="n">tk</span> <span class="o">=</span> <span class="n">tk</span> <span class="o">/</span> <span class="mf">1.1</span>
-        <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;ISTA Loss curve&#39;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iters&#39;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;res&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">pre</span><span class="p">,</span> <span class="n">loss</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">iter</span><span class="p">):</span>
+        <span class="n">residual</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">)</span>
+        <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">residual</span><span class="p">)</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
+        <span class="n">grad</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">G</span> <span class="o">@</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">obs</span>
+        <span class="n">grad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">grad</span><span class="p">)</span>
+        <span class="n">zk</span> <span class="o">=</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">tk</span> <span class="o">*</span> <span class="n">grad</span>
+        <span class="n">pre</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_softThresh</span><span class="p">(</span><span class="n">lamb</span> <span class="o">*</span> <span class="n">tk</span><span class="p">,</span> <span class="n">zk</span><span class="p">)</span>
+        <span class="n">tk</span> <span class="o">=</span> <span class="n">tk</span> <span class="o">/</span> <span class="mf">1.1</span>
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;ISTA Loss curve&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iters&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;res&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pre</span><span class="p">,</span> <span class="n">loss</span>
 </code></pre></div>
 <h3 id="fisata">FISATA方法<a class="headerlink" href="#fisata" title="Permanent link">&para;</a></h3>
 <p>只是减小了ISTA的计算复杂度，提高了计算速度，使损失可以得到更快收敛</p>
-<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">Fista_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">init_guess</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="nb">iter</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="n">pre</span> <span class="o">=</span> <span class="n">init_guess</span>
-        <span class="n">tk</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">G</span><span class="p">)</span>
-        <span class="n">lamb</span> <span class="o">=</span> <span class="mf">0.01</span>
-        <span class="n">loss</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">xk</span> <span class="o">=</span> <span class="n">init_guess</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">Fista_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">init_guess</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="nb">iter</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">pre</span> <span class="o">=</span> <span class="n">init_guess</span>
+    <span class="n">tk</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">G</span><span class="p">)</span>
+    <span class="n">lamb</span> <span class="o">=</span> <span class="mf">0.01</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">xk</span> <span class="o">=</span> <span class="n">init_guess</span>
+    <span class="n">xk_1</span> <span class="o">=</span> <span class="n">xk</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">iter</span><span class="p">):</span>
+        <span class="n">tk1</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">tk</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="n">yk1</span> <span class="o">=</span> <span class="n">xk</span> <span class="o">+</span> <span class="p">(</span><span class="n">tk</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">tk1</span> <span class="o">*</span> <span class="p">(</span><span class="n">xk</span> <span class="o">-</span> <span class="n">xk_1</span><span class="p">)</span>
+        <span class="n">grad</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">G</span> <span class="o">@</span> <span class="n">yk1</span> <span class="o">-</span> <span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">obs</span>
+        <span class="n">grad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">grad</span><span class="p">)</span>
+        <span class="n">zk</span> <span class="o">=</span> <span class="n">yk1</span> <span class="o">-</span> <span class="n">t</span> <span class="o">*</span> <span class="n">grad</span>
+
+        <span class="c1"># update iterative</span>
         <span class="n">xk_1</span> <span class="o">=</span> <span class="n">xk</span>
-        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">iter</span><span class="p">):</span>
-            <span class="n">tk1</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">tk</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
-            <span class="n">yk1</span> <span class="o">=</span> <span class="n">xk</span> <span class="o">+</span> <span class="p">(</span><span class="n">tk</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">tk1</span> <span class="o">*</span> <span class="p">(</span><span class="n">xk</span> <span class="o">-</span> <span class="n">xk_1</span><span class="p">)</span>
-            <span class="n">grad</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">G</span> <span class="o">@</span> <span class="n">yk1</span> <span class="o">-</span> <span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">obs</span>
-            <span class="n">grad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">grad</span><span class="p">)</span>
-            <span class="n">zk</span> <span class="o">=</span> <span class="n">yk1</span> <span class="o">-</span> <span class="n">t</span> <span class="o">*</span> <span class="n">grad</span>
+        <span class="n">xk</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_softThresh</span><span class="p">(</span><span class="n">lamb</span> <span class="o">*</span> <span class="n">t</span><span class="p">,</span> <span class="n">zk</span><span class="p">)</span>
 
-            <span class="c1"># update iterative</span>
-            <span class="n">xk_1</span> <span class="o">=</span> <span class="n">xk</span>
-            <span class="n">xk</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_softThresh</span><span class="p">(</span><span class="n">lamb</span> <span class="o">*</span> <span class="n">t</span><span class="p">,</span> <span class="n">zk</span><span class="p">)</span>
+        <span class="n">tk</span> <span class="o">=</span> <span class="n">tk1</span>
+        <span class="c1"># err = np.linalg.norm(self.pre - yk1)</span>
+        <span class="c1"># if k!=0 and err&lt;0.0001:</span>
+        <span class="c1">#     print(&#39;第%d轮已经收敛，增量为%f&#39; %(k,err))</span>
+        <span class="c1">#     break</span>
+        <span class="n">pre</span> <span class="o">=</span> <span class="n">yk1</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">/</span> <span class="mf">1.1</span>
 
-            <span class="n">tk</span> <span class="o">=</span> <span class="n">tk1</span>
-            <span class="c1"># err = np.linalg.norm(self.pre - yk1)</span>
-            <span class="c1"># if k!=0 and err&lt;0.0001:</span>
-            <span class="c1">#     print(&#39;第%d轮已经收敛，增量为%f&#39; %(k,err))</span>
-            <span class="c1">#     break</span>
-            <span class="n">pre</span> <span class="o">=</span> <span class="n">yk1</span>
-            <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">/</span> <span class="mf">1.1</span>
+        <span class="c1"># loss</span>
+        <span class="n">residual</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">)</span>
+        <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">residual</span><span class="p">)</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
 
-            <span class="c1"># loss</span>
-            <span class="n">residual</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">)</span>
-            <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">residual</span><span class="p">)</span>
-            <span class="n">loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;FISTA Loss curve&#39;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iters&#39;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;res&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">pre</span><span class="p">,</span> <span class="n">loss</span>
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;FISTA Loss curve&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iters&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;res&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pre</span><span class="p">,</span> <span class="n">loss</span>
 </code></pre></div>
 <h3 id="split-bregman_1">Split-Bregman方法<a class="headerlink" href="#split-bregman_1" title="Permanent link">&para;</a></h3>
 <p>参考见《反问题的迭代求解算法》课件</p>
@@ -1808,39 +1814,39 @@ b^{k+1} = b^k + (data-Gm-d^{k+1})</script>
 </div>
 <p>用软阈值函数可求解</p>
 <p>代码实现</p>
-<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="n">iiter</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="n">loss</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">lamb</span> <span class="o">=</span> <span class="mf">0.01</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x0</span>
-        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Iter</span><span class="p">)):</span>
-            <span class="c1"># regularized problem</span>
-            <span class="n">dataregs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">d</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">b_</span>
-            <span class="c1"># subquestion1</span>
-            <span class="n">Sub1</span> <span class="o">=</span> <span class="n">RegularizedInv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Op</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">obs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">x0</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Reg</span><span class="p">,</span> <span class="n">dataregs</span><span class="p">)</span>  <span class="c1"># 初始化岭回归反演</span>
-            <span class="n">x</span><span class="p">,</span> <span class="n">sub1loss</span> <span class="o">=</span> <span class="n">Sub1</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x0</span> <span class="k">if</span> <span class="n">flag</span> <span class="k">else</span> <span class="n">x</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;GN&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>  <span class="c1"># 选择优化方法迭代求解</span>
-            <span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="c1"># subquestion2</span>
-            <span class="n">dataregs2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Reg</span> <span class="o">@</span> <span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">b_</span>
-            <span class="c1"># self.d, sub2loss = self.Ista_run(self.d,np.eye(self.Reg.shape[0]),dataregs2,50,None) # ISTA方法</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_softThresh</span><span class="p">(</span><span class="n">lamb</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span> <span class="n">dataregs2</span><span class="p">)</span>  <span class="c1"># TODO lambda 应该怎么确定</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">iiter</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">lamb</span> <span class="o">=</span> <span class="mf">0.01</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x0</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Iter</span><span class="p">)):</span>
+        <span class="c1"># regularized problem</span>
+        <span class="n">dataregs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">d</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">b_</span>
+        <span class="c1"># subquestion1</span>
+        <span class="n">Sub1</span> <span class="o">=</span> <span class="n">RegularizedInv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Op</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">obs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">x0</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Reg</span><span class="p">,</span> <span class="n">dataregs</span><span class="p">)</span>  <span class="c1"># 初始化岭回归反演</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">sub1loss</span> <span class="o">=</span> <span class="n">Sub1</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x0</span> <span class="k">if</span> <span class="n">flag</span> <span class="k">else</span> <span class="n">x</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;GN&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>  <span class="c1"># 选择优化方法迭代求解</span>
+        <span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="c1"># subquestion2</span>
+        <span class="n">dataregs2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Reg</span> <span class="o">@</span> <span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">b_</span>
+        <span class="c1"># self.d, sub2loss = self.Ista_run(self.d,np.eye(self.Reg.shape[0]),dataregs2,50,None) # ISTA方法</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_softThresh</span><span class="p">(</span><span class="n">lamb</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span> <span class="n">dataregs2</span><span class="p">)</span>  <span class="c1"># TODO lambda 应该怎么确定</span>
 
-            <span class="n">residual</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">))</span>
-            <span class="n">loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">residual</span><span class="p">)</span>
+        <span class="n">residual</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">))</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">residual</span><span class="p">)</span>
 
-            <span class="bp">self</span><span class="o">.</span><span class="n">b_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">b_</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">tau</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Reg</span> <span class="o">@</span> <span class="n">x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">d</span><span class="p">)</span>
-            <span class="n">iiter</span> <span class="o">=</span> <span class="n">iiter</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">b_</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">tau</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Reg</span> <span class="o">@</span> <span class="n">x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">d</span><span class="p">)</span>
+        <span class="n">iiter</span> <span class="o">=</span> <span class="n">iiter</span> <span class="o">+</span> <span class="mi">1</span>
 
-        <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Split Bregman Loss curve(final loss = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">loss</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iters&#39;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;res&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Split Bregman Loss curve(final loss = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">loss</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iters&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;res&#39;</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">loss</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">loss</span>
 </code></pre></div>
 <h3 id="_7">多道反演<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>以上的优化方法都只针对于单道，但地震数据往往需要多道进行处理</p>
