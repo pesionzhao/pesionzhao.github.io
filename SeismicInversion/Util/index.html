@@ -1774,9 +1774,9 @@ T_{ps}
     <span class="n">vp</span> <span class="o">=</span> <span class="p">(</span><span class="n">vp1</span> <span class="o">+</span> <span class="n">vp2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
     <span class="n">vs</span> <span class="o">=</span> <span class="p">(</span><span class="n">vs1</span> <span class="o">+</span> <span class="n">vs2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
     <span class="n">rho</span> <span class="o">=</span> <span class="p">(</span><span class="n">rho1</span> <span class="o">+</span> <span class="n">rho2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
-    <span class="n">dvp</span> <span class="o">=</span> <span class="n">vp1</span> <span class="o">-</span> <span class="n">vp2</span>
-    <span class="n">dvs</span> <span class="o">=</span> <span class="n">vs1</span> <span class="o">-</span> <span class="n">vs2</span>
-    <span class="n">drho</span> <span class="o">=</span> <span class="n">rho1</span> <span class="o">-</span> <span class="n">rho2</span>
+    <span class="n">dvp</span> <span class="o">=</span> <span class="n">vp2</span> <span class="o">-</span> <span class="n">vp1</span>
+    <span class="n">dvs</span> <span class="o">=</span> <span class="n">vs2</span> <span class="o">-</span> <span class="n">vs1</span>
+    <span class="n">drho</span> <span class="o">=</span> <span class="n">rho2</span> <span class="o">-</span> <span class="n">rho1</span>
 
     <span class="c1"># 计算平均角</span>
     <span class="n">Const</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">Theta_r</span><span class="p">)</span> <span class="o">/</span> <span class="n">vp1</span>  <span class="c1"># np中的三角函数必须为弧度制！</span>
@@ -1785,7 +1785,7 @@ T_{ps}
 
     <span class="c1"># Aki-Richards方程的系数</span>
     <span class="n">G1</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">((</span><span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
-    <span class="n">G2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">vs</span> <span class="o">/</span> <span class="n">vp</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">G2</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">vs</span> <span class="o">/</span> <span class="n">vp</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
     <span class="n">G3</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">vs</span> <span class="o">/</span> <span class="n">vp</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 
     <span class="n">G</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">G1</span><span class="p">,</span> <span class="n">G2</span><span class="p">,</span> <span class="n">G3</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
