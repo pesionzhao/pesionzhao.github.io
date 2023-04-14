@@ -1776,8 +1776,8 @@ $$</p>
 <p><a href="https://zhuanlan.zhihu.com/p/555651497">软阈值迭代算法（ISTA算法）</a></p>
 <p>对于反问题</p>
 <div class="arithmatex">
-<div class="MathJax_Preview">\min ||Ax-b||_2^2+\alpha||x||_1</div>
-<script type="math/tex; mode=display">\min ||Ax-b||_2^2+\alpha||x||_1</script>
+<div class="MathJax_Preview">\min ||Ax-b||_2^2+\lambda||x||_1</div>
+<script type="math/tex; mode=display">\min ||Ax-b||_2^2+\lambda||x||_1</script>
 </div>
 <p>通过推导得到（具体参照上面的参考链接）</p>
 <div class="arithmatex">
@@ -1825,7 +1825,17 @@ $$</p>
     <span class="k">return</span> <span class="n">pre</span><span class="p">,</span> <span class="n">loss</span>
 </code></pre></div>
 <h3 id="fisata">FISATA方法<a class="headerlink" href="#fisata" title="Permanent link">&para;</a></h3>
-<p>只是减小了ISTA的计算复杂度，提高了计算速度，使损失可以得到更快收敛</p>
+<p>Amir Beck等人将Nesterov加速算法引入ISTA算法中，并称之为FISTA算法，其将复杂度从<span class="arithmatex"><span class="MathJax_Preview">O(1/k)</span><script type="math/tex">O(1/k)</script></span>降低到了<span class="arithmatex"><span class="MathJax_Preview">O(1/k^2)</span><script type="math/tex">O(1/k^2)</script></span>，减小了ISTA的计算复杂度，提高了计算速度，使损失可以得到更快收敛</p>
+<p>ISTA方法是直接迭代<span class="arithmatex"><span class="MathJax_Preview">x_k</span><script type="math/tex">x_k</script></span>，FISTA是迭代<span class="arithmatex"><span class="MathJax_Preview">y_k</span><script type="math/tex">y_k</script></span>，<span class="arithmatex"><span class="MathJax_Preview">y_k</span><script type="math/tex">y_k</script></span>由<span class="arithmatex"><span class="MathJax_Preview">x_k</span><script type="math/tex">x_k</script></span>计算得到</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\mathbf y_{k+1}=\mathbf x_k+(\frac{t_k-1}{t_{k+1}})(\mathbf x_k-\mathbf x_{k-1})</div>
+<script type="math/tex; mode=display">\mathbf y_{k+1}=\mathbf x_k+(\frac{t_k-1}{t_{k+1}})(\mathbf x_k-\mathbf x_{k-1})</script>
+</div>
+<p>其中</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">t_{k+1}=\frac{1+\sqrt{1+4t^2_k}}{2}</div>
+<script type="math/tex; mode=display">t_{k+1}=\frac{1+\sqrt{1+4t^2_k}}{2}</script>
+</div>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">Fista_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">init_guess</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="nb">iter</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="n">pre</span> <span class="o">=</span> <span class="n">init_guess</span>
     <span class="n">tk</span> <span class="o">=</span> <span class="mi">1</span>
@@ -1945,6 +1955,7 @@ b^{k+1} = b^k + (data-Gm-d^{k+1})</script>
 </code></pre></div>
 <h3 id="_7">多道反演<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>以上的优化方法都只针对于单道，但地震数据往往需要多道进行处理</p>
+<p>目前本人实现的方法只是循环进行不同道的单道反演，未完待续。。。</p>
 
 
 

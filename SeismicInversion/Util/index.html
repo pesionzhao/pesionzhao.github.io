@@ -945,15 +945,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     拟合一个回归曲线来匹配振幅拾取值，这是一个角度平方的正弦函数关系.
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -975,6 +975,13 @@
           <li class="md-nav__item">
   <a href="#zoeppritz" class="md-nav__link">
     Zoeppritz方程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aki-richards-equation" class="md-nav__link">
+    Aki-Richards-equation非线性近似
   </a>
   
 </li>
@@ -1169,15 +1176,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     拟合一个回归曲线来匹配振幅拾取值，这是一个角度平方的正弦函数关系.
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1199,6 +1206,13 @@
           <li class="md-nav__item">
   <a href="#zoeppritz" class="md-nav__link">
     Zoeppritz方程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aki-richards-equation" class="md-nav__link">
+    Aki-Richards-equation非线性近似
   </a>
   
 </li>
@@ -1285,7 +1299,7 @@ R(\theta) = R_0+B\sin^2(\theta)
 <p>其中<span class="arithmatex"><span class="MathJax_Preview">R_0</span><script type="math/tex">R_0</script></span>代表零偏移距反射系数，即截距，<span class="arithmatex"><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span>代表梯度,可以在很大程度上简化分析
 ,对于角度小于 40 度的情况, 第三项不是非常重要</p>
 <h3 id="aki-richards">Aki-Richards方程<a class="headerlink" href="#aki-richards" title="Permanent link">&para;</a></h3>
-<p>Aki-Richards 方程是Zoeppritz 方程的线性近似模拟</p>
+<p>Aki-Richards 方程是Zoeppritz 方程的线性近似模拟，代码实现见<a href="#Aki-Richards-equation">Aki-Richards非线性近似</a></p>
 <div class="arithmatex">
 <div class="MathJax_Preview">
 \begin{array}{ll}
@@ -1453,7 +1467,7 @@ R_p(\theta) = A + (2.25\Delta\sigma-A)\sin^2\theta
 <li>将每个道集转换为角度道集</li>
 </ol>
 <p>将每个道集按照角度值重新排列，即可得到角度道集。</p>
-<h2 id="_5">拟合一个回归曲线来匹配振幅拾取值，这是一个角度平方的正弦函数关系.<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="_5">拟合一个回归曲线来匹配振幅拾取值，这是一个角度平方的正弦函数关系.<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>属性A和B很少直接被利用。通常，利用的是从这两个属性中计算出其他的 AVO 属
 性。</p>
 <ul>
@@ -1743,6 +1757,82 @@ T_{ps}
         <span class="n">coef</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">icoef</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">ref</span> <span class="o">=</span> <span class="n">coef</span>
     <span class="k">return</span> <span class="n">coef</span>
+</code></pre></div>
+<h3 id="aki-richards-equation">Aki-Richards-equation非线性近似<a class="headerlink" href="#aki-richards-equation" title="Permanent link">&para;</a></h3>
+<p>公式见上面的<a href="#aki-richards">aki-richards方程</a></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">forward_single_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vp1</span><span class="p">,</span> <span class="n">vp2</span><span class="p">,</span> <span class="n">vs1</span><span class="p">,</span> <span class="n">vs2</span><span class="p">,</span> <span class="n">rho1</span><span class="p">,</span> <span class="n">rho2</span><span class="p">,</span> <span class="n">Theta_r</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Args:</span>
+<span class="sd">        Theta_r: 入射角</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        Rpp: 单层反射系数</span>
+<span class="sd">    Notes:</span>
+<span class="sd">        通过单层上下界面参数，计算单层反射系数</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># 计算平均与残差</span>
+    <span class="n">vp</span> <span class="o">=</span> <span class="p">(</span><span class="n">vp1</span> <span class="o">+</span> <span class="n">vp2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">vs</span> <span class="o">=</span> <span class="p">(</span><span class="n">vs1</span> <span class="o">+</span> <span class="n">vs2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">rho</span> <span class="o">=</span> <span class="p">(</span><span class="n">rho1</span> <span class="o">+</span> <span class="n">rho2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">dvp</span> <span class="o">=</span> <span class="n">vp1</span> <span class="o">-</span> <span class="n">vp2</span>
+    <span class="n">dvs</span> <span class="o">=</span> <span class="n">vs1</span> <span class="o">-</span> <span class="n">vs2</span>
+    <span class="n">drho</span> <span class="o">=</span> <span class="n">rho1</span> <span class="o">-</span> <span class="n">rho2</span>
+
+    <span class="c1"># 计算平均角</span>
+    <span class="n">Const</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">Theta_r</span><span class="p">)</span> <span class="o">/</span> <span class="n">vp1</span>  <span class="c1"># np中的三角函数必须为弧度制！</span>
+    <span class="n">Theta_t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arcsin</span><span class="p">(</span><span class="n">Const</span> <span class="o">*</span> <span class="n">vp2</span><span class="p">)</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="p">(</span><span class="n">Theta_r</span> <span class="o">+</span> <span class="n">Theta_t</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+
+    <span class="c1"># Aki-Richards方程的系数</span>
+    <span class="n">G1</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">((</span><span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="n">G2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">vs</span> <span class="o">/</span> <span class="n">vp</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">G3</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">vs</span> <span class="o">/</span> <span class="n">vp</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">G</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">G1</span><span class="p">,</span> <span class="n">G2</span><span class="p">,</span> <span class="n">G3</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">dvp</span> <span class="o">/</span> <span class="n">vp</span><span class="p">,</span> <span class="n">dvs</span> <span class="o">/</span> <span class="n">vs</span><span class="p">,</span> <span class="n">drho</span> <span class="o">/</span> <span class="n">rho</span><span class="p">])</span>
+
+    <span class="n">Rpp</span> <span class="o">=</span> <span class="n">G</span> <span class="o">@</span> <span class="n">m</span>
+    <span class="k">return</span> <span class="n">Rpp</span>
+
+<span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wav_mtx</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">nt0</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">t0</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1"># 目前只做单道</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        wav_mtx: 子波矩阵</span>
+<span class="sd">        theta: 入射角集</span>
+<span class="sd">        nt0: 采样点</span>
+<span class="sd">        show: 是否显示合成地震数据</span>
+<span class="sd">        t0: 采样时间，用来限定横坐标</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Rpp: 整道反射系数</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">thetar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>  <span class="c1"># 转弧度</span>
+    <span class="n">Rpp</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer</span><span class="p">):</span>
+        <span class="n">a1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">a2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vp</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">b1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">b2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">rho1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rho</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">rho2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rho</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">iRpp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">forward_single_layer</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">rho1</span><span class="p">,</span> <span class="n">rho2</span><span class="p">,</span> <span class="n">thetar</span><span class="p">)</span>
+        <span class="n">Rpp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">iRpp</span><span class="p">)</span>
+
+    <span class="n">Rpp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Rpp</span><span class="p">)</span>
+    <span class="n">Rpp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">Rpp</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">Rpp</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])))</span>  <span class="c1"># 添加全零行，行数补到和采样点数一样</span>
+    <span class="n">cal_data</span> <span class="o">=</span> <span class="n">wav_mtx</span><span class="nd">@Rpp</span>
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cal_data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">theta</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">t0</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">t0</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+                    <span class="n">vmin</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">cal_data</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">vmax</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">cal_data</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;tight&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;incident angle&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;seismic data from Aki-Ri-Nonliner&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">Rpp</span>
 </code></pre></div>
 
 
