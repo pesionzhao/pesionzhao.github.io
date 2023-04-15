@@ -876,6 +876,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    子波
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#avo" class="md-nav__link">
     AVO建模
   </a>
@@ -939,14 +946,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     从偏移距道集数据转换到角度道集数据
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     拟合一个回归曲线来匹配振幅拾取值，这是一个角度平方的正弦函数关系.
   </a>
   
@@ -958,7 +965,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     正演相关代码
   </a>
   
@@ -1107,6 +1114,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    子波
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#avo" class="md-nav__link">
     AVO建模
   </a>
@@ -1170,14 +1184,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     从偏移距道集数据转换到角度道集数据
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     拟合一个回归曲线来匹配振幅拾取值，这是一个角度平方的正弦函数关系.
   </a>
   
@@ -1189,7 +1203,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     正演相关代码
   </a>
   
@@ -1286,6 +1300,25 @@
             <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">num_samples</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># 更改文件指针</span>
             <span class="k">continue</span>
 </code></pre></div>
+<h2 id="_4">子波<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>常用的为Ricker子波</p>
+<p>生成Ricker子波代码为</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">z_ricker</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">f0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        t: 时域抽样点,都为正值</span>
+<span class="sd">        f0: 主频</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Ricker子波时域幅值</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">flipud</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">:]),</span> <span class="n">t</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># 将时域映射至整个实轴</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">f0</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">f0</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>  <span class="c1"># Ricker子波计算公式</span>
+    <span class="k">return</span> <span class="n">w</span>
+</code></pre></div>
 <h2 id="avo">AVO建模<a class="headerlink" href="#avo" title="Permanent link">&para;</a></h2>
 <h3 id="avoab-method">两项AVO方程(AB method)<a class="headerlink" href="#avoab-method" title="Permanent link">&para;</a></h3>
 <div class="arithmatex">
@@ -1331,14 +1364,23 @@ R_p(\theta) =  A+B\sin^2(\theta)+C\tan^2(\theta)\sin^2(\theta)
 R_p(\theta) =  A+B\sin^2(\theta)+C\tan^2(\theta)\sin^2(\theta) 
 </script>
 </div>
-<p>where :
-$$
+<p>where:</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \begin{aligned}
-&amp; A=\frac{1}{2}\left[\frac{\Delta V_P}{V_p}+\frac{\Delta \rho}{\rho}\right], \
-&amp; B=\frac{1}{2} \frac{\Delta V_P}{V_p}-4\left[\frac{V_S}{V_P}\right]^2 \frac{\Delta V_S}{V_S}-2\left[\frac{V_S}{V_P}\right]^2 \frac{\Delta \rho}{\rho}, \
+&amp; A=\frac{1}{2}\left[\frac{\Delta V_P}{V_p}+\frac{\Delta \rho}{\rho}\right], \\
+&amp; B=\frac{1}{2} \frac{\Delta V_P}{V_p}-4\left[\frac{V_S}{V_P}\right]^2 \frac{\Delta V_S}{V_S}-2\left[\frac{V_S}{V_P}\right]^2 \frac{\Delta \rho}{\rho}, \\
 &amp; C=\frac{1}{2} \frac{\Delta V_P}{V_p} .
 \end{aligned}
-$$</p>
+</div>
+<script type="math/tex; mode=display">
+\begin{aligned}
+& A=\frac{1}{2}\left[\frac{\Delta V_P}{V_p}+\frac{\Delta \rho}{\rho}\right], \\
+& B=\frac{1}{2} \frac{\Delta V_P}{V_p}-4\left[\frac{V_S}{V_P}\right]^2 \frac{\Delta V_S}{V_S}-2\left[\frac{V_S}{V_P}\right]^2 \frac{\Delta \rho}{\rho}, \\
+& C=\frac{1}{2} \frac{\Delta V_P}{V_p} .
+\end{aligned}
+</script>
+</div>
 <p>A是截距, B是梯度, 以及C是曲率,我们把这个方程称为ABC方程</p>
 <h3 id="aki-richardsfatti">Aki-Richards方程的Fatti形式<a class="headerlink" href="#aki-richardsfatti" title="Permanent link">&para;</a></h3>
 <p>Fatti 等人 (Geophysics, September, 1994) 发展了第三个Aki-Richards方程的
@@ -1431,7 +1473,7 @@ R_p(\theta) = A + (2.25\Delta\sigma-A)\sin^2\theta
 </script>
 </div>
 <h2 id="avo_1">AVO分析（估计截距与梯度）<a class="headerlink" href="#avo_1" title="Permanent link">&para;</a></h2>
-<h3 id="_4">从偏移距道集数据转换到角度道集数据<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_5">从偏移距道集数据转换到角度道集数据<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>可以使用下面的方式将偏移距道集转换到角度道集: TODO代码实现 </p>
 <ul>
 <li>直射线假设 (常速度)</li>
@@ -1467,7 +1509,7 @@ R_p(\theta) = A + (2.25\Delta\sigma-A)\sin^2\theta
 <li>将每个道集转换为角度道集</li>
 </ol>
 <p>将每个道集按照角度值重新排列，即可得到角度道集。</p>
-<h3 id="_5">拟合一个回归曲线来匹配振幅拾取值，这是一个角度平方的正弦函数关系.<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_6">拟合一个回归曲线来匹配振幅拾取值，这是一个角度平方的正弦函数关系.<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>属性A和B很少直接被利用。通常，利用的是从这两个属性中计算出其他的 AVO 属
 性。</p>
 <ul>
@@ -1476,7 +1518,7 @@ R_p(\theta) = A + (2.25\Delta\sigma-A)\sin^2\theta
 <li>剪切反射率: A-B 正比于剪切反射率</li>
 <li>流体因子</li>
 </ul>
-<h2 id="_6">正演相关代码<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_7">正演相关代码<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <h3 id="aki-richards_2">Aki-Richards线性近似<a class="headerlink" href="#aki-richards_2" title="Permanent link">&para;</a></h3>
 <div class="arithmatex">
 <div class="MathJax_Preview">R_{pp}=\zeta(\theta)\varDelta\ln(\alpha)+\eta(\theta)\varDelta\ln(\beta)+\xi(\theta)\varDelta\ln(\rho)</div>
