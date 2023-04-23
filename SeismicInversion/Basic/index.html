@@ -1454,8 +1454,8 @@
 <p>之前确定性反演有提到，可能会产生遵循模型的错误趋势，因此要将模型去除。</p>
 <h2 id="_7">相关概念<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <h3 id="relative-impedance"><strong>相对阻抗(relative impedance)</strong><a class="headerlink" href="#relative-impedance" title="Permanent link">&para;</a></h3>
-<p>是直接从没有模型输入的地震数据中估计出来的，是一种鲁棒的地震特性。数据不记录低频，故<strong>无趋势</strong>
-<img alt="" src="https://assets.geoexpro.com/uploads/54e343c2-e708-4245-9aca-7eb612c1382a/fig-1-b.jpg" />
+<p>是直接从没有模型输入的地震数据中估计出来的，是一种鲁棒的地震特性。数据不记录低频，故<strong>无趋势</strong></p>
+<p><img alt="" src="https://assets.geoexpro.com/uploads/54e343c2-e708-4245-9aca-7eb612c1382a/fig-1-b.jpg" />
 <center>彩色反演(colored inversion)</center></p>
 <h3 id="p-wave"><strong>p wave</strong><a class="headerlink" href="#p-wave" title="Permanent link">&para;</a></h3>
 <p>primary or pressure wave 主波</p>
@@ -1470,10 +1470,10 @@
 <h3 id="s-wave"><strong>s wave</strong><a class="headerlink" href="#s-wave" title="Permanent link">&para;</a></h3>
 <p>secondary or shear wave 次波 </p>
 <p>参考：<a href="https://en.wikipedia.org/wiki/S_wave">https://en.wikipedia.org/wiki/S_wave</a></p>
-<p>垂直于波传播方向的质点运动传播,p波在非正入射时撞击界面会产生s波,波速仅次于P波，S波无法穿越外地核，因为流体不支持剪切，所以S波的阴影区正对着地震的震源。
-粒子运动与传播方向在垂直面内为SV-wave,粒子运动与传播方向在水平面进行为SH-wave
-<img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Speeds_of_seismic_waves.PNG/1024px-Speeds_of_seismic_waves.PNG" />
-以上两种阻抗可通过结合得到另外两种属性, <span class="arithmatex"><span class="MathJax_Preview">\lambda\rho</span><script type="math/tex">\lambda\rho</script></span> 与 <span class="arithmatex"><span class="MathJax_Preview">\mu\rho</span><script type="math/tex">\mu\rho</script></span>
+<p>垂直于波传播方向的质点运动传播,p波在非正入射时撞击界面会产生s波,波速仅次于P波，S波无法穿越外地核，因为流体不支持剪切，所以S波的阴影区正对着地震的震源。</p>
+<p>粒子运动与传播方向在垂直面内为SV-wave,粒子运动与传播方向在水平面进行为SH-wave</p>
+<p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Speeds_of_seismic_waves.PNG/1024px-Speeds_of_seismic_waves.PNG" /></p>
+<p>以上两种阻抗可通过结合得到另外两种属性, <span class="arithmatex"><span class="MathJax_Preview">\lambda\rho</span><script type="math/tex">\lambda\rho</script></span> 与 <span class="arithmatex"><span class="MathJax_Preview">\mu\rho</span><script type="math/tex">\mu\rho</script></span>
 p波阻抗(IP)和<span class="arithmatex"><span class="MathJax_Preview">\lambda\rho</span><script type="math/tex">\lambda\rho</script></span> 性质告诉我们孔隙空间的影响，如孔隙度和碳氢化合物(存在或饱和度)。s波阻抗(SI)和μρ可以在去除孔隙空间和流体的影响后，为我们提供有关岩性的信息。通过比较每种产出类型之间的岩石性质异常，就有可能更好地了解异常是否可能是由孔隙度/饱和度变化或岩性变化引起的。</p>
 <ul>
 <li><strong>三项反演</strong>：得到IP，SP,体密度（sonic,shear,bulk density),体密度很难得到，对地震幅度影响很小且只存在于大角度情况下(&gt;40°)</li>
@@ -1525,8 +1525,8 @@ p波阻抗(IP)和<span class="arithmatex"><span class="MathJax_Preview">\lambda\
 <h3 id="avoamplitude-variation-with-offset"><strong>AVO(amplitude variation with offset)</strong><a class="headerlink" href="#avoamplitude-variation-with-offset" title="Permanent link">&para;</a></h3>
 <p><em>Ostrander首次提出</em>
 地震道振幅随偏移距变化，此时叠加道振幅不等于<a href="#叠加道">垂直入射道</a>（即零偏移距道）的振幅，偏移距大小与入射角有关</p>
-<p>参考文章：<a href="https://www.crewes.org/Documents/ResearchReports/2010/CRR201002.pdf">Tutorial: AVO inversion</a>
-<img alt="" src="https://s2.loli.net/2022/10/22/DslmuLA2yPMg1Jo.png" /></p>
+<p>参考文章：<a href="https://www.crewes.org/Documents/ResearchReports/2010/CRR201002.pdf">Tutorial: AVO inversion</a></p>
+<p><img alt="" src="https://s2.loli.net/2022/10/22/DslmuLA2yPMg1Jo.png" /></p>
 <p>准备步骤与地震道叠加相同，首先将共中心点道组合成道集，并按偏移距进行排序，然后用正常时差速度模型对到达波进行拉平处理，拉平过程中注意保护振幅。得到的叠加道并不与零偏移距道相似；换句话说，叠加处理并不能保护振幅。偏移距与入射角的关系取决于射线路径。多数 AVO 反演算法基于反射振幅与入射角之间的关系。因此，反演前的附加处理步骤就包括<strong>将偏移距转换成入射角</strong>，</p>
 <ul>
 <li>部分叠加方法：将每一个CMP集内的近偏移距道进行叠加，再将所有叠加道组成近偏移距道集。采用同样的方法建立中偏移距道集和远偏移距道集，然后对每种偏移距道集进行分别反演。可能会导致某些AVO信息丢失</li>
@@ -1561,12 +1561,12 @@ p波阻抗(IP)和<span class="arithmatex"><span class="MathJax_Preview">\lambda\
 <ul>
 <li>
 <ol>
-<li>线性化：<strong>由于L取决于m</strong> 令 <span class="arithmatex"><span class="MathJax_Preview">m^{(0)}=m_o</span><script type="math/tex">m^{(0)}=m_o</script></span> (<span class="arithmatex"><span class="MathJax_Preview">m_o</span><script type="math/tex">m_o</script></span>指预测值), 使其接近真实模型并线性化数据与模型之间的关系进行迭代收敛
-利用泰勒展开式
-(<span class="arithmatex"><span class="MathJax_Preview">d_i随着\pmb m变化， \pmb m 为真实模型，\pmb m_o为预测值</span><script type="math/tex">d_i随着\pmb m变化， \pmb m 为真实模型，\pmb m_o为预测值</script></span>)</li>
+<li>线性化：<strong>由于L取决于m</strong> 令 <span class="arithmatex"><span class="MathJax_Preview">m^{(0)}=m_o</span><script type="math/tex">m^{(0)}=m_o</script></span> (<span class="arithmatex"><span class="MathJax_Preview">m_o</span><script type="math/tex">m_o</script></span>指预测值), 使其接近真实模型并线性化数据与模型之间的关系进行迭代收敛</li>
 </ol>
 </li>
 </ul>
+<p>利用泰勒展开式</p>
+<p>(<span class="arithmatex"><span class="MathJax_Preview">d_i随着\pmb m变化， \pmb m 为真实模型，\pmb m_o为预测值</span><script type="math/tex">d_i随着\pmb m变化， \pmb m 为真实模型，\pmb m_o为预测值</script></span>)</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">d_i(\pmb m)\approx d_i(\pmb m_o) + \displaystyle\sum_j\left.\left[\frac{\partial {d_i(\pmb m)}}{\partial m_j}\right]\right|_{m_o}\delta m_j\tag{1.2} </div>
 <script type="math/tex; mode=display">d_i(\pmb m)\approx d_i(\pmb m_o) + \displaystyle\sum_j\left.\left[\frac{\partial {d_i(\pmb m)}}{\partial m_j}\right]\right|_{m_o}\delta m_j\tag{1.2} </script>
