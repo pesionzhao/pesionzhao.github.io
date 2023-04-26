@@ -1205,11 +1205,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#paper6-nonlinear-multichannel-impedance-inversion-by-total-variation-regularization" class="md-nav__link">
-    PAPER6 Nonlinear multichannel impedance inversion by total-variation regularization
+  <a href="#paper6-avo-inversion-based-on-transfer-learning-and-low-frequency-model" class="md-nav__link">
+    PAPER6 AVO Inversion Based on Transfer Learning and Low-Frequency Model
   </a>
   
-    <nav class="md-nav" aria-label="PAPER6 Nonlinear multichannel impedance inversion by total-variation regularization">
+    <nav class="md-nav" aria-label="PAPER6 AVO Inversion Based on Transfer Learning and Low-Frequency Model">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1221,6 +1221,40 @@
         
           <li class="md-nav__item">
   <a href="#introduction_1" class="md-nav__link">
+    INTRODUCTION
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    流程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paper7-nonlinear-multichannel-impedance-inversion-by-total-variation-regularization" class="md-nav__link">
+    PAPER7 Nonlinear multichannel impedance inversion by total-variation regularization
+  </a>
+  
+    <nav class="md-nav" aria-label="PAPER7 Nonlinear multichannel impedance inversion by total-variation regularization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    摘要
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introduction_2" class="md-nav__link">
     Introduction
   </a>
   
@@ -1620,11 +1654,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#paper6-nonlinear-multichannel-impedance-inversion-by-total-variation-regularization" class="md-nav__link">
-    PAPER6 Nonlinear multichannel impedance inversion by total-variation regularization
+  <a href="#paper6-avo-inversion-based-on-transfer-learning-and-low-frequency-model" class="md-nav__link">
+    PAPER6 AVO Inversion Based on Transfer Learning and Low-Frequency Model
   </a>
   
-    <nav class="md-nav" aria-label="PAPER6 Nonlinear multichannel impedance inversion by total-variation regularization">
+    <nav class="md-nav" aria-label="PAPER6 AVO Inversion Based on Transfer Learning and Low-Frequency Model">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1636,6 +1670,40 @@
         
           <li class="md-nav__item">
   <a href="#introduction_1" class="md-nav__link">
+    INTRODUCTION
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    流程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paper7-nonlinear-multichannel-impedance-inversion-by-total-variation-regularization" class="md-nav__link">
+    PAPER7 Nonlinear multichannel impedance inversion by total-variation regularization
+  </a>
+  
+    <nav class="md-nav" aria-label="PAPER7 Nonlinear multichannel impedance inversion by total-variation regularization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    摘要
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introduction_2" class="md-nav__link">
     Introduction
   </a>
   
@@ -1926,27 +1994,50 @@ T_{ps}
 \end{aligned}
 </script>
 </div>
-<p>我们使用了循环一致损失函数，G和F的互为输入输出，因此，G和F操作的数据都是闭环的，相比之下，仅由单个网络G或F操作的数据意味着开环。此外，根据AVO反演的需求，对循环一致损失函数进行了改进。此外，<strong>我们使用平均绝对误差(MAE)代替均方误差(mse)作为损失函数</strong>，以提高训练的鲁棒性。开环损失函数如下
-$$
+<p>我们使用了循环一致损失函数，G和F的互为输入输出，因此，G和F操作的数据都是闭环的，相比之下，仅由单个网络G或F操作的数据意味着开环。此外，根据AVO反演的需求，对循环一致损失函数进行了改进。此外，<strong>我们使用平均绝对误差(MAE)代替均方误差(mse)作为损失函数</strong>，以提高训练的鲁棒性。开环损失函数如下</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \begin{aligned}
-&amp; L_{\text {open }}^1=\frac{1}{m} \sum_i^m | G\left(S \mid V p^{\text {low }}\right)-V p^{\text {label }} \mid +\left|G\left(S \mid V s^{\text {low }}\right)-V s^{\text {labcl }}\right| \
-&amp; \left.+\left|G\left(S \mid \rho^{\text {low }}\right)-\rho^{\text {labcl }}\right|\right] \
-&amp; L_{\mathrm{open}}^2=\frac{1}{m} \sum_i^m\left[\left|F\left(V p^{\text {label }}, V s^{\text {labcl }}, \rho^{\text {label }}\right)-S\right|\right] . \
+&amp; L_{\text {open }}^1=\frac{1}{m} \sum_i^m \| G\left(S \mid V p^{\text {low }}\right)-V p^{\text {label }} \mid +\left|G\left(S \mid V s^{\text {low }}\right)-V s^{\text {labcl }}\right| \\
+&amp; \left.+\left|G\left(S \mid \rho^{\text {low }}\right)-\rho^{\text {labcl }}\right|\right] \\
+&amp; L_{\mathrm{open}}^2=\frac{1}{m} \sum_i^m\left[\left|F\left(V p^{\text {label }}, V s^{\text {labcl }}, \rho^{\text {label }}\right)-S\right|\right] . \\
 &amp; 
 \end{aligned}
-$$</p>
-<p>闭环损失函数由正演地震数据的损失，反演三参数的损失，未标注数据的正演损失组成
-$$
+</div>
+<script type="math/tex; mode=display">
 \begin{aligned}
-&amp; L_{\text {close }}^1=\frac{1}{m} \sum_i^m\left[\left|F\left(G\left(S \mid V p^{\text {low }}\right), G\left(S \mid V s^{\text {low }}\right), G\left(S \mid \rho^{\text {low }}\right)\right)-S\right|\right] \
-&amp; L_{\text {close }}^2=\frac{1}{m} \sum_i^m\left[\left|G\left(F\left(V p^{\text {label }}, V s^{\text {label }}, \rho^{\text {label }}\right) \mid V p^{\text {low }}\right)-V p^{\text {label }}\right|\right] \
-&amp; L_{\text {close }}^3=\frac{1}{m} \sum_i^m\left[\left|G\left(F\left(V p^{\text {label }}, V s^{\text {label }}, \rho^{\text {label }}\right) \mid V s^{\text {low }}\right)-V s^{\text {label }}\right|\right] \
-&amp; L_{\text {close }}^4=\frac{1}{m} \sum_i^m\left[\left|G\left(F\left(V p^{\text {label }}, V s^{\text {label }}, \rho^{\text {label }}\right) \mid \rho^{\text {low }}\right)-\rho^{\text {label }}\right|\right] \
-&amp; L_{\text {close }}^5=\frac{1}{M} \sum_i^M\left[\mid F\left(G\left(S^<em> \mid V p^{\text {low</em> }}\right), G\left(S^<em> \mid V s^{\text {low</em> }}\right)\right. \text {, }\right. \
-&amp; \left.\left.G\left(S^<em> \mid \rho^{\text {low</em> }}\right)\right)-S^* \mid\right] \
+& L_{\text {open }}^1=\frac{1}{m} \sum_i^m \| G\left(S \mid V p^{\text {low }}\right)-V p^{\text {label }} \mid +\left|G\left(S \mid V s^{\text {low }}\right)-V s^{\text {labcl }}\right| \\
+& \left.+\left|G\left(S \mid \rho^{\text {low }}\right)-\rho^{\text {labcl }}\right|\right] \\
+& L_{\mathrm{open}}^2=\frac{1}{m} \sum_i^m\left[\left|F\left(V p^{\text {label }}, V s^{\text {labcl }}, \rho^{\text {label }}\right)-S\right|\right] . \\
+& 
+\end{aligned}
+</script>
+</div>
+<p>闭环损失函数由正演地震数据的损失，反演三参数的损失，未标注数据的正演损失组成</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\begin{aligned}
+&amp; L_{\text {close }}^1=\frac{1}{m} \sum_i^m\left[\left|F\left(G\left(S \mid V p^{\text {low }}\right), G\left(S \mid V s^{\text {low }}\right), G\left(S \mid \rho^{\text {low }}\right)\right)-S\right|\right] \\
+&amp; L_{\text {close }}^2=\frac{1}{m} \sum_i^m\left[\left|G\left(F\left(V p^{\text {label }}, V s^{\text {label }}, \rho^{\text {label }}\right) \mid V p^{\text {low }}\right)-V p^{\text {label }}\right|\right] \\
+&amp; L_{\text {close }}^3=\frac{1}{m} \sum_i^m\left[\left|G\left(F\left(V p^{\text {label }}, V s^{\text {label }}, \rho^{\text {label }}\right) \mid V s^{\text {low }}\right)-V s^{\text {label }}\right|\right] \\
+&amp; L_{\text {close }}^4=\frac{1}{m} \sum_i^m\left[\left|G\left(F\left(V p^{\text {label }}, V s^{\text {label }}, \rho^{\text {label }}\right) \mid \rho^{\text {low }}\right)-\rho^{\text {label }}\right|\right] \\
+&amp; L_{\text {close }}^5=\frac{1}{M} \sum_i^M\left[\mid F\left(G\left(S^* \mid V p^{\text {low* }}\right), G\left(S^* \mid V s^{\text {low* }}\right)\right. \text {, }\right. \\
+&amp; \left.\left.G\left(S^* \mid \rho^{\text {low* }}\right)\right)-S^* \mid\right] \\
 &amp;
 \end{aligned}
-$$</p>
+</div>
+<script type="math/tex; mode=display">
+\begin{aligned}
+& L_{\text {close }}^1=\frac{1}{m} \sum_i^m\left[\left|F\left(G\left(S \mid V p^{\text {low }}\right), G\left(S \mid V s^{\text {low }}\right), G\left(S \mid \rho^{\text {low }}\right)\right)-S\right|\right] \\
+& L_{\text {close }}^2=\frac{1}{m} \sum_i^m\left[\left|G\left(F\left(V p^{\text {label }}, V s^{\text {label }}, \rho^{\text {label }}\right) \mid V p^{\text {low }}\right)-V p^{\text {label }}\right|\right] \\
+& L_{\text {close }}^3=\frac{1}{m} \sum_i^m\left[\left|G\left(F\left(V p^{\text {label }}, V s^{\text {label }}, \rho^{\text {label }}\right) \mid V s^{\text {low }}\right)-V s^{\text {label }}\right|\right] \\
+& L_{\text {close }}^4=\frac{1}{m} \sum_i^m\left[\left|G\left(F\left(V p^{\text {label }}, V s^{\text {label }}, \rho^{\text {label }}\right) \mid \rho^{\text {low }}\right)-\rho^{\text {label }}\right|\right] \\
+& L_{\text {close }}^5=\frac{1}{M} \sum_i^M\left[\mid F\left(G\left(S^* \mid V p^{\text {low* }}\right), G\left(S^* \mid V s^{\text {low* }}\right)\right. \text {, }\right. \\
+& \left.\left.G\left(S^* \mid \rho^{\text {low* }}\right)\right)-S^* \mid\right] \\
+&
+\end{aligned}
+</script>
+</div>
 <p>故综上，最终的生成器损失函数为</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">L_{I,L} = L^g+\beta(L^1_{open}+L^2_{open})+\alpha(L^1_{close}+L^2_{close}+L^3_{close}+L^4_{close}+L^5_{close})</div>
@@ -1998,11 +2089,36 @@ $$</p>
 - 使用平均绝对误差( MAE )代替均方误差( mse )作为损失函数来提高网络训练的鲁棒性</p>
 <h3 id="_17">结论<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
 <p>CMcWGAN利用弹性参数的低频信息作为条件输入缓解了横向不连续问题，提高了反演结果的精度。利用合成地震角道集的实验结果表明，CMcWGAN比cGAN具有更好的横向连续性，比传统的贝叶斯AVO反演方法具有更高的反演精度。在标签不足的情况下，CMcWGAN能够实现高精度的AVO反演，并且对含噪角度道集具有鲁棒性。</p>
-<h2 id="paper6-nonlinear-multichannel-impedance-inversion-by-total-variation-regularization">PAPER6 Nonlinear multichannel impedance inversion by total-variation regularization<a class="headerlink" href="#paper6-nonlinear-multichannel-impedance-inversion-by-total-variation-regularization" title="Permanent link">&para;</a></h2>
-<p>全变分正则化非线性多通道阻抗反演</p>
+<h2 id="paper6-avo-inversion-based-on-transfer-learning-and-low-frequency-model">PAPER6 AVO Inversion Based on Transfer Learning and Low-Frequency Model<a class="headerlink" href="#paper6-avo-inversion-based-on-transfer-learning-and-low-frequency-model" title="Permanent link">&para;</a></h2>
+<p>基于迁移学习和低频模型的AVO反演</p>
+<p><a href="https://ieeexplore.ieee.org/document/9634049">https://ieeexplore.ieee.org/document/9634049</a></p>
 <h3 id="_18">摘要<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p>当深度学习直接用于地震反演时，主要存在三个问题。首先，标签数据不足。第二，针对一个工作区域训练的网络不适用于其他工作区域。第三，反演结果存在空间不连续和不稳定问题。本文提出了结合迁移学习和低频分量约束的AVO反演方法。</p>
+<h3 id="introduction_1">INTRODUCTION<a class="headerlink" href="#introduction_1" title="Permanent link">&para;</a></h3>
+<p>根据反演算法的不同，可以分为迭代正演模拟方法、非线性反演方法和线性反演方法。传统的AVO反演是典型的病态问题，通常需要进行各种假设，反演得到的密度结果并不可靠。随着深度学习的崛起，越来越多深度学习方法被用在了地震反演上，例如CNN对时空波形进行分类，进行阻抗反演，由于网络深度增加引起的梯度爆炸，引用了Resnet对地震随机噪声的衰减，叠前反演等，这些网络均设计为单输入(仅有地震数据作为输入)，由于地震数据为带限数据，缺少低频成分，导致反演结果具有横向不稳定性和不连续性。</p>
+<p>由于岩性的差异，一个工区训练的反演网络模型不能直接应用于其他地区的地震参数反演。所以这里使用迁移学习很有必要。</p>
+<p>故本文采用迁移学习和低频约束相结合的方法，我们提出了多输入网络结构，它不仅可以学习角度地震记录和弹性参数之间的关系，还可以约束进行AVO反演，先让网络在随机合成数据中进行学习，再进行迁移学习小样本数据</p>
+<p>创新点
+- 迁移学习
+- 网络双输入（地震数据和低频信息）</p>
+<h3 id="_19">流程<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<p>将真实数据（弹性参数）当作目标域数据，随机生成一些数据（弹性参数）当作源域数据，首先使用源域数据进行网络训练得到预训练权重，之后进行目标域数据迁移学习</p>
+<p><strong>正演合成数据</strong></p>
+<p>使用合成数据可以减轻小样本问题的过拟合问题，由于Zoeppritz近似不能反映全反射现象，这里合成数据反射系数由精确Zoeppritz方程得到，之后通过和子波褶积得到合成地震数据</p>
+<p><strong>反演网络结构</strong></p>
+<p><img alt="" src="https://s2.loli.net/2023/04/25/7FEGveLYKhJBpbd.png" /></p>
+<p>第一步，用随机数据对网络进行预训练，得到广义网络模型。第二步，将广义网络模型转移到目标区域，利用目标数据对网络模型进行优化，得到符合目标区域反演要求的网络模型。</p>
+<p><strong>实验</strong>
+为了模拟真实情况下的井数较少的问题，目标域数据为Overthrust模型中4道井曲线，正演使用40hz的雷克子波，入射角为0~30间隔5°。</p>
+<p>第一步，我们用大量合成的随机数据预训练网络。第二步，将预训练的网络的权重迁移到具有相同架构的目标网络中针对目标域数据进行微调。</p>
+<p>本文还对冻结不同层对反演结果的影响做了对比，且进行了PCC对比，证明预测效果都很好</p>
+<p>对不同主频的地震数据的反演结果进行对比，同样预测效果都很好</p>
+<p>对Mamousi2数据进行实验，添加5db的高斯噪声，本文的方法依旧表现着良好的性能</p>
+<h2 id="paper7-nonlinear-multichannel-impedance-inversion-by-total-variation-regularization">PAPER7 Nonlinear multichannel impedance inversion by total-variation regularization<a class="headerlink" href="#paper7-nonlinear-multichannel-impedance-inversion-by-total-variation-regularization" title="Permanent link">&para;</a></h2>
+<p>全变分正则化非线性多通道阻抗反演</p>
+<h3 id="_20">摘要<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
 <p>声阻抗(AI)分析能够使地震反射数据映射到岩性，反射率计算AI需要求解一个有约束的非线性反问题。针对多通道形式的非线性阻抗问题，在总变差(TV)约束下，提出了两种有效的算法来恢复具有块状结构的阻抗图。</p>
-<h3 id="introduction_1">Introduction<a class="headerlink" href="#introduction_1" title="Permanent link">&para;</a></h3>
+<h3 id="introduction_2">Introduction<a class="headerlink" href="#introduction_2" title="Permanent link">&para;</a></h3>
 <p>从带限地震记录中获得AI需要两步</p>
 <ul>
 <li>deconvolution 反褶积，用于补偿由震源产生的子波的带限性质所造成的记录地震记录的缺失频率</li>
