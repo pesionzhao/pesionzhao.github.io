@@ -1487,12 +1487,12 @@ m^{k+1} = m^k - \alpha_k \nabla f(m^k)
 <script type="math/tex; mode=display">f(m) = (Gm-d)^T(Gm-d)=m^TG^TGm-2(G^Td)^Tm+d^Td</script>
 </div>
 <div class="arithmatex">
-<div class="MathJax_Preview">\nabla f(m)=2G^TG-2G^Td</div>
-<script type="math/tex; mode=display">\nabla f(m)=2G^TG-2G^Td</script>
+<div class="MathJax_Preview">\nabla f(m)=2G^TGm-2G^Td</div>
+<script type="math/tex; mode=display">\nabla f(m)=2G^TGm-2G^Td</script>
 </div>
 <div class="arithmatex">
-<div class="MathJax_Preview">m^{k+1} = m^k - \alpha_k (2G^TG-2G^Td) </div>
-<script type="math/tex; mode=display">m^{k+1} = m^k - \alpha_k (2G^TG-2G^Td) </script>
+<div class="MathJax_Preview">m^{k+1} = m^k - \alpha_k (2G^TGm^k-2G^Td) </div>
+<script type="math/tex; mode=display">m^{k+1} = m^k - \alpha_k (2G^TGm^k-2G^Td) </script>
 </div>
 <p>步长的选取</p>
 <div class="arithmatex">
@@ -1903,13 +1903,13 @@ b^{k+1} = b^k + (data-Gm-d^{k+1})</script>
  \\ \sqrt[]{\frac{\lambda}{2}} L
 \end{bmatrix}m - 
 \begin{bmatrix}data
- \\\sqrt[]{\frac{\lambda}{2}}d-b
+ \\\sqrt[]{\frac{\lambda}{2}}(d-b)
 \end{bmatrix}\right|\right|_2</div>
 <script type="math/tex; mode=display">\min\left|\left|\begin{bmatrix}G
  \\ \sqrt[]{\frac{\lambda}{2}} L
 \end{bmatrix}m - 
 \begin{bmatrix}data
- \\\sqrt[]{\frac{\lambda}{2}}d-b
+ \\\sqrt[]{\frac{\lambda}{2}}(d-b)
 \end{bmatrix}\right|\right|_2</script>
 </div>
 <p>子问题二(LASSO回归)</p>
