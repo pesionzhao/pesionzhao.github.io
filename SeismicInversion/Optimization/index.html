@@ -853,10 +853,85 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5">
+          论文笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="论文笔记" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          论文笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="../PaperNotes/" class="md-nav__link">
-        论文笔记
+        碎片
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Paper/DTV/" class="md-nav__link">
+        DTV
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Paper/Gan/" class="md-nav__link">
+        生成对抗网络
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Paper/unet/" class="md-nav__link">
+        Unet迁移学习
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1722,7 +1797,7 @@ m^{k+1} = m^k - \alpha_k \nabla f(m^k)
 </script>
 </div>
 <p>其中<span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>为差分矩阵</p>
-<p>这里介绍一种求解一阶TV正则化反问题的求解方法 <strong>IRLS</strong></p>
+<p>这里介绍一种求解带有一范数正则化反问题的求解方法 <strong>IRLS</strong></p>
 <p>对于上式求梯度得到</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">
@@ -1732,6 +1807,41 @@ m^{k+1} = m^k - \alpha_k \nabla f(m^k)
 \nabla f(m) = 2G^TGm-2G^Td+\alpha \sum_{i=0}^m\nabla|y_i|
 </script>
 </div>
+<p>由于<span class="arithmatex"><span class="MathJax_Preview">y_i</span><script type="math/tex">y_i</script></span>不为零，故</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\frac{\partial|y_i|}{\partial m_k} = L_{i,k} \mathrm{sgn}(y_i)
+</div>
+<script type="math/tex; mode=display">
+\frac{\partial|y_i|}{\partial m_k} = L_{i,k} \mathrm{sgn}(y_i)
+</script>
+</div>
+<p>因为<span class="arithmatex"><span class="MathJax_Preview">|Lm| = \sum_{i=1}^m |y_i|</span><script type="math/tex">|Lm| = \sum_{i=1}^m |y_i|</script></span>，故</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\frac{\partial|Lm|}{\partial m_k} = \sum_{i=1}^mL_{i,k} \frac{y_i}{|y_i|}
+</div>
+<script type="math/tex; mode=display">
+\frac{\partial|Lm|}{\partial m_k} = \sum_{i=1}^mL_{i,k} \frac{y_i}{|y_i|}
+</script>
+</div>
+<p>所以我们令<span class="arithmatex"><span class="MathJax_Preview">\mathbf{W}</span><script type="math/tex">\mathbf{W}</script></span>表示一个对角阵，且</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">W_{i,i}=\frac{1}{|y_i|}</div>
+<script type="math/tex; mode=display">W_{i,i}=\frac{1}{|y_i|}</script>
+</div>
+<p>则<span class="arithmatex"><span class="MathJax_Preview">\nabla|Lm|=L^TWLm</span><script type="math/tex">\nabla|Lm|=L^TWLm</script></span></p>
+<p>梯度变为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\nabla f(m) = 2G^TGm-2G^Td+\alpha L^TWLm
+</div>
+<script type="math/tex; mode=display">
+\nabla f(m) = 2G^TGm-2G^Td+\alpha L^TWLm
+</script>
+</div>
+<p>因为W依赖于Lm，所以这是一个非线性方程组，且W在任意Lm取值为0的点无定义</p>
+<p>为解决不可微问题，我们设定一个容许偏差<span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>，并将W改写如下</p>
 <p>令
 $$
 W_{i, i}= \begin{cases}1 /\left|y_i^{(k)}\right| &amp; \left|y_i^{(k)}\right| \geq \epsilon \
@@ -1951,6 +2061,22 @@ b^{k+1} = b^k + (data-Gm-d^{k+1})</script>
 <script type="math/tex; mode=display">d^{k+1}=\min_d\frac{\lambda}{2}||d^k-b^k-Lm||_2^2+\alpha||d^k||_1</script>
 </div>
 <p>用软阈值函数可求解</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+d^*=\begin{cases} \begin{array}{c} b+Lm-\frac{\lambda }{4}  ,\quad b+Lm&gt;\frac{\lambda }{4}\\\end{array}\\ \begin{array}{c} 0,\qquad \qquad \qquad b+Lm\le \frac{\lambda }{4}\\\end{array}\\ \begin{array}{c} b+Lm+\frac{\lambda }{4} ,\quad b+Lm&lt;-\frac{\lambda }{4}\\\end{array}\\\end{cases} \\
+</div>
+<script type="math/tex; mode=display">
+d^*=\begin{cases} \begin{array}{c} b+Lm-\frac{\lambda }{4}  ,\quad b+Lm>\frac{\lambda }{4}\\\end{array}\\ \begin{array}{c} 0,\qquad \qquad \qquad b+Lm\le \frac{\lambda }{4}\\\end{array}\\ \begin{array}{c} b+Lm+\frac{\lambda }{4} ,\quad b+Lm<-\frac{\lambda }{4}\\\end{array}\\\end{cases} \\
+</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+d^*=\begin{cases} \begin{array}{c} b+Lm-\frac{2\alpha }{\lambda}  ,\quad b+Lm&gt;\frac{2\alpha}{\lambda}\\\end{array}\\ \begin{array}{c} 0,\qquad \qquad \qquad |b+Lm|\le \frac{2\alpha}{\lambda}\\\end{array}\\ \begin{array}{c} b+Lm+\frac{2\alpha}{\lambda} ,\quad b+Lm&lt;-\frac{2\alpha}{\lambda}\\\end{array}\\\end{cases} \\
+</div>
+<script type="math/tex; mode=display">
+d^*=\begin{cases} \begin{array}{c} b+Lm-\frac{2\alpha }{\lambda}  ,\quad b+Lm>\frac{2\alpha}{\lambda}\\\end{array}\\ \begin{array}{c} 0,\qquad \qquad \qquad |b+Lm|\le \frac{2\alpha}{\lambda}\\\end{array}\\ \begin{array}{c} b+Lm+\frac{2\alpha}{\lambda} ,\quad b+Lm<-\frac{2\alpha}{\lambda}\\\end{array}\\\end{cases} \\
+</script>
+</div>
 <p>代码实现</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="n">iiter</span> <span class="o">=</span> <span class="mi">0</span>
@@ -2048,97 +2174,19 @@ m^{k+1}=\min_m\frac{\mu}{2}||Gm-d||^2_2+\frac{\lambda}{2}||d_x-\nabla_xm-b_x||^2
 <div class="MathJax_Preview">\begin{bmatrix}G
  \\ \sqrt[]{\frac{\lambda}{2}} \nabla_x
  \\ I
-\end{bmatrix}m 
-\begin{bmatrix}I
- \\ I
- \\ \sqrt[]{\frac{\lambda}{2}} \nabla_y
-\end{bmatrix}=
+\end{bmatrix}m =
 \begin{bmatrix}d
  \\\sqrt[]{\frac{\lambda}{2}}(d_x-b_x)
-  \\\sqrt[]{\frac{\lambda}{2}}(d_y-b_y)
+  \\\sqrt[]{\frac{\lambda}{2}}(d_y-b_y)\nabla_y^{-1}
 \end{bmatrix}</div>
 <script type="math/tex; mode=display">\begin{bmatrix}G
  \\ \sqrt[]{\frac{\lambda}{2}} \nabla_x
  \\ I
-\end{bmatrix}m 
-\begin{bmatrix}I
- \\ I
- \\ \sqrt[]{\frac{\lambda}{2}} \nabla_y
-\end{bmatrix}=
+\end{bmatrix}m =
 \begin{bmatrix}d
  \\\sqrt[]{\frac{\lambda}{2}}(d_x-b_x)
-  \\\sqrt[]{\frac{\lambda}{2}}(d_y-b_y)
+  \\\sqrt[]{\frac{\lambda}{2}}(d_y-b_y)\nabla_y^{-1}
 \end{bmatrix}</script>
-</div>
-<p>化为</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\min\left|\left|
-\begin{bmatrix}G
- \\ \sqrt[]{\frac{\lambda}{2}} \nabla_x
- \\ I
-\end{bmatrix}m-
-\begin{bmatrix}d
- \\\sqrt[]{\frac{\lambda}{2}}(d_x-b_x)
-  \\\sqrt[]{\frac{\lambda}{2}}(d_y-b_y)
-\end{bmatrix}
-\begin{bmatrix}I
- \\ I
- \\ \sqrt[]{\frac{\lambda}{2}} \nabla_y
-\end{bmatrix}^{-1}
-\right|\right|_2
-</div>
-<script type="math/tex; mode=display">
-\min\left|\left|
-\begin{bmatrix}G
- \\ \sqrt[]{\frac{\lambda}{2}} \nabla_x
- \\ I
-\end{bmatrix}m-
-\begin{bmatrix}d
- \\\sqrt[]{\frac{\lambda}{2}}(d_x-b_x)
-  \\\sqrt[]{\frac{\lambda}{2}}(d_y-b_y)
-\end{bmatrix}
-\begin{bmatrix}I
- \\ I
- \\ \sqrt[]{\frac{\lambda}{2}} \nabla_y
-\end{bmatrix}^{-1}
-\right|\right|_2
-</script>
-</div>
-<p>化简为</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\min\left|\left|
-\begin{bmatrix}G
- \\ \sqrt[]{\frac{\lambda}{2}} \nabla_x
- \\ I
-\end{bmatrix}m-
-\begin{bmatrix}d
- \\\sqrt[]{\frac{\lambda}{2}}(d_x-b_x)
-  \\\sqrt[]{\frac{\lambda}{2}}(d_y-b_y)
-\end{bmatrix}
-\begin{bmatrix}I
- \\ I
- \\ \sqrt[]{\frac{\lambda}{2}} \nabla_y
-\end{bmatrix}^{-1}
-\right|\right|_2
-</div>
-<script type="math/tex; mode=display">
-\min\left|\left|
-\begin{bmatrix}G
- \\ \sqrt[]{\frac{\lambda}{2}} \nabla_x
- \\ I
-\end{bmatrix}m-
-\begin{bmatrix}d
- \\\sqrt[]{\frac{\lambda}{2}}(d_x-b_x)
-  \\\sqrt[]{\frac{\lambda}{2}}(d_y-b_y)
-\end{bmatrix}
-\begin{bmatrix}I
- \\ I
- \\ \sqrt[]{\frac{\lambda}{2}} \nabla_y
-\end{bmatrix}^{-1}
-\right|\right|_2
-</script>
 </div>
 <p>子问题二</p>
 <div class="arithmatex">
@@ -2186,7 +2234,7 @@ s^k=\sqrt{|\nabla_xm^k+b^k_x|^2+|\nabla_ym^k+b^k_y|^2}
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../PaperNotes/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 论文笔记" rel="prev">
+        <a href="../Paper/unet/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Unet迁移学习" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -2195,7 +2243,7 @@ s^k=\sqrt{|\nabla_xm^k+b^k_x|^2+|\nabla_ym^k+b^k_y|^2}
               <span class="md-footer__direction">
                 上一页
               </span>
-              论文笔记
+              Unet迁移学习
             </div>
           </div>
         </a>

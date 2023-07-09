@@ -1040,10 +1040,85 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5">
+          论文笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="论文笔记" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          论文笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="../PaperNotes/" class="md-nav__link">
-        论文笔记
+        碎片
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Paper/DTV/" class="md-nav__link">
+        DTV
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Paper/Gan/" class="md-nav__link">
+        生成对抗网络
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Paper/unet/" class="md-nav__link">
+        Unet迁移学习
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1659,8 +1734,8 @@ T_{ps}
 \end{matrix}\right]^{-1}\times\left[\begin{matrix}
 \cos(\theta)\\
 \sin(\theta)\\
-\cos(2\delta_r)\\
-\sin(2\theta)
+\cos(2\theta)\\
+\sin(2\delta_r)
 \end{matrix}\right]\notag\end{align}
 </div>
 <script type="math/tex; mode=display">
@@ -1679,8 +1754,8 @@ T_{ps}
 \end{matrix}\right]^{-1}\times\left[\begin{matrix}
 \cos(\theta)\\
 \sin(\theta)\\
-\cos(2\delta_r)\\
-\sin(2\theta)
+\cos(2\theta)\\
+\sin(2\delta_r)
 \end{matrix}\right]\notag\end{align}
 </script>
 </div>
@@ -1890,6 +1965,23 @@ T_{ps}
 
     <span class="k">return</span> <span class="n">Rpp</span>
 </code></pre></div>
+<p>偏导数求解为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\frac{\partial R}{\partial\alpha_i} = \frac{8\sin^2(\theta) (\rho_{i+1} - \rho_{i}) (\beta_{i} + \beta_{i+1})^2}{((\rho_{i} + \rho_{i+1})(\alpha_{i} + \alpha_{i+1})^3)}+\frac{16\sin^2(\theta)(\beta_{i+1}^2 - \beta_{i}^2)}{(\alpha_{i}+ \alpha_{i+1})^3} -\frac{2\alpha_{i+1}} {(\alpha_{i}+ \alpha_{i+1})^2\cos^2(\theta)}
+</div>
+<script type="math/tex; mode=display">
+\frac{\partial R}{\partial\alpha_i} = \frac{8\sin^2(\theta) (\rho_{i+1} - \rho_{i}) (\beta_{i} + \beta_{i+1})^2}{((\rho_{i} + \rho_{i+1})(\alpha_{i} + \alpha_{i+1})^3)}+\frac{16\sin^2(\theta)(\beta_{i+1}^2 - \beta_{i}^2)}{(\alpha_{i}+ \alpha_{i+1})^3} -\frac{2\alpha_{i+1}} {(\alpha_{i}+ \alpha_{i+1})^2\cos^2(\theta)}
+</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\frac{\partial R}{\partial\beta_i}=\frac{-8\sin^2(\theta)(\rho_{i+1}-\rho_i)(\beta_i+\beta_{i+1})}{(\rho_i+\rho_{i+1})(\alpha_i+\alpha_{i+1})^2}+\frac{16\sin^2(\theta)\beta_i}{(\alpha_i+\alpha_{i+1})^2}
+</div>
+<script type="math/tex; mode=display">
+\frac{\partial R}{\partial\beta_i}=\frac{-8\sin^2(\theta)(\rho_{i+1}-\rho_i)(\beta_i+\beta_{i+1})}{(\rho_i+\rho_{i+1})(\alpha_i+\alpha_{i+1})^2}+\frac{16\sin^2(\theta)\beta_i}{(\alpha_i+\alpha_{i+1})^2}
+</script>
+</div>
 
 
 

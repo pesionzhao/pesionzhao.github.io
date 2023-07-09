@@ -966,10 +966,85 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5">
+          论文笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="论文笔记" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          论文笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="../PaperNotes/" class="md-nav__link">
-        论文笔记
+        碎片
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Paper/DTV/" class="md-nav__link">
+        DTV
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Paper/Gan/" class="md-nav__link">
+        生成对抗网络
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Paper/unet/" class="md-nav__link">
+        Unet迁移学习
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1221,8 +1296,39 @@
 {\displaystyle \mathbf {J} ={\begin{bmatrix}{\dfrac {\partial \mathbf {f} }{\partial x_{1}}}&\cdots &{\dfrac {\partial \mathbf {f} }{\partial x_{n}}}\end{bmatrix}}={\begin{bmatrix}{\dfrac {\partial f_{1}}{\partial x_{1}}}&\cdots &{\dfrac {\partial f_{1}}{\partial x_{n}}}\\\vdots &\ddots &\vdots \\{\dfrac {\partial f_{m}}{\partial x_{1}}}&\cdots &{\dfrac {\partial f_{m}}{\partial x_{n}}}\end{bmatrix}}} \\
 </script>
 </div>
+<p>矩阵求导是线性代数和微积分的交叉领域，它在机器学习、深度学习、优化等领域中都有广泛的应用。下面是矩阵求导的一些性质和技巧：</p>
+<ul>
+<li>
+<p>线性性：矩阵求导具有线性性。即对于矩阵 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span>，以及常数 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span>，有 <span class="arithmatex"><span class="MathJax_Preview">\frac{\partial (\alpha A + B)}{\partial x} = \alpha\frac{\partial A}{\partial x} + \frac{\partial B}{\partial x}</span><script type="math/tex">\frac{\partial (\alpha A + B)}{\partial x} = \alpha\frac{\partial A}{\partial x} + \frac{\partial B}{\partial x}</script></span>。</p>
+</li>
+<li>
+<p>乘法规则：矩阵求导的乘法规则与标量求导的乘法规则相似，即对于矩阵 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span>，有 <span class="arithmatex"><span class="MathJax_Preview">\frac{\partial AB}{\partial x} = \frac{\partial A}{\partial x}B + A\frac{\partial B}{\partial x}</span><script type="math/tex">\frac{\partial AB}{\partial x} = \frac{\partial A}{\partial x}B + A\frac{\partial B}{\partial x}</script></span>。</p>
+</li>
+<li>
+<p>转置规则：对于矩阵 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>，有 <span class="arithmatex"><span class="MathJax_Preview">\frac{\partial A^T}{\partial x} = (\frac{\partial A}{\partial x})^T</span><script type="math/tex">\frac{\partial A^T}{\partial x} = (\frac{\partial A}{\partial x})^T</script></span>。</p>
+</li>
+<li>
+<p>迹运算规则：对于矩阵 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>，有 <span class="arithmatex"><span class="MathJax_Preview">\frac{\partial \text{tr}(A)}{\partial x} = \text{tr}(\frac{\partial A}{\partial x})</span><script type="math/tex">\frac{\partial \text{tr}(A)}{\partial x} = \text{tr}(\frac{\partial A}{\partial x})</script></span>。</p>
+</li>
+<li>
+<p>逆运算规则：对于矩阵 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span>，有 <span class="arithmatex"><span class="MathJax_Preview">\frac{\partial A^{-1}}{\partial x} = -A^{-1}\frac{\partial A}{\partial x}A^{-1}</span><script type="math/tex">\frac{\partial A^{-1}}{\partial x} = -A^{-1}\frac{\partial A}{\partial x}A^{-1}</script></span>，以及 <span class="arithmatex"><span class="MathJax_Preview">\frac{\partial (A^{-1}B)}{\partial x} = -A^{-1}\frac{\partial A}{\partial x}A^{-1}B + A^{-1}\frac{\partial B}{\partial x}</span><script type="math/tex">\frac{\partial (A^{-1}B)}{\partial x} = -A^{-1}\frac{\partial A}{\partial x}A^{-1}B + A^{-1}\frac{\partial B}{\partial x}</script></span>。</p>
+</li>
+<li>
+<p>对数运算规则：对于矩阵 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>，有 <span class="arithmatex"><span class="MathJax_Preview">\frac{\partial \log(\det(A))}{\partial x} = \text{tr}(A^{-1}\frac{\partial A}{\partial x})</span><script type="math/tex">\frac{\partial \log(\det(A))}{\partial x} = \text{tr}(A^{-1}\frac{\partial A}{\partial x})</script></span>。</p>
+</li>
+<li>
+<p>Hadamard积规则：对于矩阵 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span>，有 <span class="arithmatex"><span class="MathJax_Preview">\frac{\partial (A\odot B)}{\partial x} = \frac{\partial A}{\partial x}\odot B + A\odot \frac{\partial B}{\partial x}</span><script type="math/tex">\frac{\partial (A\odot B)}{\partial x} = \frac{\partial A}{\partial x}\odot B + A\odot \frac{\partial B}{\partial x}</script></span>，其中 <span class="arithmatex"><span class="MathJax_Preview">\odot</span><script type="math/tex">\odot</script></span> 表示Hadamard积。</p>
+</li>
+</ul>
+<p>对于形如 <span class="arithmatex"><span class="MathJax_Preview">xA=b</span><script type="math/tex">xA=b</script></span> 的线性方程组，我们可以使用矩阵分解或者迭代算法来求解。下面介绍两种常用的方法。</p>
+<p><strong>QR 分解法</strong></p>
+<p>QR 分解法是一种求解线性方程组的常用方法，它可以将系数矩阵 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 分解为正交矩阵 <span class="arithmatex"><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span> 和上三角矩阵 <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> 的乘积，即 <span class="arithmatex"><span class="MathJax_Preview">A=QR</span><script type="math/tex">A=QR</script></span>。然后将方程组 <span class="arithmatex"><span class="MathJax_Preview">Ax=b</span><script type="math/tex">Ax=b</script></span> 变形为 <span class="arithmatex"><span class="MathJax_Preview">QRx=b</span><script type="math/tex">QRx=b</script></span>，令 <span class="arithmatex"><span class="MathJax_Preview">y=Q^Tb</span><script type="math/tex">y=Q^Tb</script></span>，则原方程组变为 <span class="arithmatex"><span class="MathJax_Preview">Rx=y</span><script type="math/tex">Rx=y</script></span>，可以通过回代法求解。具体来说，可以先求解 <span class="arithmatex"><span class="MathJax_Preview">y=Q^Tb</span><script type="math/tex">y=Q^Tb</script></span>，然后从最后一行开始，依次求解 <span class="arithmatex"><span class="MathJax_Preview">x_i=\frac{1}{r_{ii}}(y_i-\sum_{j=i+1}^n r_{ij}x_j)</span><script type="math/tex">x_i=\frac{1}{r_{ii}}(y_i-\sum_{j=i+1}^n r_{ij}x_j)</script></span>，直到求解出 <span class="arithmatex"><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span>。</p>
+<p><strong>共轭梯度法</strong></p>
+<p>共轭梯度法是一种迭代算法，用于解决对称正定线性方程组 <span class="arithmatex"><span class="MathJax_Preview">Ax=b</span><script type="math/tex">Ax=b</script></span>，其中 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 是对称正定矩阵。对于形如 <span class="arithmatex"><span class="MathJax_Preview">xA=b</span><script type="math/tex">xA=b</script></span> 的方程组，我们可以对其进行变形，得到 <span class="arithmatex"><span class="MathJax_Preview">A=x^Tx</span><script type="math/tex">A=x^Tx</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">b=x^Tb</span><script type="math/tex">b=x^Tb</script></span>，然后再使用共轭梯度法求解。具体来说，可以按照共轭梯度法的步骤进行迭代，只需要在每次迭代时，将搜索方向和残差都乘以 <span class="arithmatex"><span class="MathJax_Preview">x^T</span><script type="math/tex">x^T</script></span> 即可。</p>
+<p>总之，对于形如 <span class="arithmatex"><span class="MathJax_Preview">xA=b</span><script type="math/tex">xA=b</script></span> 的线性方程组，可以使用 QR 分解法或者共轭梯度法进行求解。QR 分解法适用于一般的线性方程组，而共轭梯度法适用于对称正定线性方程组，且具有更快的收敛速度。</p>
 <h3 id="_8">参考网址<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p><a href="https://zhuanlan.zhihu.com/p/538062723">深度学习中的矩阵求导入门</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/600736368">矩阵的四大基本空间</a></p>
 
 
 
@@ -1259,13 +1365,13 @@
       
       
         
-        <a href="../PaperNotes/" class="md-footer__link md-footer__link--next" aria-label="下一页: 论文笔记" rel="next">
+        <a href="../PaperNotes/" class="md-footer__link md-footer__link--next" aria-label="下一页: 碎片" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              论文笔记
+              碎片
             </div>
           </div>
           <div class="md-footer__button md-icon">
