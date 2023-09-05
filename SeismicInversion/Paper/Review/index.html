@@ -13,7 +13,7 @@
     
     
       
-        <title>Unet迁移学习 - ZPSJLU</title>
+        <title>Review - ZPSJLU</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#avo-inversion-based-on-transfer-learning-and-low-frequency-model" class="md-skip">
+        <a href="#entropy-regularized-nonlinear-joint-pp-ps-avo-inversion-using-zoeppritz-equations" class="md-skip">
           跳转至
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Unet迁移学习
+              Review
             
           </span>
         </div>
@@ -922,6 +922,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../unet/" class="md-nav__link">
+        Unet迁移学习
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -932,12 +946,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Unet迁移学习
+          Review
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Unet迁移学习
+        Review
       </a>
       
         
@@ -954,11 +968,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#avo-inversion-based-on-transfer-learning-and-low-frequency-model" class="md-nav__link">
-    AVO Inversion Based on Transfer Learning and Low-Frequency Model
+  <a href="#entropy-regularized-nonlinear-joint-pp-ps-avo-inversion-using-zoeppritz-equations" class="md-nav__link">
+    Entropy Regularized Nonlinear Joint PP-PS AVO Inversion Using Zoeppritz Equations
   </a>
   
-    <nav class="md-nav" aria-label="AVO Inversion Based on Transfer Learning and Low-Frequency Model">
+    <nav class="md-nav" aria-label="Entropy Regularized Nonlinear Joint PP-PS AVO Inversion Using Zoeppritz Equations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -969,16 +983,43 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    INTRODUCTION
+  <a href="#_2" class="md-nav__link">
+    引言
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    流程
+  <a href="#_3" class="md-nav__link">
+    理论
   </a>
+  
+    <nav class="md-nav" aria-label="理论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    熵正则化模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    量子退火算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    实验
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -991,20 +1032,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Review/" class="md-nav__link">
-        Review
-      </a>
     </li>
   
 
@@ -1062,11 +1089,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#avo-inversion-based-on-transfer-learning-and-low-frequency-model" class="md-nav__link">
-    AVO Inversion Based on Transfer Learning and Low-Frequency Model
+  <a href="#entropy-regularized-nonlinear-joint-pp-ps-avo-inversion-using-zoeppritz-equations" class="md-nav__link">
+    Entropy Regularized Nonlinear Joint PP-PS AVO Inversion Using Zoeppritz Equations
   </a>
   
-    <nav class="md-nav" aria-label="AVO Inversion Based on Transfer Learning and Low-Frequency Model">
+    <nav class="md-nav" aria-label="Entropy Regularized Nonlinear Joint PP-PS AVO Inversion Using Zoeppritz Equations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1077,16 +1104,43 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    INTRODUCTION
+  <a href="#_2" class="md-nav__link">
+    引言
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    流程
+  <a href="#_3" class="md-nav__link">
+    理论
   </a>
+  
+    <nav class="md-nav" aria-label="理论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    熵正则化模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    量子退火算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    实验
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1110,33 +1164,99 @@
                   
 
 
-  <h1>Unet迁移学习</h1>
+  <h1>Review</h1>
 
-<h2 id="avo-inversion-based-on-transfer-learning-and-low-frequency-model">AVO Inversion Based on Transfer Learning and Low-Frequency Model<a class="headerlink" href="#avo-inversion-based-on-transfer-learning-and-low-frequency-model" title="Permanent link">&para;</a></h2>
-<p>基于迁移学习和低频模型的AVO反演</p>
-<p><a href="https://ieeexplore.ieee.org/document/9634049">https://ieeexplore.ieee.org/document/9634049</a></p>
+<h2 id="entropy-regularized-nonlinear-joint-pp-ps-avo-inversion-using-zoeppritz-equations">Entropy Regularized Nonlinear Joint PP-PS AVO Inversion Using Zoeppritz Equations<a class="headerlink" href="#entropy-regularized-nonlinear-joint-pp-ps-avo-inversion-using-zoeppritz-equations" title="Permanent link">&para;</a></h2>
+<p>基于Zoeppritz方程的熵正则化非线性联合Pp - PS Avo反演</p>
 <h3 id="_1">摘要<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>当深度学习直接用于地震反演时，主要存在三个问题。首先，标签数据不足。第二，针对一个工作区域训练的网络不适用于其他工作区域。第三，反演结果存在空间不连续和不稳定问题。本文提出了结合迁移学习和低频分量约束的AVO反演方法。</p>
-<h3 id="introduction">INTRODUCTION<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
-<p>根据反演算法的不同，可以分为迭代正演模拟方法、非线性反演方法和线性反演方法。传统的AVO反演是典型的病态问题，通常需要进行各种假设，反演得到的密度结果并不可靠。随着深度学习的崛起，越来越多深度学习方法被用在了地震反演上，例如CNN对时空波形进行分类，进行阻抗反演，由于网络深度增加引起的梯度爆炸，引用了Resnet对地震随机噪声的衰减，叠前反演等，这些网络均设计为单输入(仅有地震数据作为输入)，由于地震数据为带限数据，缺少低频成分，导致反演结果具有横向不稳定性和不连续性。</p>
-<p>由于岩性的差异，一个工区训练的反演网络模型不能直接应用于其他地区的地震参数反演。所以这里使用迁移学习很有必要。</p>
-<p>故本文采用迁移学习和低频约束相结合的方法，我们提出了多输入网络结构，它不仅可以学习角度地震记录和弹性参数之间的关系，还可以约束进行AVO反演，先让网络在随机合成数据中进行学习，再进行迁移学习小样本数据</p>
-<p>创新点
-- 迁移学习
-- 网络双输入（地震数据和低频信息）</p>
-<h3 id="_2">流程<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>将真实数据（弹性参数）当作目标域数据，随机生成一些数据（弹性参数）当作源域数据，首先使用源域数据进行网络训练得到预训练权重，之后进行目标域数据迁移学习</p>
-<p><strong>正演合成数据</strong></p>
-<p>使用合成数据可以减轻小样本问题的过拟合问题，由于Zoeppritz近似不能反映全反射现象，这里合成数据反射系数由精确Zoeppritz方程得到，之后通过和子波褶积得到合成地震数据</p>
-<p><strong>反演网络结构</strong></p>
-<p><img alt="" src="https://s2.loli.net/2023/04/25/7FEGveLYKhJBpbd.png" /></p>
-<p>第一步，用随机数据对网络进行预训练，得到广义网络模型。第二步，将广义网络模型转移到目标区域，利用目标数据对网络模型进行优化，得到符合目标区域反演要求的网络模型。</p>
-<p><strong>实验</strong></p>
-<p>为了模拟真实情况下的井数较少的问题，目标域数据为Overthrust模型中4道井曲线，正演使用40hz的雷克子波，入射角为0~30间隔5°。</p>
-<p>第一步，我们用大量合成的随机数据预训练网络。第二步，将预训练的网络的权重迁移到具有相同架构的目标网络中针对目标域数据进行微调。</p>
-<p>本文还对冻结不同层对反演结果的影响做了对比，且进行了PCC对比，证明预测效果都很好</p>
-<p>对不同主频的地震数据的反演结果进行对比，同样预测效果都很好</p>
-<p>对Mamousi2数据进行实验，添加5db的高斯噪声，本文的方法依旧表现着良好的性能</p>
+<p>基于多分量地震数据的地震反演可以提高流体识别和岩性解释的精度。但对于剧烈的层间参数变化准确度差。</p>
+<p>信息熵描述了系统的混沌性。将其作为先验约束，驱动反演参数的混沌性接近于先验测井数据的混沌性，可以提高反演结果的分辨率和稳定性。</p>
+<p>为解决信息熵的高度非线性与Zoeppritz方程所带来的复杂，使用了QA算法，不仅可以缓解求解的复杂性，而且可以快速收敛到全局最优解</p>
+<h3 id="_2">引言<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>精确Zoeppritz方程的非线性叠前AVO反演不需要考虑弱反射界面、小角度入射等约束条件，具有更广阔的发展空间</p>
+<h3 id="_3">理论<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h4 id="_4">熵正则化模型<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>将信息熵约束作为先验信息引入到AVO反演中，使反演参数的无序程度接近于实际数据的混沌程度，可以降低反演的不确定性，提高反演结果的精度。</p>
+<p>信息熵定义为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+H=-\sum^n_{i=1}p_i\log p_i
+</div>
+<script type="math/tex; mode=display">
+H=-\sum^n_{i=1}p_i\log p_i
+</script>
+</div>
+<p>PS波对密度和横波速度更为敏感。因此，PP - PS波联合反演有利于更好地估计速度和密度，优化函数建立如下</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+E=\min_m\frac{1}{2}||d_{pp}-G_{pp}(m)||^2_2+\frac{\alpha}{2}||d_{ps}-G_{ps}(m)||^2_2+\beta||H_{inv}-H_{ref}||^2_2
+</div>
+<script type="math/tex; mode=display">
+E=\min_m\frac{1}{2}||d_{pp}-G_{pp}(m)||^2_2+\frac{\alpha}{2}||d_{ps}-G_{ps}(m)||^2_2+\beta||H_{inv}-H_{ref}||^2_2
+</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+H_{inv}=-\sum^n_{i=1}\frac{m_i}{Q}\ln\frac{m_i}{Q}
+</div>
+<script type="math/tex; mode=display">
+H_{inv}=-\sum^n_{i=1}\frac{m_i}{Q}\ln\frac{m_i}{Q}
+</script>
+</div>
+<p>其中<span class="arithmatex"><span class="MathJax_Preview">Q=\sum^n_{i=1}|m_i|</span><script type="math/tex">Q=\sum^n_{i=1}|m_i|</script></span>， <span class="arithmatex"><span class="MathJax_Preview">\alpha=\frac{\sigma_{pp}}{\sigma_{ps}}</span><script type="math/tex">\alpha=\frac{\sigma_{pp}}{\sigma_{ps}}</script></span>，<span class="arithmatex"><span class="MathJax_Preview">H_{inv}</span><script type="math/tex">H_{inv}</script></span>表示待反演弹性参数的信息熵，<span class="arithmatex"><span class="MathJax_Preview">H_{ref}</span><script type="math/tex">H_{ref}</script></span>表示参考信息熵，参考信息熵一般可以从测井资料中获得。</p>
+<h4 id="_5">量子退火算法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>量子退火( QA )是模拟退火( SA )的扩展和改进。</p>
+<p><strong>模拟退火</strong></p>
+<p>参考：<a href="https://zhuanlan.zhihu.com/p/382426984">模拟退火算法超详细教程</a>，<a href="https://blog.csdn.net/google19890102/article/details/45395257">优化算法——模拟退火算法</a></p>
+<p>算法思想来源于固体退火原理，是一种基于概率的算法。先从一个较高的初始温度出发，逐渐降低温度，直到温度降低到满足热平衡条件为止。在每个温度下，进行n轮搜索，每轮搜索时对旧解添加随机扰动生成新解，并按一定规则接受新解。</p>
+<p>在任一温度时，对初始解添加随机扰动产生新解，若新解的目标函数值优于旧解，则接受新解；若新解差于旧解，则按一定概率接受旧解，从而有一定概率跳出局部最优解，找到全局最优解。</p>
+<p>模拟退火算法描述：</p>
+<p>若J( Y(i+1) )&gt;= J( Y(i) )  (即移动后得到更优解)，则总是接受该移动</p>
+<p>若J( Y(i+1) )&lt; J( Y(i) )  (即移动后的解比当前解要差)，则以一定的概率接受移动，而且这个概率随着时间推移逐渐降低（逐渐降低才能趋向稳定）</p>
+<p><img alt="" src="https://img-blog.csdnimg.cn/img_convert/86d56bab56997295ea4125fb58e7f792.png" /></p>
+<p>模拟退火算法的优点在于：不管函数形式多复杂，模拟退火算法更有可能找到全局最优解。</p>
+<p><strong>量子退火</strong></p>
+<p><a href="https://zhuanlan.zhihu.com/p/500623111">量子退火算法</a></p>
+<p>在经典的热退火情况下，系统要达到全局最小值，必须克服<span class="arithmatex"><span class="MathJax_Preview">O(N)</span><script type="math/tex">O(N)</script></span>的较大势垒<span class="arithmatex"><span class="MathJax_Preview">\Delta E</span><script type="math/tex">\Delta E</script></span>为系统的大小（温度为<span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span>时，逃逸概率为<span class="arithmatex"><span class="MathJax_Preview">exp(-\Delta E /T)</span><script type="math/tex">exp(-\Delta E /T)</script></span>），而在量子退火的情况下，系统可以隧穿势垒。如果势垒较窄，隧穿概率为<span class="arithmatex"><span class="MathJax_Preview">exp(- \omega \sqrt{\Delta E}/ \Gamma)</span><script type="math/tex">exp(- \omega \sqrt{\Delta E}/ \Gamma)</script></span>，其中<span class="arithmatex"><span class="MathJax_Preview">\Gamma</span><script type="math/tex">\Gamma</script></span>为隧穿波动场，<span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span>为势垒宽度。</p>
+<p><img alt="" src="https://pic3.zhimg.com/v2-194623311fd756778459ad3da2204c8a_r.jpg" /></p>
+<p>曼哈顿函数为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">H(t) = H_{pot} (t) + H_{kin}(t)</div>
+<script type="math/tex; mode=display">H(t) = H_{pot} (t) + H_{kin}(t)</script>
+</div>
+<p>其表示量子退火算法中的评价函数（Cost Function），<span class="arithmatex"><span class="MathJax_Preview">H_{pot}(t)</span><script type="math/tex">H_{pot}(t)</script></span>表示势能，对应模拟退火算法的评价函数，<span class="arithmatex"><span class="MathJax_Preview">H_{kin}(t)</span><script type="math/tex">H_{kin}(t)</script></span>表示动能，在动能中加入量子波动（初始值较大，然后按照一定的进度表慢慢减小到零）。通常</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">H_{kin}(t)=-\Gamma(t)\sum^n_{i=1}\sigma^x_i</div>
+<script type="math/tex; mode=display">H_{kin}(t)=-\Gamma(t)\sum^n_{i=1}\sigma^x_i</script>
+</div>
+<p>在地震反演中可用常数C代替<span class="arithmatex"><span class="MathJax_Preview">sigma^x_i</span><script type="math/tex">sigma^x_i</script></span>，曼哈顿函数表示为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">H(t) = \Delta E +C\Gamma(t)</div>
+<script type="math/tex; mode=display">H(t) = \Delta E +C\Gamma(t)</script>
+</div>
+<p>根据Metropolis - Hastings准则，接受概率可以写为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">p=\left\{\begin{aligned}
+1  \quad \Delta E\le0&amp;\\
+exp(- {\Delta E+C\Gamma(t)}/ \Gamma(t)) \quad \Delta E\gt 0&amp;
+\end{aligned}\right.</div>
+<script type="math/tex; mode=display">p=\left\{\begin{aligned}
+1  \quad \Delta E\le0&\\
+exp(- {\Delta E+C\Gamma(t)}/ \Gamma(t)) \quad \Delta E\gt 0&
+\end{aligned}\right.</script>
+</div>
+<p>衰减函数为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\Gamma(t)=\Gamma_0*exp(-1*\alpha*(iter-1)^\frac{1}{2})</div>
+<script type="math/tex; mode=display">\Gamma(t)=\Gamma_0*exp(-1*\alpha*(iter-1)^\frac{1}{2})</script>
+</div>
+<p>其中<span class="arithmatex"><span class="MathJax_Preview">\Gamma_0</span><script type="math/tex">\Gamma_0</script></span>为初始值，<span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span>为衰减因子</p>
+<h4 id="_6">实验<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>在不同信噪比下对比了Tikhonov, PP波熵正则化，PP-PS联合熵正则化模拟退火算法，PP-PS联合熵正则化量子退火算法所得反演结果与相对误差，结果证明本文方法具有更高的准确度与抗噪性。</p>
+<p>通过计算不同算法和不同信噪比下的反演结果与测井曲线之间的Pearson相关系数定量评估每种算法的反演性能</p>
+<p>可观察到本文的方法具有较高的相关系数与较低的均方误差。</p>
+<p>证明了QA比SA有较高的收敛速度</p>
+<p>证明了引入信息熵约束得到更高的稳定性（通过计算相对误差的方差得到），同时发现信噪比对稳定性几乎没有影响</p>
 
 
 
@@ -1157,7 +1277,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../Gan/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 生成对抗网络" rel="prev">
+        <a href="../unet/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Unet迁移学习" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1166,20 +1286,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              生成对抗网络
+              Unet迁移学习
             </div>
           </div>
         </a>
       
       
         
-        <a href="../Review/" class="md-footer__link md-footer__link--next" aria-label="下一页: Review" rel="next">
+        <a href="../../Optimization/" class="md-footer__link md-footer__link--next" aria-label="下一页: 优化方法笔记" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              Review
+              优化方法笔记
             </div>
           </div>
           <div class="md-footer__button md-icon">
