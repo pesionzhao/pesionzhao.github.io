@@ -20,7 +20,7 @@
     
     
       
-        <title>反演概念 - ZPSJLU</title>
+        <title>反演概念 - ZPSXJTU</title>
       
     
     
@@ -85,7 +85,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../.." title="ZPSJLU" class="md-header__button md-logo" aria-label="ZPSJLU" data-md-component="logo">
+    <a href="../.." title="ZPSXJTU" class="md-header__button md-logo" aria-label="ZPSXJTU" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
@@ -99,7 +99,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            ZPSJLU
+            ZPSXJTU
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -281,13 +281,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="ZPSJLU" class="md-nav__button md-logo" aria-label="ZPSJLU" data-md-component="logo">
+    <a href="../.." title="ZPSXJTU" class="md-nav__button md-logo" aria-label="ZPSXJTU" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
 
     </a>
-    ZPSJLU
+    ZPSXJTU
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1289,20 +1289,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    声阻抗反演
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_16" class="md-nav__link">
     相关性质
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
+  <a href="#_17" class="md-nav__link">
     反演问题
   </a>
   
@@ -1774,20 +1781,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    声阻抗反演
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_16" class="md-nav__link">
     相关性质
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
+  <a href="#_17" class="md-nav__link">
     反演问题
   </a>
   
@@ -1936,7 +1950,19 @@ p波阻抗(IP)和<span class="arithmatex"><span class="MathJax_Preview">\lambda\
 </ul>
 <h3 id="zoepptriz-equation"><strong>Zoepptriz equation</strong><a class="headerlink" href="#zoepptriz-equation" title="Permanent link">&para;</a></h3>
 <p>描述平面波入射射线和离散振幅之间关系，但由于地下大量未知与地球的复杂性，应用在地震数据中有很大困难，所以提出了很多近似方法</p>
-<h2 id="_15">相关性质<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<h3 id="_15">声阻抗反演<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>第一个公式基于连续的地球模型，其中弹性参数随深度连续变化, 模型的离散化得到反射率函数的第j分量为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+r[j] = \frac{1}{2}\log\frac{z[j+1]}{z[j]}
+</div>
+<script type="math/tex; mode=display">
+r[j] = \frac{1}{2}\log\frac{z[j+1]}{z[j]}
+</script>
+</div>
+<p>第二个公式是由一个分层大地模型导出的，其中第j层的反射系数表示为</p>
+<p>其中 <span class="arithmatex"><span class="MathJax_Preview">z[j] = \rho[j] v_p[j]</span><script type="math/tex">z[j] = \rho[j] v_p[j]</script></span></p>
+<h2 id="_16">相关性质<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p><strong>更冷、密度更大、更硬</strong>的岩石，<strong>波速更快,阻抗越高</strong>，因此它们勾勒出了向下的构造板块。</p>
@@ -1945,7 +1971,7 @@ p波阻抗(IP)和<span class="arithmatex"><span class="MathJax_Preview">\lambda\
 <p><strong>孔隙度(porosity)增加</strong>会引起<strong>层速度和密度下降</strong>，因此导致相应的<strong>声阻抗下降</strong>。</p>
 </li>
 </ul>
-<h2 id="_16">反演问题<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<h2 id="_17">反演问题<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
 <p><span class="arithmatex"><span class="MathJax_Preview">{d = Lm}</span><script type="math/tex">{d = Lm}</script></span></p>
 <p><strong>m</strong>: model, <strong>d</strong>: recorded data, <strong>L</strong>: forward-modeling operator</p>
 <p>性质：
