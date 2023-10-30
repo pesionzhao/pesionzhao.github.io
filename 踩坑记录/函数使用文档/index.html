@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD/">
+        <link rel="prev" href="../WSL%E4%B8%8B%E9%85%8D%E7%BD%AEdocker%E7%8E%AF%E5%A2%83/">
       
       
-        <link rel="next" href="../%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/">
+        <link rel="next" href="../../SeismicInversion/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>WSL下GPU配置与docker安装 - ZPSXJTU</title>
+        <title>函数使用文档 - ZPSXJTU</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#wsl" class="md-skip">
+        <a href="#python" class="md-skip">
           跳转至
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              WSL下GPU配置与docker安装
+              函数使用文档
             
           </span>
         </div>
@@ -999,6 +999,26 @@
                 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../WSL%E4%B8%8B%E9%85%8D%E7%BD%AEdocker%E7%8E%AF%E5%A2%83/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WSL下GPU配置与docker安装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1012,7 +1032,7 @@
           
   
   <span class="md-ellipsis">
-    WSL下GPU配置与docker安装
+    函数使用文档
   </span>
   
 
@@ -1023,7 +1043,7 @@
         
   
   <span class="md-ellipsis">
-    WSL下GPU配置与docker安装
+    函数使用文档
   </span>
   
 
@@ -1043,29 +1063,124 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#wsl" class="md-nav__link">
-    安装WSL
+  <a href="#python" class="md-nav__link">
+    Python
+  </a>
+  
+    <nav class="md-nav" aria-label="Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    输入输出
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    json
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numpy" class="md-nav__link">
+    Numpy
+  </a>
+  
+    <nav class="md-nav" aria-label="Numpy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    维度处理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    统计
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    生成矩阵
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    矩阵乘法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plt" class="md-nav__link">
+    Plt
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker" class="md-nav__link">
-    安装docker
+  <a href="#pandas" class="md-nav__link">
+    Pandas
   </a>
+  
+    <nav class="md-nav" aria-label="Pandas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    总结函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    映射
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group" class="md-nav__link">
+    group操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    数据操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#nvidia" class="md-nav__link">
-    安装nvidia驱动
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nvidia-container-toolkit" class="md-nav__link">
-    安装nvidia-container-toolkit
+  <a href="#torch" class="md-nav__link">
+    Torch
   </a>
   
 </li>
@@ -1074,26 +1189,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    函数使用文档
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1414,29 +1509,124 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#wsl" class="md-nav__link">
-    安装WSL
+  <a href="#python" class="md-nav__link">
+    Python
+  </a>
+  
+    <nav class="md-nav" aria-label="Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    输入输出
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    json
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numpy" class="md-nav__link">
+    Numpy
+  </a>
+  
+    <nav class="md-nav" aria-label="Numpy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    维度处理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    统计
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    生成矩阵
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    矩阵乘法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plt" class="md-nav__link">
+    Plt
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker" class="md-nav__link">
-    安装docker
+  <a href="#pandas" class="md-nav__link">
+    Pandas
   </a>
+  
+    <nav class="md-nav" aria-label="Pandas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    总结函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    映射
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group" class="md-nav__link">
+    group操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    数据操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#nvidia" class="md-nav__link">
-    安装nvidia驱动
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nvidia-container-toolkit" class="md-nav__link">
-    安装nvidia-container-toolkit
+  <a href="#torch" class="md-nav__link">
+    Torch
   </a>
   
 </li>
@@ -1456,95 +1646,196 @@
                   
 
 
-  <h1>WSL下GPU配置与docker安装</h1>
+  <h1>函数使用文档</h1>
 
-<p><a href="https://blog.csdn.net/qq_43636384/article/details/128453416">WSL2安装（详细过程）</a></p>
-<p><a href="https://blog.csdn.net/wojiuguowei/article/details/122100090">史上最全的WSL安装教程</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/475022079">docker | 基于 WSL2 在 Windows 下使用 docker</a></p>
-<p><a href="https://config.net.cn/server/microservice/fa3d6ff7-039e-451f-bb66-4a9b92952d7b-p1.html">win10启用Wsl2，安装Docker desktop集成Ubuntu，配置docker开发环境</a></p>
-<p><a href="https://blog.csdn.net/weixin_43948284/article/details/131559937">深度学习——docker安装nvidia-container-toolkit的步骤与执行过程中的一些报错</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/488731878">win10/11下wsl2安装gpu版的pytorch（避坑指南）</a></p>
-<h3 id="wsl">安装WSL<a class="headerlink" href="#wsl" title="Permanent link">&para;</a></h3>
-<p><strong>可以优先看</strong><a href="https://learn.microsoft.com/zh-cn/windows/wsl/tutorials/wsl-containers"><strong>官方文档!!!</strong></a></p>
-<p>为Linux启用子系统</p>
-<p>控制面板-&gt;程序-&gt;程序与功能-&gt;启用或关闭windows功能-&gt;适用于Linux的windows子系统 <strong>打开</strong></p>
-<p>打开powershell输入</p>
-<div class="highlight"><pre><span></span><code><span class="n">dism</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">online</span> <span class="p">/</span><span class="nb">enable-feature</span> <span class="p">/</span><span class="n">featurename</span><span class="p">:</span><span class="n">Microsoft-Windows-Subsystem-Linux</span> <span class="p">/</span><span class="n">all</span> <span class="p">/</span><span class="n">norestart</span>
-</code></pre></div>
-<p>启用虚拟化:以管理员打开powershell输入下列命令</p>
-<div class="highlight"><pre><span></span><code><span class="n">dism</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">online</span> <span class="p">/</span><span class="nb">enable-feature</span> <span class="p">/</span><span class="n">featurename</span><span class="p">:</span><span class="n">VirtualMachinePlatform</span> <span class="p">/</span><span class="n">all</span> <span class="p">/</span><span class="n">norestart</span>
-</code></pre></div>
-<p>下载X64的<a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">WSL2 Linux内核升级包</a>并安装</p>
-<p><a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi</a></p>
-<p>设置WSL默认版本</p>
-<div class="highlight"><pre><span></span><code><span class="n">wsl</span> <span class="p">-</span><span class="n">-set-default-version</span> <span class="n">2</span>
-</code></pre></div>
-<p>打开Microsoft Store安装ubuntu 20.04.6 LTS</p>
-<p>安装完后打开ubuntu,设置用户名密码即可ok</p>
-<p>cmd中输入</p>
-<div class="highlight"><pre><span></span><code>wsl -l -v
-</code></pre></div>
-<p>即可看到是否安装成功</p>
-<h3 id="docker">安装docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
-<p><a href="https://zhuanlan.zhihu.com/p/475022079">docker | 基于 WSL2 在 Windows 下使用 docker</a></p>
-<p>windows安装docker-desktop,按照提示安装</p>
-<p><a href="https://www.docker.com/products/docker-desktop">https://www.docker.com/products/docker-desktop</a></p>
-<p>cmd</p>
-<div class="highlight"><pre><span></span><code>docker --version
-</code></pre></div>
-<p>设置Ubuntu作为默认发行版</p>
-<p>打开docker-desktop-&gt;设置-&gt;Resource-&gt;WSL intergration-&gt;打开选项ubuntu-20.04</p>
-<p>在子系统中输入</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>hello-world
-</code></pre></div>
-<p>换源参考链接</p>
-<h3 id="nvidia">安装nvidia驱动<a class="headerlink" href="#nvidia" title="Permanent link">&para;</a></h3>
-<p><strong>一定要注意cuda版本!!!! <a href="https://developer.nvidia.com/cuda-11.1.1-download-archive?target_os=Linux&amp;target_arch=x86_64&amp;target_distro=WSLUbuntu&amp;target_version=20&amp;target_type=runfilelocal">我下载的是11.1.1</a></strong></p>
-<p>官网下载runfile: <a href="https://developer.nvidia.com/cuda-downloads">https://developer.nvidia.com/cuda-downloads</a></p>
-<p>往期版本: <a href="https://developer.nvidia.com/cuda-toolkit-archive">https://developer.nvidia.com/cuda-toolkit-archive</a></p>
-<p>选择Linux-&gt;x86_64-&gt;WSL_Ubuntu-&gt;2.0-&gt;runfile</p>
-<p>将出现的两条指令复制到终端运行,全部默认选项</p>
-<p>之后添加环境变量,看好自己的文件夹在哪!!</p>
-<div class="highlight"><pre><span></span><code>vim<span class="w"> </span>~/.bashrc
-</code></pre></div>
-<p>输入i进行编辑,在文件最后加入</p>
-<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/cuda/bin:<span class="nv">$PATH</span>
-<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/usr/local/cuda-11.1/lib64:<span class="nv">$LD_LIBRARY_PAT</span>
-<span class="w"> </span><span class="sb">```</span>
+<h2 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h2>
+<h3 id="_1">输入输出<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 允许在字符串中插入变量或表达式的值。</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">!&#39;</span><span class="p">)</span>
 
-<span class="w"> </span>esc输入:wq进行保存退出
+<span class="c1"># format 方法允许您使用占位符 {} 将变量或表达式的值插入到字符串中，然后使用 format 方法中的参数传递这些值。</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, </span><span class="si">{}</span><span class="s2">!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 
-<span class="w"> </span>刷新环境变量
-
-<span class="w"> </span><span class="sb">```</span>shell
-<span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.bashrc
-<span class="w"> </span><span class="sb">```</span>
-
-<span class="w"> </span>之后在终端输入nvcc<span class="w"> </span>-V即可看到cuda版本
-
-<span class="w"> </span>可以用官方sample测试是否可以正常使用
-
-<span class="w"> </span><span class="sb">```</span>shell
-<span class="nb">cd</span><span class="w"> </span>/usr/local/cuda/samples/4_Finance/BlackScholes
-make<span class="w"> </span>BlackScholes
-./BlackScholes
+<span class="c1"># 百分号格式化是传统的字符串格式化方法，它使用 % 运算符将变量或表达式的值插入到字符串中</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, </span><span class="si">%s</span><span class="s2">!&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="nvidia-container-toolkit">安装nvidia-container-toolkit<a class="headerlink" href="#nvidia-container-toolkit" title="Permanent link">&para;</a></h3>
-<p>首先，1. 确保nvcc -V可以正常输出，2. 确保docker安装成功</p>
-<p>在服务器bash中设置stable存储库和密钥：
-<div class="highlight"><pre><span></span><code><span class="nv">distribution</span><span class="o">=</span><span class="k">$(</span>.<span class="w"> </span>/etc/os-release<span class="p">;</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$ID$VERSION_ID</span><span class="k">)</span>
-curl<span class="w"> </span>-s<span class="w"> </span>-L<span class="w"> </span>https://nvidia.github.io/nvidia-docker/gpgkey<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>apt-key<span class="w"> </span>add<span class="w"> </span>-
-curl<span class="w"> </span>-s<span class="w"> </span>-L<span class="w"> </span>https://nvidia.github.io/nvidia-docker/<span class="nv">$distribution</span>/nvidia-docker.list<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/nvidia-docker.list
-</code></pre></div></p>
-<p>添加NVIDIA Container Toolkit的软件源，并安装nvidia-docker2软件包：</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
-sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>nvidia-container-toolkit
+<h3 id="json">json<a class="headerlink" href="#json" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># json的读写</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;date_map.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">date_map</span><span class="p">,</span> <span class="n">json_file</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;date_map.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+    <span class="n">date_map</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">json_file</span><span class="p">)</span>
 </code></pre></div>
-<p>重启docker</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>docker
+<h2 id="numpy">Numpy<a class="headerlink" href="#numpy" title="Permanent link">&para;</a></h2>
+<h3 id="_2">维度处理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>ndarray = np.expand_dims(x, axis=1) 加dimension length=1的维度 (加在第一位或最后一维也可写作x[np.newaxis, :] or x[np.newaxis])</li>
+<li>ndarray.squeeze()/numpy.squeeze(a, axis=None) 删dimension length=1的维度</li>
+<li>np.transpose(ndarray, axes=(2, 3, 0, 1)) 交换维度</li>
+<li>np.swapaxes(a, axis1, axis2), 交换两个轴的维度</li>
+<li>ndarray.flatten(order='C') order: {‘C’, ‘F’, ‘A’, ‘K’} 展平化, C按行,F按列</li>
+<li>ndarray.ravel(order)/np.ravel(a, order) flatten和ravel用法相同,只不过flatten返回拷贝ravel返回视图,更改ravel()原矩阵也会跟着改变</li>
+<li>ndarray.reshape(shape=(), order='C')/np.reshape(a, newshape=(), order='C')</li>
+</ul>
+<blockquote>
+<p>这里的order可取c或者f，对应C语言索引和Fortran索引，c表示一行一行的展开，f表示一列一列的展开，后重新组合，三维同理，看子矩阵即可</p>
+<blockquote>
+<p>在C语言中的索引顺序是从左到右，从上到下： A[0][0], A[0][1], A[1][0], A[1][1], A[2][0], A[2][1]</p>
+<p>而在Fortran语言中则是 从上到下，从左到右 ： A[1][1], A[2][1], A[3][1], A[1][2], A[2][2], A[3][2]</p>
+</blockquote>
+</blockquote>
+<h3 id="_3">统计<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>np.std(x, axis=None, dtype=None) 计算沿指定轴的标准差，默认</li>
+<li>np.var(x, axis=None, dtype=None) 计算沿指定轴的方差</li>
+<li>np.mean() 均值同上</li>
+</ul>
+<h3 id="_4">生成矩阵<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>np.ones(shape=(), dtype) 生成全一阵</li>
+<li>np.zeros(shape=(), dtype=float) 生成全零阵 </li>
+<li>np.identity(n, dtype) 生成单位阵</li>
+<li>np.tile(a, reps) 通过重复矩阵a来构造一个新矩阵, rep:a在每个轴上重复的次数</li>
+<li>np.repeat(a, repeats, axis=None) 重复矩阵中的每个元素</li>
+<li>np.kron(a,b) 克罗内克积</li>
+<li>np.vstack([]) 垂直vertically顺序堆叠矩阵</li>
+<li>np.hstack([]) 水平horizontally顺序堆叠矩阵</li>
+<li>np.concatenate(seq=[],axis=0) 按照某一轴拼接矩阵</li>
+<li>np.stack([], axis=0, dtype=),在新维度堆叠矩阵</li>
+<li>np.block() 从嵌套的块列表中组装一个矩阵,类似与np.array(list[]),只不过这里的list中的元素为矩阵</li>
+</ul>
+<h3 id="_5">矩阵乘法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>np.dot(a, b) 如果a和b都是一维数组，则它是向量的内积,二维优先使用matmul <img alt="↙️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2199.svg" title=":arrow_lower_left:" /></li>
+<li>np.matmul(x1, x2) 不管原矩阵多大,都是原矩阵的最后两维点乘,再广播到原矩阵前几维的维度, 和@等价</li>
+</ul>
+<p>np.matmul和np.dot的区别</p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="c1">#np.dot(a,c)为分别计算a@b[0] ... a@b[n]</span>
+<span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>
+<span class="o">&gt;&gt;</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1">#np.matmul(a,c)计算最后两维矩阵点乘,再广播到前面的9,5的维度中,也就是对应每个子矩阵点乘,前面的维度必须一样</span>
+<span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>
+<span class="o">&gt;&gt;</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
-<p>安装完成</p>
-<p>docker的具体使用方法,还得学习!!!!</p>
+<h2 id="plt">Plt<a class="headerlink" href="#plt" title="Permanent link">&para;</a></h2>
+<ul>
+<li>fig, ax = plt.subplots(nrows, ncols, sharex, sharey) 共享x轴或共享y轴</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">((</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">),</span> <span class="p">(</span><span class="n">ax3</span><span class="p">,</span> <span class="n">ax4</span><span class="p">))</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Simple plot&#39;</span><span class="p">)</span>
+
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Sharing Y axis&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</code></pre></div>
+- Axes.plot(x, y, fmt), 这里fmt代表绘图样式. 具体参照<a href="https://matplotlib.org/3.5.3/api/_as_gen/matplotlib.axes.Axes.plot.html#matplotlib.axes.Axes.plot">官方文档</a></p>
+<blockquote>
+<p>颜色：可以使用单个字符来指定颜色，比如'r'表示红色，'b'表示蓝色，'g'表示绿色等。也可以使用英文单词来表示颜色，比如'red'表示红色，'blue'表示蓝色。</p>
+<p>标记：标记是在数据点上绘制的符号，例如圆圈、方块、三角形等。可以使用字符来指定标记，例如'o'表示圆圈，'s'表示方块，'^'表示三角形等。</p>
+<p>线条样式：可以使用字符来定义线条的样式，比如'-'表示实线，'--'表示虚线，':'表示点线，'-'表示线段等。</p>
+</blockquote>
+<ul>
+<li>Axes.legend()/ax.legend(['First line', 'Second line']) 图例 </li>
+<li>plt.imshow(X, cmap='viridis', norm=None, aspect=None, vmin=None, vmax=None) cmp选择合适的色标 <a href="https://matplotlib.org/stable/users/explain/colors/colormaps.html">官方文档</a>; aspect:轴的横纵比 'equal'/'auto'; vmin和vmax定义了颜色映射覆盖的数据范围。默认情况下，颜色映射覆盖所提供数据的完整值范围。当给出norm时，使用vmin/vmax是错误的</li>
+<li></li>
+</ul>
+<h2 id="pandas">Pandas<a class="headerlink" href="#pandas" title="Permanent link">&para;</a></h2>
+<p>强烈建议参考kaggle的教程,网址:<a href="https://www.kaggle.com/learn/pandas">https://www.kaggle.com/learn/pandas</a></p>
+<ul>
+<li>pd.read_csv('data.csv', index_col=0), index_col表示指定data.csv中第0列作为DataFrame的列索引</li>
+<li>Data.head(3) 查看一个 DataFrame 的前 n 行，默认参数值为 5</li>
+<li>Data.tail() 查看一个 DataFrame 的末尾 n 行，默认参数值为 - Data.sample(2) 随机抽取一个 DataFrame 的 n 行</li>
+<li>data = Data[Data.date_id==20230123] 取DataFrame列标签date_id==20230123的数据</li>
+<li>pd.DataFrame(data), 由data生成一个DataFrame</li>
+<li>Data.to_csv('data.csv', index=False)</li>
+<li>data.loc[行名,列名] 可以指定多个列[name1, name2]</li>
+<li>data.iloc[行下标,列下标]</li>
+</ul>
+<blockquote>
+<p>data.loc和iloc在索引时,如果使用切片,例如[0:9],iloc和python的切片操作一样不包含最后一个元素,但loc包含最后一个元素,因为loc可以进行字符串索引,比如Data.loc['Apple':'Banana']!!</p>
+</blockquote>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># 还可以进行这样的访问:</span>
+<span class="n">Data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">Data</span><span class="o">.</span><span class="n">country</span> <span class="o">==</span> <span class="s1">&#39;Italy&#39;</span><span class="p">]</span> 
+<span class="n">Data</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">Data</span><span class="o">.</span><span class="n">country</span> <span class="o">==</span> <span class="s1">&#39;Italy&#39;</span><span class="p">)</span><span class="o">&amp;</span> <span class="p">(</span><span class="n">Data</span><span class="o">.</span><span class="n">points</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">)]</span>
+
+<span class="c1"># 配合条件选择器</span>
+<span class="c1"># isin 代表 &quot;is in&quot;, 可以理解为&amp;</span>
+<span class="n">reviews</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">reviews</span><span class="o">.</span><span class="n">country</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;Italy&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span><span class="p">])]</span>
+
+<span class="c1"># isnull and notnull 表示是否为空(Nan)</span>
+<span class="n">reviews</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">reviews</span><span class="o">.</span><span class="n">price</span><span class="o">.</span><span class="n">notnull</span><span class="p">()]</span>
+</code></pre></div>
+- data.set_index("title") 使用现有列(这里为title列)作为索引
+- Data['critic'] = 'everyone' 增添列
+- Data['index_backwards'] = range(len(reviews), 0, -1)</p>
+<h4 id="_6">总结函数<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li>reviews.attribute.describe() 均值,最大值等等...</li>
+<li>reviews.taster_name.unique() 返回taster_name唯一序列</li>
+<li>reviews.taster_name.value_counts() 返回每个taster_name对应的个数</li>
+</ul>
+<h4 id="_7">映射<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li>reviews.points.map(lambda p: p - review_points_mean) 返回减去均值的新的Series, 也可以简易写作reviews.points-review_points_mean</li>
+<li>reviews.apply(remean_points, axis='columns') remean_points为自定义方法 如果axis='index'时,需要定义操作行数据的函数</li>
+</ul>
+<h4 id="group">group操作<a class="headerlink" href="#group" title="Permanent link">&para;</a></h4>
+<p>group相当于把一样的标签打包成一个group</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 将points一样的行打包成一个group</span>
+<span class="n">reviews</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;points&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="c1">#等价于 reviews.points.value_counts()</span>
+<span class="c1"># # 将country,province一样的行打包成一个group</span>
+<span class="n">reviews</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;province&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">df</span><span class="p">:</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()])</span> <span class="c1"># idxmax()代表最大的索引</span>
+
+<span class="n">reviews</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;country&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">price</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="nb">len</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">])</span> <span class="c1"># agg可以同时运行不同的函数</span>
+
+<span class="c1"># 对于多标签所得到的group会得到多索引,可以rest_index改回但索引,返回的会多一个长度列,代表这个单索引对应原多索引向量的长度</span>
+<span class="n">countries_reviewed</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># 按照长度进行排序 默认升序</span>
+<span class="n">countries_reviewed</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;len&#39;</span><span class="p">)</span>
+<span class="c1"># 降序</span>
+<span class="n">countries_reviewed</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;len&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># 按照索引排序</span>
+<span class="n">countries_reviewed</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+<span class="c1"># 多个排序列</span>
+<span class="n">countries_reviewed</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;len&#39;</span><span class="p">])</span>
+</code></pre></div>
+<h4 id="_8">数据操作<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># 更改数据类型</span>
+<span class="n">reviews</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+<span class="c1"># 替换缺失值,将每个NaN替换为“unknown”。</span>
+<span class="n">reviews</span><span class="o">.</span><span class="n">region_2</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;Unknown&quot;</span><span class="p">)</span>
+<span class="c1"># 替换</span>
+<span class="n">reviews</span><span class="o">.</span><span class="n">taster_twitter_handle</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;@kerinokeefe&quot;</span><span class="p">,</span> <span class="s2">&quot;@kerino&quot;</span><span class="p">)</span>
+
+<span class="c1"># 更改列名</span>
+<span class="n">reviews</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;points&#39;</span><span class="p">:</span> <span class="s1">&#39;score&#39;</span><span class="p">})</span>
+<span class="c1"># 更改行名 不常用,常用的为 set_index()用现有列更改索引</span>
+<span class="n">reviews</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;firstEntry&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;secondEntry&#39;</span><span class="p">})</span>
+<span class="c1"># 行列都有name属性,可以更改这个name属性</span>
+<span class="n">reviews</span><span class="o">.</span><span class="n">rename_axis</span><span class="p">(</span><span class="s2">&quot;wines&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;rows&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">rename_axis</span><span class="p">(</span><span class="s2">&quot;fields&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span>
+
+<span class="c1"># 按指定轴拼接两个data</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">canadian_youtube</span><span class="p">,</span> <span class="n">british_youtube</span><span class="p">])</span> <span class="c1"># 默认axis=0 也就是index</span>
+<span class="c1"># 按列拼接,index相同</span>
+<span class="n">left</span> <span class="o">=</span> <span class="n">canadian_youtube</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;trending_date&#39;</span><span class="p">])</span>
+<span class="n">right</span> <span class="o">=</span> <span class="n">british_youtube</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;trending_date&#39;</span><span class="p">])</span>
+
+<span class="n">left</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">lsuffix</span><span class="o">=</span><span class="s1">&#39;_CAN&#39;</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">&#39;_UK&#39;</span><span class="p">)</span> <span class="c1"># 左侧的frame加_CAN的后缀,右侧的frame加_UK的后缀</span>
+</code></pre></div>
+<h2 id="torch">Torch<a class="headerlink" href="#torch" title="Permanent link">&para;</a></h2>
+<ul>
+<li>torch.save(model.state_dict(), savepath)</li>
+</ul>
 
 
 

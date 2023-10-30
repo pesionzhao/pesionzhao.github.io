@@ -1007,6 +1007,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    函数使用文档
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1336,6 +1356,61 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    环境搭建
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyg" class="md-nav__link">
+    详解PYG
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    实验过程
+  </a>
+  
+    <nav class="md-nav" aria-label="实验过程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    数据预处理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lstm" class="md-nav__link">
+    LSTM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cnnlstm" class="md-nav__link">
+    CNN+LSTM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnnlstm" class="md-nav__link">
+    GNN+LSTM
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1362,6 +1437,70 @@
 <h3 id="geohash">GeoHash编码原理<a class="headerlink" href="#geohash" title="Permanent link">&para;</a></h3>
 <p>GeoHash 技术原理及应用实战[<a href="https://zhuanlan.zhihu.com/p/645078866">https://zhuanlan.zhihu.com/p/645078866</a>]</p>
 <p>简单来说,就是利用带有距离的索引对坐标进行编码,其索引与相对距离有关,索引重复度越大,两点距离越近</p>
+<h3 id="_2">环境搭建<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><a href="https://zhuanlan.zhihu.com/p/602615941?utm_id=0">PyTorch Geometric(PyG) 库的安装</a></p>
+<p><a href="https://data.pyg.org/whl/">whl</a></p>
+<p>使用pytorch的图神经网络插件模块</p>
+<p>此时跑demo会报错</p>
+<div class="highlight"><pre><span></span><code>cannot<span class="w"> </span>import<span class="w"> </span>name<span class="w"> </span>‘container_abcs‘<span class="w"> </span>from<span class="w"> </span>‘torch._six‘
+</code></pre></div>
+<p>参考<a href="https://blog.csdn.net/weixin_45628042/article/details/129963098">cannot import name ‘container_abcs‘ from ‘torch._six‘</a></p>
+<p>1.8版本之后container_abcs被移除了。所以导入方式不同会出现这样的错误</p>
+<p>修改源码（此方法权限不足时无法使用）
+进入环境中torch_geometric的dataloader.py文件将</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">torch._six</span> <span class="kn">import</span> <span class="n">container_abs</span><span class="p">,</span><span class="n">string_classes</span><span class="p">,</span><span class="n">int_classes</span>
+</code></pre></div>
+<p>替换为</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">collections.abc</span> <span class="k">as</span> <span class="nn">container_abcs</span>
+<span class="n">int_classes</span> <span class="o">=</span> <span class="nb">int</span>
+<span class="n">string_classes</span> <span class="o">=</span> <span class="nb">str</span>
+</code></pre></div>
+<p>之后又报错</p>
+<div class="highlight"><pre><span></span><code>ImportError:<span class="w"> </span>urllib3<span class="w"> </span>v2.0<span class="w"> </span>only<span class="w"> </span>supports<span class="w"> </span>OpenSSL<span class="w"> </span><span class="m">1</span>.1.1+,<span class="w"> </span>currently<span class="w"> </span>the<span class="w"> </span>‘ssl’<span class="w"> </span>module<span class="w"> </span>is<span class="w"> </span>compiled<span class="w"> </span>with<span class="w"> </span>OpenSSL<span class="w"> </span><span class="m">1</span>.1.0h<span class="w"> </span><span class="m">27</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">2018</span>.
+</code></pre></div>
+<p>解决办法</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">urllib3</span><span class="o">==</span><span class="m">1</span>.26.15
+</code></pre></div>
+<h3 id="pyg">详解PYG<a class="headerlink" href="#pyg" title="Permanent link">&para;</a></h3>
+<p>图数据：Data</p>
+<ul>
+<li>
+<p>x (torch.Tensor, optional) – Node feature matrix with shape [num_nodes, num_node_features]. (default: None) 节点与其特征</p>
+</li>
+<li>
+<p>edge_index (LongTensor, optional) – Graph connectivity in COO format with shape [2, num_edges]. (default: None) 边序号</p>
+</li>
+<li>
+<p>edge_attr (torch.Tensor, optional) – Edge feature matrix with shape [num_edges, num_edge_features]. (default: None) 每条边特征</p>
+</li>
+<li>
+<p>y (torch.Tensor, optional) – Graph-level or node-level ground-truth labels with arbitrary shape. (default: None) 标签</p>
+</li>
+<li>
+<p>pos (torch.Tensor, optional) – Node position matrix with shape [num_nodes, num_dimensions]. (default: None) 节点位置矩阵</p>
+</li>
+<li>
+<p>**kwargs (optional) – Additional attributes.</p>
+</li>
+</ul>
+<p>通过 train_mask 和 test_mask 来实现训练集和测试集的划分</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torch_geometric.transforms</span> <span class="k">as</span> <span class="nn">T</span>
+<span class="n">split</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">RandomNodeSplit</span><span class="p">(</span><span class="n">num_val</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">num_test</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+</code></pre></div>
+即可完成划分</p>
+<h2 id="_3">实验过程<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">数据预处理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="lstm">LSTM<a class="headerlink" href="#lstm" title="Permanent link">&para;</a></h3>
+<p>参考链接</p>
+<p><a href="https://pytorch.org/docs/1.9.0/generated/torch.nn.LSTM.html#torch.nn.LSTM">pytorch官方参数讲解</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/79064602">LSTM细节分析理解（pytorch版）</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/617126384">基于 PyTorch + LSTM 进行时间序列预测（附完整源码）</a></p>
+<p><a href="https://blog.csdn.net/qq_41725313/article/details/128880574">LSTM的模型建立以及用LSTMCell构建模型的相关学习记录</a></p>
+<h3 id="cnnlstm">CNN+LSTM<a class="headerlink" href="#cnnlstm" title="Permanent link">&para;</a></h3>
+<p>参考链接</p>
+<p><a href="https://blog.csdn.net/AdjsWsgz/article/details/127929101">利用Pytorch实现ResNet网络</a></p>
+<p><a href="https://github.com/WZMIAOMIAO/deep-learning-for-image-processing">简单图像处理源码合集</a></p>
+<h3 id="gnnlstm">GNN+LSTM<a class="headerlink" href="#gnnlstm" title="Permanent link">&para;</a></h3>
 
 
 
