@@ -1013,11 +1013,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" class="md-nav__link">
+      <a href="../../踩坑记录/python使用文档.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    函数使用文档
+    python使用文档
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    工具使用文档
   </span>
   
 
@@ -1348,6 +1368,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cstl" class="md-nav__link">
+    c++STL容器
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1544,11 +1571,6 @@
 <span class="c1">//删除</span>
 <span class="n">myMap</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="s">&quot;Alice&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 删除键为&quot;Alice&quot;的键值对</span>
 <span class="n">myMap</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="w"> </span><span class="c1">// 清空哈希表中所有的键值对</span>
-
-<span class="c1">// 集合set&lt;&gt;//unordered_set&lt;&gt;无序</span>
-<span class="c1">// 元素唯一，且按照升序排列</span>
-<span class="n">set</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
-<span class="n">set</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">pos</span><span class="p">);</span>
 </code></pre></div>
 <p>给定一个表示 DNA序列 的字符串 s ，返回所有在 DNA 分子中出现不止一次的 长度为 10 的序列(子字符串)。你可以按 任意顺序 返回答案。</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
@@ -1606,6 +1628,23 @@
 <span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">RandomAccessIterator</span><span class="o">&gt;</span><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span><span class="p">(</span><span class="n">RandomAccessIterator</span><span class="w"> </span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="n">RandomAccessIterator</span><span class="w"> </span><span class="n">last</span><span class="p">);</span>
 <span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">RandomAccessIterator</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Compare</span><span class="o">&gt;</span><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span><span class="p">(</span><span class="n">RandomAccessIterator</span><span class="w"> </span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="n">RandomAccessIterator</span><span class="w"> </span><span class="n">last</span><span class="p">,</span><span class="w"> </span><span class="n">Compare</span><span class="w"> </span><span class="n">comp</span><span class="p">);</span>
 </code></pre></div>
+<h2 id="cstl">c++STL容器<a class="headerlink" href="#cstl" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1">//vector</span>
+
+<span class="c1">//集合</span>
+<span class="c1">// 集合set&lt;&gt;//unordered_set&lt;&gt;无序</span>
+<span class="c1">// 元素唯一，且按照升序排列</span>
+<span class="n">set</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+<span class="n">set</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">pos</span><span class="p">);</span>
+
+<span class="c1">//队列</span>
+</code></pre></div>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 贪心算法</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 并查集</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 广度搜索</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 二分法代码</li>
+</ul>
 
 
 

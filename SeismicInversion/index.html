@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/">
+        <link rel="prev" href="../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/">
       
       
         <link rel="next" href="Basic/">
@@ -1019,11 +1019,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" class="md-nav__link">
+      <a href="../踩坑记录/python使用文档.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    函数使用文档
+    python使用文档
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    工具使用文档
   </span>
   
 
@@ -1155,6 +1175,13 @@
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     需要完成的工作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    数据结构
   </a>
   
 </li>
@@ -1462,6 +1489,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    数据结构
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1493,13 +1527,15 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 传播矩阵法进行反演</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Q值估计</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 全波形反演</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 盲反演</li>
 </ul>
 <h3 id="_2">工作问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 线性反演时正演算子由于m对角化导致过大, 内存显存都不够,时间变慢</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Gan网络的判别器损失函数为负数,gp的计算</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Gan网络数据集的加载,要在加载标签的同时加载不带标签数据</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 贝叶斯Aki-Richards线性反演用Zoeppritz正演的数据很差,但用自己正演的数据却很好, 前几层有伪影</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 线性反演时正演算子由于m对角化导致过大, 内存显存都不够,时间变慢</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Gan网络的判别器损失函数为负数,gp的计算</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Gan网络数据集的加载,要在加载标签的同时加载不带标签数据</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 贝叶斯Aki-Richards线性反演用Zoeppritz正演的数据很差,但用自己正演的数据却很好, 前几层有伪影</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 贝叶斯反演前面几层会有很严重的波动</li>
 </ul>
 <h3 id="_3">未来要做的事情<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ul class="task-list">
@@ -1515,7 +1551,19 @@
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 实现共轭梯度法</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 分裂bregman</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 实现scipy稀疏矩阵的代替darray</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 实现scipy稀疏矩阵的代替darray</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Gan数据集载入有问题,论文中只用了34道标签,是不是一次全部载入带标签的之后再载入无标签的?</li>
+</ul>
+<h3 id="_5">数据结构<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 线段树</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Floyd</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 并查集</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 二分法</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 树状数组</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> flyod</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 深度优先搜索</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 贪心算法</li>
 </ul>
 
 

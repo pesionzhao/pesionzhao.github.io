@@ -1019,11 +1019,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" class="md-nav__link">
+      <a href="../../踩坑记录/python使用文档.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    函数使用文档
+    python使用文档
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    工具使用文档
   </span>
   
 
@@ -1188,6 +1208,13 @@
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     具体代码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#su" class="md-nav__link">
+    SU数据
   </a>
   
 </li>
@@ -1571,6 +1598,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#su" class="md-nav__link">
+    SU数据
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1762,6 +1796,35 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">num_samples</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># 更改文件指针</span>
             <span class="k">continue</span>
+</code></pre></div>
+<h3 id="su">SU数据<a class="headerlink" href="#su" title="Permanent link">&para;</a></h3>
+<p>与segy数据类似，只不过没有3600字节的卷头</p>
+<p><a href="https://www.geo.uib.no/eworkshop/index.php?n=Main.SeismicUnix">USING SeismicUnix</a></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">read_custom_SU</span><span class="p">(</span><span class="n">datapath</span><span class="p">,</span> <span class="n">savepath</span><span class="p">):</span>
+    <span class="n">cdp</span> <span class="o">=</span> <span class="mi">200</span>
+    <span class="n">traces</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">datapath</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">trace_header</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">240</span><span class="p">)</span> <span class="c1"># 道头数据</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">trace_header</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="n">cdp_cur</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span><span class="s2">&quot;&lt;i&quot;</span><span class="p">,</span> <span class="n">trace_header</span><span class="p">,</span> <span class="mi">20</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># CDP</span>
+            <span class="n">num_samples</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span><span class="s2">&quot;&lt;h&quot;</span><span class="p">,</span> <span class="n">trace_header</span><span class="p">,</span> <span class="mi">114</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># 采样点数</span>
+            <span class="n">dt</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span><span class="s2">&quot;&lt;h&quot;</span><span class="p">,</span> <span class="n">trace_header</span><span class="p">,</span> <span class="mi">116</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># 采样间隔 μs</span>
+            <span class="k">if</span> <span class="n">cdp_cur</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">amp</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_samples</span><span class="p">):</span>
+                    <span class="n">amp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span><span class="s2">&quot;&lt;f&quot;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">4</span><span class="p">))[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">traces</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">amp</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">num_samples</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>
+                <span class="k">continue</span>
+
+        <span class="n">traces</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">traces</span><span class="p">)</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">savepath</span><span class="p">,</span> <span class="n">traces</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;traces = </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">, layers = </span><span class="si">{</span><span class="n">num_sample</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="_4">子波<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>常用的为Ricker子波</p>
@@ -2264,7 +2327,7 @@ T_{ps}
     <span class="k">return</span> <span class="n">coef</span>
 </code></pre></div>
 <h3 id="aki-richards-equation">Aki-Richards-equation非线性近似<a class="headerlink" href="#aki-richards-equation" title="Permanent link">&para;</a></h3>
-<p>公式见上面的<a href="#aki-richards">aki-richards方程</a></p>
+<p>公式见上面的<a href="#aki-richards方程">aki-richards方程</a></p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">forward_single_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vp1</span><span class="p">,</span> <span class="n">vp2</span><span class="p">,</span> <span class="n">vs1</span><span class="p">,</span> <span class="n">vs2</span><span class="p">,</span> <span class="n">rho1</span><span class="p">,</span> <span class="n">rho2</span><span class="p">,</span> <span class="n">Theta_r</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Args:</span>

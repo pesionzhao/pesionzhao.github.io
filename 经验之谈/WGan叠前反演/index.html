@@ -1013,11 +1013,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" class="md-nav__link">
+      <a href="../../踩坑记录/python使用文档.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    函数使用文档
+    python使用文档
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    工具使用文档
   </span>
   
 
@@ -1380,12 +1400,6 @@
 <p><a href="https://necromuralist.github.io/Neurotic-Networking/posts/gans/wasserstein-gan-with-gradient-penalty/index.html">https://necromuralist.github.io/Neurotic-Networking/posts/gans/wasserstein-gan-with-gradient-penalty/index.html</a></p>
 <p>博客</p>
 <p><a href="https://www.qixinbo.info/2021/10/21/gan/">https://www.qixinbo.info/2021/10/21/gan/</a></p>
-<p>遇到的问题及解决方案</p>
-<ol>
-<li>计算图被释放导致无法进行第二个backward, 由于在进行backward时链式法则会将所有链到的计算图释放，所以二次backward回溯变量的梯度时会回溯到模型那里，但模型backward的计算图已被释放,所以解决方案为在通过一遍模型得到输出或者backward(retain_graph=True)不释放计算图</li>
-<li>判别器损失为负数而且很离谱，多半是因为原始数据没有正则化！！！很重要</li>
-<li></li>
-</ol>
 
 
 
