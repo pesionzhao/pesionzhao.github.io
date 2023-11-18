@@ -253,6 +253,24 @@
   
 
       
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Learning/PythonDoc/" class="md-tabs__link">
+          
+  
+  实用工具
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -1007,46 +1025,6 @@
 
               
             
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/Python%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    python使用文档
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    工具使用文档
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1337,6 +1315,87 @@
   
 
     
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    实用工具
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            实用工具
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Learning/PythonDoc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    python使用文档
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Learning/ToolDoc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    工具使用文档
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1412,6 +1471,8 @@
 git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>http.proxy<span class="w"> </span>http://127.0.0.1:7890
 <span class="c1"># v2ray</span>
 git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>http.proxy<span class="w"> </span>http://127.0.0.1:10809
+<span class="c1"># unset</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>--unset<span class="w"> </span>http.proxy
 </code></pre></div>
 <p>netron查看神经网络结构图</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torchvision.models</span> <span class="k">as</span> <span class="nn">models</span>
@@ -1496,6 +1557,44 @@ python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"
 <div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-xzvf<span class="w"> </span>path
 </code></pre></div>
 <p>解压.gz用7z</p>
+<p>WSL设置代理</p>
+<div class="highlight"><pre><span></span><code><span class="nv">host_ip</span><span class="o">=</span><span class="k">$(</span>cat<span class="w"> </span>/etc/resolv.conf<span class="w"> </span><span class="p">|</span>grep<span class="w"> </span><span class="s2">&quot;nameserver&quot;</span><span class="w"> </span><span class="p">|</span>cut<span class="w"> </span>-f<span class="w"> </span><span class="m">2</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot; &quot;</span><span class="k">)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ALL_PROXY</span><span class="o">=</span><span class="s2">&quot;http://</span><span class="nv">$host_ip</span><span class="s2">:7890&quot;</span>
+</code></pre></div>
+<p><a href="https://zhuanlan.zhihu.com/p/414627975">WSL 下使用代理</a></p>
+<ul>
+<li>1.windows v2ray客户端开启允许来自局域网的连接。</li>
+<li>wsl中关闭自动更新dns nameserver /etc/wsl.conf 文件中设置为false。</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>network<span class="o">]</span>
+<span class="nv">generateResolvConf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span>
+</code></pre></div>
+<p><strong>这里如果设成false会导致再一次开机时没有此文件，Temporary failure in name resolution导致域名解析失败</strong></p>
+<ul>
+<li>然后/etc/resolv.conf中nameserver替换成8.8.8.8或者其他可用的dns服务器。</li>
+</ul>
+<p>在~/.bashrc中添加如下内容</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># add for proxy</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">hostip</span><span class="o">=</span><span class="k">$(</span>ip<span class="w"> </span>route<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>default<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $3}&#39;</span><span class="k">)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">hostport</span><span class="o">=</span><span class="m">10810</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">proxy</span><span class="o">=</span><span class="s1">&#39;</span>
+<span class="s1">    export HTTPS_PROXY=&quot;socks5://${hostip}:${hostport}&quot;;</span>
+<span class="s1">    export HTTP_PROXY=&quot;socks5://${hostip}:${hostport}&quot;;</span>
+<span class="s1">    export ALL_PROXY=&quot;socks5://${hostip}:${hostport}&quot;;</span>
+<span class="s1">    echo -e &quot;Acquire::http::Proxy \&quot;http://${hostip}:${hostport}\&quot;;&quot; | sudo tee -a /etc/apt/apt.conf.d/proxy.conf &gt; /dev/null;</span>
+<span class="s1">    echo -e &quot;Acquire::https::Proxy \&quot;http://${hostip}:${hostport}\&quot;;&quot; | sudo tee -a /etc/apt/apt.conf.d/proxy.conf &gt; /dev/null;</span>
+<span class="s1">&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">unproxy</span><span class="o">=</span><span class="s1">&#39;</span>
+<span class="s1">    unset HTTPS_PROXY;</span>
+<span class="s1">    unset HTTP_PROXY;</span>
+<span class="s1">    unset ALL_PROXY;</span>
+<span class="s1">    sudo sed -i -e &#39;</span>/Acquire::http::Proxy/d<span class="s1">&#39; /etc/apt/apt.conf.d/proxy.conf;</span>
+<span class="s1">    sudo sed -i -e &#39;</span>/Acquire::https::Proxy/d<span class="s1">&#39; /etc/apt/apt.conf.d/proxy.conf;</span>
+<span class="s1">&#39;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>source .bashrc
+</code></pre></div>
+<p>关闭防火墙</p>
 
 
 
