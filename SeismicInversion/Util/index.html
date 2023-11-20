@@ -1828,14 +1828,14 @@
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">struct</span>
 
 <span class="c1"># 打开SEGY文件</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;gathers.sgy&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">datapath</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 
     <span class="c1"># 读取二进制文件头</span>
     <span class="n">bin_header</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">3600</span><span class="p">)</span>
 
     <span class="c1"># 获取文件头中的相关信息</span>
     <span class="n">sample_interval</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span><span class="s2">&quot;&gt;h&quot;</span><span class="p">,</span> <span class="n">bin_header</span><span class="p">,</span> <span class="mi">3216</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># &gt;h表示大端short</span>
-    <span class="n">num_samples</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span><span class="s2">&quot;&gt;h&quot;</span><span class="p">,</span> <span class="n">bin_header</span><span class="p">,</span> <span class="mi">3220</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">num_samples</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span><span class="s2">&quot;&gt;h&quot;</span><span class="p">,</span> <span class="n">bin_header</span><span class="p">,</span> <span class="mi">3220</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># 采样点</span>
 
     <span class="c1"># 读取所有道数据</span>
     <span class="n">traces</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># 某一CDP的道集</span>
@@ -1887,6 +1887,10 @@
 </code></pre></div>
 <h2 id="_4">子波<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>常用的为Ricker子波</p>
+<div class="arithmatex">
+<div class="MathJax_Preview"> f(t) = (1 - 2\pi^2f_0^2t^2)e^{-\pi^2f_0^2t^2}</div>
+<script type="math/tex; mode=display"> f(t) = (1 - 2\pi^2f_0^2t^2)e^{-\pi^2f_0^2t^2}</script>
+</div>
 <p>生成Ricker子波代码为</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">z_ricker</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">f0</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
