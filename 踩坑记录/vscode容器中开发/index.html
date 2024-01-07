@@ -1096,11 +1096,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#c" class="md-nav__link">
-    c++
+  <a href="#_3" class="md-nav__link">
+    进入容器
   </a>
   
-    <nav class="md-nav" aria-label="c++">
+    <nav class="md-nav" aria-label="进入容器">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1110,8 +1110,22 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#dockfliedevcontianer" class="md-nav__link">
+    由DockFlie构建devcontianer
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockerflie" class="md-nav__link">
+    DockerFlie编写
+  </a>
   
 </li>
         
@@ -1580,11 +1594,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#c" class="md-nav__link">
-    c++
+  <a href="#_3" class="md-nav__link">
+    进入容器
   </a>
   
-    <nav class="md-nav" aria-label="c++">
+    <nav class="md-nav" aria-label="进入容器">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1594,8 +1608,22 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#dockfliedevcontianer" class="md-nav__link">
+    由DockFlie构建devcontianer
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockerflie" class="md-nav__link">
+    DockerFlie编写
+  </a>
   
 </li>
         
@@ -1629,14 +1657,36 @@
 <li>docker</li>
 <li>dev container</li>
 </ul>
-<h3 id="c">c++<a class="headerlink" href="#c" title="Permanent link">&para;</a></h3>
+<h3 id="_3">进入容器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p><a href="https://ddanilov.me/dockerized-cpp-build-with-vscode">VS Code with dockerized build environments for C/C++ projects</a></p>
-<p><a href="https://code.visualstudio.com/docs/devcontainers/create-dev-container#_automate-dev-container-creation">官方创建devcontainer.json的教程</a></p>
+<p><a href="https://code.visualstudio.com/docs/devcontainers/create-dev-container">官方创建devcontainer.json的教程</a></p>
 <p><a href="https://docs.docker.com/engine/reference/builder/">DockerFlie编写规范</a></p>
 <p><a href="https://code.visualstudio.com/remote/advancedcontainers/add-local-file-mount">设置文件挂载宿主机</a></p>
 <h4 id="devcontianerjson">自动生成devcontianer.json<a class="headerlink" href="#devcontianerjson" title="Permanent link">&para;</a></h4>
-<p>首先在要进行开发的目录中<code>ctrl+shift+p</code>或<code>F1</code>打开<code>open container configuration Flie</code>,选择对应的镜像,之后还可以选择添加的其他配置, 选完后会在文件夹中看到<code>devcontainer.json and DockerFile</code>,之后可以根据需要进行编辑</p>
-<p>之后搜索<code>Reopen in Container</code>加载该容器, 即可在当前目录下在容器中进行调试,路径为/Worksapce</p>
+<ul>
+<li>进行开发的目录中<code>ctrl+shift+p</code>或<code>F1</code>打开<code>open container configuration Flie</code></li>
+<li>选择对应的镜像,之后还可以选择添加的其他配置</li>
+<li>选完后会在文件夹中看到<code>devcontainer.json</code>和<code>DockerFile</code></li>
+<li>继续<code>ctrl+shift+p</code>搜索<code>Reopen in Container</code>加载该容器, 即可在当前目录下在容器中进行调试,路径为/Worksapce</li>
+</ul>
+<h4 id="dockfliedevcontianer">由DockFlie构建devcontianer<a class="headerlink" href="#dockfliedevcontianer" title="Permanent link">&para;</a></h4>
+<ul>
+<li>在根目录写好DockerFlie</li>
+<li><code>ctrl+shift+p</code>打开<code>open container configuration Flie</code></li>
+<li>选择<code>来自DockerFlie</code></li>
+<li>选择需要附加的软件,可以不选跳过</li>
+<li>会出现<code>.devcontainer/devcontianer.json</code></li>
+<li><code>Reopen in Container</code>加载该容器可进入容器</li>
+</ul>
+<p>之后就可以进入容器进行开发了~</p>
+<h3 id="dockerflie">DockerFlie编写<a class="headerlink" href="#dockerflie" title="Permanent link">&para;</a></h3>
+<p><a href="https://yeasy.gitbook.io/docker_practice/image/build">使用 Dockerfile 定制镜像</a></p>
+<ul>
+<li><code>FROM</code> 指定基础镜像</li>
+<li><code>RUN</code> 执行命令</li>
+<li><code>COPY</code> 复制文件: 将从构建上下文目录中 &lt;源路径&gt; 的文件/目录复制到新的一层的镜像内的 &lt;目标路径&gt; 位置</li>
+<li><code>CMD</code> 容器启动命令, 用于指定默认的容器主进程的启动命令, 比如，ubuntu 镜像默认的 CMD 是 <code>/bin/bash</code></li>
+</ul>
 
 
 

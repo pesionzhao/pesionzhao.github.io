@@ -2098,6 +2098,7 @@
 <ul>
 <li><code>np.vectorize(pyfuc)(some func cant broadcast)</code> 定义一个向量化函数，该函数接受嵌套的对象序列或numpy数组作为输入，并返回单个numpy数组或numpy数组元组。向量化函数在输入数组的连续元组上计算pyfunc</li>
 <li><code>numpy.clip(a, a_min, a_max)</code> 将a限制在a_min与a_max中,大于a_max置a_max</li>
+<li><code>np.ix_</code>: 从多个序列构建mesh, e.g. <code>a[np.ix_(rows,cols)]</code> 这里如果行列长度不一样直接进行索引会报错,所以使用<code>ix_</code></li>
 </ul>
 <h2 id="plt">Plt<a class="headerlink" href="#plt" title="Permanent link">&para;</a></h2>
 <h3 id="axes">Axes<a class="headerlink" href="#axes" title="Permanent link">&para;</a></h3>

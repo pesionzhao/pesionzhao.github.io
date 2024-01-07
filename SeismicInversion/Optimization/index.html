@@ -1508,8 +1508,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fisata" class="md-nav__link">
-    FISATA方法
+  <a href="#fista" class="md-nav__link">
+    FISTA方法
   </a>
   
 </li>
@@ -1523,6 +1523,81 @@
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
+    拟牛顿法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bfgs" class="md-nav__link">
+    BFGS算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l-bfgs" class="md-nav__link">
+    L-BFGS算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    蒙特卡洛
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    目标泛函构建
+  </a>
+  
+    <nav class="md-nav" aria-label="目标泛函构建">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    贝叶斯理论
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    正则化项构建
+  </a>
+  
+    <nav class="md-nav" aria-label="正则化项构建">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cv" class="md-nav__link">
+    CV交叉验证
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    广义交叉验证
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
     多道反演
   </a>
   
@@ -1839,8 +1914,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fisata" class="md-nav__link">
-    FISATA方法
+  <a href="#fista" class="md-nav__link">
+    FISTA方法
   </a>
   
 </li>
@@ -1854,6 +1929,81 @@
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
+    拟牛顿法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bfgs" class="md-nav__link">
+    BFGS算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l-bfgs" class="md-nav__link">
+    L-BFGS算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    蒙特卡洛
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    目标泛函构建
+  </a>
+  
+    <nav class="md-nav" aria-label="目标泛函构建">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    贝叶斯理论
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    正则化项构建
+  </a>
+  
+    <nav class="md-nav" aria-label="正则化项构建">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cv" class="md-nav__link">
+    CV交叉验证
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    广义交叉验证
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
     多道反演
   </a>
   
@@ -2480,7 +2630,7 @@ $$</p>
         <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;res&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">pre</span><span class="p">,</span> <span class="n">loss</span>
 </code></pre></div>
-<h3 id="fisata">FISATA方法<a class="headerlink" href="#fisata" title="Permanent link">&para;</a></h3>
+<h3 id="fista">FISTA方法<a class="headerlink" href="#fista" title="Permanent link">&para;</a></h3>
 <p>Amir Beck等人将Nesterov加速算法引入ISTA算法中，并称之为FISTA算法，其将复杂度从<span class="arithmatex"><span class="MathJax_Preview">O(1/k)</span><script type="math/tex">O(1/k)</script></span>降低到了<span class="arithmatex"><span class="MathJax_Preview">O(1/k^2)</span><script type="math/tex">O(1/k^2)</script></span>，减小了ISTA的计算复杂度，提高了计算速度，使损失可以得到更快收敛</p>
 <p>ISTA方法是直接迭代<span class="arithmatex"><span class="MathJax_Preview">x_k</span><script type="math/tex">x_k</script></span>，FISTA是迭代<span class="arithmatex"><span class="MathJax_Preview">y_k</span><script type="math/tex">y_k</script></span>，<span class="arithmatex"><span class="MathJax_Preview">y_k</span><script type="math/tex">y_k</script></span>由<span class="arithmatex"><span class="MathJax_Preview">x_k</span><script type="math/tex">x_k</script></span>计算得到</p>
 <div class="arithmatex">
@@ -2724,7 +2874,20 @@ d^{k+1}_y=\max\left(s^k-\frac{1}{\lambda},0\right)\frac{\nabla_ym^k+b^k_y}{s^k} 
 s^k=\sqrt{|\nabla_xm^k+b^k_x|^2+|\nabla_ym^k+b^k_y|^2}
 </script>
 </div>
-<h3 id="_7">多道反演<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h3 id="_7">拟牛顿法<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p><a href="https://zhuanlan.zhihu.com/p/29672873">深入机器学习系列17-BFGS &amp; L-BFGS</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/514576143">数值优化（六）——拟牛顿法之LBFGS理论与实战</a></p>
+<p><a href="https://www.jianshu.com/p/6cf95ad7a5b0">机器学习基础·L-BFGS算法</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/144736223">数值优化（6）——拟牛顿法：SR1，BFGS，DFP，DM条件</a></p>
+<h3 id="bfgs">BFGS算法<a class="headerlink" href="#bfgs" title="Permanent link">&para;</a></h3>
+<h3 id="l-bfgs">L-BFGS算法<a class="headerlink" href="#l-bfgs" title="Permanent link">&para;</a></h3>
+<h3 id="_8">蒙特卡洛<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h2 id="_9">目标泛函构建<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="_10">贝叶斯理论<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h2 id="_11">正则化项构建<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="cv">CV交叉验证<a class="headerlink" href="#cv" title="Permanent link">&para;</a></h3>
+<h3 id="_12">广义交叉验证<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h3 id="_13">多道反演<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <p>以上的优化方法都只针对于单道，但地震数据往往需要多道进行处理</p>
 <p>目前本人实现的方法只是循环进行不同道的单道反演，未完待续。。。</p>
 

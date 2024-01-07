@@ -1774,8 +1774,8 @@
 <p><span id="6.118"></span></p>
 <p>边界条件要求<span class="arithmatex"><span class="MathJax_Preview">v_1, v_2, \sigma_{33}, \sigma_{13}</span><script type="math/tex">v_1, v_2, \sigma_{33}, \sigma_{13}</script></span>连续,速度公式代入应变应力关系, 边界条件产生如下关于反射和透射系数的矩阵方程：</p>
 <div class="arithmatex">
-<div class="MathJax_Preview">\left.\left(\begin{array}{cccc}\beta_\mathrm{P_1}&amp;\beta_\mathrm{S_1}&amp;-\beta_\mathrm{P_2}&amp;-\beta_\mathrm{S_2}\\\xi_\mathrm{P_1}&amp;\xi_\mathrm{S_1}&amp;\xi_\mathrm{P_2}&amp;\xi_\mathrm{S_2}\\Z_\mathrm{P_1}&amp;Z_\mathrm{S_1}&amp;-Z_\mathrm{P_2}&amp;-Z_\mathrm{S_2}\\W_\mathrm{P_1}&amp;W_\mathrm{S_1}&amp;W_\mathrm{P_2}&amp;W_\mathrm{S_2}\end{array}\right.\right)\cdot\left(\begin{array}{c}R_\mathrm{Pp}\\R_\mathrm{PS}\\T_\mathrm{PP}\\T_\mathrm{PS}\end{array}\right)=\left(\begin{array}{c}-\beta_\mathrm{P_1}\\\xi_\mathrm{P_1}\\-Z_\mathrm{P_1}\\W_\mathrm{P_1}\end{array}\right)</div>
-<script type="math/tex; mode=display">\left.\left(\begin{array}{cccc}\beta_\mathrm{P_1}&\beta_\mathrm{S_1}&-\beta_\mathrm{P_2}&-\beta_\mathrm{S_2}\\\xi_\mathrm{P_1}&\xi_\mathrm{S_1}&\xi_\mathrm{P_2}&\xi_\mathrm{S_2}\\Z_\mathrm{P_1}&Z_\mathrm{S_1}&-Z_\mathrm{P_2}&-Z_\mathrm{S_2}\\W_\mathrm{P_1}&W_\mathrm{S_1}&W_\mathrm{P_2}&W_\mathrm{S_2}\end{array}\right.\right)\cdot\left(\begin{array}{c}R_\mathrm{Pp}\\R_\mathrm{PS}\\T_\mathrm{PP}\\T_\mathrm{PS}\end{array}\right)=\left(\begin{array}{c}-\beta_\mathrm{P_1}\\\xi_\mathrm{P_1}\\-Z_\mathrm{P_1}\\W_\mathrm{P_1}\end{array}\right)</script>
+<div class="MathJax_Preview">\left.\left(\begin{array}{cccc}\beta_\mathrm{P_1}&amp;\beta_\mathrm{S_1}&amp;-\beta_\mathrm{P_2}&amp;-\beta_\mathrm{S_2}\\\xi_\mathrm{P_1}&amp;\xi_\mathrm{S_1}&amp;\xi_\mathrm{P_2}&amp;\xi_\mathrm{S_2}\\Z_\mathrm{P_1}&amp;Z_\mathrm{S_1}&amp;-Z_\mathrm{P_2}&amp;-Z_\mathrm{S_2}\\W_\mathrm{P_1}&amp;W_\mathrm{S_1}&amp;W_\mathrm{P_2}&amp;W_\mathrm{S_2}\end{array}\right.\right)\cdot\left(\begin{array}{c}R_\mathrm{PP}\\R_\mathrm{PS}\\T_\mathrm{PP}\\T_\mathrm{PS}\end{array}\right)=\left(\begin{array}{c}-\beta_\mathrm{P_1}\\\xi_\mathrm{P_1}\\-Z_\mathrm{P_1}\\W_\mathrm{P_1}\end{array}\right)</div>
+<script type="math/tex; mode=display">\left.\left(\begin{array}{cccc}\beta_\mathrm{P_1}&\beta_\mathrm{S_1}&-\beta_\mathrm{P_2}&-\beta_\mathrm{S_2}\\\xi_\mathrm{P_1}&\xi_\mathrm{S_1}&\xi_\mathrm{P_2}&\xi_\mathrm{S_2}\\Z_\mathrm{P_1}&Z_\mathrm{S_1}&-Z_\mathrm{P_2}&-Z_\mathrm{S_2}\\W_\mathrm{P_1}&W_\mathrm{S_1}&W_\mathrm{P_2}&W_\mathrm{S_2}\end{array}\right.\right)\cdot\left(\begin{array}{c}R_\mathrm{PP}\\R_\mathrm{PS}\\T_\mathrm{PP}\\T_\mathrm{PS}\end{array}\right)=\left(\begin{array}{c}-\beta_\mathrm{P_1}\\\xi_\mathrm{P_1}\\-Z_\mathrm{P_1}\\W_\mathrm{P_1}\end{array}\right)</script>
 </div>
 <p>其中</p>
 <p><span class="arithmatex"><span class="MathJax_Preview">X = \beta {p_{11}}{s_1} + \xi {p_{13}}{s_3}</span><script type="math/tex">X = \beta {p_{11}}{s_1} + \xi {p_{13}}{s_3}</script></span>
@@ -1867,28 +1867,30 @@
 </div>
 <p>其中</p>
 <div class="arithmatex">
-<div class="MathJax_Preview">{\bf{T}}(z)\left. { = {\rm{i}}\omega \left( {\begin{array}{r}
+<div class="MathJax_Preview">{\bf{T}}(z) = {\rm{i}}\omega \left( {\begin{array}{r}
 {{\beta _{\rm{P}}}}&amp;{{\beta _{\rm{s}}}}&amp;{{\beta _{\rm{P}}}}&amp;{{\beta _{\rm{S}}}}\\
 { - {\xi _{\rm{P}}}}&amp;{ - {\xi _{\rm{S}}}}&amp;{{\xi _{\rm{P}}}}&amp;{{\xi _{\rm{S}}}}\\
 { - {Z_{\rm{P}}}}&amp;{ - {Z_{\rm{S}}}}&amp;{ - {Z_{\rm{P}}}}&amp;{ - {Z_{\rm{S}}}}\\
 {{W_{\rm{P}}}}&amp;{{W_{\rm{S}}}}&amp;{ - {W_{\rm{P}}}}&amp;{ - {W_{\rm{S}}}}
-\end{array}} \right.} \right)\left. { \cdot \left( {\begin{array}{c}
+\end{array}}  \right) \cdot \left( 
+{\begin{array}{c}
 {\exp ({\rm{i}}\omega {s_{3P}}z)}&amp;0&amp;0&amp;0\\
 0&amp;{\exp ({\rm{i}}\omega {s_{3S}}z)}&amp;0&amp;0\\
 0&amp;0&amp;{\exp ( - {\rm{i}}\omega {s_{3P}}z)}&amp;0\\
 0&amp;0&amp;0&amp;{\exp ( - {\rm{i}}\omega {s_{3S}}z)}
-\end{array}} \right.} \right)</div>
-<script type="math/tex; mode=display">{\bf{T}}(z)\left. { = {\rm{i}}\omega \left( {\begin{array}{r}
+\end{array}} \right)</div>
+<script type="math/tex; mode=display">{\bf{T}}(z) = {\rm{i}}\omega \left( {\begin{array}{r}
 {{\beta _{\rm{P}}}}&{{\beta _{\rm{s}}}}&{{\beta _{\rm{P}}}}&{{\beta _{\rm{S}}}}\\
 { - {\xi _{\rm{P}}}}&{ - {\xi _{\rm{S}}}}&{{\xi _{\rm{P}}}}&{{\xi _{\rm{S}}}}\\
 { - {Z_{\rm{P}}}}&{ - {Z_{\rm{S}}}}&{ - {Z_{\rm{P}}}}&{ - {Z_{\rm{S}}}}\\
 {{W_{\rm{P}}}}&{{W_{\rm{S}}}}&{ - {W_{\rm{P}}}}&{ - {W_{\rm{S}}}}
-\end{array}} \right.} \right)\left. { \cdot \left( {\begin{array}{c}
+\end{array}}  \right) \cdot \left( 
+{\begin{array}{c}
 {\exp ({\rm{i}}\omega {s_{3P}}z)}&0&0&0\\
 0&{\exp ({\rm{i}}\omega {s_{3S}}z)}&0&0\\
 0&0&{\exp ( - {\rm{i}}\omega {s_{3P}}z)}&0\\
 0&0&0&{\exp ( - {\rm{i}}\omega {s_{3S}}z)}
-\end{array}} \right.} \right)</script>
+\end{array}} \right)</script>
 </div>
 <p>然后，z = 0和z = h处的场通过下面的方程联系起来：</p>
 <p><span id="6.157"></span></p>
@@ -1898,11 +1900,11 @@
 </div>
 <p>其中起到了边界条件的作用。注意到当h = 0时，B为单位矩阵</p>
 <p>用下标1表示上半空间，用下标2表示下半空间.此外，下标I、R和T分别表示入射波、反射波和透射波。利用对称性质定义反射波的偏振，给出了P波从层上入射时的质点振速</p>
+<p><span id="6.158"></span></p>
 <div class="arithmatex">
 <div class="MathJax_Preview">\begin{aligned}\mathbf{v}_1&amp;=\mathbf{v}_{\mathbf{P}_I}+\mathbf{v}_{\mathbf{P}_R}+\mathbf{v}_{\mathbf{S}_R},\\\mathbf{v}_2&amp;=\mathbf{v}_{\mathbf{P}_T}+\mathbf{v}_{\mathbf{S}_T},\end{aligned}\tag{6.158}</div>
 <script type="math/tex; mode=display">\begin{aligned}\mathbf{v}_1&=\mathbf{v}_{\mathbf{P}_I}+\mathbf{v}_{\mathbf{P}_R}+\mathbf{v}_{\mathbf{S}_R},\\\mathbf{v}_2&=\mathbf{v}_{\mathbf{P}_T}+\mathbf{v}_{\mathbf{S}_T},\end{aligned}\tag{6.158}</script>
 </div>
-<p><span id="6.158"></span></p>
 <p>反射透射速度可通过<a href="#6.118">(6.118)</a> 求得,其中极化分量由下式获得,</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">\left(\begin{array}{c}\beta_{\mathbf{P}}\\\xi_{\mathbf{P}}\end{array}\right)=\frac{1}{\sqrt{s_{1}^{2}+s_{3\mathbf{P}}^{2}}}\left(\begin{array}{c}s_{1}\\s_{3\mathbf{P}}\end{array}\right),\quad\left(\begin{array}{c}\beta_{\mathbf{S}}\\\xi_{\mathbf{S}}\end{array}\right)=\frac{1}{\sqrt{s_{1}^{2}+s_{3\mathbf{S}}^{2}}}\left(\begin{array}{c}s_{\mathbf{S}}\\-s_{1}\end{array}\right)</div>
@@ -1943,6 +1945,27 @@
 <div class="arithmatex">
 <div class="MathJax_Preview">(\mathbf{A}_{1}-\mathbf{B}\cdot\mathbf{A}_{2})\cdot\mathbf{r}=-\mathbf{i}_{\mathbf{P}}\tag{6.169}</div>
 <script type="math/tex; mode=display">(\mathbf{A}_{1}-\mathbf{B}\cdot\mathbf{A}_{2})\cdot\mathbf{r}=-\mathbf{i}_{\mathbf{P}}\tag{6.169}</script>
+</div>
+<p>S波同理</p>
+<p>无层时，h = 0, B为单位矩阵，得到6.2节的方程组。当上下半空间为同一介质时，可以得到pp波反射系数在正入射处的绝对值为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\mathrm{Rpp}(0)=\frac{2|R_0\sin(kh)|}{|R_0^2\exp(-\mathrm{i}kh)-\exp(\mathrm{i}kh)|}</div>
+<script type="math/tex; mode=display">\mathrm{Rpp}(0)=\frac{2|R_0\sin(kh)|}{|R_0^2\exp(-\mathrm{i}kh)-\exp(\mathrm{i}kh)|}</script>
+</div>
+<p>考虑叠层地质系统，有N层，其刚度为pIJα，密度为ρα，每层厚度为hα，则总厚度为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">h=\sum_{\alpha=1}^Nh_\alpha </div>
+<script type="math/tex; mode=display">h=\sum_{\alpha=1}^Nh_\alpha </script>
+</div>
+<p>通过在层与层之间的界面处匹配边界条件，很容易说明给出反射和透射系数的矩阵系统为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\left[\mathbf{A}_{1}-\left(\prod_{\alpha=1}^{N}\mathbf{B}_{\alpha}\right)\cdot\mathbf{A}_{2}\right]\cdot\mathbf{r}=-\mathbf{i}_{\mathbf{P}(\mathbf{S})}</div>
+<script type="math/tex; mode=display">\left[\mathbf{A}_{1}-\left(\prod_{\alpha=1}^{N}\mathbf{B}_{\alpha}\right)\cdot\mathbf{A}_{2}\right]\cdot\mathbf{r}=-\mathbf{i}_{\mathbf{P}(\mathbf{S})}</script>
+</div>
+<p>其中</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\mathbf{B}_{\alpha}=\mathbf{T}(0)\cdot\mathbf{T}^{-1}(\mathbf{h}_{\alpha}),\quad\alpha=1,\ldots,N</div>
+<script type="math/tex; mode=display">\mathbf{B}_{\alpha}=\mathbf{T}(0)\cdot\mathbf{T}^{-1}(\mathbf{h}_{\alpha}),\quad\alpha=1,\ldots,N</script>
 </div>
 <p>字母含义</p>
 <p>角θ， δ和ψ表示传播，衰减和Umov-Poynting矢量(能量)方向</p>
