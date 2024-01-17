@@ -1683,6 +1683,25 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>docker
 </code></pre></div>
 <p>安装完成</p>
+<p>由于镜像都过大,下载速度很慢,可以通过更换国内源</p>
+<p><a href="http://www.dfcsoft.com/View.aspx?id=057a2efcdb0d428d80a49e5c00b6f924">Windows Docker 配置国内镜像源的两种方法</a></p>
+<ol>
+<li>通过Docker-Desktop-&gt;设置-&gt;Docker Engine 添加</li>
+<li>修改daemon.json配置(这个由于我用的是子系统,所以没有使用这个选项)</li>
+</ol>
+<p>添加以下地址：</p>
+<div class="highlight"><pre><span></span><code><span class="c">&quot;registry-mirrors&quot;: [</span>
+<span class="c">&quot;https://docker.mirrors.ustc.edu.cn&quot;,</span>
+<span class="c">&quot;https://registry.docker-cn.com&quot;,</span>
+<span class="c">&quot;http://hub-mirror.c.163.com&quot;,</span>
+<span class="c">&quot;https://mirror.ccs.tencentyun.com&quot;</span>
+]
+</code></pre></div>
+<p>之后重启Docker</p>
+<p>输入</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>info
+</code></pre></div>
+<p>如果在最后显示了Registry Mirrors:,即为配置成功~</p>
 <p>docker的具体使用方法,见其他文档~</p>
 
 
