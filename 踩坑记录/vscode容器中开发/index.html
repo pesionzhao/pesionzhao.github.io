@@ -1104,15 +1104,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#devcontianerjson" class="md-nav__link">
-    自动生成devcontianer.json
+  <a href="#devcontainerjson" class="md-nav__link">
+    自动生成devcontainer.json
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dockfliedevcontianer" class="md-nav__link">
-    由DockFlie构建devcontianer
+  <a href="#dockfliedevcontainer" class="md-nav__link">
+    由DockFlie构建devcontainer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#devcontainerjson_1" class="md-nav__link">
+    修改/自己编写devcontainer.json
   </a>
   
 </li>
@@ -1533,6 +1540,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Learning/LinearAlgebra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    线性代数理论
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Learning/Propagation/" class="md-nav__link">
         
   
@@ -1602,15 +1629,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#devcontianerjson" class="md-nav__link">
-    自动生成devcontianer.json
+  <a href="#devcontainerjson" class="md-nav__link">
+    自动生成devcontainer.json
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dockfliedevcontianer" class="md-nav__link">
-    由DockFlie构建devcontianer
+  <a href="#dockfliedevcontainer" class="md-nav__link">
+    由DockFlie构建devcontainer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#devcontainerjson_1" class="md-nav__link">
+    修改/自己编写devcontainer.json
   </a>
   
 </li>
@@ -1662,27 +1696,47 @@
 <p><a href="https://code.visualstudio.com/docs/devcontainers/create-dev-container">官方创建devcontainer.json的教程</a></p>
 <p><a href="https://docs.docker.com/engine/reference/builder/">DockerFlie编写规范</a></p>
 <p><a href="https://code.visualstudio.com/remote/advancedcontainers/add-local-file-mount">设置文件挂载宿主机</a></p>
-<h4 id="devcontianerjson">自动生成devcontianer.json<a class="headerlink" href="#devcontianerjson" title="Permanent link">&para;</a></h4>
+<h4 id="devcontainerjson">自动生成devcontainer.json<a class="headerlink" href="#devcontainerjson" title="Permanent link">&para;</a></h4>
 <ul>
 <li>进行开发的目录中<code>ctrl+shift+p</code>或<code>F1</code>打开<code>open container configuration Flie</code></li>
 <li>选择对应的镜像,之后还可以选择添加的其他配置</li>
 <li>选完后会在文件夹中看到<code>devcontainer.json</code>和<code>DockerFile</code></li>
 <li>继续<code>ctrl+shift+p</code>搜索<code>Reopen in Container</code>加载该容器, 即可在当前目录下在容器中进行调试,路径为/Worksapce</li>
 </ul>
-<h4 id="dockfliedevcontianer">由DockFlie构建devcontianer<a class="headerlink" href="#dockfliedevcontianer" title="Permanent link">&para;</a></h4>
+<h4 id="dockfliedevcontainer">由DockFlie构建devcontainer<a class="headerlink" href="#dockfliedevcontainer" title="Permanent link">&para;</a></h4>
 <ul>
 <li>在根目录写好DockerFlie</li>
 <li><code>ctrl+shift+p</code>打开<code>open container configuration Flie</code></li>
 <li>选择<code>来自DockerFlie</code></li>
 <li>选择需要附加的软件,可以不选跳过</li>
-<li>会出现<code>.devcontainer/devcontianer.json</code></li>
+<li>会出现<code>.devcontainer/devcontainer.json</code></li>
 <li><code>Reopen in Container</code>加载该容器可进入容器</li>
 </ul>
 <p>之后就可以进入容器进行开发了~</p>
+<h4 id="devcontainerjson_1">修改/自己编写devcontainer.json<a class="headerlink" href="#devcontainerjson_1" title="Permanent link">&para;</a></h4>
+<p>由于在实际的应用中官方</p>
+<p>devcontainer.json中各字段的命名规则及其作用 👇</p>
+<p><a href="https://containers.dev/implementors/json_reference/">Dev Container metadata reference</a></p>
+<p>举个简单的例子,如果我想基于已有镜像构造容器, 使用GPU, 离开容器时自动删除可以这样编写json文件 👇</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CUDA117_env&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// UI中的容器名</span>
+<span class="w">    </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pesioncuda&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// 本地镜像的名字</span>
+<span class="w">    </span><span class="c1">// 由于不需要build,故不用以下字段</span>
+<span class="w">    </span><span class="c1">// &quot;build&quot;: {</span>
+<span class="w">    </span><span class="c1">//  // Sets the run context to one level up instead of the .devcontainer folder.</span>
+<span class="w">    </span><span class="c1">//  &quot;context&quot;: &quot;..&quot;,</span>
+<span class="w">    </span><span class="c1">//  // Update the &#39;dockerFile&#39; property if you aren&#39;t using the standard &#39;Dockerfile&#39; filename.</span>
+<span class="w">    </span><span class="c1">//  &quot;dockerfile&quot;: &quot;../.DockerFile&quot;</span>
+<span class="w">    </span><span class="c1">// },</span>
+<span class="w">    </span><span class="nt">&quot;runArgs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;--rm&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--gpus&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;all&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// 在进行docker run时需要传的参数</span>
+<span class="w">    </span><span class="nt">&quot;postCreateCommand&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nvidia-smi&quot;</span><span class="w"> </span><span class="c1">// 创建好容器后进行的command, 用于检查是否能正确读取GPU</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>docker run</code>的参数可参考官方网址<a href="https://docs.docker.com/engine/reference/commandline/run/">docker run</a></p>
 <h3 id="dockerflie">DockerFlie编写<a class="headerlink" href="#dockerflie" title="Permanent link">&para;</a></h3>
 <p><a href="https://yeasy.gitbook.io/docker_practice/image/build">使用 Dockerfile 定制镜像</a></p>
 <ul>
-<li><code>FROM</code> 指定基础镜像</li>
+<li><code>FROM</code> 指定基础镜像, 可以是本地已经构建好的</li>
 <li><code>RUN</code> 执行命令</li>
 <li><code>COPY</code> 复制文件: 将从构建上下文目录中 &lt;源路径&gt; 的文件/目录复制到新的一层的镜像内的 &lt;目标路径&gt; 位置</li>
 <li><code>CMD</code> 容器启动命令, 用于指定默认的容器主进程的启动命令, 比如，ubuntu 镜像默认的 CMD 是 <code>/bin/bash</code></li>

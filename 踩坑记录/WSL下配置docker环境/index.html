@@ -1507,6 +1507,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Learning/LinearAlgebra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    线性代数理论
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Learning/Propagation/" class="md-nav__link">
         
   
@@ -1682,7 +1702,24 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w
 <p>重启docker</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>docker
 </code></pre></div>
-<p>安装完成</p>
+<p>配置Docker daemon使其可以识别到NVIDIA Container Runtime</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nvidia-ctk<span class="w"> </span>runtime<span class="w"> </span>configure<span class="w"> </span>--runtime<span class="o">=</span>docker
+</code></pre></div>
+<p>输出
+<div class="highlight"><pre><span></span><code>INFO<span class="o">[</span><span class="m">0000</span><span class="o">]</span><span class="w"> </span>Loading<span class="w"> </span>docker<span class="w"> </span>config<span class="w"> </span>from<span class="w"> </span>/etc/docker/daemon.json
+INFO<span class="o">[</span><span class="m">0000</span><span class="o">]</span><span class="w"> </span>Successfully<span class="w"> </span>loaded<span class="w"> </span>config
+INFO<span class="o">[</span><span class="m">0000</span><span class="o">]</span><span class="w"> </span>Wrote<span class="w"> </span>updated<span class="w"> </span>config<span class="w"> </span>to<span class="w"> </span>/etc/docker/daemon.json
+INFO<span class="o">[</span><span class="m">0000</span><span class="o">]</span><span class="w"> </span>It<span class="w"> </span>is<span class="w"> </span>recommended<span class="w"> </span>that<span class="w"> </span>the<span class="w"> </span>docker<span class="w"> </span>daemon<span class="w"> </span>be<span class="w"> </span>restarted.
+</code></pre></div></p>
+<p>重启docker, 安装完成</p>
+<p>拉取pytorch官方镜像</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>pull<span class="w"> </span>pytorch/pytorch:2.0.0-cuda11.7-cudnn8-devel
+</code></pre></div>
+<p>进入镜像</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>cuda117<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>pytorch/pytorch:2.0.0-cuda11.7-cudnn8-devel
+</code></pre></div>
+<p>——GPU用于指定容器应该看到哪个GPU, all的意思是“所有的”。如果你只想用一个，你可以传递它的id——gpu 1。你也可以指定一个要使用的gpu列表，——gpu "device=1,2"</p>
+<p><a href="https://blog.roboflow.com/nvidia-docker-vscode-pytorch/">Develop like a Pro with NVIDIA + Docker + VS Code + PyTorch</a></p>
 <p>由于镜像都过大,下载速度很慢,可以通过更换国内源</p>
 <p><a href="http://www.dfcsoft.com/View.aspx?id=057a2efcdb0d428d80a49e5c00b6f924">Windows Docker 配置国内镜像源的两种方法</a></p>
 <ol>
