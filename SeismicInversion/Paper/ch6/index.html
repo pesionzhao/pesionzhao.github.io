@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../Gan/">
+        <link rel="prev" href="../ch5/">
       
       
-        <link rel="next" href="../Review/">
+        <link rel="next" href="../Source/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Unet迁移学习 - ZPSXJTU</title>
+        <title>chapter6递归求解反射系数 - ZPSXJTU</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#avo-inversion-based-on-transfer-learning-and-low-frequency-model" class="md-skip">
+        <a href="#chapter-6" class="md-skip">
           跳转至
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Unet迁移学习
+              chapter6递归求解反射系数
             
           </span>
         </div>
@@ -1214,17 +1214,19 @@
                 
   
   
+    
+  
   
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5_1" checked>
         
           <label class="md-nav__link" for="__nav_5_5_1" id="__nav_5_5_1_label" tabindex="0">
             
@@ -1237,7 +1239,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_5_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_5_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_5_1">
             <span class="md-nav__icon md-icon"></span>
             反射率法
@@ -1328,9 +1330,27 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../ch6/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    chapter6递归求解反射系数
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1339,6 +1359,78 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-6" class="md-nav__link">
+    Chapter 6
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#611" class="md-nav__link">
+    6.1.1 分层叠加
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#612" class="md-nav__link">
+    6.1.2 加法规则的推广
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#613" class="md-nav__link">
+    6.1.3 附加规则的解释
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    6.2 堆叠层的反射
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 堆叠层的反射">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#621" class="md-nav__link">
+    6.2.1 递归方案
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1456,27 +1548,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Unet迁移学习
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../unet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1485,58 +1559,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#avo-inversion-based-on-transfer-learning-and-low-frequency-model" class="md-nav__link">
-    AVO Inversion Based on Transfer Learning and Low-Frequency Model
-  </a>
-  
-    <nav class="md-nav" aria-label="AVO Inversion Based on Transfer Learning and Low-Frequency Model">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    摘要
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    INTRODUCTION
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    流程
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1763,30 +1785,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#avo-inversion-based-on-transfer-learning-and-low-frequency-model" class="md-nav__link">
-    AVO Inversion Based on Transfer Learning and Low-Frequency Model
+  <a href="#chapter-6" class="md-nav__link">
+    Chapter 6
   </a>
   
-    <nav class="md-nav" aria-label="AVO Inversion Based on Transfer Learning and Low-Frequency Model">
+    <nav class="md-nav" aria-label="Chapter 6">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    摘要
+  <a href="#611" class="md-nav__link">
+    6.1.1 分层叠加
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    INTRODUCTION
+  <a href="#612" class="md-nav__link">
+    6.1.2 加法规则的推广
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    流程
+  <a href="#613" class="md-nav__link">
+    6.1.3 附加规则的解释
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    6.2 堆叠层的反射
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 堆叠层的反射">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#621" class="md-nav__link">
+    6.2.1 递归方案
   </a>
   
 </li>
@@ -1811,33 +1853,207 @@
                   
 
 
-  <h1>Unet迁移学习</h1>
+  <h1>chapter6递归求解反射系数</h1>
 
-<h2 id="avo-inversion-based-on-transfer-learning-and-low-frequency-model">AVO Inversion Based on Transfer Learning and Low-Frequency Model<a class="headerlink" href="#avo-inversion-based-on-transfer-learning-and-low-frequency-model" title="Permanent link">&para;</a></h2>
-<p>基于迁移学习和低频模型的AVO反演</p>
-<p><a href="https://ieeexplore.ieee.org/document/9634049">https://ieeexplore.ieee.org/document/9634049</a></p>
-<h3 id="_1">摘要<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>当深度学习直接用于地震反演时，主要存在三个问题。首先，标签数据不足。第二，针对一个工作区域训练的网络不适用于其他工作区域。第三，反演结果存在空间不连续和不稳定问题。本文提出了结合迁移学习和低频分量约束的AVO反演方法。</p>
-<h3 id="introduction">INTRODUCTION<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
-<p>根据反演算法的不同，可以分为迭代正演模拟方法、非线性反演方法和线性反演方法。传统的AVO反演是典型的病态问题，通常需要进行各种假设，反演得到的密度结果并不可靠。随着深度学习的崛起，越来越多深度学习方法被用在了地震反演上，例如CNN对时空波形进行分类，进行阻抗反演，由于网络深度增加引起的梯度爆炸，引用了Resnet对地震随机噪声的衰减，叠前反演等，这些网络均设计为单输入(仅有地震数据作为输入)，由于地震数据为带限数据，缺少低频成分，导致反演结果具有横向不稳定性和不连续性。</p>
-<p>由于岩性的差异，一个工区训练的反演网络模型不能直接应用于其他地区的地震参数反演。所以这里使用迁移学习很有必要。</p>
-<p>故本文采用迁移学习和低频约束相结合的方法，我们提出了多输入网络结构，它不仅可以学习角度地震记录和弹性参数之间的关系，还可以约束进行AVO反演，先让网络在随机合成数据中进行学习，再进行迁移学习小样本数据</p>
-<p>创新点
-- 迁移学习
-- 网络双输入（地震数据和低频信息）</p>
-<h3 id="_2">流程<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>将真实数据（弹性参数）当作目标域数据，随机生成一些数据（弹性参数）当作源域数据，首先使用源域数据进行网络训练得到预训练权重，之后进行目标域数据迁移学习</p>
-<p><strong>正演合成数据</strong></p>
-<p>使用合成数据可以减轻小样本问题的过拟合问题，由于Zoeppritz近似不能反映全反射现象，这里合成数据反射系数由精确Zoeppritz方程得到，之后通过和子波褶积得到合成地震数据</p>
-<p><strong>反演网络结构</strong></p>
-<p><img alt="" src="https://s2.loli.net/2023/04/25/7FEGveLYKhJBpbd.png" /></p>
-<p>第一步，用随机数据对网络进行预训练，得到广义网络模型。第二步，将广义网络模型转移到目标区域，利用目标数据对网络模型进行优化，得到符合目标区域反演要求的网络模型。</p>
-<p><strong>实验</strong></p>
-<p>为了模拟真实情况下的井数较少的问题，目标域数据为Overthrust模型中4道井曲线，正演使用40hz的雷克子波，入射角为0~30间隔5°。</p>
-<p>第一步，我们用大量合成的随机数据预训练网络。第二步，将预训练的网络的权重迁移到具有相同架构的目标网络中针对目标域数据进行微调。</p>
-<p>本文还对冻结不同层对反演结果的影响做了对比，且进行了PCC对比，证明预测效果都很好</p>
-<p>对不同主频的地震数据的反演结果进行对比，同样预测效果都很好</p>
-<p>对Mamousi2数据进行实验，添加5db的高斯噪声，本文的方法依旧表现着良好的性能</p>
+<h2 id="chapter-6">Chapter 6<a class="headerlink" href="#chapter-6" title="Permanent link">&para;</a></h2>
+<h3 id="611">6.1.1 分层叠加<a class="headerlink" href="#611" title="Permanent link">&para;</a></h3>
+<p>我们考虑由均匀半空间所包围的区域 <span class="arithmatex"><span class="MathJax_Preview">(z_A，z_C)</span><script type="math/tex">(z_A，z_C)</script></span>，<span class="arithmatex"><span class="MathJax_Preview">z_A</span><script type="math/tex">z_A</script></span>和<span class="arithmatex"><span class="MathJax_Preview">z_C</span><script type="math/tex">z_C</script></span>处的弹性参数具有连续性。然后通过在<span class="arithmatex"><span class="MathJax_Preview">z_A</span><script type="math/tex">z_A</script></span>和<span class="arithmatex"><span class="MathJax_Preview">z_C</span><script type="math/tex">z_C</script></span>之间的<span class="arithmatex"><span class="MathJax_Preview">z_B</span><script type="math/tex">z_B</script></span>层分割分层来划分该区域。我们设想在 zB 处引入一个无限小的均匀区域，链式规则与(5.38)一样</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\mathbf{Q}(z_{A},z_{C})=\mathbf{Q}(z_{A},z_{B})\mathbf{Q}(z_{B},z_{C})\tag{6.1}</div>
+<script type="math/tex; mode=display">\mathbf{Q}(z_{A},z_{C})=\mathbf{Q}(z_{A},z_{B})\mathbf{Q}(z_{B},z_{C})\tag{6.1}</script>
+</div>
+<p>由于<span class="arithmatex"><span class="MathJax_Preview">z_A \le z_B \le z_C</span><script type="math/tex">z_A \le z_B \le z_C</script></span>，我们可以对(6.1)中的每个Q采用(5.45)表示法。(6.1) 的左侧由<span class="arithmatex"><span class="MathJax_Preview">Q(z_A, z_C)</span><script type="math/tex">Q(z_A, z_C)</script></span>的分区组成</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\begin{aligned}
+&amp;(\mathbf{T_D^{AC}})^{-1}=(\mathbf{T_D^{AB}})^{-1}[\mathbf{I}-\mathbf{R_U^{AB}}\mathbf{R_D^{BC}}](\mathbf{T_D^{BC}})^{-1} \\
+&amp;\mathbf{R_D^{AC}(T_D^{AC})^{-1}=T_U^{AB}R_D^{BC}(T_D^{BC})^{-1}+R_D^{AB}(T_D^{AB})^{-1}[I-R_U^{AB}R_D^{BC}](T_D^{BC})^{-1}} \\
+&amp;(\mathbf{T_D^{AC}})^{-1}\mathbf{R_U^{AC}}=(\mathbf{T_D^{AB}})^{-1}\mathbf{R_U^{AB}}\mathbf{T_U^{BC}}+(\mathbf{T_D^{AB}})^{-1}[\mathbf{I}-\mathbf{R_U^{AB}}\mathbf{R_D^{BC}}](\mathbf{T_D^{BC}})^{-1}\mathbf{R_U^{BC}}
+\end{aligned}\tag{6.2}</div>
+<script type="math/tex; mode=display">\begin{aligned}
+&(\mathbf{T_D^{AC}})^{-1}=(\mathbf{T_D^{AB}})^{-1}[\mathbf{I}-\mathbf{R_U^{AB}}\mathbf{R_D^{BC}}](\mathbf{T_D^{BC}})^{-1} \\
+&\mathbf{R_D^{AC}(T_D^{AC})^{-1}=T_U^{AB}R_D^{BC}(T_D^{BC})^{-1}+R_D^{AB}(T_D^{AB})^{-1}[I-R_U^{AB}R_D^{BC}](T_D^{BC})^{-1}} \\
+&(\mathbf{T_D^{AC}})^{-1}\mathbf{R_U^{AC}}=(\mathbf{T_D^{AB}})^{-1}\mathbf{R_U^{AB}}\mathbf{T_U^{BC}}+(\mathbf{T_D^{AB}})^{-1}[\mathbf{I}-\mathbf{R_U^{AB}}\mathbf{R_D^{BC}}](\mathbf{T_D^{BC}})^{-1}\mathbf{R_U^{BC}}
+\end{aligned}\tag{6.2}</script>
+</div>
+<p>对于<span class="arithmatex"><span class="MathJax_Preview">Q(z_A, z_C)</span><script type="math/tex">Q(z_A, z_C)</script></span>的剩余部分有一个更复杂的表达式</p>
+<p>借助<span class="arithmatex"><span class="MathJax_Preview">(T^{AC}_D)^{−1}</span><script type="math/tex">(T^{AC}_D)^{−1}</script></span>的表达式，我们可以恢复整体反射和透射矩阵。向下的矩阵是</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\begin{aligned}\mathbf{T_D^{AC}}&amp;=\mathbf{T_D^{BC}}[\mathbf{I}-\mathbf{R_U^{AB}}\mathbf{R_D^{BC}}]^{-1}\mathbf{T_D^{AB}},\\\mathbf{R_D^{AC}}&amp;=\mathbf{R_D^{AB}}+\mathbf{T_U^{AB}}\mathbf{R_D^{BC}}[\mathbf{I}-\mathbf{R_U^{AB}}\mathbf{R_D^{BC}}]^{-1}\mathbf{T_D^{AB}}\end{aligned}\tag{6.3}</div>
+<script type="math/tex; mode=display">\begin{aligned}\mathbf{T_D^{AC}}&=\mathbf{T_D^{BC}}[\mathbf{I}-\mathbf{R_U^{AB}}\mathbf{R_D^{BC}}]^{-1}\mathbf{T_D^{AB}},\\\mathbf{R_D^{AC}}&=\mathbf{R_D^{AB}}+\mathbf{T_U^{AB}}\mathbf{R_D^{BC}}[\mathbf{I}-\mathbf{R_U^{AB}}\mathbf{R_D^{BC}}]^{-1}\mathbf{T_D^{AB}}\end{aligned}\tag{6.3}</script>
+</div>
+<p>向上的矩阵也有类似的结构</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\begin{aligned}
+&amp;\mathbf{T}_{\mathrm{U}}^{\mathrm{AC}} =\mathbf{T_{U}^{AB}[I-R_{D}^{BC}R_{U}^{AB}]^{-1}T_{U}^{BC}} \\
+&amp;\mathbf{R}_{\mathrm{U}}^{\mathrm{AC}} =\mathbf{R_{U}^{BC}}+\mathbf{T_{D}^{BC}}\mathbf{R_{U}^{AB}}[\mathbf{I}-\mathbf{R_{D}^{BC}}\mathbf{R_{U}^{AB}}]^{-1}\mathbf{T_{U}^{BC}}
+\end{aligned}\tag{6.4}</div>
+<script type="math/tex; mode=display">\begin{aligned}
+&\mathbf{T}_{\mathrm{U}}^{\mathrm{AC}} =\mathbf{T_{U}^{AB}[I-R_{D}^{BC}R_{U}^{AB}]^{-1}T_{U}^{BC}} \\
+&\mathbf{R}_{\mathrm{U}}^{\mathrm{AC}} =\mathbf{R_{U}^{BC}}+\mathbf{T_{D}^{BC}}\mathbf{R_{U}^{AB}}[\mathbf{I}-\mathbf{R_{D}^{BC}}\mathbf{R_{U}^{AB}}]^{-1}\mathbf{T_{U}^{BC}}
+\end{aligned}\tag{6.4}</script>
+</div>
+<h3 id="612">6.1.2 加法规则的推广<a class="headerlink" href="#612" title="Permanent link">&para;</a></h3>
+<p>在5.2节中，我们展示了反射和透射矩阵与基本应力-位移矩阵BVC的相互关系，其列对应于水平zC的上行和下行波。现在我们利用这个关系将加法规则推广到一般反射矩阵。</p>
+<p>在<span class="arithmatex"><span class="MathJax_Preview">z_A</span><script type="math/tex">z_A</script></span>水平上我们可以构造<span class="arithmatex"><span class="MathJax_Preview">B_{VC}(z_A)</span><script type="math/tex">B_{VC}(z_A)</script></span></p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\mathbf{B}_{\mathrm{VC}}(z_{{A}}) =\mathbf{P}(z_{{A}},z_{{C}})\mathbf{D}(z_{{C}})
+=\mathbf{P}(z_{A},z_{B})\mathbf{P}(z_{B},z_{C})\mathbf{D}(z_{C})\tag{6.5}</div>
+<script type="math/tex; mode=display">
+\mathbf{B}_{\mathrm{VC}}(z_{{A}}) =\mathbf{P}(z_{{A}},z_{{C}})\mathbf{D}(z_{{C}})
+=\mathbf{P}(z_{A},z_{B})\mathbf{P}(z_{B},z_{C})\mathbf{D}(z_{C})\tag{6.5}</script>
+</div>
+<p>采用传播链规则(2.89)。我们现在可以用<span class="arithmatex"><span class="MathJax_Preview">z_B</span><script type="math/tex">z_B</script></span>和<span class="arithmatex"><span class="MathJax_Preview">z_C</span><script type="math/tex">z_C</script></span>之间的波传播子Q来改写(6.5)，使用(5.47)</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\mathbf{B}_{{VC}}(z_{{A}}) =\mathbf{P}(z_{A},z_{B})\mathbf{D}(z_{B})\mathbf{Q}(z_{B},z_{C})
+=\mathbf{B}_\mathrm{VB}(z_\mathrm{A})\mathbf{Q}(z_\mathrm{B},z_\mathrm{C}), 
+\tag{6.6}</div>
+<script type="math/tex; mode=display">
+\mathbf{B}_{{VC}}(z_{{A}}) =\mathbf{P}(z_{A},z_{B})\mathbf{D}(z_{B})\mathbf{Q}(z_{B},z_{C})
+=\mathbf{B}_\mathrm{VB}(z_\mathrm{A})\mathbf{Q}(z_\mathrm{B},z_\mathrm{C}), 
+\tag{6.6}</script>
+</div>
+<p>我们认识到基本矩阵<span class="arithmatex"><span class="MathJax_Preview">B_{VB}</span><script type="math/tex">B_{VB}</script></span>对应于<span class="arithmatex"><span class="MathJax_Preview">z_B</span><script type="math/tex">z_B</script></span>处的上下波。在分块形式中，我们看到两个基本矩阵通过出现在<span class="arithmatex"><span class="MathJax_Preview">Q(z_B, z_C)</span><script type="math/tex">Q(z_B, z_C)</script></span>中的区域<span class="arithmatex"><span class="MathJax_Preview">(z_B, z_C)</span><script type="math/tex">(z_B, z_C)</script></span>的反射和透射性质连接起来。与牵引力部分有相同的形式 即</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\begin{aligned}{W}_{{UC}}(z_{{A}})&amp;={W}_{{UB}}(z_{{A}})\mathbf{T}_{{U}}^{{BC}}-\{{W}_{{DB}}(z_{{A}})+{W}_{{UB}}(z_{{A}})\mathbf{R}_{{D}}^{{BC}}\}(\mathbf{T}_{{D}}^{{BC}})^{-1}\mathbf{R}_{{U}}^{{BC}}\\{W}_{{DC}}(z_{{A}})&amp;=\left({W}_{{DB}}(z_{{A}})+{W}_{{UB}}(z_{{A}})\mathbf{R}_{{DC}}^{{BC}}\right)(\mathbf{T}_{{D}}^{{BC}})^{-1}\end{aligned}\tag{6.7}</div>
+<script type="math/tex; mode=display">\begin{aligned}{W}_{{UC}}(z_{{A}})&={W}_{{UB}}(z_{{A}})\mathbf{T}_{{U}}^{{BC}}-\{{W}_{{DB}}(z_{{A}})+{W}_{{UB}}(z_{{A}})\mathbf{R}_{{D}}^{{BC}}\}(\mathbf{T}_{{D}}^{{BC}})^{-1}\mathbf{R}_{{U}}^{{BC}}\\{W}_{{DC}}(z_{{A}})&=\left({W}_{{DB}}(z_{{A}})+{W}_{{UB}}(z_{{A}})\mathbf{R}_{{DC}}^{{BC}}\right)(\mathbf{T}_{{D}}^{{BC}})^{-1}\end{aligned}\tag{6.7}</script>
+</div>
+<p>考虑在<span class="arithmatex"><span class="MathJax_Preview">z = z_A</span><script type="math/tex">z = z_A</script></span>处施加自由表面边界条件，根据<span class="arithmatex"><span class="MathJax_Preview">B_{VC}</span><script type="math/tex">B_{VC}</script></span>的牵引部分, 由(5.63)式可得自由表面处<span class="arithmatex"><span class="MathJax_Preview">z_C</span><script type="math/tex">z_C</script></span>之间的向上反射矩阵为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\mathbf{R_{U}^{fC}}=-\mathbf{T_{DC}^{-1}}(z_{A})\mathbf{T_{UC}(z_{A})}\tag{6.8}</div>
+<script type="math/tex; mode=display">\mathbf{R_{U}^{fC}}=-\mathbf{T_{DC}^{-1}}(z_{A})\mathbf{T_{UC}(z_{A})}\tag{6.8}</script>
+</div>
+<p>如果我们现在用<span class="arithmatex"><span class="MathJax_Preview">B_{VB}</span><script type="math/tex">B_{VB}</script></span>和BC反射和透射矩阵来代替<span class="arithmatex"><span class="MathJax_Preview">B_{VC}</span><script type="math/tex">B_{VC}</script></span>，我们就有了</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\mathbf{R_{U}^{fC}=T_{D}^{BC}(T_{DB}(z_{A})+T_{UB}(z_{A})R_{D}^{BC})^{-1}T_{UB}(z_{A})T_{U}^{BC}+R_{U}^{BC}}\tag{6.9}</div>
+<script type="math/tex; mode=display">\mathbf{R_{U}^{fC}=T_{D}^{BC}(T_{DB}(z_{A})+T_{UB}(z_{A})R_{D}^{BC})^{-1}T_{UB}(z_{A})T_{U}^{BC}+R_{U}^{BC}}\tag{6.9}</script>
+</div>
+<p>从(6.8)得到了</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\mathbf{R}_{U}^{fC}=\mathbf{R}_{U}^{BC}+\mathbf{T}_D^{BC}\mathbf{R}_{U}^{fB}[\mathbf{I}-\mathbf{R}_D^{BC}\mathbf{R}_{U}^{fB}]^{-1}\mathbf{T}_{U}^{BC}\tag{6.10}</div>
+<script type="math/tex; mode=display">\mathbf{R}_{U}^{fC}=\mathbf{R}_{U}^{BC}+\mathbf{T}_D^{BC}\mathbf{R}_{U}^{fB}[\mathbf{I}-\mathbf{R}_D^{BC}\mathbf{R}_{U}^{fB}]^{-1}\mathbf{T}_{U}^{BC}\tag{6.10}</script>
+</div>
+<p>这个加法关系的形式与我们前面关于向上矩阵的关系(6.4)完全相同。在地震场的所有边界条件下，反射的加法关系的结构将是相同的，因此位移和牵引力的线性组合在某些深度上消失。对应反射矩阵的计算需要计算类似式(6.8)的表达式，其中T由位移和牵引的其他组合代替。由于相同的线性算子将应用于式(6.7)的两边，我们总是会从(6.10)中提取一个reverberation operator</p>
+<p>当我们要求自由面牵引力消失时，我们进一步推广了传输的附加规则，因为表面位移<span class="arithmatex"><span class="MathJax_Preview">W^{fC}_U</span><script type="math/tex">W^{fC}_U</script></span>可以表示为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\mathbf{W_{U}^{fC}}=\mathbf{W_{U}^{fB}}[\mathbf{I}-\mathbf{R_{D}^{BC}}\mathbf{R_{U}^{fB}}]^{-1}\mathbf{T_{U}^{BC}}\tag{6.11}</div>
+<script type="math/tex; mode=display">\mathbf{W_{U}^{fC}}=\mathbf{W_{U}^{fB}}[\mathbf{I}-\mathbf{R_{D}^{BC}}\mathbf{R_{U}^{fB}}]^{-1}\mathbf{T_{U}^{BC}}\tag{6.11}</script>
+</div>
+<p>当我们使用(2.68)时，它与(6.4)的形式相同，用于向上传输。</p>
+<p>如果我们把<span class="arithmatex"><span class="MathJax_Preview">z_B</span><script type="math/tex">z_B</script></span>置于自由曲面(z = 0)的正下方，就可以得到这个位移算子的一个特别有用的形式</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\mathbf{W}_{\mathrm{U}}^{\mathrm{fC}}=\mathbf{W}_{\mathrm{F}}[\mathbf{I}-\mathbf{R}_{\mathrm{D}}^{\mathrm{0C}}\mathbf{R}_{\mathrm{F}}]^{-1}\mathbf{T}_{\mathrm{U}}^{\mathrm{0C}}\tag{6.12}</div>
+<script type="math/tex; mode=display">\mathbf{W}_{\mathrm{U}}^{\mathrm{fC}}=\mathbf{W}_{\mathrm{F}}[\mathbf{I}-\mathbf{R}_{\mathrm{D}}^{\mathrm{0C}}\mathbf{R}_{\mathrm{F}}]^{-1}\mathbf{T}_{\mathrm{U}}^{\mathrm{0C}}\tag{6.12}</script>
+</div>
+<p>其中<span class="arithmatex"><span class="MathJax_Preview">W_F = m_{U0} + m_{D0}R_F</span><script type="math/tex">W_F = m_{U0} + m_{D0}R_F</script></span>，用D ( 0 + )的分拆表示.这个位移算子在半空间对埋藏源激励的响应表达式中起着重要的作用，正如我们在7.3节中所见。</p>
+<h3 id="613">6.1.3 附加规则的解释<a class="headerlink" href="#613" title="Permanent link">&para;</a></h3>
+<p>加法规则( 6.3 )，( 6.4 )使得我们可以构造一个区域' AC '的整体反射和透射矩阵，但是我们还没有对区域' AB '和' BC '的性质如何结合给出任何物理解释</p>
+<p>作为说明，我们取向下的矩阵</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\begin{aligned}&amp;\mathbf{T_D^{AC}=T_D^{BC}[I-R_U^{AB}R_D^{BC}]^{-1}T_D^{AB}}\\&amp;\mathbf{R_D^{AC}=R_D^{AB}+T_U^{AB}R_D^{BC}[I-R_U^{AB}R_D^{BC}]^{-1}T_D^{AB}}\end{aligned}\tag{6.13}</div>
+<script type="math/tex; mode=display">\begin{aligned}&\mathbf{T_D^{AC}=T_D^{BC}[I-R_U^{AB}R_D^{BC}]^{-1}T_D^{AB}}\\&\mathbf{R_D^{AC}=R_D^{AB}+T_U^{AB}R_D^{BC}[I-R_U^{AB}R_D^{BC}]^{-1}T_D^{AB}}\end{aligned}\tag{6.13}</script>
+</div>
+<p>其中上、下区域的性质通过矩阵逆<span class="arithmatex"><span class="MathJax_Preview">[I-R^{AB}_UR^{BC}_D]^{-1}</span><script type="math/tex">[I-R^{AB}_UR^{BC}_D]^{-1}</script></span>的作用而耦合</p>
+<p><strong>对于SH波</strong>，<span class="arithmatex"><span class="MathJax_Preview">R^{AB}_U R^{BC}_D</span><script type="math/tex">R^{AB}_U R^{BC}_D</script></span>只是反射系数的乘积</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\mathbf{R_U^{AB}}\mathbf{R_D^{BC}}=(\mathbf{R_U^{HH}})(\mathbf{R_D^{HH}})\tag{6.14}</div>
+<script type="math/tex; mode=display">\mathbf{R_U^{AB}}\mathbf{R_D^{BC}}=(\mathbf{R_U^{HH}})(\mathbf{R_D^{HH}})\tag{6.14}</script>
+</div>
+<p>为了简单起见，我们去掉上标AB，BC</p>
+<p><strong>对于P-SV波</strong>，矩阵乘积生成</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\mathbf{R_D^{AB}}\mathbf{R_D^{BC}}=\begin{pmatrix}\mathbf{R_U^{PP}}\mathbf{R_D^{PP}}+\mathbf{R_U^{PS}}\mathbf{R_D^{SP}}&amp;\mathbf{R_U^{PP}}\mathbf{R_D^{PS}}+\mathbf{R_U^{PS}}\mathbf{R_D^{SS}}\\\mathbf{R_U^{SP}}\mathbf{R_D^{PP}}+\mathbf{R_U^{SS}}\mathbf{R_D^{SP}}&amp;\mathbf{R_U^{SP}}\mathbf{R_D^{PS}}+\mathbf{R_U^{SS}}\mathbf{R_U^{SS}}\end{pmatrix}\tag{6.15}</div>
+<script type="math/tex; mode=display">\mathbf{R_D^{AB}}\mathbf{R_D^{BC}}=\begin{pmatrix}\mathbf{R_U^{PP}}\mathbf{R_D^{PP}}+\mathbf{R_U^{PS}}\mathbf{R_D^{SP}}&\mathbf{R_U^{PP}}\mathbf{R_D^{PS}}+\mathbf{R_U^{PS}}\mathbf{R_D^{SS}}\\\mathbf{R_U^{SP}}\mathbf{R_D^{PP}}+\mathbf{R_U^{SS}}\mathbf{R_D^{SP}}&\mathbf{R_U^{SP}}\mathbf{R_D^{PS}}+\mathbf{R_U^{SS}}\mathbf{R_U^{SS}}\end{pmatrix}\tag{6.15}</script>
+</div>
+<p>并且每个部分代表了物理上可行的反射元素的组合</p>
+<p>当我们根据行列式和矩阵共轭直接计算逆<span class="arithmatex"><span class="MathJax_Preview">[I-R^{AB}_UR^{BC}_D]^{-1}</span><script type="math/tex">[I-R^{AB}_UR^{BC}_D]^{-1}</script></span>时，我们在所有耦合波情况下都遇到了困难。例如，在P - SV波行列式的展开中，我们产生了反射组合</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\mathrm{R_U^{SP}R_D^{PS}R_U^{PS}R_D^{SP},\quad R_U^{PP}R_D^{PP}R_U^{SS}R_D^{SS}}\tag{6.16}</div>
+<script type="math/tex; mode=display">\mathrm{R_U^{SP}R_D^{PS}R_U^{PS}R_D^{SP},\quad R_U^{PP}R_D^{PP}R_U^{SS}R_D^{SS}}\tag{6.16}</script>
+</div>
+<p>由于波形的切换，任何物理过程都无法实现(Cisternas, Betancourt &amp; Leiva, 1973)。如果我们对矩阵的逆作级数展开式，这个困难就可以解决了</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">[I-R_{{U}}^{AB}R_{{D}}^{BC}]^{-1}=I+R_{{U}}^{AB}R_{{D}}^{BC}+R_{{U}}^{AB}R_{{D}}^{BC}R_{{U}}^{AB}R_{{D}}^{BC}+...\tag{6.17}</div>
+<script type="math/tex; mode=display">[I-R_{{U}}^{AB}R_{{D}}^{BC}]^{-1}=I+R_{{U}}^{AB}R_{{D}}^{BC}+R_{{U}}^{AB}R_{{D}}^{BC}R_{{U}}^{AB}R_{{D}}^{BC}+...\tag{6.17}</script>
+</div>
+<p>其中，所有相互作用的组合在物理上都是可行的。随着这个逆的展开，向下的反射和透射矩阵具有了表示形式</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\begin{aligned}
+&amp;R_{D}^{AC} =\mathbf{R_D^{AB}}+\mathbf{T_U^{AB}}\mathbf{R_D^{BC}}\mathbf{T_D^{AB}}+\mathbf{T_U^{AB}}\mathbf{R_D^{BC}}\mathbf{R_U^{AB}}\mathbf{R_D^{BC}}\mathbf{T_D^{AB}}+...,  \\
+&amp;T_{D}^{AC} =\mathbf{T_D^{BC}}\mathbf{T_D^{AB}}+\mathbf{T_D^{BC}}\mathbf{R_U^{AB}}\mathbf{R_D^{BC}}\mathbf{T_D^{AB}}+...
+\end{aligned}\tag{6.18}</div>
+<script type="math/tex; mode=display">\begin{aligned}
+&R_{D}^{AC} =\mathbf{R_D^{AB}}+\mathbf{T_U^{AB}}\mathbf{R_D^{BC}}\mathbf{T_D^{AB}}+\mathbf{T_U^{AB}}\mathbf{R_D^{BC}}\mathbf{R_U^{AB}}\mathbf{R_D^{BC}}\mathbf{T_D^{AB}}+...,  \\
+&T_{D}^{AC} =\mathbf{T_D^{BC}}\mathbf{T_D^{AB}}+\mathbf{T_D^{BC}}\mathbf{R_U^{AB}}\mathbf{R_D^{BC}}\mathbf{T_D^{AB}}+...
+\end{aligned}\tag{6.18}</script>
+</div>
+<p>而这些序列中更高的项包含了<span class="arithmatex"><span class="MathJax_Preview">R_{AB}^U R_{BC}^D</span><script type="math/tex">R_{AB}^U R_{BC}^D</script></span>的更高次幂</p>
+<p>序列(6.18)的示意图如下图示，其中我们设想了在zA处入射向下的行波，从而产生反射和透射项。通过从右到左的阅读，可以找到(6.17)中每个术语的物理内容。</p>
+<p><img alt="" src="https://s2.loli.net/2024/03/08/ekPlahAj6rMDT7x.png" /></p>
+<p>由图可以清晰的看到每一项的计算过程, 序列中高阶项的项包括' AB '区和' BC '区之间进一步的内部相互作用。总响应式( 6.3 )包含了所有这些内部混响，因此我们将<span class="arithmatex"><span class="MathJax_Preview">[I-R^{AB}_UR^{BC}_D]^{-1}</span><script type="math/tex">[I-R^{AB}_UR^{BC}_D]^{-1}</script></span>作为区域'AC'的混响算子。</p>
+<p>在透射序列(6.18)中也可以看到类似的模式。第一项<span class="arithmatex"><span class="MathJax_Preview">T^{BC}_D T^{AB}_D</span><script type="math/tex">T^{BC}_D T^{AB}_D</script></span>对应的是通过整个区域的直接传播。高阶项包括由<span class="arithmatex"><span class="MathJax_Preview">R^{AB}_U R^{BC}_D</span><script type="math/tex">R^{AB}_U R^{BC}_D</script></span>的幂表示的连续内部混响</p>
+<p>通过对混响算符的这种解释，我们看到，如果我们截断<span class="arithmatex"><span class="MathJax_Preview">[ I-R^{AB}_U R^{BC}_D]</span><script type="math/tex">[ I-R^{AB}_U R^{BC}_D]</script></span>^{-1}到M + 1项的展开式，我们将在<span class="arithmatex"><span class="MathJax_Preview">R^{AC}_D</span><script type="math/tex">R^{AC}_D</script></span>，T^{AC}_D的近似式( 6.18 )中包含M个内部混响。如果这些反射和透射量本身被用于加法规则的进一步应用中，则可能的内部混响是累积的，并且最大可以出现nM个这样的腿，其中n是RAC D或TAC D出现在响应完全扩展中的次数。</p>
+<p>Kennett (1975,1979a)和Stephen(1977)使用截断展开来研究多次反射，并限制对地震波场部分的关注。对于复倍数的研究，使用近似来抑制一个区域内的所有内部混响是特别方便的</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">^0\mathbf{R}_D^{A{C}}=\mathbf{R}_D^{A{B}}+\mathbf{T}_U^{A{B}}{R}_D^{B{C}}\mathbf{T}_D^{A{B}}\tag{6.19}</div>
+<script type="math/tex; mode=display">^0\mathbf{R}_D^{A{C}}=\mathbf{R}_D^{A{B}}+\mathbf{T}_U^{A{B}}{R}_D^{B{C}}\mathbf{T}_D^{A{B}}\tag{6.19}</script>
+</div>
+<p>只允许一个内部混响</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">^{1}\mathbf{R}_D^{AC}=\mathbf{R}_D^{AB}+\mathbf{T}_{U}^{AB}\mathbf{R}_D^{BC}[\mathbf{I}+\mathbf{R}_{U}^{AB}\mathbf{R}_D^{BC}]\mathbf{T}_D^{AB}\tag{6.20}</div>
+<script type="math/tex; mode=display">^{1}\mathbf{R}_D^{AC}=\mathbf{R}_D^{AB}+\mathbf{T}_{U}^{AB}\mathbf{R}_D^{BC}[\mathbf{I}+\mathbf{R}_{U}^{AB}\mathbf{R}_D^{BC}]\mathbf{T}_D^{AB}\tag{6.20}</script>
+</div>
+<p>并且当全混响序列包含矩阵逆时</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\mathbf{R_D^{AC}}=\mathbf{R_D^{AB}}+\mathbf{T_U^{AB}}\mathbf{R_D^{BC}}[\mathbf{I}-\mathbf{R_U^{AB}}\mathbf{R_D^{BC}}]^{-1}\mathbf{T_D^{AB}}\tag{6.21}</div>
+<script type="math/tex; mode=display">\mathbf{R_D^{AC}}=\mathbf{R_D^{AB}}+\mathbf{T_U^{AB}}\mathbf{R_D^{BC}}[\mathbf{I}-\mathbf{R_U^{AB}}\mathbf{R_D^{BC}}]^{-1}\mathbf{T_D^{AB}}\tag{6.21}</script>
+</div>
+<p>同样的项组合出现在(6.20)，(6.21)中，对于P-SV波，我们只需要计算2 × 2矩阵逆。因此，当需要在'AC'中进行多个内部交互时，计算完整响应(6.21)更方便、更有效。</p>
+<p>在上面的讨论中，我们考虑了从“AB”和“BC”区域反射时P波和SV波之间转换的可能性。如果这种反射可以忽略不计，混响算符本质上就是P波和SV波的单独算符</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">[\mathbf{I}-\mathbf{R_U^{AB}}\mathbf{R_D^{BC}}]^{-1}\approx\begin{bmatrix}[1-\mathbf{R_U^{AB}}\mathbf{R_D^{BC}}]_{\mathbf{PP}}^{-1}&amp;0\\0&amp;[1-\mathbf{R_U^{AB}}\mathbf{R_D^{BC}}]_{\mathbf{SS}}^{-1}\end{bmatrix}\tag{6.22}</div>
+<script type="math/tex; mode=display">[\mathbf{I}-\mathbf{R_U^{AB}}\mathbf{R_D^{BC}}]^{-1}\approx\begin{bmatrix}[1-\mathbf{R_U^{AB}}\mathbf{R_D^{BC}}]_{\mathbf{PP}}^{-1}&0\\0&[1-\mathbf{R_U^{AB}}\mathbf{R_D^{BC}}]_{\mathbf{SS}}^{-1}\end{bmatrix}\tag{6.22}</script>
+</div>
+<p>如果转换可能只发生在'AB'区域，情况会更加复杂，因为现在P和SV内部倍数之间存在部分耦合。每一种波型的混响序列都将被该波型的转换倍数所产生的贡献所改变:<span class="arithmatex"><span class="MathJax_Preview">\mathrm{R_U^{PS}}\mathrm{R_D^{SS}}\mathrm{R_U^{PS}}\mathrm{R_D^{PP}}.</span><script type="math/tex">\mathrm{R_U^{PS}}\mathrm{R_D^{SS}}\mathrm{R_U^{PS}}\mathrm{R_D^{PP}}.</script></span></p>
+<h2 id="62">6.2 堆叠层的反射<a class="headerlink" href="#62" title="Permanent link">&para;</a></h2>
+<p>在任何均匀层中没有反射，意味着一个均匀矩阵堆栈的反射矩阵在很大程度上取决于界面系数。通过层的传输给出了调制界面效应的相位项。对于一个均匀层堆栈，在前一节中引入的加法规则可以用于构造两阶段递归过程中的反射和传输矩阵。通过一层的相位延迟和界面项交替引入。</p>
+<h3 id="621">6.2.1 递归方案<a class="headerlink" href="#621" title="Permanent link">&para;</a></h3>
+<p>考虑z1 &lt; z &lt; z2中的一个均匀层覆盖在z2 &lt; z &lt; z3中的一堆这样的层上。我们假设z2−处的反射和透射矩阵是已知的，并写为:</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\mathbf{R}_\mathrm{D}(z_2-)=\mathbf{R}_\mathrm{D}(z_2-,z_3+)\tag{6.23}</div>
+<script type="math/tex; mode=display">\mathbf{R}_\mathrm{D}(z_2-)=\mathbf{R}_\mathrm{D}(z_2-,z_3+)\tag{6.23}</script>
+</div>
+<p>然后，我们可以使用加法规则和(5.49)加入对应于通过均匀层的透射的相位项，以计算z1+处界面下方的反射和透射矩阵。因此</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\begin{aligned}\mathbf{R}_\mathrm{D}(z_1+)&amp;=\mathbf{E}_\mathrm{D}^{12}\mathbf{R}_\mathrm{D}(z_2-)\mathbf{E}_\mathrm{D}^{12}\\\mathbf{T}_\mathrm{D}(z_1+)&amp;=\mathbf{T}_\mathrm{D}(z_2-)\mathbf{E}_\mathrm{D}^{12}\\\mathbf{T}_\mathrm{U}(z_1+)&amp;=\mathbf{E}_\mathrm{D}^{12}\mathbf{T}_\mathrm{U}(z_2-)\end{aligned}\tag{6.24}</div>
+<script type="math/tex; mode=display">\begin{aligned}\mathbf{R}_\mathrm{D}(z_1+)&=\mathbf{E}_\mathrm{D}^{12}\mathbf{R}_\mathrm{D}(z_2-)\mathbf{E}_\mathrm{D}^{12}\\\mathbf{T}_\mathrm{D}(z_1+)&=\mathbf{T}_\mathrm{D}(z_2-)\mathbf{E}_\mathrm{D}^{12}\\\mathbf{T}_\mathrm{U}(z_1+)&=\mathbf{E}_\mathrm{D}^{12}\mathbf{T}_\mathrm{U}(z_2-)\end{aligned}\tag{6.24}</script>
+</div>
+<p>其中<span class="arithmatex"><span class="MathJax_Preview">E^{12}_D</span><script type="math/tex">E^{12}_D</script></span>为向下通过层传播的相位收入(3.45)。加法规则的进一步应用允许我们包含界面z1的反射和透射矩阵，例如:</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\mathbf{R}_D^1=\mathbf{R}_D(z_1-,z_1+)\tag{6.25}</div>
+<script type="math/tex; mode=display">\mathbf{R}_D^1=\mathbf{R}_D(z_1-,z_1+)\tag{6.25}</script>
+</div>
+<p>z1界面上方的向下反射和透射矩阵取决于界面项和先前计算的向下量</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\begin{aligned}\mathbf{R}_\mathrm{D}(z_1-)&amp;=\mathbf{R}_\mathrm{D}^1+\mathbf{T}_\mathrm{U}^1\mathbf{R}_\mathrm{D}(z_1+)[1-\mathbf{R}_\mathrm{U}^1\mathbf{R}_\mathrm{D}(z_1+)]^{-1}\mathbf{T}_\mathrm{D}^1,\\\mathbf{T}_\mathrm{D}(z_1-)&amp;=\mathbf{T}_\mathrm{D}(z_1+)[1-\mathbf{R}_\mathrm{U}^1\mathbf{R}_\mathrm{D}(z_1+)]^{-1}\mathbf{T}_\mathrm{D}^1,\end{aligned}\tag{6.26}</div>
+<script type="math/tex; mode=display">\begin{aligned}\mathbf{R}_\mathrm{D}(z_1-)&=\mathbf{R}_\mathrm{D}^1+\mathbf{T}_\mathrm{U}^1\mathbf{R}_\mathrm{D}(z_1+)[1-\mathbf{R}_\mathrm{U}^1\mathbf{R}_\mathrm{D}(z_1+)]^{-1}\mathbf{T}_\mathrm{D}^1,\\\mathbf{T}_\mathrm{D}(z_1-)&=\mathbf{T}_\mathrm{D}(z_1+)[1-\mathbf{R}_\mathrm{U}^1\mathbf{R}_\mathrm{D}(z_1+)]^{-1}\mathbf{T}_\mathrm{D}^1,\end{aligned}\tag{6.26}</script>
+</div>
+<p>向上的矩阵采用不那么简单的形式，因为我们实际上是在波传播系统最复杂的层面上增加了一层</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\begin{aligned}\mathbf{R}_\mathbf{U}(z_1-)&amp;=\mathbf{R}_\mathbf{U}(z_2-)+\mathbf{T}_\mathbf{D}(z_1+)\mathbf{R}_\mathbf{U}^1[1-\mathbf{R}_\mathbf{D}(z_1+)\mathbf{R}_\mathbf{U}^1]^{-1}\mathbf{T}_\mathbf{U}(z_1+)\\\mathbf{T}_\mathbf{U}(z_1-)&amp;=\mathbf{T}_\mathbf{U}^1[1-\mathbf{R}_\mathbf{D}(z_1+)\mathbf{R}_\mathbf{U}^1]^{-1}\mathbf{T}_\mathbf{U}(z_1+)\end{aligned}\tag{6.27}</div>
+<script type="math/tex; mode=display">\begin{aligned}\mathbf{R}_\mathbf{U}(z_1-)&=\mathbf{R}_\mathbf{U}(z_2-)+\mathbf{T}_\mathbf{D}(z_1+)\mathbf{R}_\mathbf{U}^1[1-\mathbf{R}_\mathbf{D}(z_1+)\mathbf{R}_\mathbf{U}^1]^{-1}\mathbf{T}_\mathbf{U}(z_1+)\\\mathbf{T}_\mathbf{U}(z_1-)&=\mathbf{T}_\mathbf{U}^1[1-\mathbf{R}_\mathbf{D}(z_1+)\mathbf{R}_\mathbf{U}^1]^{-1}\mathbf{T}_\mathbf{U}(z_1+)\end{aligned}\tag{6.27}</script>
+</div>
+<p>如果需要，截断混响序列可以代替矩阵逆，以给出有限的近似结果。</p>
+<p>加法规则的这两种应用可以递归地计算全反射矩阵和透射矩阵。我们从z3的分层基础开始，计算界面矩阵，例如<span class="arithmatex"><span class="MathJax_Preview">R^3_D</span><script type="math/tex">R^3_D</script></span>，它也将是<span class="arithmatex"><span class="MathJax_Preview">R_D(z3−)</span><script type="math/tex">R_D(z3−)</script></span>。我们使用(6.24)将堆叠反射和透射矩阵步进到stack中最低层的顶部, 然后我们使用(6.26)-(6.27)的接口加法关系将stack矩阵带到该接口的上端。(6.24)和(6.26)-(6.27)的循环允许我们对任意数量的层进行一次一层的stack操作。</p>
+<p>对于向下的矩阵<span class="arithmatex"><span class="MathJax_Preview">R_D，T_D</span><script type="math/tex">R_D，T_D</script></span> ( 6.24 )，( 6.26 )在计算过程中只需要保持向下的stack矩阵。当需要向上的矩阵时，通常更方便地从分层的顶部开始分别计算它们，并每次向下工作一层。所得到的构造方案具有与( 6.24 )，( 6.26 )类似的结构，并且很容易通过从自由表面系数开始而不是界面系数来适应自由表面反射矩阵</p>
+<p>在固定的慢度p下，所有的界面矩阵<span class="arithmatex"><span class="MathJax_Preview">R^i_D，T^i_D</span><script type="math/tex">R^i_D，T^i_D</script></span>等都是频率无关的, 因此每一层中频率依赖项通过相位引入<span class="arithmatex"><span class="MathJax_Preview">E^{12}_D</span><script type="math/tex">E^{12}_D</script></span>, 如果存储界面系数，则可以在一个慢度p的多个频率下快速执行计算。</p>
+<p>当波在任何层中消失时，我们选择的垂直慢度<span class="arithmatex"><span class="MathJax_Preview">q_\alpha, q_\beta</span><script type="math/tex">q_\alpha, q_\beta</script></span>意味着<span class="arithmatex"><span class="MathJax_Preview">E^{12}_D</span><script type="math/tex">E^{12}_D</script></span>需满足</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\exp\{\operatorname{i}_{\alpha}(z_2-z_1)\}=\exp\{-\omega|{q}_{\alpha}|(z_2-z_1)\}\tag{6.28}</div>
+<script type="math/tex; mode=display">\exp\{\operatorname{i}_{\alpha}(z_2-z_1)\}=\exp\{-\omega|{q}_{\alpha}|(z_2-z_1)\}\tag{6.28}</script>
+</div>
+<p>当<span class="arithmatex"><span class="MathJax_Preview">q^2_\alpha \le z_1</span><script type="math/tex">q^2_\alpha \le z_1</script></span>, 我们总是让<span class="arithmatex"><span class="MathJax_Preview">z_2 &gt; z_1</span><script type="math/tex">z_2 > z_1</script></span>所以不会出现随频率增长的指数项。这意味着即使在高频率下，递归格式在数值上也是稳定的。</p>
 
 
 
