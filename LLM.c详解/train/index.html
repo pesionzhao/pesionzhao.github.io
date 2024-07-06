@@ -16,7 +16,7 @@
     
     
       
-        <title>Todolist - ZPSXJTU</title>
+        <title>Train - ZPSXJTU</title>
       
     
     
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Todolist
+              Train
             
           </span>
         </div>
@@ -1684,126 +1684,22 @@
                   
 
 
-  <h1>Todolist</h1>
+  <h1>Train</h1>
 
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 加后验概率进行约束</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 可学习正则化</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 传播矩阵正演法</li>
+<p><a href="https://fairscale.readthedocs.io/en/stable/deep_dive/oss_sdp_fsdp.html">高效的内存管理</a></p>
+<p>零冗余优化器是一类算法，旨在解决使用数据并行训练和模型并行训练之间的权衡。当使用数据并行训练时，您需要在内存和计算/通信效率之间进行权衡。另一方面，当使用模型并行训练时，您需要为内存权衡计算/通信效率。ZeRO试图解决这个问题。模型训练通常涉及两类内存占用:</p>
+<ul>
+<li>模型状态-优化器状态，梯度，参数</li>
+<li>剩余状态-激活，临时缓冲区，碎片内存</li>
 </ul>
-<hr />
-<p>12.29</p>
+<p>为了减少模型状态的冗余，提出了三种不同的算法。这些在FairScale中被实现为优化状态分片(OSS)、分片数据并行(SDP)和完全分片数据并行(FSDP)。让我们更深入地了解每种算法的实际机制，并理解它们为什么能够节省内存。</p>
+<p>TODO 细看</p>
+<p>nv_bfloat16浮点数的数据类型。该结构实现赋值操作符和类型转换。总共使用了16位:1个符号位，8个指数位，有效位数存储在7位中。总精度为8位。</p>
+<p>问题</p>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 红海数据处理</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 写汇报</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 总结docker文档</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 阅读论文</li>
-</ul>
-<p>1.4</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 对比雅可比矩阵正误</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 检查Zoeppritz方程</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 损失函数的J_m的计算方法,为什么real和aug差这么大</li>
-</ul>
-<p>1.18</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 总结回溯法,N皇后三种解法,明天自己做一遍全排列</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 总结python调c++</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 总结cuda实现三线性插值及其梯度反传</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 总结cmake语法</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 再次学习dockerfile使用方法,结合pull好的镜像,配置好环境</li>
-</ul>
-<p>1.19</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 搞明白.vscode里的三个文件到底是什么</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> GCC,GDB到底什么关系,为什么GCC -o可以生成文件 vscode却无法调试</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 总结回溯法,cmake配置</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> c++ function函数</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 背包问题</li>
-</ul>
-<p>1.21</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 红蓝染色二分法</li>
-</ul>
-<p>5.9</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 把数据模型双驱动神经网络和梯度修正神经网络拆解成两个文件夹</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> docker打包环境</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 把快速反射率法正演封装到python</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 写时深转换函数</li>
-</ul>
-<p>5.30</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 做出相同数据的FRM和RM的对比结果</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 学习字典学习</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 知乎cuda学习第一章内容，包括实现</li>
-</ul>
-<p>6.1</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 做出python与excel的通信，并结合electron完成前端界面的编写</li>
-</ul>
-<p>逻辑如下</p>
-<p>初始化新账单：新建excel文件，内容模板包括 日期，收入or支出，金额，余额，说明</p>
-<p>json与excel的互转：</p>
-<p>对账单的check：检查每一项的加和是否正确</p>
-<p>添加数据：</p>
-<p>6.3</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> python抛出异常 raise</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 二分法Ⅰ习题</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 频率选取问题/最后一层的厚度没有用到</li>
-</ul>
-<p>6.12</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 搜索旋转数组的一次二分的方法</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 0-1背包，完全背包</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 接雨水单调栈</li>
-</ul>
-<p>6.14</p>
-<p>难题</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 2786. 访问数组中的位置使分数最大</li>
-</ul>
-<p>6.18</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 总结线性DP, 并且递推的一个数组优化要再次总结</li>
-</ul>
-<p>6.19</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 线程池</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 二叉树遍历迭代法</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 单调栈大合集</li>
-</ul>
-<p>6.24</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 状态机DP</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 状压DP <a href="https://leetcode.cn/problems/beautiful-arrangement/description/">526, 优美的排列</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> lambda表达式 <a href="int&amp; i">&amp;</a>为什么要两个&amp; ,一个是捕获参数,一个是函数传参</li>
-</ul>
-<p>7.1</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 630的周赛题</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Dijkstra <a href="https://leetcode.cn/problems/network-delay-time/solutions/2668220/liang-chong-dijkstra-xie-fa-fu-ti-dan-py-ooe8/">743</a> [2065]</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 630每日一题 总数和</li>
-</ul>
-<p>7.4
-- [ ] 树形DP
-- [ ] 今天每日一题败了<a href="https://leetcode.cn/problems/minimum-moves-to-pick-k-ones/description/?envType=daily-question&amp;envId=2024-07-04">3086. 拾起 K 个 1 需要的最少行动次数</a>
-- [ ] 中位数贪心<a href="https://leetcode.cn/problems/5TxKeK/description/">LCP 24. 数字游戏</a> 
-- [ ] <a href="https://leetcode.cn/problems/minimum-operations-to-make-all-array-elements-equal/description/">2602. 使数组元素全部相等的最少操作次数</a>
-- [ ] auto &amp;[to, cost] 为什么有&amp;</p>
-<p>7.5</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 1631. 最小体力消耗路径 并查集and二分</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> floyed算法</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> group convelution</li>
-</ul>
-<p>7.6</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 周赛打家劫舍</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> transformer复现</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 逆序对</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="https://www.bilibili.com/video/BV1ho4y1W7QK/?vd_source=c43347ef375755d298da8f0c05cfe444">买卖股票的最佳时机【基础算法精讲 21】</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 为什么用size_t: 答可以看作无符号的int,比int表示范围更广,方便移植</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 内存管理的三种算法</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> NVTX_RANGE_FN()什么意思</li>
 </ul>
 
 

@@ -2487,6 +2487,7 @@
 <span class="n">nn</span><span class="o">.</span><span class="n">Conv1d</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span> <span class="n">out_channels</span><span class="p">,</span> <span class="n">kernel_size</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dilation</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">groups</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">padding_mode</span><span class="o">=</span><span class="s1">&#39;zeros&#39;</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="c1"># 一维卷积</span>
 </code></pre></div>
 <p>其中dilation为膨胀率,会膨胀卷积核增大感受野, group为组操作,具体可参照<a href="https://pytorch.org/docs/1.9.0/generated/torch.nn.Conv1d.html?highlight=conv1d#torch.nn.Conv1d">官方文档</a>, 每个组进行对应的一部分卷积之后拼接起来.方便理解可以参照<a href="https://github.com/vdumoulin/conv_arithmetic/blob/master/README.md">可视化卷积过程</a></p>
+<p><code>register_buffer</code> 将某个变量注册进缓冲区,作为常量供模型使用</p>
 <h3 id="_11">数据生成<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 数据生成相关API</span>
 <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="o">.</span><span class="n">uniform_</span><span class="p">(</span><span class="n">from</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># 用均匀分布的随机数填充张量x</span>
@@ -2505,6 +2506,7 @@
 <ul>
 <li><code>torch.clamp(input, min=None, max=None) → Tensor</code> 将tensor截断在范围中</li>
 <li><code>torch.transpose(input, dim0, dim1)</code> 将张量两个维度交换</li>
+<li><code>Tensor.masked_fill(mask,value)</code> 在mask为true的地方置为value</li>
 <li></li>
 </ul>
 <h3 id="_13">梯度相关<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>

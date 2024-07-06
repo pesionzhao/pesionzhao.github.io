@@ -1680,6 +1680,19 @@
     Algorithms
   </a>
   
+    <nav class="md-nav" aria-label="Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ranges" class="md-nav__link">
+    ranges
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1692,6 +1705,13 @@
           <li class="md-nav__item">
   <a href="#lambda" class="md-nav__link">
     lambda表达式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gcc" class="md-nav__link">
+    gcc
   </a>
   
 </li>
@@ -2047,6 +2067,19 @@
     Algorithms
   </a>
   
+    <nav class="md-nav" aria-label="Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ranges" class="md-nav__link">
+    ranges
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2059,6 +2092,13 @@
           <li class="md-nav__item">
   <a href="#lambda" class="md-nav__link">
     lambda表达式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gcc" class="md-nav__link">
+    gcc
   </a>
   
 </li>
@@ -2284,9 +2324,13 @@
 <li><a href="#远程重命名仓库">远程重命名仓库</a></li>
 <li><a href="#c">C++</a></li>
 <li><a href="#关键字">关键字</a></li>
-<li><a href="#algorithms">Algorithms</a></li>
+<li><a href="#algorithms">Algorithms</a><ul>
+<li><a href="#ranges">ranges</a></li>
+</ul>
+</li>
 <li><a href="#iterator">iterator</a></li>
 <li><a href="#lambda表达式">lambda表达式</a></li>
+<li><a href="#gcc">gcc</a></li>
 <li><a href="#string">string</a></li>
 <li><a href="#vector">vector</a></li>
 <li><a href="#set">Set</a><ul>
@@ -2391,15 +2435,33 @@ git<span class="w"> </span>remote<span class="w"> </span>set-head<span class="w"
 <li>reduce要计算的需满足结合律和交换律</li>
 <li>reduce默认初始值是由默认构造生成的，要注意一下</li>
 </ul>
+<h4 id="ranges">ranges<a class="headerlink" href="#ranges" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">sort</span><span class="p">(</span><span class="n">R</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">Comp</span><span class="w"> </span><span class="n">comp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="n">Proj</span><span class="w"> </span><span class="n">proj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{});</span><span class="c1">//按照comp排序({}默认升序),在proj方向进行排序</span>
+</code></pre></div>
 <h3 id="iterator">iterator<a class="headerlink" href="#iterator" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">distance</span><span class="w"> </span><span class="p">(</span><span class="n">InputIterator</span><span class="w"> </span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="n">InputIterator</span><span class="w"> </span><span class="n">last</span><span class="p">);</span><span class="c1">//两迭代器之间的元素个数</span>
 </code></pre></div>
 <h3 id="lambda">lambda表达式<a class="headerlink" href="#lambda" title="Permanent link">&para;</a></h3>
 <p><a href="https://zhuanlan.zhihu.com/p/384314474">C++ Lambda表达式的完整介绍</a></p>
 <p>使用std::function在函数内部构造dfs时经常使用！！</p>
-<div class="highlight"><pre><span></span><code><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dfs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">int</span><span class="p">{};</span>
+<div class="highlight"><pre><span></span><code><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dfs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">int</span>
+<span class="p">{};</span>
 <span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dfs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">){};</span>
 </code></pre></div>
+<p>lambda表达式语法</p>
+<p><code>[capture list] (params list) mutable exception-&gt; return type { function body }</code></p>
+<p><code>[capture list]</code>中为捕获的参数, 分为值捕获和引用捕获,例如</p>
+<p><code>[]</code>: 不捕获任何变量
+<code>[&amp;]</code>: 以引用方式捕获所有外部变量
+<code>[=]</code>: 以值的方式捕获所有外部变量
+<code>[=]</code>: 以值的方式捕获所有外部变量
+<code>[=,&amp;x]</code>: 以引用方式捕获x,其余都用值
+<code>[&amp;,x]</code>: 以值方式捕获x,其余都用引用</p>
+<p><code>(params list)</code>函数参数列表</p>
+<p><code>mutable</code>指示符：用来说用是否可以修改捕获的变量</p>
+<p><code>exception</code>：异常设定</p>
+<h3 id="gcc">gcc<a class="headerlink" href="#gcc" title="Permanent link">&para;</a></h3>
+<p><code>__builtin_popcount()</code> : 统计二进制数中1的个数</p>
 <h3 id="string">string<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">//获取子串</span>
 <span class="n">str</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>

@@ -16,7 +16,7 @@
     
     
       
-        <title>Todolist - ZPSXJTU</title>
+        <title>C++11特性 - ZPSXJTU</title>
       
     
     
@@ -66,6 +66,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#c11" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -96,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Todolist
+              C++11特性
             
           </span>
         </div>
@@ -255,7 +260,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../Learning/PythonDoc/" class="md-tabs__link">
+        <a href="../PythonDoc/" class="md-tabs__link">
           
   
   实用工具
@@ -1552,7 +1557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Learning/PythonDoc/" class="md-nav__link">
+      <a href="../PythonDoc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1572,7 +1577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Learning/ToolDoc/" class="md-nav__link">
+      <a href="../ToolDoc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1592,7 +1597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Learning/Algorithm/" class="md-nav__link">
+      <a href="../Algorithm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1612,7 +1617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Learning/LinearAlgebra/" class="md-nav__link">
+      <a href="../LinearAlgebra/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1632,7 +1637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Learning/Propagation/" class="md-nav__link">
+      <a href="../Propagation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1670,6 +1675,64 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    智能指针
+  </a>
+  
+    <nav class="md-nav" aria-label="智能指针">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unique_ptr" class="md-nav__link">
+    unique_ptr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared_ptr" class="md-nav__link">
+    shared_ptr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weak_ptr" class="md-nav__link">
+    weak_ptr
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    右值引用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    删除函数
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1684,127 +1747,29 @@
                   
 
 
-  <h1>Todolist</h1>
-
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 加后验概率进行约束</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 可学习正则化</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 传播矩阵正演法</li>
-</ul>
-<hr />
-<p>12.29</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 红海数据处理</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 写汇报</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 总结docker文档</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 阅读论文</li>
-</ul>
-<p>1.4</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 对比雅可比矩阵正误</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 检查Zoeppritz方程</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 损失函数的J_m的计算方法,为什么real和aug差这么大</li>
-</ul>
-<p>1.18</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 总结回溯法,N皇后三种解法,明天自己做一遍全排列</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 总结python调c++</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 总结cuda实现三线性插值及其梯度反传</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 总结cmake语法</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 再次学习dockerfile使用方法,结合pull好的镜像,配置好环境</li>
-</ul>
-<p>1.19</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 搞明白.vscode里的三个文件到底是什么</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> GCC,GDB到底什么关系,为什么GCC -o可以生成文件 vscode却无法调试</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 总结回溯法,cmake配置</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> c++ function函数</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 背包问题</li>
-</ul>
-<p>1.21</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 红蓝染色二分法</li>
-</ul>
-<p>5.9</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 把数据模型双驱动神经网络和梯度修正神经网络拆解成两个文件夹</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> docker打包环境</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 把快速反射率法正演封装到python</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 写时深转换函数</li>
-</ul>
-<p>5.30</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 做出相同数据的FRM和RM的对比结果</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 学习字典学习</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 知乎cuda学习第一章内容，包括实现</li>
-</ul>
-<p>6.1</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 做出python与excel的通信，并结合electron完成前端界面的编写</li>
-</ul>
-<p>逻辑如下</p>
-<p>初始化新账单：新建excel文件，内容模板包括 日期，收入or支出，金额，余额，说明</p>
-<p>json与excel的互转：</p>
-<p>对账单的check：检查每一项的加和是否正确</p>
-<p>添加数据：</p>
-<p>6.3</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> python抛出异常 raise</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 二分法Ⅰ习题</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 频率选取问题/最后一层的厚度没有用到</li>
-</ul>
-<p>6.12</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 搜索旋转数组的一次二分的方法</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 0-1背包，完全背包</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 接雨水单调栈</li>
-</ul>
-<p>6.14</p>
-<p>难题</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 2786. 访问数组中的位置使分数最大</li>
-</ul>
-<p>6.18</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 总结线性DP, 并且递推的一个数组优化要再次总结</li>
-</ul>
-<p>6.19</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 线程池</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 二叉树遍历迭代法</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 单调栈大合集</li>
-</ul>
-<p>6.24</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 状态机DP</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 状压DP <a href="https://leetcode.cn/problems/beautiful-arrangement/description/">526, 优美的排列</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> lambda表达式 <a href="int&amp; i">&amp;</a>为什么要两个&amp; ,一个是捕获参数,一个是函数传参</li>
-</ul>
-<p>7.1</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 630的周赛题</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Dijkstra <a href="https://leetcode.cn/problems/network-delay-time/solutions/2668220/liang-chong-dijkstra-xie-fa-fu-ti-dan-py-ooe8/">743</a> [2065]</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 630每日一题 总数和</li>
-</ul>
-<p>7.4
-- [ ] 树形DP
-- [ ] 今天每日一题败了<a href="https://leetcode.cn/problems/minimum-moves-to-pick-k-ones/description/?envType=daily-question&amp;envId=2024-07-04">3086. 拾起 K 个 1 需要的最少行动次数</a>
-- [ ] 中位数贪心<a href="https://leetcode.cn/problems/5TxKeK/description/">LCP 24. 数字游戏</a> 
-- [ ] <a href="https://leetcode.cn/problems/minimum-operations-to-make-all-array-elements-equal/description/">2602. 使数组元素全部相等的最少操作次数</a>
-- [ ] auto &amp;[to, cost] 为什么有&amp;</p>
-<p>7.5</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 1631. 最小体力消耗路径 并查集and二分</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> floyed算法</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> group convelution</li>
-</ul>
-<p>7.6</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 周赛打家劫舍</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> transformer复现</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 逆序对</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="https://www.bilibili.com/video/BV1ho4y1W7QK/?vd_source=c43347ef375755d298da8f0c05cfe444">买卖股票的最佳时机【基础算法精讲 21】</a></li>
-</ul>
+<h1 id="c11">C++11特性<a class="headerlink" href="#c11" title="Permanent link">&para;</a></h1>
+<h3 id="_1">智能指针<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>用来解决内存泄漏, RAII思想</p>
+<h4 id="unique_ptr">unique_ptr<a class="headerlink" href="#unique_ptr" title="Permanent link">&para;</a></h4>
+<p>独占智能指针,不允许通过赋值将 一个unique_ptr赋值给另一个unique_ptr,但可以通过函数返回给其他的unique_ptr，还可以通过std::move来转移到其 他的unique_ptr，这样它本身就不再拥有原来指针的所有权了。</p>
+<h4 id="shared_ptr">shared_ptr<a class="headerlink" href="#shared_ptr" title="Permanent link">&para;</a></h4>
+<p>比智能指针多了一个引用计数,也就是说一个指针有多个引用对象时,当最后一个shared_ptr析构时,其内存才会被释放</p>
+<p>shared_ptr和unique_ptr的使用场景是要根据实际应用需求来选择。如果希望只有一个智能指针管 理资源或者管理数组就用unique_ptr，如果希望多个智能指针管理同一个资源就用shared_ptr。</p>
+<h4 id="weak_ptr">weak_ptr<a class="headerlink" href="#weak_ptr" title="Permanent link">&para;</a></h4>
+<p>有一点share_ptr智能指针还是有内存泄露的情况，当两个对象相互 使用一个shared_ptr成员变量指向对方，会造成循环引用，使引用计数失效，从而导致内存泄漏。</p>
+<blockquote>
+<p>未完待续</p>
+</blockquote>
+<h3 id="_2">右值引用<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>对于马上就要销毁的变量的引用</p>
+<p>比如
+<div class="highlight"><pre><span></span><code><span class="mi">3</span><span class="p">;</span>
+<span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">;</span>
+</code></pre></div></p>
+<p>用<code>&amp;&amp;</code>声明, 作用为<strong>移动语义</strong>和<strong>完美转发</strong>, 比如有些对象注定要销毁,但我们还希望对其进行复制和延展</p>
+<h3 id="_3">删除函数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>阻止类的复制和拷贝构造操作</p>
+<p>在拷贝操作和复制操作函数后加<code>=delete</code>,也就成了只移类型</p>
 
 
 

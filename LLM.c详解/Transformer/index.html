@@ -16,7 +16,7 @@
     
     
       
-        <title>Todolist - ZPSXJTU</title>
+        <title>Transformer - ZPSXJTU</title>
       
     
     
@@ -66,6 +66,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#gpt2" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -96,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Todolist
+              Transformer
             
           </span>
         </div>
@@ -1671,6 +1676,21 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gpt2" class="md-nav__link">
+    gpt2详解
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1684,126 +1704,62 @@
                   
 
 
-  <h1>Todolist</h1>
+  <h1>Transformer</h1>
 
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 加后验概率进行约束</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 可学习正则化</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 传播矩阵正演法</li>
+<h2 id="gpt2">gpt2详解<a class="headerlink" href="#gpt2" title="Permanent link">&para;</a></h2>
+<p><a href="https://jalammar.github.io/illustrated-gpt2/">图解gpt2</a></p>
+<p><strong>什么是自注意力机制?</strong></p>
+<ul>
+<li>注意力机制就是特征层与输出相乘,越大的地方就说明该地方更应该被注意</li>
+<li>自注意力机制就是特征层和特征层相乘,越大说明这两个位置越相关</li>
 </ul>
-<hr />
-<p>12.29</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 红海数据处理</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 写汇报</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 总结docker文档</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 阅读论文</li>
+<p>首先我们把一个句子分段</p>
+<ul>
+<li>每个单词需要经过一个词嵌入矩阵(wte)得到其对应的向量: 这一过程可以理解为把单词编码成计算机可以理解的数字</li>
+<li>单词的位置也很重要,在经过词嵌入之后要加位置编码矩阵(wpe),才能送入transformer block</li>
+<li>这个向量会经过自注意力模块,前向网络,得到结果后压入栈用于下一个单词的计算</li>
 </ul>
-<p>1.4</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 对比雅可比矩阵正误</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 检查Zoeppritz方程</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 损失函数的J_m的计算方法,为什么real和aug差这么大</li>
+<p>一个简单的例子</p>
+<blockquote>
+<p>First Law of Robotics</p>
+<blockquote>
+<p>A robot may not injure a human being or, through inaction, allow a human being to come to harm.</p>
+</blockquote>
+<p>Second Law of Robotics</p>
+<blockquote>
+<p>A robot must obey the orders given <strong>it</strong> by human beings except where <strong>such orders</strong> would conflict with the <strong>First Law</strong>.</p>
+</blockquote>
+</blockquote>
+<p>标黑字体的单词我们着重关注</p>
+<ul>
+<li>it 指 robot</li>
+<li>such orders 指上文中的 "the orders given it by human beings"</li>
+<li>The First Law 指上文的 "First Law of Robotics"</li>
 </ul>
-<p>1.18</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 总结回溯法,N皇后三种解法,明天自己做一遍全排列</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 总结python调c++</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 总结cuda实现三线性插值及其梯度反传</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 总结cmake语法</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 再次学习dockerfile使用方法,结合pull好的镜像,配置好环境</li>
+<p>自注意力机制就是计算当前词和之前词的关联性,在送入网络之前,需要把当前单词及其相关单词进行融合,再送入网络,这里就引出三个很重要的矩阵query,key,value</p>
+<ul>
+<li>query: 当前单词用于评价其他单词的矩阵(当前单词的query乘其他单词的key就可以知道其他单词相对于当前单词的分数)</li>
+<li>key: 可以理解为当前单词的一种特征,在计算其他单词时用于和其他单词的query匹配</li>
+<li>value: 当前单词的硬指标,如果说前面两个矩阵计算和其他单词的相关性,这个就是单词本身的价值</li>
 </ul>
-<p>1.19</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 搞明白.vscode里的三个文件到底是什么</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> GCC,GDB到底什么关系,为什么GCC -o可以生成文件 vscode却无法调试</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 总结回溯法,cmake配置</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> c++ function函数</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 背包问题</li>
-</ul>
-<p>1.21</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 红蓝染色二分法</li>
-</ul>
-<p>5.9</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 把数据模型双驱动神经网络和梯度修正神经网络拆解成两个文件夹</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> docker打包环境</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 把快速反射率法正演封装到python</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 写时深转换函数</li>
-</ul>
-<p>5.30</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 做出相同数据的FRM和RM的对比结果</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 学习字典学习</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 知乎cuda学习第一章内容，包括实现</li>
-</ul>
-<p>6.1</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 做出python与excel的通信，并结合electron完成前端界面的编写</li>
-</ul>
-<p>逻辑如下</p>
-<p>初始化新账单：新建excel文件，内容模板包括 日期，收入or支出，金额，余额，说明</p>
-<p>json与excel的互转：</p>
-<p>对账单的check：检查每一项的加和是否正确</p>
-<p>添加数据：</p>
-<p>6.3</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> python抛出异常 raise</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 二分法Ⅰ习题</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 频率选取问题/最后一层的厚度没有用到</li>
-</ul>
-<p>6.12</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 搜索旋转数组的一次二分的方法</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 0-1背包，完全背包</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 接雨水单调栈</li>
-</ul>
-<p>6.14</p>
-<p>难题</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 2786. 访问数组中的位置使分数最大</li>
-</ul>
-<p>6.18</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 总结线性DP, 并且递推的一个数组优化要再次总结</li>
-</ul>
-<p>6.19</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 线程池</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 二叉树遍历迭代法</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 单调栈大合集</li>
-</ul>
-<p>6.24</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 状态机DP</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 状压DP <a href="https://leetcode.cn/problems/beautiful-arrangement/description/">526, 优美的排列</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> lambda表达式 <a href="int&amp; i">&amp;</a>为什么要两个&amp; ,一个是捕获参数,一个是函数传参</li>
-</ul>
-<p>7.1</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 630的周赛题</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Dijkstra <a href="https://leetcode.cn/problems/network-delay-time/solutions/2668220/liang-chong-dijkstra-xie-fa-fu-ti-dan-py-ooe8/">743</a> [2065]</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 630每日一题 总数和</li>
-</ul>
-<p>7.4
-- [ ] 树形DP
-- [ ] 今天每日一题败了<a href="https://leetcode.cn/problems/minimum-moves-to-pick-k-ones/description/?envType=daily-question&amp;envId=2024-07-04">3086. 拾起 K 个 1 需要的最少行动次数</a>
-- [ ] 中位数贪心<a href="https://leetcode.cn/problems/5TxKeK/description/">LCP 24. 数字游戏</a> 
-- [ ] <a href="https://leetcode.cn/problems/minimum-operations-to-make-all-array-elements-equal/description/">2602. 使数组元素全部相等的最少操作次数</a>
-- [ ] auto &amp;[to, cost] 为什么有&amp;</p>
-<p>7.5</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 1631. 最小体力消耗路径 并查集and二分</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> floyed算法</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> group convelution</li>
-</ul>
-<p>7.6</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 周赛打家劫舍</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> transformer复现</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 逆序对</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="https://www.bilibili.com/video/BV1ho4y1W7QK/?vd_source=c43347ef375755d298da8f0c05cfe444">买卖股票的最佳时机【基础算法精讲 21】</a></li>
+<p>用博客中的类比就是:把它想象成在文件柜里搜寻。query就是你需要寻找东西的便利贴。key就像柜内文件夹的标签。当您将标签与便利贴相匹配时，我们取出该文件夹的内容，这些内容就是value。只不过您不仅要寻找一个值，而且要从混合文件夹中寻找混合值。</p>
+<p>将Q乘以每个K向量生成每个文件夹的score(点积后+softmax)。将每个score乘value并相加,得到自注意力的输出</p>
+<p>得到自注意力的输出后,再经过神经网络,编码器,得到输出向量,再与词嵌入矩阵(wte)点乘,得到了词嵌入矩阵中每个单词的分数(看看输出向量和词嵌入矩阵中哪个分数高),找最高的单词作为token,也可以通过概率的方式抽取,或者取前40个大的token,这就完成对一个单词的操作,我们还要将这样的操作重复很多次直到遍历完了整个串</p>
+<p>训练时是长序列中的多个token,预测时是单个token的预测</p>
+<p>transformer使用了很多层的归一化</p>
+<p>pre-train: 用于让模型可以生成文本(通过前面的词生成下一个词)</p>
+<p>fine-tuning: 根据问题生成答案</p>
+<p>stage3: compare answer</p>
+<p>未来的LLM</p>
+<ul>
+<li>可以读取并生成文本</li>
+<li>浏览文件,网页</li>
+<li>使用工具: e.g 计算器,编译器</li>
+<li>生成图像,视频</li>
+<li>可以听,说,写歌</li>
+<li>可以长时间思考(system 2)而不是根据经验(system 1)</li>
+<li>可以有自我奖励机制进行自我改进,针对特定任务进行微调</li>
+<li>成为一个操作系统 LLM OS!!!!</li>
 </ul>
 
 
