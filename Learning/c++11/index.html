@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../Algorithm/">
+      
+      
+        <link rel="next" href="../ToolDoc/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>C++11特性 - ZPSXJTU</title>
+        <title>c++特性杂记 - ZPSXJTU</title>
       
     
     
@@ -67,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#c11" class="md-skip">
+        <a href="#c" class="md-skip">
           跳转至
         </a>
       
@@ -101,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              C++11特性
+              c++特性杂记
             
           </span>
         </div>
@@ -256,14 +260,16 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../PythonDoc/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Algorithm/" class="md-tabs__link">
           
   
-  实用工具
+  学习文档
 
         </a>
       </li>
@@ -1521,33 +1527,35 @@
       
   
   
+    
+  
   
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    实用工具
+    学习文档
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            实用工具
+            学习文档
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1557,15 +1565,180 @@
   
   
     <li class="md-nav__item">
-      <a href="../PythonDoc/" class="md-nav__link">
+      <a href="../Algorithm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    python使用文档
+    算法
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structrue.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数据结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    c++特性杂记
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    c++特性杂记
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    C++
+  </a>
+  
+    <nav class="md-nav" aria-label="C++">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    关键字
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    智能指针
+  </a>
+  
+    <nav class="md-nav" aria-label="智能指针">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unique_ptr" class="md-nav__link">
+    unique_ptr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared_ptr" class="md-nav__link">
+    shared_ptr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weak_ptr" class="md-nav__link">
+    weak_ptr
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    右值引用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    删除函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    默认函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr" class="md-nav__link">
+    constexpr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lambda" class="md-nav__link">
+    lambda表达式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1597,11 +1770,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/" class="md-nav__link">
+      <a href="../PythonDoc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    数据结构与算法
+    python使用文档
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CUDA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CUDA
   </span>
   
 
@@ -1675,8 +1868,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1685,7 +1876,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    C++
+  </a>
+  
+    <nav class="md-nav" aria-label="C++">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
+    关键字
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     智能指针
   </a>
   
@@ -1717,18 +1923,44 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     右值引用
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     删除函数
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    默认函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr" class="md-nav__link">
+    constexpr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lambda" class="md-nav__link">
+    lambda表达式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1747,8 +1979,34 @@
                   
 
 
-<h1 id="c11">C++11特性<a class="headerlink" href="#c11" title="Permanent link">&para;</a></h1>
-<h3 id="_1">智能指针<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+  <h1>c++特性杂记</h1>
+
+<h2 id="c">C++<a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
+<h3 id="_1">关键字<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>const</code> 代表常量,不能被修改, <strong>const默认与其左边结合，当左边没有任何东西则与右边结合。</strong>, 也就是const int<em> 等价于 int const</em></li>
+</ul>
+<p><a href="https://www.zhihu.com/question/443195492/answer/1723886545">C++里 const int<em> 与 int const</em> 有什么区别？</a></p>
+<p>对于int *const，则是表示一旦得到了某个变量的地址，不能改变其地址也就是不能再指向其他变量,但是可以修改指向的内容</p>
+<p>对于int const * 表示不能修改指向的内容,但是可以修改指针的地址</p>
+<p>成员函数后加<code>const</code>表示该函数不修改类成员</p>
+<ul>
+<li><code>static</code> 全局的静态变量在程序启动前就会初始化, 局部静态变量在第一次调用该语句的时候才会初始化</li>
+</ul>
+<p><strong>修饰函数</strong>: 函数只能在本文件内引用，其他文件是不可以调用这个函数的。</p>
+<p><strong>修饰成员函数</strong>: 调用的时候可以不依赖对象，直接类名然后函数名就可以调用。</p>
+<p><strong>修饰成员变量</strong>: 存储在data段，不属于对象私有，类实例化的对象共享一个变量。</p>
+<p><strong>修饰全局变量</strong>: 存储在data段，只有本文件可见</p>
+<p><strong>修饰局部变量</strong>: 存储在data段，只有本文件可见，只在第一次使用的时候初始化一次，后面不会在初始化。</p>
+<ul>
+<li><code>sizeof</code> 对数组: 数组所占空间大小, 对指针: 指针本身的大小(64位操作系统为8字节,32位为4字节,取决于操作系统位数,CPU字长,编译器)</li>
+<li><code>const_cast</code> 去除<strong>指针或引用</strong>的const属性, 对常量没用,利用指针对其更改</li>
+<li><code>static_cast</code> 用于非多态类型转换(静态转换)，任何标准转换都可以用它，但是不能用于两个不相关的类型转换。</li>
+<li><code>dynamic_cast</code> 用于将一个父类对象的指针转换为子类对象的指针或引用</li>
+<li><code>reinterpret_cast</code> 不推荐 将一种类型转换为另一种不同的类型。</li>
+<li><code>volatile​​​​​​​</code> 保持内存可见性（CPU每次处理这个被volatile修饰的变量的时候，都会从内存中重新加载变量的值到寄存器）</li>
+</ul>
+<h3 id="_2">智能指针<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>用来解决内存泄漏, RAII思想</p>
 <h4 id="unique_ptr">unique_ptr<a class="headerlink" href="#unique_ptr" title="Permanent link">&para;</a></h4>
 <p>独占智能指针,不允许通过赋值将 一个unique_ptr赋值给另一个unique_ptr,但可以通过函数返回给其他的unique_ptr，还可以通过std::move来转移到其 他的unique_ptr，这样它本身就不再拥有原来指针的所有权了。</p>
@@ -1760,16 +2018,48 @@
 <blockquote>
 <p>未完待续</p>
 </blockquote>
-<h3 id="_2">右值引用<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_3">右值引用<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>对于马上就要销毁的变量的引用</p>
 <p>比如
 <div class="highlight"><pre><span></span><code><span class="mi">3</span><span class="p">;</span>
 <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">;</span>
 </code></pre></div></p>
 <p>用<code>&amp;&amp;</code>声明, 作用为<strong>移动语义</strong>和<strong>完美转发</strong>, 比如有些对象注定要销毁,但我们还希望对其进行复制和延展</p>
-<h3 id="_3">删除函数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>阻止类的复制和拷贝构造操作</p>
+<h3 id="_4">删除函数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>阻止编译器对某些成员函数的生成,例如阻止类的复制和拷贝构造操作</p>
 <p>在拷贝操作和复制操作函数后加<code>=delete</code>,也就成了只移类型</p>
+<h3 id="_5">默认函数<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>显示要求编译器生成某些成员函数 <code>=default</code></p>
+<h3 id="constexpr">constexpr<a class="headerlink" href="#constexpr" title="Permanent link">&para;</a></h3>
+<p>它表示 constant（常数）表达式, 不能修改, 并在编译时计算而不是运行时,c++11标准的constexpr函数要求如下</p>
+<ul>
+<li>函数的返回类型和参数必须是字面类型。</li>
+<li>函数体必须包含一个单一的 return 语句（在 C++11 中），或可以包含多条语句（在 C++14 及更高版本中）</li>
+</ul>
+<p>constexpr 和 const 都表示常量，但它们有一些重要的区别：</p>
+<ul>
+<li>const 变量的值在运行时确定，尽管它不可变。</li>
+<li>constexpr 变量的值在编译时确定，是编译时常量。</li>
+</ul>
+<h3 id="lambda">lambda表达式<a class="headerlink" href="#lambda" title="Permanent link">&para;</a></h3>
+<p><a href="https://zhuanlan.zhihu.com/p/384314474">C++ Lambda表达式的完整介绍</a></p>
+<p>使用std::function在函数内部构造dfs时经常使用！！</p>
+<div class="highlight"><pre><span></span><code><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dfs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">int</span>
+<span class="p">{};</span>
+<span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dfs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">){};</span>
+</code></pre></div>
+<p>lambda表达式语法</p>
+<p><code>[capture list] (params list) mutable exception-&gt; return type { function body }</code></p>
+<p><code>[capture list]</code>中为捕获的参数, 分为值捕获和引用捕获,例如</p>
+<p><code>[]</code>: 不捕获任何变量
+<code>[&amp;]</code>: 以引用方式捕获所有外部变量
+<code>[=]</code>: 以值的方式捕获所有外部变量
+<code>[=]</code>: 以值的方式捕获所有外部变量
+<code>[=,&amp;x]</code>: 以引用方式捕获x,其余都用值
+<code>[&amp;,x]</code>: 以值方式捕获x,其余都用引用</p>
+<p><code>(params list)</code>函数参数列表</p>
+<p><code>mutable</code>指示符：用来说用是否可以修改捕获的变量</p>
+<p><code>exception</code>：异常设定</p>
 
 
 
