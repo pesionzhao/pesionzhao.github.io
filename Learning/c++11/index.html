@@ -2047,8 +2047,11 @@
 <li><code>const</code> 代表常量,不能被修改, <strong>const默认与其左边结合，当左边没有任何东西则与右边结合。</strong>, 也就是const int<em> 等价于 int const</em></li>
 </ul>
 <p><a href="https://www.zhihu.com/question/443195492/answer/1723886545">C++里 const int<em> 与 int const</em> 有什么区别？</a></p>
-<p>对于int *const，则是表示一旦得到了某个变量的地址，不能改变其地址也就是不能再指向其他变量,但是可以修改指向的内容</p>
-<p>对于int const * 表示不能修改指向的内容,但是可以修改指针的地址</p>
+<p>对于int<em> const，则是表示一旦得到了某个变量的地址，不能改变其地址也就是不能再指向其他变量,但是可以修改指向的内容,</em><em>也就是栈区int</em>类型的变量无法修改**</p>
+<p>对于int const * 表示不能修改指向的内容,但是可以修改指针的地址,<strong>也就是堆区的指向无法修改</strong></p>
+<p><strong>数组名和指针的关系</strong> <a href="https://blog.csdn.net/ljob2006/article/details/4872167">C/C++数组名与指针区别深入探索</a></p>
+<p>对数组进行<code>sizeof()</code>返回数组长度乘元素长度, 对指针进行<code>sizeof()</code>是指针的长度,取决操作系统地址总线</p>
+<p>简单来说,数组名指代一种数据结构,且可作为指针常量(也即是不能修改,自增之类操作),数组名作为函数形参时，在函数体内，其失去了本身的内涵，仅仅只是一个指针,且失去了常量特性</p>
 <p>成员函数后加<code>const</code>表示该函数不修改类成员</p>
 <ul>
 <li><code>static</code> 全局的静态变量在程序启动前就会初始化, 局部静态变量在第一次调用该语句的时候才会初始化</li>
@@ -2163,6 +2166,8 @@
       <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
         <script src="../../js/tongji.js"></script>
+      
+        <script src="../../js/google.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

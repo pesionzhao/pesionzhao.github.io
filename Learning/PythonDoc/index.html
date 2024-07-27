@@ -2424,17 +2424,17 @@
 </ul>
 <h3 id="_4">生成矩阵<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ul>
-<li>np.ones(shape=(), dtype) 生成全一阵</li>
-<li>np.zeros(shape=(), dtype=float) 生成全零阵 </li>
-<li>np.identity(n, dtype) 生成单位阵</li>
-<li>np.tile(a, reps) 通过重复矩阵a来构造一个新矩阵, rep:a在每个轴上重复的次数</li>
-<li>np.repeat(a, repeats, axis=None) 重复矩阵中的每个元素</li>
-<li>np.kron(a,b) 克罗内克积</li>
-<li>np.vstack([]) 垂直vertically顺序堆叠矩阵</li>
-<li>np.hstack([]) 水平horizontally顺序堆叠矩阵</li>
-<li>np.concatenate(seq=[],axis=0) 按照某一轴拼接矩阵</li>
-<li>np.stack([], axis=0, dtype=),在新维度堆叠矩阵</li>
-<li>np.block() 从嵌套的块列表中组装一个矩阵,类似与np.array(list[]),只不过这里的list中的元素为矩阵</li>
+<li><code>np.ones(shape=(), dtype)</code> 生成全一阵</li>
+<li><code>np.zeros(shape=(), dtype=float)</code> 生成全零阵 </li>
+<li><code>np.identity(n, dtype)</code> 生成单位阵</li>
+<li><code>np.tile(a, reps)</code> 通过重复矩阵a来构造一个新矩阵, rep: a在每个轴上重复的次数</li>
+<li><code>np.repeat(a, repeats, axis=None)</code> 重复矩阵中的每个元素</li>
+<li><code>np.kron(a,b)</code> 克罗内克积</li>
+<li><code>np.vstack([])</code> 垂直vertically顺序堆叠矩阵</li>
+<li><code>np.hstack([])</code> 水平horizontally顺序堆叠矩阵</li>
+<li><code>np.concatenate(seq=[],axis=0)</code> 按照某一轴拼接矩阵</li>
+<li><code>np.stack([], axis=0, dtype=)</code>,在新维度堆叠矩阵</li>
+<li><code>np.block()</code> 从嵌套的块列表中组装一个矩阵,类似与np.array(list[]),只不过这里的list中的元素为矩阵</li>
 <li><code>numpy.arange(start, stop, step)</code> 生成等差数列,start默认为0，step默认为1</li>
 </ul>
 <h3 id="_5">矩阵乘法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
@@ -2514,6 +2514,9 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">ticks</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">),</span><span class="mi">10</span><span class="p">),</span> <span class="n">labels</span><span class="o">=</span><span class="n">time</span><span class="p">[::</span><span class="mi">10</span><span class="p">])</span> <span class="c1"># 把纵坐标映射成time,由于时刻值很多，yticks默认全都显示，所以要做步长处理</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># 有时自动显示的轴不是感兴趣的轴，这样可以指定显示横坐标为x的刻度</span>
 </code></pre></div>
+<ul>
+<li><code>pcolor(X,Y,C)</code> 按照xy坐标进行画多边形,比如坐标为<code>X[i],Y[i]</code>,<code>X[i+1],Y[i]</code>,<code>X[i],Y[i+1]</code>,<code>X[i+1],Y[i+1]</code>构成的矩形中元素都为<code>C[i]</code>.  <code>pcolor(C)</code> 近似等价于<code>imshow</code></li>
+</ul>
 <h2 id="pandas">Pandas<a class="headerlink" href="#pandas" title="Permanent link">&para;</a></h2>
 <p>强烈建议参考kaggle的教程,网址:<a href="https://www.kaggle.com/learn/pandas">https://www.kaggle.com/learn/pandas</a></p>
 <ul>
@@ -2728,6 +2731,8 @@
       <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
         <script src="../../js/tongji.js"></script>
+      
+        <script src="../../js/google.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

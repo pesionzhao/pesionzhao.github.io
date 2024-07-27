@@ -1752,13 +1752,6 @@
         
           <li class="md-nav__item">
   <a href="#_13" class="md-nav__link">
-    并查集
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
     最短路
   </a>
   
@@ -1799,7 +1792,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     求解最大公约数
   </a>
   
@@ -1807,14 +1800,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     辗转相除法
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
+  <a href="#_16" class="md-nav__link">
     更相减损法
   </a>
   
@@ -1833,14 +1826,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
+  <a href="#_17" class="md-nav__link">
     记忆化搜索
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
+  <a href="#_18" class="md-nav__link">
     复杂度分析
   </a>
   
@@ -1848,7 +1841,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_20" class="md-nav__link">
+  <a href="#_19" class="md-nav__link">
     递归算法
   </a>
   
@@ -2184,13 +2177,6 @@
         
           <li class="md-nav__item">
   <a href="#_13" class="md-nav__link">
-    并查集
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
     最短路
   </a>
   
@@ -2231,7 +2217,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     求解最大公约数
   </a>
   
@@ -2239,14 +2225,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     辗转相除法
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
+  <a href="#_16" class="md-nav__link">
     更相减损法
   </a>
   
@@ -2265,14 +2251,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
+  <a href="#_17" class="md-nav__link">
     记忆化搜索
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
+  <a href="#_18" class="md-nav__link">
     复杂度分析
   </a>
   
@@ -2280,7 +2266,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_20" class="md-nav__link">
+  <a href="#_19" class="md-nav__link">
     递归算法
   </a>
   
@@ -2770,16 +2756,14 @@
 <p><a href="https://leetcode.cn/problems/minimum-size-subarray-sum/description/">209. 长度最小的子数组</a></p>
 <p><a href="https://leetcode.cn/problems/subarray-product-less-than-k/description/">713. 乘积小于 K 的子数组</a></p>
 <p>初始化区间左边界为0，右边界为0，遍历取区间<strong>右边界</strong>，如果不符合题意就左边界向里缩，知道刚好满足条件，再继续向右取右边界，直到遍历结束</p>
-<h3 id="_13">并查集<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
-<p><a href="https://www.zhihu.com/collection/945696876">算法学习笔记(1) : 并查集</a></p>
-<h3 id="_14">最短路<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<h3 id="_13">最短路<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <h4 id="dijkstra">Dijkstra算法<a class="headerlink" href="#dijkstra" title="Permanent link">&para;</a></h4>
 <p>模板题 <a href="https://leetcode.cn/problems/network-delay-time/description/">743. 网络延迟时间</a></p>
 <p>问题描述</p>
 <p>图中,求k点到某一点的最短路径</p>
 <p>算法流程</p>
 <ul>
-<li>构建邻接矩阵g[i][j],表示从某一点到某一点的边权,如果没有这样的边,就置为无穷, <code>dis[n]</code>数组表示k到n的最短路径长度,初始化为无穷,<code>dis[k]=0</code></li>
+<li>构建邻接矩阵<code>g[i][j]</code>,表示从某一点到某一点的边权,如果没有这样的边,就置为无穷, <code>dis[n]</code>数组表示k到n的最短路径长度,初始化为无穷,<code>dis[k]=0</code></li>
 <li>找到dis中最小的一点<code>dis[y]</code>,即为k到该点y的最小距离,固定,之后不再进行计算</li>
 <li>更新计算y相邻点z的dis, 如果<code>dis[z]&gt;dis[y]+g[y][z]</code>,就把<code>dis[z]</code>更新,作为临时最短路</li>
 </ul>
@@ -2808,19 +2792,19 @@
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="c1">//找未被固定的最短路</span>
 <span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">-1</span><span class="p">)</span><span class="c1">//所有节点均被固定</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">ranges</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">dis</span><span class="p">);</span><span class="c1">//走完所有节点的最短时间</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">dis</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">==</span><span class="n">INT_MAX</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="k">return</span><span class="p">;</span><span class="w"> </span><span class="c1">//有节点无法到达</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="n">done</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="c1">//固定最短路</span>
-<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="c1">//更新x相邻节点</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">dis</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="n">dis</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">dis</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">+</span><span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">i</span><span class="p">]);</span>
-<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">-1</span><span class="p">)</span><span class="c1">//所有节点均被固定</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ranges</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">dis</span><span class="p">);</span><span class="c1">//走完所有节点的最短时间</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">dis</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">==</span><span class="n">INT_MAX</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w"> </span><span class="c1">//有节点无法到达</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">done</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="c1">//固定最短路</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="c1">//更新x相邻节点</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">dis</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="n">dis</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">dis</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">+</span><span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">i</span><span class="p">]);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -2888,6 +2872,9 @@
 <span class="c1">//此时的g[i][j]就表示i到k的最短路</span>
 <span class="k">return</span><span class="w"> </span><span class="n">ranges</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="n">k</span><span class="p">]);</span>
 </code></pre></div>
+<p>原始floyd算法为三维DP</p>
+<p><code>g[k+1][i][j] = min(g[k][i][j], g[k][i][k]+g[k][k][j]);</code></p>
+<p><a href="https://leetcode.cn/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/solutions/2525946/dai-ni-fa-ming-floyd-suan-fa-cong-ji-yi-m8s51/">带你发明 Floyd 算法：从记忆化搜索到递推（Python/Java/C++/Go/JS/Rust）</a></p>
 <h4 id="dfs">dfs暴力算法<a class="headerlink" href="#dfs" title="Permanent link">&para;</a></h4>
 <p>暴力搜索每一条可行的路,计算最小值</p>
 <div class="highlight"><pre><span></span><code><span class="c1">//构建邻接表</span>
@@ -2942,7 +2929,7 @@
 <span class="p">}</span>
 <span class="k">return</span><span class="w"> </span><span class="n">ranges</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">dis</span><span class="p">);</span>
 </code></pre></div>
-<h3 id="_15">求解最大公约数<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<h3 id="_14">求解最大公约数<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
 <p><a href="https://zhuanlan.zhihu.com/p/338809271">求两个数的最大公约数3种算法</a></p>
 <p>简单来说就是合并求取连通域的算法</p>
 <p>如果想合并两个域，需要找到这两个域的根节点，将两个根节点相互连接(谁是父谁是子呢？慢慢往下看)</p>
@@ -2960,10 +2947,10 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>路径压缩</p>
-<h4 id="_16">辗转相除法<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
-<h4 id="_17">更相减损法<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
+<h4 id="_15">辗转相除法<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<h4 id="_16">更相减损法<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
 <h4 id="stein">Stein算法（结合辗转相除法和更相减损法的优势以及移位运算）<a class="headerlink" href="#stein" title="Permanent link">&para;</a></h4>
-<h3 id="_18">记忆化搜索<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<h3 id="_17">记忆化搜索<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
 <p>举一个很简单的例子：求解第n项斐波那契数列的值，递归代码(朴素dfs)如下</p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">feibo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="c1">//第n项 n&gt;=0</span>
 <span class="p">{</span>
@@ -3023,8 +3010,8 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>上两种代码几乎一摸一样, 时间复杂度<span class="arithmatex"><span class="MathJax_Preview">O(n)</span><script type="math/tex">O(n)</script></span>, 空间复杂度O(1)</p>
-<h3 id="_19">复杂度分析<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
-<h4 id="_20">递归算法<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
+<h3 id="_18">复杂度分析<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<h4 id="_19">递归算法<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
 <h4 id="ologn">二分算法的时间复杂度为什么是O(logN)?<a class="headerlink" href="#ologn" title="Permanent link">&para;</a></h4>
 <h4 id="-">分治算法--牺牲空间复杂度换时间复杂度<a class="headerlink" href="#-" title="Permanent link">&para;</a></h4>
 
@@ -3070,6 +3057,8 @@
       <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
         <script src="../../js/tongji.js"></script>
+      
+        <script src="../../js/google.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

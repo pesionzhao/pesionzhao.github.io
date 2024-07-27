@@ -2504,6 +2504,10 @@ git<span class="w"> </span>remote<span class="w"> </span>set-head<span class="w"
 <span class="n">low</span><span class="o">=</span><span class="n">std</span><span class="o">::</span><span class="n">lower_bound</span><span class="w"> </span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span><span class="c1">//      ^</span>
 <span class="n">up</span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">upper_bound</span><span class="w"> </span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span><span class="c1">//               ^</span>
 </code></pre></div>
+<ul>
+<li><code>void *memset(void *str, int c, size_t n)</code> str指向的空间中n个字节被设置为c</li>
+<li><code>void iota (ForwardIterator first, ForwardIterator last, T val);</code> 将迭代器区间的元素assgin为val开始并不断自增</li>
+</ul>
 <p><strong>trick</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1">//降序排列</span>
 <span class="n">ranges</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">greater</span><span class="p">());</span>
@@ -2543,7 +2547,16 @@ git<span class="w"> </span>remote<span class="w"> </span>set-head<span class="w"
 <p><code>mutable</code>指示符：用来说用是否可以修改捕获的变量</p>
 <p><code>exception</code>：异常设定</p>
 <h3 id="gcc">gcc<a class="headerlink" href="#gcc" title="Permanent link">&para;</a></h3>
-<p><code>__builtin_popcount()</code> : 统计二进制数中1的个数</p>
+<ul>
+<li><code>__builtin_popcount()</code> : 统计二进制数中1的个数</li>
+<li><code>__builtin_ctz(x)</code>：x末尾0的个数。x=0时结果未定义。(count the trailing zeros)</li>
+<li><code>__builtin_clz(x)</code>：x前导0的个数。x=0时结果未定义。(count the leading zeros)</li>
+<li><code>__builtin_ffs(x)</code>：返回x中最后一个为1的位是从后向前的第几位</li>
+</ul>
+<p>上述仅适用于unsigned int</p>
+<ul>
+<li><code>__builtin_parity(x)</code>: x中1个数的奇偶性,返回1为奇,返回0为偶</li>
+</ul>
 <h3 id="string">string<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">//获取子串</span>
 <span class="n">str</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
@@ -2562,6 +2575,9 @@ git<span class="w"> </span>remote<span class="w"> </span>set-head<span class="w"
 </code></pre></div>
 <h3 id="vector">vector<a class="headerlink" href="#vector" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">vec</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">n</span><span class="p">));</span><span class="c1">//m行n列的空数组</span>
+<span class="c1">//重新构造</span>
+<span class="n">vec</span><span class="p">.</span><span class="n">assgin</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span><span class="c1">//整个数组元素都赋为10</span>
+<span class="n">vec</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span><span class="c1">//新元素用10</span>
 <span class="n">vec</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">iterator</span><span class="w"> </span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">size_type</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">value_type</span><span class="o">&amp;</span><span class="w"> </span><span class="n">val</span><span class="p">);</span><span class="c1">//在pos位置插入n个val</span>
 <span class="n">vec</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">iterator</span><span class="w"> </span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">InputIterator</span><span class="w"> </span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="n">InputIterator</span><span class="w"> </span><span class="n">last</span><span class="p">);</span><span class="c1">//在pos位置插入[first,last)</span>
 </code></pre></div>
@@ -2844,6 +2860,8 @@ find<span class="w"> </span><span class="o">[</span>flags<span class="o">]</span
       <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
         <script src="../../js/tongji.js"></script>
+      
+        <script src="../../js/google.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
