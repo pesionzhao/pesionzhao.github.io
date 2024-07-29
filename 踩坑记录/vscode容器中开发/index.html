@@ -12,7 +12,7 @@
         <link rel="prev" href="../WSL%E4%B8%8B%E9%85%8D%E7%BD%AEdocker%E7%8E%AF%E5%A2%83/">
       
       
-        <link rel="next" href="../../SeismicInversion/">
+        <link rel="next" href="../dockerlize%20GUI%20in%20wsl/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -1135,7 +1135,7 @@
         
           <li class="md-nav__item">
   <a href="#devcontainerjson" class="md-nav__link">
-    自动生成devcontainer.json
+    由镜像生成devcontainer.json
   </a>
   
 </li>
@@ -1189,6 +1189,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dockerlize%20GUI%20in%20wsl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    docker容器中图形化界面开发环境配置
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1956,7 +1976,7 @@
         
           <li class="md-nav__item">
   <a href="#devcontainerjson" class="md-nav__link">
-    自动生成devcontainer.json
+    由镜像生成devcontainer.json
   </a>
   
 </li>
@@ -2036,7 +2056,7 @@
 <p><a href="https://code.visualstudio.com/docs/devcontainers/create-dev-container">官方创建devcontainer.json的教程</a></p>
 <p><a href="https://docs.docker.com/engine/reference/builder/">DockerFlie编写规范</a></p>
 <p><a href="https://code.visualstudio.com/remote/advancedcontainers/add-local-file-mount">设置文件挂载宿主机</a></p>
-<h4 id="devcontainerjson">自动生成devcontainer.json<a class="headerlink" href="#devcontainerjson" title="Permanent link">&para;</a></h4>
+<h4 id="devcontainerjson">由镜像生成devcontainer.json<a class="headerlink" href="#devcontainerjson" title="Permanent link">&para;</a></h4>
 <ul>
 <li>进行开发的目录中<code>ctrl+shift+p</code>或<code>F1</code>打开<code>open container configuration Flie</code></li>
 <li>选择对应的镜像,之后还可以选择添加的其他配置</li>
@@ -2057,7 +2077,7 @@
 <p>由于在实际的应用中官方</p>
 <p>devcontainer.json中各字段的命名规则及其作用 👇</p>
 <p><a href="https://containers.dev/implementors/json_reference/">Dev Container metadata reference</a></p>
-<p>举个简单的例子,如果我想基于已有镜像构造容器, 使用GPU, 离开容器时自动删除可以这样编写json文件 👇</p>
+<p>举个简单的例子,如果我想基于已有镜像构造容器(build和image 字段只能同时存在一个), 使用GPU, 离开容器时自动删除可以这样编写json文件 👇</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CUDA117_env&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// UI中的容器名</span>
 <span class="w">    </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pesioncuda&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// 本地镜像的名字</span>
@@ -2116,7 +2136,7 @@
 <span class="w">    </span><span class="nt">&quot;postCreateCommand&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nvidia-smi&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;customizations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;vscode&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;extensions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="nt">&quot;extensions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="c1">// vscode插件</span>
 <span class="w">                </span><span class="s2">&quot;yzhang.markdown-all-in-one&quot;</span>
 <span class="w">            </span><span class="p">]</span>
 <span class="w">        </span><span class="p">}</span>

@@ -1081,6 +1081,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/dockerlize%20GUI%20in%20wsl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    docker容器中图形化界面开发环境配置
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2514,11 +2534,12 @@
 <p>线条样式：可以使用字符来定义线条的样式，比如'-'表示实线，'--'表示虚线，':'表示点线，'-'表示线段等。</p>
 </blockquote>
 <ul>
-<li>Axes.legend()/ax.legend(['First line', 'Second line']) 图例 </li>
-<li>plt.imshow(X, cmap='viridis', norm=None, aspect=None, vmin=None, vmax=None) </li>
+<li><code>Axes.legend()</code>/<code>ax.legend(['First line', 'Second line'])</code> 图例 </li>
+<li><code>plt.imshow(X, cmap='viridis', norm=None, aspect=None, vmin=None, vmax=None)</code> </li>
 </ul>
 <p>cmp选择合适的色标 <a href="https://matplotlib.org/stable/users/explain/colors/colormaps.html">官方文档</a>; aspect:轴的横纵比 'equal'/'auto'; vmin和vmax定义了颜色映射覆盖的数据范围。默认情况下，颜色映射覆盖所提供数据的完整值范围。当给出norm时，使用vmin/vmax是错误的</p>
-<p><code>plt.xticks(ticks=None, labels=None)</code> 坐标映射，ticks映射到label, 并显示，如果不指定label，就是把ticks的刻度画出来</p>
+<p><code>plt.xticks(ticks=None, labels=None)</code> 坐标映射，ticks映射到label, 并显示，如果不指定label，就是把ticks的刻度画出来
+-<code>plt.vlines(x,ymin,ymax,color)</code> 画垂直线段</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 由于imshow画出来的图横纵坐标是行数和列数，有时需要指定横纵坐标</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">ticks</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">theta</span><span class="p">)),</span> <span class="n">labels</span><span class="o">=</span><span class="n">theta</span><span class="p">)</span> <span class="c1"># 把横坐标映射成theta，可以是numpy,list</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">ticks</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">),</span><span class="mi">10</span><span class="p">),</span> <span class="n">labels</span><span class="o">=</span><span class="n">time</span><span class="p">[::</span><span class="mi">10</span><span class="p">])</span> <span class="c1"># 把纵坐标映射成time,由于时刻值很多，yticks默认全都显示，所以要做步长处理</span>
@@ -2526,6 +2547,7 @@
 </code></pre></div>
 <ul>
 <li><code>pcolor(X,Y,C)</code> 按照xy坐标进行画多边形,比如坐标为<code>X[i],Y[i]</code>,<code>X[i+1],Y[i]</code>,<code>X[i],Y[i+1]</code>,<code>X[i+1],Y[i+1]</code>构成的矩形中元素都为<code>C[i]</code>.  <code>pcolor(C)</code> 近似等价于<code>imshow</code></li>
+<li><code>plt.Normalize(vmin, vmax, clip)</code> 用于规定一种norm可以统一颜色mapping范围，超过<code>[vmin,vmax]</code>的显示由clip决定，false就显示vmin或max</li>
 </ul>
 <h2 id="pandas">Pandas<a class="headerlink" href="#pandas" title="Permanent link">&para;</a></h2>
 <p>强烈建议参考kaggle的教程,网址:<a href="https://www.kaggle.com/learn/pandas">https://www.kaggle.com/learn/pandas</a></p>

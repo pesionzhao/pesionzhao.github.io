@@ -1081,6 +1081,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/dockerlize%20GUI%20in%20wsl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    docker容器中图形化界面开发环境配置
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2004,6 +2024,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#docker-run" class="md-nav__link">
+    运行容器 docker run
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2404,6 +2431,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#docker-run" class="md-nav__link">
+    运行容器 docker run
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2473,6 +2507,7 @@
 <li><a href="#删除">删除</a></li>
 <li><a href="#多容器">多容器</a></li>
 <li><a href="#打包">打包</a></li>
+<li><a href="#运行容器-docker-run">运行容器 docker run</a></li>
 <li><a href="#cmake">CMake</a></li>
 </ul>
 <h2 id="git">git使用<a class="headerlink" href="#git" title="Permanent link">&para;</a></h2>
@@ -2708,6 +2743,7 @@ git<span class="w"> </span>remote<span class="w"> </span>set-head<span class="w"
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;apple banana&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;s/(\w+) (\w+)/\2 \1/&#39;</span><span class="w"> </span><span class="c1"># 交换两个单词的位置 s表示交换</span>
 </code></pre></div>
 <h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
+<p>深入理解linux可以看<a href="../Linux/">linux学习</a></p>
 <p><a href="https://kinsta.com/blog/linux-commands/">你必须知道的四十个linux指令</a></p>
 <p><a href="https://www.runoob.com/linux/linux-command-manual.html">菜鸟教程 Linux 命令大全</a></p>
 <h3 id="_5">常用命令<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
@@ -2802,6 +2838,7 @@ find<span class="w"> </span><span class="o">[</span>flags<span class="o">]</span
 <ul>
 <li><code>docker pull busybox</code> pull一个docker</li>
 <li><code>docker stop "containername"</code></li>
+<li><code>docker exec [OPTIONS] CONTAINER COMMAND</code> 命令用于在运行中的容器内执行一个新的命令。这对于调试、运行附加的进程或在容器内部进行管理操作非常有用。 例如<code>docker exec -it my_container /bin/bash</code></li>
 </ul>
 <h3 id="_11">删除<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2812,7 +2849,7 @@ find<span class="w"> </span><span class="o">[</span>flags<span class="o">]</span
 <li><code>docker image prune</code> 删除dangling镜像</li>
 <li><code>docker rm</code> 指定id或名字删除容器</li>
 <li><code>docker run --rm image_name</code> 离开时删除容器</li>
-<li><code>docker rm $(docker ps -a -q -f status=exited)</code> 等价于 <code>docker container prune</code></li>
+<li><code>docker rm $(docker ps -a -q -f status=exited)</code> 等价于 <code>docker container prune</code> $()表示指令替换,这一段先执行</li>
 <li><code>docker volume rm</code> 指定id或名字删除卷</li>
 <li><code>docker volume prune</code> 删除dangling状态的volume</li>
 <li></li>
@@ -2825,6 +2862,20 @@ find<span class="w"> </span><span class="o">[</span>flags<span class="o">]</span
 <h3 id="_13">打包<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>docker init</code></li>
+</ul>
+<h3 id="docker-run">运行容器 docker run<a class="headerlink" href="#docker-run" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>-d</code>: detach 后台运行容器</li>
+<li><code>-it</code>: interactive 交互</li>
+<li><code>--name</code>: 为容器指定名字</li>
+<li><code>-p</code>: publish 容器端口映射到主机端口 <code>host_port:container_port</code></li>
+<li><code>-v</code>: volume 挂载卷 <code>host_path:container_path</code></li>
+<li><code>--rm</code>: 离开容器自动删除</li>
+<li><code>-e</code>: 设置容器内环境变量</li>
+<li><code>--network</code>: 指定容器连接的网络 host </li>
+<li><code>-u</code>: 指定用户</li>
+<li><code>--entrypoint</code>: 容器入口点</li>
+<li><code>-w</code>: 设置容器工作目录</li>
 </ul>
 <h2 id="cmake">CMake<a class="headerlink" href="#cmake" title="Permanent link">&para;</a></h2>
 
