@@ -1,0 +1,137 @@
+site_name: ZPSXJTU
+nav:
+    - Home: index.md
+    - 经验之谈: 
+        - 专栏介绍: 经验之谈\README.md
+        - 基于单相机双光源的眼动交互: 经验之谈\单相机双光源视线估计.md
+        - 蛋白质荧光阵列矫正与计数: 经验之谈\荧光阵列矫正计数.md
+        - 吉林大学教务管理系统验证码识别: 经验之谈\JLU Captcha.md
+        - robomaster工程矿石识别: 经验之谈\robomaster工程矿石识别.md
+        - 百度车载影像检测与分割: 经验之谈\百度大数据竞赛划水记录.md
+        - 运营商栅格预测: 经验之谈\运营商栅格活跃度预测.md
+        # - 力扣每日一练: 经验之谈\编程每日一练.md
+        # - 头部姿态估计: 经验之谈\头部姿态估计.md
+    # - 碎碎念:
+    #     - 专栏介绍: 碎碎念\README.md
+    #     - 暑假留校摸鱼: 碎碎念\暑假摸鱼.md
+    #     - Daily Record: 碎碎念\Daily Learning.md
+    - 论文笔记:
+        - 专栏介绍: 论文笔记\README.md
+        - 网络解读:
+            - 屠榜的transformer: 论文笔记\Transformer.md
+            - 吊打一切的yoloX: 论文笔记\吊打一切的yolox.md
+            - CascadeRCNN永远滴神: 论文笔记\CascadeRCNN.md
+            - 高分辨网络HR-Net: 论文笔记\HR-Net 论文解读.md
+            - 小目标检测王者TPH-YOLOV5: 论文笔记\小目标封神TPH-YOLOV5.md
+            - 嵌入式同时完成三大视觉任务YOLOP: 论文笔记\YOLOP.md
+        - 理论基础:
+            - 从标签平滑和知识蒸馏看Soft Label: 论文笔记\基础理解\Soft label.md
+        - 即插即用:
+            - 百度开源UMOP解决特征层gt不匹配: 论文笔记\即插即用\UMOP.md
+    - 踩坑记录:
+        - 专栏介绍: 踩坑记录\README.md
+        - 基础: 踩坑记录\基础.md
+        - nano部署yolov5: 踩坑记录\nano部署yolov5.md
+        - windows下配置libtorch(vs/cmake): 踩坑记录\LibtorchInWindows.md
+        - windows+vscode配置opencv4.1.1: 踩坑记录\vscode配置opencv.md
+        - windows配置深度学习环境: 踩坑记录\新电脑配环境.md
+        - win11+ubuntu双系统的安装与卸载: 踩坑记录\ubuntu双系统安装与卸载.md
+        - WSL下GPU配置与docker安装: 踩坑记录\WSL下配置docker环境.md
+        - vscode+devcontainer+docker容器开发: 踩坑记录\vscode容器中开发.md
+        - docker容器中图形化界面开发环境配置: 踩坑记录\dockerlize GUI in wsl.md
+    - 地震反演:
+        - 专栏介绍: SeismicInversion\README.md
+        - 反演概念: SeismicInversion\Basic.md
+        - 反演基础: SeismicInversion\Util.md
+        - 数学基础: SeismicInversion\BasicMath.md
+        - 论文笔记:
+            - 反射率法:
+                - 概括: SeismicInversion\Paper\RM.md
+                - chapter2耦合波: SeismicInversion\Paper\CoupleWave.md
+                - chapter4震源: SeismicInversion\Paper\Appendix.md
+                - chapter5反射与透射: SeismicInversion\Paper\ch5.md
+                - chapter6递归求解反射系数: SeismicInversion\Paper\ch6.md 
+                - chapter7层状半空间响应: SeismicInversion\Paper\Source.md
+                - chapter7求解地震记录: SeismicInversion\Paper\Response.md
+            - 碎片: SeismicInversion\PaperNotes.md
+            - DTV: SeismicInversion\Paper\DTV.md
+            - 生成对抗网络: SeismicInversion\Paper\Gan.md
+            - Unet迁移学习: SeismicInversion\Paper\unet.md
+            - Review: SeismicInversion\Paper\Review.md
+        - 优化方法笔记: SeismicInversion\Optimization.md
+    - 学习文档:
+        - 专栏介绍: Learning/README.md
+        - 算法: Learning/Algorithm.md
+        - 动态规划: Learning/DP.md
+        - 数据结构: Learning/Structure.md
+        - c++特性杂记:  Learning/c++11.md
+        - 工具使用文档: Learning/ToolDoc.md
+        - python使用文档: Learning/PythonDoc.md
+        - CUDA: Learning/CUDA.md
+        - 线性代数理论: Learning\LinearAlgebra.md
+        - 波在介质中的传播学习笔记: Learning\Propagation.md
+    # - Rule for ZPS:
+    #     - Rule918: Rule\Rule.md
+# Theme
+theme:
+  name: 'material'
+  language: 'zh'
+  palette:
+    primary: 'Blue Grey'
+    accent: 'red'
+    scheme: Slate
+    #scheme: preference
+    
+  icon:
+    logo: 'material/school'
+  features:
+    - navigation.tabs
+  font:
+    text: 'Noto Sans'
+    code: 'Source Code Pro'
+
+# Extensions
+markdown_extensions:
+    - admonition
+    - codehilite:
+        guess_lang: false
+    - def_list
+    - footnotes
+    - meta
+    - toc:
+        permalink: true
+    - pymdownx.arithmatex #general：true公式可拖拉
+    - pymdownx.caret
+    - pymdownx.critic
+    - pymdownx.details
+    - pymdownx.emoji: # emoji
+        emoji_generator: !!python/name:pymdownx.emoji.to_svg
+    - pymdownx.inlinehilite
+    - pymdownx.keys
+    - pymdownx.magiclink
+    - pymdownx.mark
+    - pymdownx.smartsymbols
+    - pymdownx.superfences:
+        custom_fences:
+          - name: mermaid
+            class: mermaid
+            format: !!python/name:pymdownx.superfences.fence_code_format
+    - pymdownx.tasklist:
+        custom_checkbox: true
+    - pymdownx.tilde
+
+extra_javascript:
+  # other extra java script
+  # - mathjax-config.js
+  - 'js/tongji.js'
+  - 'js/google.js'
+  # - js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  # - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - 'https://cdnjs.loli.net/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'
+  # - 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+
+extra:
+  analytics:
+    provider: google
+    property: G-8Q77YBREF9
