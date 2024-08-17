@@ -1,0 +1,1812 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>c++特性杂记 - ZPSXJTU</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.472b142f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.08040f6c.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#546d78">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-8Q77YBREF9"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-8Q77YBREF9",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-8Q77YBREF9",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="Slate" data-md-color-primary="Blue-Grey" data-md-color-accent="red">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#c" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="ZPSXJTU" class="md-header__button md-logo" aria-label="ZPSXJTU" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ZPSXJTU
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              c++特性杂记
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/" class="md-tabs__link">
+        经验之谈
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" class="md-tabs__link">
+        论文笔记
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="md-tabs__link">
+        踩坑记录
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../SeismicInversion/" class="md-tabs__link">
+        地震反演
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        学习文档
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ZPSXJTU" class="md-nav__button md-logo" aria-label="ZPSXJTU" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+
+    </a>
+    ZPSXJTU
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          经验之谈
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="经验之谈" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          经验之谈
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/%E5%8D%95%E7%9B%B8%E6%9C%BA%E5%8F%8C%E5%85%89%E6%BA%90%E8%A7%86%E7%BA%BF%E4%BC%B0%E8%AE%A1/" class="md-nav__link">
+        基于单相机双光源的眼动交互
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/%E8%8D%A7%E5%85%89%E9%98%B5%E5%88%97%E7%9F%AB%E6%AD%A3%E8%AE%A1%E6%95%B0/" class="md-nav__link">
+        蛋白质荧光阵列矫正与计数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/JLU%20Captcha/" class="md-nav__link">
+        吉林大学教务管理系统验证码识别
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/robomaster%E5%B7%A5%E7%A8%8B%E7%9F%BF%E7%9F%B3%E8%AF%86%E5%88%AB/" class="md-nav__link">
+        robomaster工程矿石识别
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/%E7%99%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9B%E5%88%92%E6%B0%B4%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+        百度车载影像检测与分割
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/%E8%BF%90%E8%90%A5%E5%95%86%E6%A0%85%E6%A0%BC%E6%B4%BB%E8%B7%83%E5%BA%A6%E9%A2%84%E6%B5%8B/" class="md-nav__link">
+        运营商栅格预测
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          论文笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="论文笔记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          论文笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          网络解读
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="网络解读" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          网络解读
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/Transformer/" class="md-nav__link">
+        屠榜的transformer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8A%E6%89%93%E4%B8%80%E5%88%87%E7%9A%84yolox/" class="md-nav__link">
+        吊打一切的yoloX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/CascadeRCNN/" class="md-nav__link">
+        CascadeRCNN永远滴神
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/HR-Net%20%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/" class="md-nav__link">
+        高分辨网络HR-Net
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%B0%8F%E7%9B%AE%E6%A0%87%E5%B0%81%E7%A5%9ETPH-YOLOV5/" class="md-nav__link">
+        小目标检测王者TPH-YOLOV5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/YOLOP/" class="md-nav__link">
+        嵌入式同时完成三大视觉任务YOLOP
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          理论基础
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="理论基础" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          理论基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%9F%BA%E7%A1%80%E7%90%86%E8%A7%A3/Soft%20label/" class="md-nav__link">
+        从标签平滑和知识蒸馏看Soft Label
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          即插即用
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="即插即用" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          即插即用
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%8D%B3%E6%8F%92%E5%8D%B3%E7%94%A8/UMOP/" class="md-nav__link">
+        百度开源UMOP解决特征层gt不匹配
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          踩坑记录
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="踩坑记录" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          踩坑记录
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/nano%E9%83%A8%E7%BD%B2yolov5/" class="md-nav__link">
+        nano部署yolov5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/LibtorchInWindows/" class="md-nav__link">
+        windows下配置libtorch(vs/cmake)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/vscode%E9%85%8D%E7%BD%AEopencv/" class="md-nav__link">
+        windows+vscode配置opencv4.1.1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/%E6%96%B0%E7%94%B5%E8%84%91%E9%85%8D%E7%8E%AF%E5%A2%83/" class="md-nav__link">
+        windows配置深度学习环境
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD/" class="md-nav__link">
+        win11+ubuntu双系统的安装与卸载
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/WSL%E4%B8%8B%E9%85%8D%E7%BD%AEdocker%E7%8E%AF%E5%A2%83/" class="md-nav__link">
+        WSL下GPU配置与docker安装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/vscode%E5%AE%B9%E5%99%A8%E4%B8%AD%E5%BC%80%E5%8F%91/" class="md-nav__link">
+        vscode+devcontainer+docker容器开发
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/dockerlize%20GUI%20in%20wsl/" class="md-nav__link">
+        docker容器中图形化界面开发环境配置
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          地震反演
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="地震反演" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          地震反演
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Basic/" class="md-nav__link">
+        反演概念
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Util/" class="md-nav__link">
+        反演基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/BasicMath/" class="md-nav__link">
+        数学基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5">
+          论文笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="论文笔记" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          论文笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_1" type="checkbox" id="__nav_5_5_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_1">
+          反射率法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="反射率法" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          反射率法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/RM.md" class="md-nav__link">
+        概括
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/CoupleWave.md" class="md-nav__link">
+        chapter2耦合波
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/Appendix.md" class="md-nav__link">
+        chapter4震源
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/ch5.md" class="md-nav__link">
+        chapter5反射与透射
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/ch6.md" class="md-nav__link">
+        chapter6递归求解反射系数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/Source.md" class="md-nav__link">
+        chapter7层状半空间响应
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/Response.md" class="md-nav__link">
+        chapter7求解地震记录
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/PaperNotes/" class="md-nav__link">
+        碎片
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/DTV.md" class="md-nav__link">
+        DTV
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/Gan.md" class="md-nav__link">
+        生成对抗网络
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/unet.md" class="md-nav__link">
+        Unet迁移学习
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/Review.md" class="md-nav__link">
+        Review
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Optimization/" class="md-nav__link">
+        优化方法笔记
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          学习文档
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="学习文档" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          学习文档
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Algorithm/" class="md-nav__link">
+        算法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DP/" class="md-nav__link">
+        动态规划
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structure/" class="md-nav__link">
+        数据结构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          c++特性杂记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        c++特性杂记
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    C++
+  </a>
+  
+    <nav class="md-nav" aria-label="C++">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    关键字
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    智能指针
+  </a>
+  
+    <nav class="md-nav" aria-label="智能指针">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unique_ptr" class="md-nav__link">
+    unique_ptr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared_ptr" class="md-nav__link">
+    shared_ptr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weak_ptr" class="md-nav__link">
+    weak_ptr
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    右值引用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    删除函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    默认函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr" class="md-nav__link">
+    constexpr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lambda" class="md-nav__link">
+    lambda表达式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ToolDoc/" class="md-nav__link">
+        工具使用文档
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PythonDoc/" class="md-nav__link">
+        python使用文档
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CUDA/" class="md-nav__link">
+        CUDA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LinearAlgebra/" class="md-nav__link">
+        线性代数理论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Propagation/" class="md-nav__link">
+        波在介质中的传播学习笔记
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    C++
+  </a>
+  
+    <nav class="md-nav" aria-label="C++">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    关键字
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    智能指针
+  </a>
+  
+    <nav class="md-nav" aria-label="智能指针">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unique_ptr" class="md-nav__link">
+    unique_ptr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared_ptr" class="md-nav__link">
+    shared_ptr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weak_ptr" class="md-nav__link">
+    weak_ptr
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    右值引用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    删除函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    默认函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr" class="md-nav__link">
+    constexpr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lambda" class="md-nav__link">
+    lambda表达式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>c++特性杂记</h1>
+
+<h2 id="c">C++<a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
+<h3 id="_1">关键字<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>const</code> 代表常量,不能被修改, <strong>const默认与其左边结合，当左边没有任何东西则与右边结合。</strong>, 也就是const int<em> 等价于 int const</em></li>
+</ul>
+<p><a href="https://www.zhihu.com/question/443195492/answer/1723886545">C++里 const int<em> 与 int const</em> 有什么区别？</a></p>
+<p>对于int<em> const，则是表示一旦得到了某个变量的地址，不能改变其地址也就是不能再指向其他变量,但是可以修改指向的内容,</em><em>也就是栈区int</em>类型的变量无法修改**</p>
+<p>对于int const * 表示不能修改指向的内容,但是可以修改指针的地址,<strong>也就是堆区的指向无法修改</strong></p>
+<p><strong>数组名和指针的关系</strong> <a href="https://blog.csdn.net/ljob2006/article/details/4872167">C/C++数组名与指针区别深入探索</a></p>
+<p>对数组进行<code>sizeof()</code>返回数组长度乘元素长度, 对指针进行<code>sizeof()</code>是指针的长度,取决操作系统地址总线</p>
+<p>简单来说,数组名指代一种数据结构,且可作为指针常量(也即是不能修改,自增之类操作),数组名作为函数形参时，在函数体内，其失去了本身的内涵，仅仅只是一个指针,且失去了常量特性</p>
+<p>成员函数后加<code>const</code>表示该函数不修改类成员</p>
+<ul>
+<li><code>static</code> 全局的静态变量在程序启动前就会初始化, 局部静态变量在第一次调用该语句的时候才会初始化</li>
+</ul>
+<p><strong>修饰函数</strong>: 函数只能在本文件内引用，其他文件是不可以调用这个函数的。</p>
+<p><strong>修饰成员函数</strong>: 调用的时候可以不依赖对象，直接类名然后函数名就可以调用。</p>
+<p><strong>修饰成员变量</strong>: 存储在data段，不属于对象私有，类实例化的对象共享一个变量。</p>
+<p><strong>修饰全局变量</strong>: 存储在data段，只有本文件可见</p>
+<p><strong>修饰局部变量</strong>: 存储在data段，只有本文件可见，只在第一次使用的时候初始化一次，后面不会在初始化。</p>
+<ul>
+<li><code>sizeof</code> 对数组: 数组所占空间大小, 对指针: 指针本身的大小(64位操作系统为8字节,32位为4字节,取决于操作系统位数,CPU字长,编译器)</li>
+<li><code>const_cast</code> 去除<strong>指针或引用</strong>的const属性, 对常量没用,利用指针对其更改</li>
+<li><code>static_cast</code> 用于非多态类型转换(静态转换)，任何标准转换都可以用它，但是不能用于两个不相关的类型转换。</li>
+<li><code>dynamic_cast</code> 用于将一个父类对象的指针转换为子类对象的指针或引用</li>
+<li><code>reinterpret_cast</code> 不推荐 将一种类型转换为另一种不同的类型。</li>
+<li><code>volatile​​​​​​​</code> 保持内存可见性（CPU每次处理这个被volatile修饰的变量的时候，都会从内存中重新加载变量的值到寄存器）</li>
+</ul>
+<h3 id="_2">智能指针<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>用来解决内存泄漏, RAII思想</p>
+<h4 id="unique_ptr">unique_ptr<a class="headerlink" href="#unique_ptr" title="Permanent link">&para;</a></h4>
+<p>独占智能指针,不允许通过赋值将 一个unique_ptr赋值给另一个unique_ptr,但可以通过函数返回给其他的unique_ptr，还可以通过std::move来转移到其 他的unique_ptr，这样它本身就不再拥有原来指针的所有权了。</p>
+<h4 id="shared_ptr">shared_ptr<a class="headerlink" href="#shared_ptr" title="Permanent link">&para;</a></h4>
+<p>比智能指针多了一个引用计数,也就是说一个指针有多个引用对象时,当最后一个shared_ptr析构时,其内存才会被释放</p>
+<p>shared_ptr和unique_ptr的使用场景是要根据实际应用需求来选择。如果希望只有一个智能指针管 理资源或者管理数组就用unique_ptr，如果希望多个智能指针管理同一个资源就用shared_ptr。</p>
+<h4 id="weak_ptr">weak_ptr<a class="headerlink" href="#weak_ptr" title="Permanent link">&para;</a></h4>
+<p>有一点share_ptr智能指针还是有内存泄露的情况，当两个对象相互 使用一个shared_ptr成员变量指向对方，会造成循环引用，使引用计数失效，从而导致内存泄漏。</p>
+<blockquote>
+<p>未完待续</p>
+</blockquote>
+<h3 id="_3">右值引用<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>对于马上就要销毁的变量的引用</p>
+<p>比如
+<div class="highlight"><pre><span></span><code><span class="mi">3</span><span class="p">;</span><span class="w"></span>
+<span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></p>
+<p>用<code>&amp;&amp;</code>声明, 作用为<strong>移动语义</strong>和<strong>完美转发</strong>, 比如有些对象注定要销毁,但我们还希望对其进行复制和延展</p>
+<h3 id="_4">删除函数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>阻止编译器对某些成员函数的生成,例如阻止类的复制和拷贝构造操作</p>
+<p>在拷贝操作和复制操作函数后加<code>=delete</code>,也就成了只移类型</p>
+<h3 id="_5">默认函数<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>显示要求编译器生成某些成员函数 <code>=default</code></p>
+<h3 id="constexpr">constexpr<a class="headerlink" href="#constexpr" title="Permanent link">&para;</a></h3>
+<p>它表示 constant（常数）表达式, 不能修改, 并在编译时计算而不是运行时,c++11标准的constexpr函数要求如下</p>
+<ul>
+<li>函数的返回类型和参数必须是字面类型。</li>
+<li>函数体必须包含一个单一的 return 语句（在 C++11 中），或可以包含多条语句（在 C++14 及更高版本中）</li>
+</ul>
+<p>constexpr 和 const 都表示常量，但它们有一些重要的区别：</p>
+<ul>
+<li>const 变量的值在运行时确定，尽管它不可变。</li>
+<li>constexpr 变量的值在编译时确定，是编译时常量。</li>
+</ul>
+<h3 id="lambda">lambda表达式<a class="headerlink" href="#lambda" title="Permanent link">&para;</a></h3>
+<p><a href="https://zhuanlan.zhihu.com/p/384314474">C++ Lambda表达式的完整介绍</a></p>
+<p>使用std::function在函数内部构造dfs时经常使用！！</p>
+<div class="highlight"><pre><span></span><code><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dfs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">int</span><span class="w"></span>
+<span class="p">{};</span><span class="w"></span>
+<span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dfs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">){};</span><span class="w"></span>
+</code></pre></div>
+<p>lambda表达式语法</p>
+<p><code>[capture list] (params list) mutable exception-&gt; return type { function body }</code></p>
+<p><code>[capture list]</code>中为捕获的参数, 分为值捕获和引用捕获,例如</p>
+<p><code>[]</code>: 不捕获任何变量
+<code>[&amp;]</code>: 以引用方式捕获所有外部变量
+<code>[=]</code>: 以值的方式捕获所有外部变量
+<code>[=]</code>: 以值的方式捕获所有外部变量
+<code>[=,&amp;x]</code>: 以引用方式捕获x,其余都用值
+<code>[&amp;,x]</code>: 以值方式捕获x,其余都用引用</p>
+<p><code>(params list)</code>函数参数列表</p>
+<p><code>mutable</code>指示符：用来说用是否可以修改捕获的变量</p>
+<p><code>exception</code>：异常设定</p>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../Structure/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 数据结构" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              数据结构
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../ToolDoc/" class="md-footer__link md-footer__link--next" aria-label="下一页: 工具使用文档" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              工具使用文档
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      
+        <script src="../../js/tongji.js"></script>
+      
+        <script src="../../js/google.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdnjs.loli.net/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

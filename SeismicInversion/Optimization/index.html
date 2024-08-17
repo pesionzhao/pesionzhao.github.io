@@ -1,0 +1,2901 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>优化方法笔记 - ZPSXJTU</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.472b142f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.08040f6c.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#546d78">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-8Q77YBREF9"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-8Q77YBREF9",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-8Q77YBREF9",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="Slate" data-md-color-primary="Blue-Grey" data-md-color-accent="red">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="ZPSXJTU" class="md-header__button md-logo" aria-label="ZPSXJTU" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ZPSXJTU
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              优化方法笔记
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/" class="md-tabs__link">
+        经验之谈
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" class="md-tabs__link">
+        论文笔记
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="md-tabs__link">
+        踩坑记录
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        地震反演
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Learning/" class="md-tabs__link">
+        学习文档
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ZPSXJTU" class="md-nav__button md-logo" aria-label="ZPSXJTU" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+
+    </a>
+    ZPSXJTU
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          经验之谈
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="经验之谈" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          经验之谈
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/%E5%8D%95%E7%9B%B8%E6%9C%BA%E5%8F%8C%E5%85%89%E6%BA%90%E8%A7%86%E7%BA%BF%E4%BC%B0%E8%AE%A1/" class="md-nav__link">
+        基于单相机双光源的眼动交互
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/%E8%8D%A7%E5%85%89%E9%98%B5%E5%88%97%E7%9F%AB%E6%AD%A3%E8%AE%A1%E6%95%B0/" class="md-nav__link">
+        蛋白质荧光阵列矫正与计数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/JLU%20Captcha/" class="md-nav__link">
+        吉林大学教务管理系统验证码识别
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/robomaster%E5%B7%A5%E7%A8%8B%E7%9F%BF%E7%9F%B3%E8%AF%86%E5%88%AB/" class="md-nav__link">
+        robomaster工程矿石识别
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/%E7%99%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9B%E5%88%92%E6%B0%B4%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+        百度车载影像检测与分割
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/%E8%BF%90%E8%90%A5%E5%95%86%E6%A0%85%E6%A0%BC%E6%B4%BB%E8%B7%83%E5%BA%A6%E9%A2%84%E6%B5%8B/" class="md-nav__link">
+        运营商栅格预测
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          论文笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="论文笔记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          论文笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          网络解读
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="网络解读" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          网络解读
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/Transformer/" class="md-nav__link">
+        屠榜的transformer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8A%E6%89%93%E4%B8%80%E5%88%87%E7%9A%84yolox/" class="md-nav__link">
+        吊打一切的yoloX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/CascadeRCNN/" class="md-nav__link">
+        CascadeRCNN永远滴神
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/HR-Net%20%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/" class="md-nav__link">
+        高分辨网络HR-Net
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%B0%8F%E7%9B%AE%E6%A0%87%E5%B0%81%E7%A5%9ETPH-YOLOV5/" class="md-nav__link">
+        小目标检测王者TPH-YOLOV5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/YOLOP/" class="md-nav__link">
+        嵌入式同时完成三大视觉任务YOLOP
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          理论基础
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="理论基础" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          理论基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%9F%BA%E7%A1%80%E7%90%86%E8%A7%A3/Soft%20label/" class="md-nav__link">
+        从标签平滑和知识蒸馏看Soft Label
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          即插即用
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="即插即用" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          即插即用
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%8D%B3%E6%8F%92%E5%8D%B3%E7%94%A8/UMOP/" class="md-nav__link">
+        百度开源UMOP解决特征层gt不匹配
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          踩坑记录
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="踩坑记录" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          踩坑记录
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/nano%E9%83%A8%E7%BD%B2yolov5/" class="md-nav__link">
+        nano部署yolov5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/LibtorchInWindows/" class="md-nav__link">
+        windows下配置libtorch(vs/cmake)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/vscode%E9%85%8D%E7%BD%AEopencv/" class="md-nav__link">
+        windows+vscode配置opencv4.1.1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/%E6%96%B0%E7%94%B5%E8%84%91%E9%85%8D%E7%8E%AF%E5%A2%83/" class="md-nav__link">
+        windows配置深度学习环境
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD/" class="md-nav__link">
+        win11+ubuntu双系统的安装与卸载
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/WSL%E4%B8%8B%E9%85%8D%E7%BD%AEdocker%E7%8E%AF%E5%A2%83/" class="md-nav__link">
+        WSL下GPU配置与docker安装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/vscode%E5%AE%B9%E5%99%A8%E4%B8%AD%E5%BC%80%E5%8F%91/" class="md-nav__link">
+        vscode+devcontainer+docker容器开发
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/dockerlize%20GUI%20in%20wsl/" class="md-nav__link">
+        docker容器中图形化界面开发环境配置
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          地震反演
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="地震反演" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          地震反演
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Basic/" class="md-nav__link">
+        反演概念
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Util/" class="md-nav__link">
+        反演基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BasicMath/" class="md-nav__link">
+        数学基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5">
+          论文笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="论文笔记" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          论文笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_1" type="checkbox" id="__nav_5_5_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_1">
+          反射率法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="反射率法" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          反射率法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Paper/RM.md" class="md-nav__link">
+        概括
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Paper/CoupleWave.md" class="md-nav__link">
+        chapter2耦合波
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Paper/Appendix.md" class="md-nav__link">
+        chapter4震源
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Paper/ch5.md" class="md-nav__link">
+        chapter5反射与透射
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Paper/ch6.md" class="md-nav__link">
+        chapter6递归求解反射系数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Paper/Source.md" class="md-nav__link">
+        chapter7层状半空间响应
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Paper/Response.md" class="md-nav__link">
+        chapter7求解地震记录
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PaperNotes/" class="md-nav__link">
+        碎片
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Paper/DTV.md" class="md-nav__link">
+        DTV
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Paper/Gan.md" class="md-nav__link">
+        生成对抗网络
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Paper/unet.md" class="md-nav__link">
+        Unet迁移学习
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Paper/Review.md" class="md-nav__link">
+        Review
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          优化方法笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        优化方法笔记
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    凸优化概括
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#least-square" class="md-nav__link">
+    least-square
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tikhonov-regularizationridge-regressionrr" class="md-nav__link">
+    Tikhonov regularization/Ridge Regression(RR)
+  </a>
+  
+    <nav class="md-nav" aria-label="Tikhonov regularization/Ridge Regression(RR)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generalized-tikhonov-regularization" class="md-nav__link">
+    Generalized Tikhonov regularization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lavrentyev-regularization" class="md-nav__link">
+    Lavrentyev regularization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bregman-method" class="md-nav__link">
+    Bregman method
+  </a>
+  
+    <nav class="md-nav" aria-label="Bregman method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bregman-iteration" class="md-nav__link">
+    Bregman Iteration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linearized-bregman" class="md-nav__link">
+    Linearized Bregman
+  </a>
+  
+    <nav class="md-nav" aria-label="Linearized Bregman">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#split-bregman" class="md-nav__link">
+    Split Bregman
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    基础方法即代码实现
+  </a>
+  
+    <nav class="md-nav" aria-label="基础方法即代码实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    梯度下降
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    随机梯度下降
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    高斯牛顿法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-levenbergmarquardt" class="md-nav__link">
+    列文伯格-马夸特方法(Levenberg–Marquardt)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#irls" class="md-nav__link">
+    IRLS
+  </a>
+  
+    <nav class="md-nav" aria-label="IRLS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    正则化反演
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ista" class="md-nav__link">
+    ISTA方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fista" class="md-nav__link">
+    FISTA方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split-bregman_1" class="md-nav__link">
+    Split-Bregman方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    拟牛顿法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bfgs" class="md-nav__link">
+    BFGS算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l-bfgs" class="md-nav__link">
+    L-BFGS算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    蒙特卡洛
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    目标泛函构建
+  </a>
+  
+    <nav class="md-nav" aria-label="目标泛函构建">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    贝叶斯理论
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    正则化项构建
+  </a>
+  
+    <nav class="md-nav" aria-label="正则化项构建">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cv" class="md-nav__link">
+    CV交叉验证
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    广义交叉验证
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    多道反演
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          学习文档
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="学习文档" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          学习文档
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Learning/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Learning/Algorithm/" class="md-nav__link">
+        算法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Learning/DP/" class="md-nav__link">
+        动态规划
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Learning/Structure/" class="md-nav__link">
+        数据结构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Learning/c%2B%2B11/" class="md-nav__link">
+        c++特性杂记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Learning/ToolDoc/" class="md-nav__link">
+        工具使用文档
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Learning/PythonDoc/" class="md-nav__link">
+        python使用文档
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Learning/CUDA/" class="md-nav__link">
+        CUDA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Learning/LinearAlgebra/" class="md-nav__link">
+        线性代数理论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Learning/Propagation/" class="md-nav__link">
+        波在介质中的传播学习笔记
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    凸优化概括
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#least-square" class="md-nav__link">
+    least-square
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tikhonov-regularizationridge-regressionrr" class="md-nav__link">
+    Tikhonov regularization/Ridge Regression(RR)
+  </a>
+  
+    <nav class="md-nav" aria-label="Tikhonov regularization/Ridge Regression(RR)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generalized-tikhonov-regularization" class="md-nav__link">
+    Generalized Tikhonov regularization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lavrentyev-regularization" class="md-nav__link">
+    Lavrentyev regularization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bregman-method" class="md-nav__link">
+    Bregman method
+  </a>
+  
+    <nav class="md-nav" aria-label="Bregman method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bregman-iteration" class="md-nav__link">
+    Bregman Iteration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linearized-bregman" class="md-nav__link">
+    Linearized Bregman
+  </a>
+  
+    <nav class="md-nav" aria-label="Linearized Bregman">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#split-bregman" class="md-nav__link">
+    Split Bregman
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    基础方法即代码实现
+  </a>
+  
+    <nav class="md-nav" aria-label="基础方法即代码实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    梯度下降
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    随机梯度下降
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    高斯牛顿法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-levenbergmarquardt" class="md-nav__link">
+    列文伯格-马夸特方法(Levenberg–Marquardt)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#irls" class="md-nav__link">
+    IRLS
+  </a>
+  
+    <nav class="md-nav" aria-label="IRLS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    正则化反演
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ista" class="md-nav__link">
+    ISTA方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fista" class="md-nav__link">
+    FISTA方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split-bregman_1" class="md-nav__link">
+    Split-Bregman方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    拟牛顿法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bfgs" class="md-nav__link">
+    BFGS算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l-bfgs" class="md-nav__link">
+    L-BFGS算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    蒙特卡洛
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    目标泛函构建
+  </a>
+  
+    <nav class="md-nav" aria-label="目标泛函构建">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    贝叶斯理论
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    正则化项构建
+  </a>
+  
+    <nav class="md-nav" aria-label="正则化项构建">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cv" class="md-nav__link">
+    CV交叉验证
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    广义交叉验证
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    多道反演
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>优化方法笔记</h1>
+
+<h2 id="_1">凸优化概括<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><a href="https://zhuanlan.zhihu.com/p/596857609">变量选择之LASSO—（一）凸正则化方法1</a></p>
+<h2 id="least-square">least-square<a class="headerlink" href="#least-square" title="Permanent link">&para;</a></h2>
+<p>参考: </p>
+<p><a href="https://textbooks.math.gatech.edu/ila/least-squares.html">https://textbooks.math.gatech.edu/ila/least-squares.html</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/31341436">https://zhuanlan.zhihu.com/p/31341436</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Ordinary_least_squares">https://en.wikipedia.org/wiki/Ordinary_least_squares</a></p>
+<p>对于方程</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">Ax=b</div>
+<script type="math/tex; mode=display">Ax=b</script>
+</div>
+<p>最小二乘法的解为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\hat x=(A^TA)^{-1}A^Tb</div>
+<script type="math/tex; mode=display">\hat x=(A^TA)^{-1}A^Tb</script>
+</div>
+<p>不适用于不满秩的情况。</p>
+<h2 id="tikhonov-regularizationridge-regressionrr">Tikhonov regularization/Ridge Regression(RR)<a class="headerlink" href="#tikhonov-regularizationridge-regressionrr" title="Permanent link">&para;</a></h2>
+<p>参考： </p>
+<p><a href="https://en.wikipedia.org/wiki/Ridge_regression">https://en.wikipedia.org/wiki/Ridge_regression</a></p>
+<p>也称<strong>岭回归</strong>，岭回归是在线性回归模型中存在多共线性(高度相关)自变量时，作为解决最小二乘估计量不精确问题的一种可能方法.</p>
+<p>通过在对角线上添加正元素来缓解，从而减少其条件数。类似于普通的最小二乘估计器，<span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>为正则化阻尼Regularization dampings  </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">{\displaystyle {\hat {\beta }}_{R}=(\mathbf {X} ^{\mathsf {T}}\mathbf {X} +\lambda \mathbf {I} )^{-1}\mathbf {X} ^{\mathsf {T}}\mathbf {y} }</div>
+<script type="math/tex; mode=display">{\displaystyle {\hat {\beta }}_{R}=(\mathbf {X} ^{\mathsf {T}}\mathbf {X} +\lambda \mathbf {I} )^{-1}\mathbf {X} ^{\mathsf {T}}\mathbf {y} }</script>
+</div>
+<p>在最小二乘最小化过程中加入正则化项，防止过拟合，获得更加理想的解，类似于L2正则化。</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">{\displaystyle \|A\mathbf {x} -\mathbf {b} \|_{2}^{2}+\|\Gamma \mathbf {x} \|_{2}^{2}}</div>
+<script type="math/tex; mode=display">{\displaystyle \|A\mathbf {x} -\mathbf {b} \|_{2}^{2}+\|\Gamma \mathbf {x} \|_{2}^{2}}</script>
+</div>
+<p>解为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">{\displaystyle {\hat {x}}=(A^{\top }A+\Gamma ^{\top }\Gamma )^{-1}A^{\top }\mathbf {b} .}</div>
+<script type="math/tex; mode=display">{\displaystyle {\hat {x}}=(A^{\top }A+\Gamma ^{\top }\Gamma )^{-1}A^{\top }\mathbf {b} .}</script>
+</div>
+<p>Tikhonov matrix <span class="arithmatex"><span class="MathJax_Preview">\Gamma = \alpha I</span><script type="math/tex">\Gamma = \alpha I</script></span></p>
+<h3 id="generalized-tikhonov-regularization">Generalized Tikhonov regularization<a class="headerlink" href="#generalized-tikhonov-regularization" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">
+<div class="MathJax_Preview">{\displaystyle x^{*}=(A^{\top }PA+Q)^{-1}(A^{\top }Pb+Qx_{0})}</div>
+<script type="math/tex; mode=display">{\displaystyle x^{*}=(A^{\top }PA+Q)^{-1}(A^{\top }Pb+Qx_{0})}</script>
+</div>
+<p>其中P为b的协方差矩阵，<span class="arithmatex"><span class="MathJax_Preview">x_0</span><script type="math/tex">x_0</script></span>为<span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>的期望值</p>
+<h3 id="lavrentyev-regularization">Lavrentyev regularization<a class="headerlink" href="#lavrentyev-regularization" title="Permanent link">&para;</a></h3>
+<p>如果A是对称正定的，即有<span class="arithmatex"><span class="MathJax_Preview">A=A^{\top }&gt;0</span><script type="math/tex">A=A^{\top }>0</script></span>， 所以<span class="arithmatex"><span class="MathJax_Preview">{\displaystyle \|x\|_{P}^{2}=x^{\top }A^{-1}x}</span><script type="math/tex">{\displaystyle \|x\|_{P}^{2}=x^{\top }A^{-1}x}</script></span> ????</p>
+<p>故最优解为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">{\displaystyle x^{*}=(A+Q)^{-1}(b+Qx_{0})}</div>
+<script type="math/tex; mode=display">{\displaystyle x^{*}=(A+Q)^{-1}(b+Qx_{0})}</script>
+</div>
+<p>可以看作Tikhonov regularization中<span class="arithmatex"><span class="MathJax_Preview">{\displaystyle A=A^{\top }=P^{-1}}</span><script type="math/tex">{\displaystyle A=A^{\top }=P^{-1}}</script></span>的情况</p>
+<h2 id="bregman-method">Bregman method<a class="headerlink" href="#bregman-method" title="Permanent link">&para;</a></h2>
+<p>参考：</p>
+<p><a href="https://www.zhihu.com/question/22426561/answer/209945856">如何理解Bregman divergence?</a></p>
+<p><a href="https://blog.csdn.net/wangshun_410/article/details/84963242?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522166911133516800182726241%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=166911133516800182726241&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-84963242-null-null.142^v66^control,201^v3^add_ask,213^v2^t3_control1&amp;utm_term=bregman&amp;spm=1018.2226.3001.4187">Bregman 散度（Bregman divergence）和Bregman信息（Bregman information）</a></p>
+<p><a href="https://machinelearning.blog.csdn.net/article/details/122395719?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-122395719-blog-84963242.pc_relevant_default&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-122395719-blog-84963242.pc_relevant_default&amp;utm_relevant_index=2">机器学习中的数学——距离定义（二十五）：布雷格曼散度（Bregman Divergence）</a></p>
+<p><a href="https://blog.csdn.net/weixin_41923961/article/details/80329393">Split-Bregman迭代方式</a></p>
+<p>定义Bregman散度为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">D_{F}(p,q)=F(p)-F(q)-\langle \nabla F(q),p-q\rangle</div>
+<script type="math/tex; mode=display">D_{F}(p,q)=F(p)-F(q)-\langle \nabla F(q),p-q\rangle</script>
+</div>
+<p>几何意义如下图
+<img alt="" src="https://www.researchgate.net/publication/284899225/figure/fig1/AS:401374723493888@1472706599282/Geometric-interpretation-of-Bregman-Divergence.png" /></p>
+<p>选择不同的F会有不同的损失函数</p>
+<p><img alt="" src="https://picx.zhimg.com/v2-cbbe99689224cdd829003483938af50e_r.jpg?source=1940ef5c" /></p>
+<p>例如最小均方误差</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">d^2(x,y)=\|x-y\|^2= \left&lt; x-y,x-y \right&gt; = \|x\| ^2 - \|y\|^2-\left&lt;2y,x-y \right&gt;</div>
+<script type="math/tex; mode=display">d^2(x,y)=\|x-y\|^2= \left< x-y,x-y \right> = \|x\| ^2 - \|y\|^2-\left<2y,x-y \right></script>
+</div>
+<h3 id="bregman-iteration">Bregman Iteration<a class="headerlink" href="#bregman-iteration" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">
+<div class="MathJax_Preview">u_{k+1}=\argmin_uD^{p_k}_J(u,u_k)+\lambda\pmb H(u), p_k\in\partial J(u_k)</div>
+<script type="math/tex; mode=display">u_{k+1}=\argmin_uD^{p_k}_J(u,u_k)+\lambda\pmb H(u), p_k\in\partial J(u_k)</script>
+</div>
+<p>等价于</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">u_{k+1}=\arg \min _{u} J(u)-\left\langle p, u-u_{k}\right\rangle+\lambda H(u), \quad p_{k} \in \partial J\left(u_{k}\right)</div>
+<script type="math/tex; mode=display">u_{k+1}=\arg \min _{u} J(u)-\left\langle p, u-u_{k}\right\rangle+\lambda H(u), \quad p_{k} \in \partial J\left(u_{k}\right)</script>
+</div>
+<p>Result，证明见文档<a href="https://getreuer.info/posts/bregman.pdf">《Notes on Bregman Iteration》</a></p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\pmb H(u_{k+1})\leq \pmb H(u_{k+1})+\frac{1}{\lambda}D^{p_k}_J(u_{k+1},u_k)\leq\pmb H(u_k)</div>
+<script type="math/tex; mode=display">\pmb H(u_{k+1})\leq \pmb H(u_{k+1})+\frac{1}{\lambda}D^{p_k}_J(u_{k+1},u_k)\leq\pmb H(u_k)</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\left\{\begin{array}{l}
+u_{k+1}=\argmin_uD_{J}^{p_{k}}\left(u, u_{k}\right)+\lambda H(u) \\
+p_{k+1}=p_{k}-\lambda \nabla H\left(u_{k+1}\right)
+\end{array}\right.
+</div>
+<script type="math/tex; mode=display">
+\left\{\begin{array}{l}
+u_{k+1}=\argmin_uD_{J}^{p_{k}}\left(u, u_{k}\right)+\lambda H(u) \\
+p_{k+1}=p_{k}-\lambda \nabla H\left(u_{k+1}\right)
+\end{array}\right.
+</script>
+</div>
+<p>假设<span class="arithmatex"><span class="MathJax_Preview">H(u,f)=\frac12||Au-f||^2_2</span><script type="math/tex">H(u,f)=\frac12||Au-f||^2_2</script></span>，则<span class="arithmatex"><span class="MathJax_Preview">p_0=0</span><script type="math/tex">p_0=0</script></span>时的迭代过程等价于
+$$
+\left{ \begin{array}{l}
+u_{k+1}=\arg \min <em>{u} J(u)+\lambda H\left(u, f</em>{k}\right) \
+f_{k+1}=f_{k}+\left(f-A u_{k+1}\right), \quad f_{0}=f
+\end{array}\right.
+$$</p>
+<h3 id="linearized-bregman">Linearized Bregman<a class="headerlink" href="#linearized-bregman" title="Permanent link">&para;</a></h3>
+<p>假设<span class="arithmatex"><span class="MathJax_Preview">J(u)=||u||_1</span><script type="math/tex">J(u)=||u||_1</script></span>，将H(u)进行矩阵泰勒展开得</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">H(u)\approx H(u_k)+\nabla H(u_k)\cdot(u_k-u)</div>
+<script type="math/tex; mode=display">H(u)\approx H(u_k)+\nabla H(u_k)\cdot(u_k-u)</script>
+</div>
+<p>但是这种近似展开只有在<span class="arithmatex"><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span>和<span class="arithmatex"><span class="MathJax_Preview">u_k</span><script type="math/tex">u_k</script></span>十分接近的时候上式才准确，所以加入惩罚项<span class="arithmatex"><span class="MathJax_Preview">\frac{1}{2 \delta}\left\|u-u_{k}\right\|_{2}^{2}</span><script type="math/tex">\frac{1}{2 \delta}\left\|u-u_{k}\right\|_{2}^{2}</script></span>，最终如下</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">u_{k+1}=\arg \min _{u} D^{p_k}_J(u,u_k)+\lambda H(u_k)+\left\langle\lambda \nabla H\left(u_{k}\right), u-u_k\right\rangle+\frac{1}{2 \delta}\left\|u-u_{k}\right\|_{2}^{2}</div>
+<script type="math/tex; mode=display">u_{k+1}=\arg \min _{u} D^{p_k}_J(u,u_k)+\lambda H(u_k)+\left\langle\lambda \nabla H\left(u_{k}\right), u-u_k\right\rangle+\frac{1}{2 \delta}\left\|u-u_{k}\right\|_{2}^{2}</script>
+</div>
+<p>化简得
+$$
+u_{k+1}=\arg \min <em>{u} J(u)+\left\langle\lambda \nabla H\left(u</em>{k}\right)-p_{k}, u\right\rangle+\frac{1}{2 \delta}\left|u-u_{k}\right|_{2}^{2}
+$$</p>
+<h4 id="split-bregman">Split Bregman<a class="headerlink" href="#split-bregman" title="Permanent link">&para;</a></h4>
+<p>假设<span class="arithmatex"><span class="MathJax_Preview">\Phi 和 E(u)</span><script type="math/tex">\Phi 和 E(u)</script></span>均为凸函数</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\min _{u}\|\Phi(u)\|_{1}+E(u)</div>
+<script type="math/tex; mode=display">\min _{u}\|\Phi(u)\|_{1}+E(u)</script>
+</div>
+<p>通过运算符分裂</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\min _{u, d}\|d\|_{1}+E(u) \text { subject to } \Phi(u)=d</div>
+<script type="math/tex; mode=display">\min _{u, d}\|d\|_{1}+E(u) \text { subject to } \Phi(u)=d</script>
+</div>
+<p>令<span class="arithmatex"><span class="MathJax_Preview">J(u,d)=||d||_1+E(u),H(u,d)=\frac12||d-\Phi(u)||^2_2</span><script type="math/tex">J(u,d)=||d||_1+E(u),H(u,d)=\frac12||d-\Phi(u)||^2_2</script></span>，带入Bregman方法</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\left\{\begin{aligned}
+\left(u^{k+1}, d^{k+1}\right) &amp;=\min _{u, d} J(u, d)-\left\langle p_{u}^{k}, u-u^{k}\right\rangle-\left\langle p_{d}^{k}, d-d^{k}\right\rangle+\lambda H(u, d) \\
+p_{u}^{k+1} &amp;=p_{u}^{k}-\lambda \nabla_{u} H\left(u^{k+1}, d^{k+1}\right) \\
+p_{d}^{k+1} &amp;=p_{d}^{k}-\lambda \nabla_{d} H\left(u^{k+1}, d^{k+1}\right)
+\end{aligned}\right.</div>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+\left(u^{k+1}, d^{k+1}\right) &=\min _{u, d} J(u, d)-\left\langle p_{u}^{k}, u-u^{k}\right\rangle-\left\langle p_{d}^{k}, d-d^{k}\right\rangle+\lambda H(u, d) \\
+p_{u}^{k+1} &=p_{u}^{k}-\lambda \nabla_{u} H\left(u^{k+1}, d^{k+1}\right) \\
+p_{d}^{k+1} &=p_{d}^{k}-\lambda \nabla_{d} H\left(u^{k+1}, d^{k+1}\right)
+\end{aligned}\right.</script>
+</div>
+<p>lsqr方法</p>
+<p><a href="https://zhuanlan.zhihu.com/p/76644659">最小二乘法原理详解</a></p>
+<p><a href="https://wenku.baidu.com/view/86ca6a43a8956bec0975e330?aggId=86ca6a43a8956bec0975e330&amp;fr=catalogMain_&amp;_wkts_=1676943404187">最小平方QR分解法</a></p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\min\left\|\left[\begin{array}{c}
+A \\
+\lambda I
+\end{array}\right] x-\left[\begin{array}{l}
+b \\
+0
+\end{array}\right]\right\|_2</div>
+<script type="math/tex; mode=display">\min\left\|\left[\begin{array}{c}
+A \\
+\lambda I
+\end{array}\right] x-\left[\begin{array}{l}
+b \\
+0
+\end{array}\right]\right\|_2</script>
+</div>
+<h2 id="_2">基础方法即代码实现<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>对于问题</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\min\left\|\left[\begin{array}{c}
+A \\
+\lambda I
+\end{array}\right] x-\left[\begin{array}{l}
+b \\
+0
+\end{array}\right]\right\|_2</div>
+<script type="math/tex; mode=display">\min\left\|\left[\begin{array}{c}
+A \\
+\lambda I
+\end{array}\right] x-\left[\begin{array}{l}
+b \\
+0
+\end{array}\right]\right\|_2</script>
+</div>
+<p>在之后的代码实现中，令<span class="arithmatex"><span class="MathJax_Preview">G = \left[\begin{array}{c}A \\ \lambda I \end{array}\right],
+obs = \left[\begin{array}{c} b \\ 0 \end{array}\right]</span><script type="math/tex">G = \left[\begin{array}{c}A \\ \lambda I \end{array}\right],
+obs = \left[\begin{array}{c} b \\ 0 \end{array}\right]</script></span></p>
+<p>其中<span class="arithmatex"><span class="MathJax_Preview">\lambda I</span><script type="math/tex">\lambda I</script></span>为正则化项，用于为反问题增加约束，减小多解性</p>
+<h3 id="_3">梯度下降<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>通过梯度下降最小化目标泛函<span class="arithmatex"><span class="MathJax_Preview">f(m)</span><script type="math/tex">f(m)</script></span>的迭代流程为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+m^{k+1} = m^k - \alpha_k \nabla f(m^k)
+</div>
+<script type="math/tex; mode=display">
+m^{k+1} = m^k - \alpha_k \nabla f(m^k)
+</script>
+</div>
+<p>对于<span class="arithmatex"><span class="MathJax_Preview">Ax=b</span><script type="math/tex">Ax=b</script></span>的问题，可以求出</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\min f(m) = ||Gm-d||^2_2</div>
+<script type="math/tex; mode=display">\min f(m) = ||Gm-d||^2_2</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">f(m) = (Gm-d)^T(Gm-d)=m^TG^TGm-2(G^Td)^Tm+d^Td</div>
+<script type="math/tex; mode=display">f(m) = (Gm-d)^T(Gm-d)=m^TG^TGm-2(G^Td)^Tm+d^Td</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">\nabla f(m)=2G^TGm-2G^Td</div>
+<script type="math/tex; mode=display">\nabla f(m)=2G^TGm-2G^Td</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">m^{k+1} = m^k - \alpha_k (2G^TGm^k-2G^Td) </div>
+<script type="math/tex; mode=display">m^{k+1} = m^k - \alpha_k (2G^TGm^k-2G^Td) </script>
+</div>
+<p>步长的选取</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\alpha_k \leq \frac{2}{\lambda_{max} (G^TG)}
+</div>
+<script type="math/tex; mode=display">
+\alpha_k \leq \frac{2}{\lambda_{max} (G^TG)}
+</script>
+</div>
+<p>代码实现</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">GD_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">init_guess</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">Iter</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">pre</span> <span class="o">=</span> <span class="n">init_guess</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Iter</span><span class="p">):</span>
+        <span class="n">step</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">grad</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">G</span> <span class="o">@</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">obs</span>
+        <span class="n">residual</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">)</span>
+        <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">residual</span><span class="p">)</span>
+        <span class="c1"># 原定损失小于沿学习率迭代后的损失，说明步长较大，减小步长</span>
+        <span class="k">while</span> <span class="n">rmse</span> <span class="o">&lt;</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span> <span class="o">-</span> <span class="n">step</span> <span class="o">*</span> <span class="n">grad</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">)):</span>
+            <span class="n">step</span> <span class="o">=</span> <span class="n">step</span> <span class="o">*</span> <span class="mf">0.5</span>
+        <span class="n">pre</span> <span class="o">=</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">step</span> <span class="o">*</span> <span class="n">grad</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;GD Loss curve(final loss = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">loss</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iters&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;res&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">pre</span><span class="p">,</span> <span class="n">loss</span>
+</code></pre></div>
+<h3 id="_4">随机梯度下降<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>类似梯度下降，只不过不是求全部列的梯度，而是求其随机一列的梯度进行下降</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\min f(m) = ||Gm-d||^2_2 = \sum^m_{i=1} f_i(m) = \sum^m_{i=1}(Gm-d)^2_i \\
+\nabla f(m)_i = 2G^T_iG_im-2d_iG^T_i
+</div>
+<script type="math/tex; mode=display">
+\min f(m) = ||Gm-d||^2_2 = \sum^m_{i=1} f_i(m) = \sum^m_{i=1}(Gm-d)^2_i \\
+\nabla f(m)_i = 2G^T_iG_im-2d_iG^T_i
+</script>
+</div>
+<p>代码实现(固定梯度) TODO 变梯度</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">SGD_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">init_guess</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="nb">iter</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">init_guess</span> <span class="o">=</span> <span class="n">init_guess</span>
+    <span class="n">pre</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_guess</span>
+    <span class="n">rmse_prev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">iter</span><span class="p">):</span>
+        <span class="n">step</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 步长 </span>
+        <span class="n">lossres</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>  <span class="c1"># 损失，如果未加正则化,self.A,self.b即为G,obs</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>  <span class="c1"># 随机取行号</span>
+        <span class="n">grad</span> <span class="o">=</span> <span class="n">G</span><span class="p">[</span><span class="n">index</span><span class="p">:</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">G</span><span class="p">[</span><span class="n">index</span><span class="p">:</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">@</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">obs</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">*</span> <span class="n">G</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># 随机一行的梯度</span>
+        <span class="n">pre</span> <span class="o">=</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">step</span> <span class="o">*</span> <span class="n">grad</span>  <span class="c1"># 梯度下降</span>
+        <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">lossres</span><span class="p">)</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;SGD Loss curve(final loss = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">loss</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iters&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;res&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">pre</span><span class="p">,</span> <span class="n">loss</span>
+</code></pre></div>
+<h3 id="_5">高斯牛顿法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>参考链接: </p>
+<p><a href="https://omyllymaki.medium.com/gauss-newton-algorithm-implementation-from-scratch-55ebe56aac2e">Algorithms from scratch: Gauss-Newton</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/113946848">最小二乘问题的四种解法——牛顿法，梯度下降法，高斯牛顿法和列文伯格-马夸特法的区别和联系</a></p>
+<p>对于最小二乘问题</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\min_x\frac{1}{2}||f(x)||_2^2</div>
+<script type="math/tex; mode=display">\min_x\frac{1}{2}||f(x)||_2^2</script>
+</div>
+<p>对<span class="arithmatex"><span class="MathJax_Preview">f(x + \Delta x)</span><script type="math/tex">f(x + \Delta x)</script></span>进行泰勒展开得到</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">f(x+\Delta x) \approx f(x) + J(x)^T \Delta x + o(\Delta x)</div>
+<script type="math/tex; mode=display">f(x+\Delta x) \approx f(x) + J(x)^T \Delta x + o(\Delta x)</script>
+</div>
+<p>所以最小二乘问题化为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\Delta x^* = \arg \min \frac{1}{2} ||f(x + \Delta x)||_2^2 \approx \arg \min \frac{1}{2} ||f(x) + J(x)^T \Delta x||_2^2</div>
+<script type="math/tex; mode=display">\Delta x^* = \arg \min \frac{1}{2} ||f(x + \Delta x)||_2^2 \approx \arg \min \frac{1}{2} ||f(x) + J(x)^T \Delta x||_2^2</script>
+</div>
+<p>化简</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">m(x) = \frac{1}{2} ||f(x) + J(x)^T \Delta x||^2 = \frac{1}{2}(f(x) + J(x)^T \Delta x)^T(f(x) + J(x)^T \Delta x) </div>
+<script type="math/tex; mode=display">m(x) = \frac{1}{2} ||f(x) + J(x)^T \Delta x||^2 = \frac{1}{2}(f(x) + J(x)^T \Delta x)^T(f(x) + J(x)^T \Delta x) </script>
+</div>
+<p>求导令导数等于零可得</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">m^`(x) = 0 \quad \rightarrow \quad J(x)J(x)^T\Delta x = - J(x)f(x) \rightarrow \Delta x = \frac{- J(x)f(x)}{J(x)J(x)^T}</div>
+<script type="math/tex; mode=display">m^`(x) = 0 \quad \rightarrow \quad J(x)J(x)^T\Delta x = - J(x)f(x) \rightarrow \Delta x = \frac{- J(x)f(x)}{J(x)J(x)^T}</script>
+</div>
+<p>代码实现</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">GN_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">init_guess</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="nb">iter</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">pre</span> <span class="o">=</span> <span class="n">init_guess</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">iter</span><span class="p">):</span>
+        <span class="n">residual</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">)</span>
+        <span class="n">lossres</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
+        <span class="n">jacobian</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_jacobian</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">10</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">))</span>
+        <span class="n">pre</span> <span class="o">=</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">jacobian</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">jacobian</span><span class="p">)</span> <span class="o">@</span> <span class="p">(</span><span class="n">jacobian</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">residual</span><span class="p">)</span>
+        <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">lossres</span><span class="p">)</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gauss-Newton Loss curve(final loss = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">loss</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iters&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;res&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">pre</span><span class="p">,</span> <span class="n">loss</span>
+</code></pre></div>
+<h3 id="-levenbergmarquardt">列文伯格-马夸特方法(Levenberg–Marquardt)<a class="headerlink" href="#-levenbergmarquardt" title="Permanent link">&para;</a></h3>
+<p>基本原理与高斯牛顿法类似，在高斯牛顿法中，可以看到，损失曲线在后期会进入锯齿状，迭代的次数较长。所以，为了避免其步长过大导致的问题，该方法提出了信赖区域，动态调整步长减小迭代次数</p>
+<p>在迭代过程中设定一个评判标准用于评判估计的好坏，从而动态调整步长</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\rho = \frac{f(x+\Delta x) - f(x)}{J(x)^T\Delta x}</div>
+<script type="math/tex; mode=display">\rho = \frac{f(x+\Delta x) - f(x)}{J(x)^T\Delta x}</script>
+</div>
+<p>分为以下三种情况</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">\rho</span><script type="math/tex">\rho</script></span> 接近1，近似是好的，不需要更改</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\rho</span><script type="math/tex">\rho</script></span> 太小，则实际减少的值小于近似减少的值，近似较大，需要缩小近似的范围</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\rho</span><script type="math/tex">\rho</script></span> 太大，则实际减少的值大于近似减少的值，近似较小，需要扩大近似的范围。</li>
+</ul>
+<p>反问题为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\min \frac {1}{2}||f(x) + J(x)^T \Delta x||  \quad s.t \quad ||D \Delta x &lt; \mu||_2</div>
+<script type="math/tex; mode=display">\min \frac {1}{2}||f(x) + J(x)^T \Delta x||  \quad s.t \quad ||D \Delta x < \mu||_2</script>
+</div>
+<p>其中<span class="arithmatex"><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span>为系数矩阵，<span class="arithmatex"><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span>为信赖半径</p>
+<p>可以构建拉格朗日函数，<span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>为系数因子</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">L(\Delta x,\lambda) = \frac {1}{2}||f(x) + J(x)^T\Delta x||^2 + \frac {\lambda}{2}(||D \Delta x||^2 - \mu)</div>
+<script type="math/tex; mode=display">L(\Delta x,\lambda) = \frac {1}{2}||f(x) + J(x)^T\Delta x||^2 + \frac {\lambda}{2}(||D \Delta x||^2 - \mu)</script>
+</div>
+<p>求导并化简得</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">J(x)f(x) + J(x)J^T(x)\Delta x + \lambda D^TD \Delta x = 0 \rightarrow (JJ^T + \lambda D^TD) \Delta x = -Jf</div>
+<script type="math/tex; mode=display">J(x)f(x) + J(x)J^T(x)\Delta x + \lambda D^TD \Delta x = 0 \rightarrow (JJ^T + \lambda D^TD) \Delta x = -Jf</script>
+</div>
+<p>在实际使用中，通常将<span class="arithmatex"><span class="MathJax_Preview">I</span><script type="math/tex">I</script></span>代替<span class="arithmatex"><span class="MathJax_Preview">D^TD</span><script type="math/tex">D^TD</script></span></p>
+<p>代码实现</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">LM_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">init_guess</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="nb">iter</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">pre</span> <span class="o">=</span> <span class="n">init_guess</span>
+    <span class="n">lam</span> <span class="o">=</span> <span class="mf">0.01</span>  <span class="c1"># todo 如何设定lambda</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">iter</span><span class="p">):</span>
+        <span class="n">residual</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">)</span>
+        <span class="n">lossres</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
+        <span class="n">jacobian</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_jacobian</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">10</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">))</span>
+        <span class="n">pre</span> <span class="o">=</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">jacobian</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">jacobian</span> <span class="o">+</span> <span class="n">lam</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="n">jacobian</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="o">@</span> <span class="p">(</span>
+                <span class="n">jacobian</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">residual</span><span class="p">)</span>
+        <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">lossres</span><span class="p">)</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Levenberg-Marquardt Loss curve(final loss = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">loss</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iters&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;res&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">pre</span><span class="p">,</span> <span class="n">loss</span>
+</code></pre></div>
+<p>LM方法是由牛顿法的基础上得到的，他们之间的联系主要取决于<span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>的取值</p>
+<p>对于迭代过程</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+(JJ^T + \lambda I) \Delta x_k = -Jf
+</div>
+<script type="math/tex; mode=display">
+(JJ^T + \lambda I) \Delta x_k = -Jf
+</script>
+</div>
+<ul>
+<li>当<span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>较大时，更新方程中<span class="arithmatex"><span class="MathJax_Preview">\lambda I</span><script type="math/tex">\lambda I</script></span>占主要，迭代近似为<span class="arithmatex"><span class="MathJax_Preview">\lambda I \Delta x_k = -Jf</span><script type="math/tex">\lambda I \Delta x_k = -Jf</script></span>，此时为梯度下降法</li>
+<li>当<span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>较大时，更新方程中<span class="arithmatex"><span class="MathJax_Preview">JJ^T</span><script type="math/tex">JJ^T</script></span>占主要，迭代近似为<span class="arithmatex"><span class="MathJax_Preview">JJ^T \Delta x_k = -Jf</span><script type="math/tex">JJ^T \Delta x_k = -Jf</script></span>，此时为高斯牛顿法</li>
+</ul>
+<h3 id="irls">IRLS<a class="headerlink" href="#irls" title="Permanent link">&para;</a></h3>
+<h4 id="_6">正则化反演<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>参考链接</p>
+<p><a href="https://zhuanlan.zhihu.com/p/596857609">变量选择之LASSO—（一）凸正则化方法1</a></p>
+<p>对于最小二乘问题<span class="arithmatex"><span class="MathJax_Preview">\min ||Ax-b||_2</span><script type="math/tex">\min ||Ax-b||_2</script></span>进行反演时，因为约束条件不够，可能会出现多个不同的<span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>满足<span class="arithmatex"><span class="MathJax_Preview">\min ||Ax-b||_2</span><script type="math/tex">\min ||Ax-b||_2</script></span>，当并不是我们预期的<span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>,也就是问题的多解性，这时我们需要在求解反问题的方程中添加其他约束项，从数学上来讲，就是在损失函数中加个正则项，来防止过拟合。目前主要有L1正则化和L2正则化，即LASSO回归和岭回归</p>
+<p>参考链接：<a href="https://www.zhihu.com/question/26485586/answer/91420865">l1正则与l2正则的特点是什么，各有什么优势？</a></p>
+<ul>
+<li>
+<p>L1-Regularization(一范数)
+  $$\lambda \sum_{i=0}^k|w_i| $$</p>
+</li>
+<li>
+<p>L2-Regularization(二范数)
+  <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\lambda \sum_{i=0}^k w_i^2</span><script type="math/tex">\lambda \sum_{i=0}^k w_i^2</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\lambda \sum_{i=0}^k w_i^2</span><script type="math/tex">\lambda \sum_{i=0}^k w_i^2</script></span></script></span></p>
+</li>
+</ul>
+<p>对于地震反演，常用的就是TV正则化，即对模型的差分的一范数，提高模型的不连续性，可以形成稀疏解</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\min ||Gm-d||_2^2+\alpha||Lm||_1
+</div>
+<script type="math/tex; mode=display">
+\min ||Gm-d||_2^2+\alpha||Lm||_1
+</script>
+</div>
+<p>其中<span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>为差分矩阵</p>
+<p>这里介绍一种求解带有一范数正则化反问题的求解方法 <strong>IRLS</strong></p>
+<p>对于上式求梯度得到</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\nabla f(m) = 2G^TGm-2G^Td+\alpha \sum_{i=0}^m\nabla|y_i|
+</div>
+<script type="math/tex; mode=display">
+\nabla f(m) = 2G^TGm-2G^Td+\alpha \sum_{i=0}^m\nabla|y_i|
+</script>
+</div>
+<p>由于<span class="arithmatex"><span class="MathJax_Preview">y_i</span><script type="math/tex">y_i</script></span>不为零，故</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\frac{\partial|y_i|}{\partial m_k} = L_{i,k} \mathrm{sgn}(y_i)
+</div>
+<script type="math/tex; mode=display">
+\frac{\partial|y_i|}{\partial m_k} = L_{i,k} \mathrm{sgn}(y_i)
+</script>
+</div>
+<p>因为<span class="arithmatex"><span class="MathJax_Preview">|Lm| = \sum_{i=1}^m |y_i|</span><script type="math/tex">|Lm| = \sum_{i=1}^m |y_i|</script></span>，故</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\frac{\partial|Lm|}{\partial m_k} = \sum_{i=1}^mL_{i,k} \frac{y_i}{|y_i|}
+</div>
+<script type="math/tex; mode=display">
+\frac{\partial|Lm|}{\partial m_k} = \sum_{i=1}^mL_{i,k} \frac{y_i}{|y_i|}
+</script>
+</div>
+<p>所以我们令<span class="arithmatex"><span class="MathJax_Preview">\mathbf{W}</span><script type="math/tex">\mathbf{W}</script></span>表示一个对角阵，且</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">W_{i,i}=\frac{1}{|y_i|}</div>
+<script type="math/tex; mode=display">W_{i,i}=\frac{1}{|y_i|}</script>
+</div>
+<p>则<span class="arithmatex"><span class="MathJax_Preview">\nabla|Lm|=L^TWLm</span><script type="math/tex">\nabla|Lm|=L^TWLm</script></span></p>
+<p>梯度变为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\nabla f(m) = 2G^TGm-2G^Td+\alpha L^TWLm
+</div>
+<script type="math/tex; mode=display">
+\nabla f(m) = 2G^TGm-2G^Td+\alpha L^TWLm
+</script>
+</div>
+<p>因为W依赖于Lm，所以这是一个非线性方程组，且W在任意Lm取值为0的点无定义</p>
+<p>为解决不可微问题，我们设定一个容许偏差<span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>，并将W改写如下</p>
+<p>令
+$$
+W_{i, i}= \begin{cases}1 /\left|y_i^{(k)}\right| &amp; \left|y_i^{(k)}\right| \geq \epsilon \
+1 / \epsilon &amp; \left|y_i^{(k)}\right|&lt;\epsilon .\end{cases}
+$$</p>
+<p>迭代过程为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\mathbf{m}^{(k+1)}=\arg \min \left\|\left[\begin{array}{c}
+\mathbf{G} \\
+\sqrt{\frac{\alpha}{2}} \sqrt{\mathbf{W}} \mathbf{L}
+\end{array}\right] \mathbf{m}-\left[\begin{array}{l}
+\mathbf{d} \\
+\mathbf{0}
+\end{array}\right]\right\|_2
+</div>
+<script type="math/tex; mode=display">
+\mathbf{m}^{(k+1)}=\arg \min \left\|\left[\begin{array}{c}
+\mathbf{G} \\
+\sqrt{\frac{\alpha}{2}} \sqrt{\mathbf{W}} \mathbf{L}
+\end{array}\right] \mathbf{m}-\left[\begin{array}{l}
+\mathbf{d} \\
+\mathbf{0}
+\end{array}\right]\right\|_2
+</script>
+</div>
+<p>代码实现，示例为高斯牛顿法优化策略</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">GN_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">init_guess</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="nb">iter</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">IRLS</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1"># IRLS为一范数参数[alpha, eps, L]</span>
+    <span class="n">pre</span> <span class="o">=</span> <span class="n">init_guess</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">with</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="nb">iter</span><span class="p">)</span> <span class="k">as</span> <span class="n">t</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">iter</span><span class="p">):</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">set_description</span><span class="p">(</span><span class="s1">&#39;solver GN&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">IRLS</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">L</span> <span class="o">=</span> <span class="n">IRLS</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">alpha</span> <span class="o">=</span> <span class="n">IRLS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">eps</span> <span class="o">=</span> <span class="n">IRLS</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">Reg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_IRLSupdate</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">pre</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span><span class="n">eps</span><span class="p">)</span>
+                <span class="n">G</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">Reg</span><span class="p">))</span>
+                <span class="n">obs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Reg</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))))</span>  <span class="c1"># TODO 一维数据适用，二维数据要改！！！</span>
+            <span class="n">residual</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">)</span>
+            <span class="n">lossres</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
+            <span class="n">jacobian</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_jacobian</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">10</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">))</span>
+            <span class="n">pre</span> <span class="o">=</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">jacobian</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">jacobian</span><span class="p">)</span> <span class="o">@</span> <span class="p">(</span><span class="n">jacobian</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">residual</span><span class="p">)</span>
+            <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">lossres</span><span class="p">)</span>
+            <span class="n">loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">set_postfix</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="n">rmse</span><span class="p">)</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gauss-Newton Loss curve(final loss = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">loss</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iters&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;res&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">pre</span><span class="p">,</span> <span class="n">loss</span>
+</code></pre></div>
+<h3 id="ista">ISTA方法<a class="headerlink" href="#ista" title="Permanent link">&para;</a></h3>
+<p>参考链接</p>
+<p><a href="https://zhuanlan.zhihu.com/p/555651497">软阈值迭代算法（ISTA算法）</a></p>
+<p>对于反问题</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\min ||Ax-b||_2^2+\lambda||x||_1</div>
+<script type="math/tex; mode=display">\min ||Ax-b||_2^2+\lambda||x||_1</script>
+</div>
+<p>通过推导得到（具体参照上面的参考链接）</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\mathbf{x}_{k+1}=\mathcal{T}_{\lambda t}\left(\mathbf{x}_k-2 t \mathbf{A}^T\left(\mathbf{A} \mathbf{x}_k-\mathbf{b}\right)\right)
+</div>
+<script type="math/tex; mode=display">
+\mathbf{x}_{k+1}=\mathcal{T}_{\lambda t}\left(\mathbf{x}_k-2 t \mathbf{A}^T\left(\mathbf{A} \mathbf{x}_k-\mathbf{b}\right)\right)
+</script>
+</div>
+<p>其中，软阈值函数为: </p>
+<p>参考链接：<a href="https://blog.csdn.net/qq_40206371/article/details/122422976">硬阈值 &amp; 软阈值</a></p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\mathcal{T}_\omega(\mathbf{x})_i=\left(\left|x_i\right|-\omega\right)_{+} \operatorname{sgn}\left(x_i\right)</div>
+<script type="math/tex; mode=display">\mathcal{T}_\omega(\mathbf{x})_i=\left(\left|x_i\right|-\omega\right)_{+} \operatorname{sgn}\left(x_i\right)</script>
+</div>
+<p>即</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+[\mathcal{T}_{\omega}(x)]_i=\begin{cases} \begin{array}{c} x_i-\omega ,\quad x_i&gt;\omega\\\end{array}\\ \begin{array}{c} 0,\qquad \quad |x_i|\le \omega\\\end{array}\\ \begin{array}{c} x_i+\omega ,\quad x_i&lt;-\omega\\\end{array}\\\end{cases} \\
+</div>
+<script type="math/tex; mode=display">
+[\mathcal{T}_{\omega}(x)]_i=\begin{cases} \begin{array}{c} x_i-\omega ,\quad x_i>\omega\\\end{array}\\ \begin{array}{c} 0,\qquad \quad |x_i|\le \omega\\\end{array}\\ \begin{array}{c} x_i+\omega ,\quad x_i<-\omega\\\end{array}\\\end{cases} \\
+</script>
+</div>
+<p>当A为单位矩阵时，即</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\min ||x-b||_2^2+\lambda||x||_1</div>
+<script type="math/tex; mode=display">\min ||x-b||_2^2+\lambda||x||_1</script>
+</div>
+<p>解为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">x^*=\mathcal{T}_{\frac{\lambda}{2}}(b)</div>
+<script type="math/tex; mode=display">x^*=\mathcal{T}_{\frac{\lambda}{2}}(b)</script>
+</div>
+<p>代码实现</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">Ista_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">init_guess</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="nb">iter</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">pre</span> <span class="o">=</span> <span class="n">init_guess</span>
+    <span class="n">lamb</span> <span class="o">=</span> <span class="mf">0.01</span>
+    <span class="n">tk</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">G</span><span class="p">)</span>  <span class="c1"># tk最大值</span>
+
+    <span class="n">loss</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">iter</span><span class="p">):</span>
+        <span class="n">residual</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">)</span>
+        <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">residual</span><span class="p">)</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
+        <span class="n">grad</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">G</span> <span class="o">@</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">obs</span>
+        <span class="n">grad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">grad</span><span class="p">)</span>
+        <span class="n">zk</span> <span class="o">=</span> <span class="n">pre</span> <span class="o">-</span> <span class="n">tk</span> <span class="o">*</span> <span class="n">grad</span>
+        <span class="n">pre</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_softThresh</span><span class="p">(</span><span class="n">lamb</span> <span class="o">*</span> <span class="n">tk</span><span class="p">,</span> <span class="n">zk</span><span class="p">)</span>
+        <span class="n">tk</span> <span class="o">=</span> <span class="n">tk</span> <span class="o">/</span> <span class="mf">1.1</span>
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;ISTA Loss curve&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iters&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;res&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pre</span><span class="p">,</span> <span class="n">loss</span>
+</code></pre></div>
+<h3 id="fista">FISTA方法<a class="headerlink" href="#fista" title="Permanent link">&para;</a></h3>
+<p>Amir Beck等人将Nesterov加速算法引入ISTA算法中，并称之为FISTA算法，其将复杂度从<span class="arithmatex"><span class="MathJax_Preview">O(1/k)</span><script type="math/tex">O(1/k)</script></span>降低到了<span class="arithmatex"><span class="MathJax_Preview">O(1/k^2)</span><script type="math/tex">O(1/k^2)</script></span>，减小了ISTA的计算复杂度，提高了计算速度，使损失可以得到更快收敛</p>
+<p>ISTA方法是直接迭代<span class="arithmatex"><span class="MathJax_Preview">x_k</span><script type="math/tex">x_k</script></span>，FISTA是迭代<span class="arithmatex"><span class="MathJax_Preview">y_k</span><script type="math/tex">y_k</script></span>，<span class="arithmatex"><span class="MathJax_Preview">y_k</span><script type="math/tex">y_k</script></span>由<span class="arithmatex"><span class="MathJax_Preview">x_k</span><script type="math/tex">x_k</script></span>计算得到</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\mathbf y_{k+1}=\mathbf x_k+(\frac{t_k-1}{t_{k+1}})(\mathbf x_k-\mathbf x_{k-1})</div>
+<script type="math/tex; mode=display">\mathbf y_{k+1}=\mathbf x_k+(\frac{t_k-1}{t_{k+1}})(\mathbf x_k-\mathbf x_{k-1})</script>
+</div>
+<p>其中</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">t_{k+1}=\frac{1+\sqrt{1+4t^2_k}}{2}</div>
+<script type="math/tex; mode=display">t_{k+1}=\frac{1+\sqrt{1+4t^2_k}}{2}</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">Fista_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">init_guess</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="nb">iter</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">pre</span> <span class="o">=</span> <span class="n">init_guess</span>
+    <span class="n">tk</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">G</span><span class="p">)</span>
+    <span class="n">lamb</span> <span class="o">=</span> <span class="mf">0.01</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">xk</span> <span class="o">=</span> <span class="n">init_guess</span>
+    <span class="n">xk_1</span> <span class="o">=</span> <span class="n">xk</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">iter</span><span class="p">):</span>
+        <span class="n">tk1</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">tk</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="n">yk1</span> <span class="o">=</span> <span class="n">xk</span> <span class="o">+</span> <span class="p">(</span><span class="n">tk</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">tk1</span> <span class="o">*</span> <span class="p">(</span><span class="n">xk</span> <span class="o">-</span> <span class="n">xk_1</span><span class="p">)</span>
+        <span class="n">grad</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">G</span> <span class="o">@</span> <span class="n">yk1</span> <span class="o">-</span> <span class="n">G</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">obs</span>
+        <span class="n">grad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">grad</span><span class="p">)</span>
+        <span class="n">zk</span> <span class="o">=</span> <span class="n">yk1</span> <span class="o">-</span> <span class="n">t</span> <span class="o">*</span> <span class="n">grad</span>
+
+        <span class="c1"># update iterative</span>
+        <span class="n">xk_1</span> <span class="o">=</span> <span class="n">xk</span>
+        <span class="n">xk</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_softThresh</span><span class="p">(</span><span class="n">lamb</span> <span class="o">*</span> <span class="n">t</span><span class="p">,</span> <span class="n">zk</span><span class="p">)</span>
+
+        <span class="n">tk</span> <span class="o">=</span> <span class="n">tk1</span>
+        <span class="c1"># err = np.linalg.norm(self.pre - yk1)</span>
+        <span class="c1"># if k!=0 and err&lt;0.0001:</span>
+        <span class="c1">#     print(&#39;第%d轮已经收敛，增量为%f&#39; %(k,err))</span>
+        <span class="c1">#     break</span>
+        <span class="n">pre</span> <span class="o">=</span> <span class="n">yk1</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">/</span> <span class="mf">1.1</span>
+
+        <span class="c1"># loss</span>
+        <span class="n">residual</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">obs</span><span class="p">)</span>
+        <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">residual</span><span class="p">)</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;FISTA Loss curve&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iters&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;res&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pre</span><span class="p">,</span> <span class="n">loss</span>
+</code></pre></div>
+<h3 id="split-bregman_1">Split-Bregman方法<a class="headerlink" href="#split-bregman_1" title="Permanent link">&para;</a></h3>
+<p>参考见《反问题的迭代求解算法》课件</p>
+<p><strong>对于一阶TV反问题</strong></p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\min _{m}||data-Gm||_2^2+\alpha||L m ||_1</div>
+<script type="math/tex; mode=display">\min _{m}||data-Gm||_2^2+\alpha||L m ||_1</script>
+</div>
+<p>令<span class="arithmatex"><span class="MathJax_Preview">d^k=Lm</span><script type="math/tex">d^k=Lm</script></span>，增加约束项，得到</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\left(m^{k+1}, d^{k+1}\right)=\min _{m, d}||data-Gm||_2^2+\alpha||d^k||_1+\frac{\lambda}{2}\left\|d^k-Lm-b^{k}\right\|_{2}^{2} \\
+b^{k+1} = b^k + (data-Gm-d^{k+1})</div>
+<script type="math/tex; mode=display">\left(m^{k+1}, d^{k+1}\right)=\min _{m, d}||data-Gm||_2^2+\alpha||d^k||_1+\frac{\lambda}{2}\left\|d^k-Lm-b^{k}\right\|_{2}^{2} \\
+b^{k+1} = b^k + (data-Gm-d^{k+1})</script>
+</div>
+<p>故，上式可拆解成两个子问题，岭回归问题与LASSO回归问题</p>
+<p>子问题一(岭回归)</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">m^{k+1} = \min_m||data-Gm||_2^2+\frac{\lambda }{2} ||d^k-b^k-Lm||_2^2</div>
+<script type="math/tex; mode=display">m^{k+1} = \min_m||data-Gm||_2^2+\frac{\lambda }{2} ||d^k-b^k-Lm||_2^2</script>
+</div>
+<p>可看作</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\min\left|\left|\begin{bmatrix}G
+ \\ \sqrt[]{\frac{\lambda}{2}} L
+\end{bmatrix}m - 
+\begin{bmatrix}data
+ \\\sqrt[]{\frac{\lambda}{2}}(d-b)
+\end{bmatrix}\right|\right|_2</div>
+<script type="math/tex; mode=display">\min\left|\left|\begin{bmatrix}G
+ \\ \sqrt[]{\frac{\lambda}{2}} L
+\end{bmatrix}m - 
+\begin{bmatrix}data
+ \\\sqrt[]{\frac{\lambda}{2}}(d-b)
+\end{bmatrix}\right|\right|_2</script>
+</div>
+<p>子问题二(LASSO回归)</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">d^{k+1}=\min_d\frac{\lambda}{2}||d^k-b^k-Lm||_2^2+\alpha||d^k||_1</div>
+<script type="math/tex; mode=display">d^{k+1}=\min_d\frac{\lambda}{2}||d^k-b^k-Lm||_2^2+\alpha||d^k||_1</script>
+</div>
+<p>用软阈值函数可求解</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+d^*=\begin{cases} \begin{array}{c} b+Lm-\frac{\lambda }{4}  ,\quad b+Lm&gt;\frac{\lambda }{4}\\\end{array}\\ \begin{array}{c} 0,\qquad \qquad \qquad b+Lm\le \frac{\lambda }{4}\\\end{array}\\ \begin{array}{c} b+Lm+\frac{\lambda }{4} ,\quad b+Lm&lt;-\frac{\lambda }{4}\\\end{array}\\\end{cases} \\
+</div>
+<script type="math/tex; mode=display">
+d^*=\begin{cases} \begin{array}{c} b+Lm-\frac{\lambda }{4}  ,\quad b+Lm>\frac{\lambda }{4}\\\end{array}\\ \begin{array}{c} 0,\qquad \qquad \qquad b+Lm\le \frac{\lambda }{4}\\\end{array}\\ \begin{array}{c} b+Lm+\frac{\lambda }{4} ,\quad b+Lm<-\frac{\lambda }{4}\\\end{array}\\\end{cases} \\
+</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+d^*=\begin{cases} \begin{array}{c} b+Lm-\frac{2\alpha }{\lambda}  ,\quad b+Lm&gt;\frac{2\alpha}{\lambda}\\\end{array}\\ \begin{array}{c} 0,\qquad \qquad \qquad |b+Lm|\le \frac{2\alpha}{\lambda}\\\end{array}\\ \begin{array}{c} b+Lm+\frac{2\alpha}{\lambda} ,\quad b+Lm&lt;-\frac{2\alpha}{\lambda}\\\end{array}\\\end{cases} \\
+</div>
+<script type="math/tex; mode=display">
+d^*=\begin{cases} \begin{array}{c} b+Lm-\frac{2\alpha }{\lambda}  ,\quad b+Lm>\frac{2\alpha}{\lambda}\\\end{array}\\ \begin{array}{c} 0,\qquad \qquad \qquad |b+Lm|\le \frac{2\alpha}{\lambda}\\\end{array}\\ \begin{array}{c} b+Lm+\frac{2\alpha}{\lambda} ,\quad b+Lm<-\frac{2\alpha}{\lambda}\\\end{array}\\\end{cases} \\
+</script>
+</div>
+<p>代码实现</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">iiter</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">lamb</span> <span class="o">=</span> <span class="mf">0.01</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x0</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Iter</span><span class="p">)):</span>
+        <span class="c1"># regularized problem</span>
+        <span class="n">dataregs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">d</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">b_</span>
+        <span class="c1"># subquestion1</span>
+        <span class="n">Sub1</span> <span class="o">=</span> <span class="n">RegularizedInv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Op</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">obs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">x0</span><span class="p">,</span> <span class="n">lamb</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Reg</span><span class="p">,</span> <span class="n">dataregs</span><span class="p">)</span>  <span class="c1"># 初始化岭回归反演</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">sub1loss</span> <span class="o">=</span> <span class="n">Sub1</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x0</span> <span class="k">if</span> <span class="n">flag</span> <span class="k">else</span> <span class="n">x</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;GN&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>  <span class="c1"># 选择优化方法迭代求解</span>
+        <span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="c1"># subquestion2</span>
+        <span class="n">dataregs2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Reg</span> <span class="o">@</span> <span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">b_</span>
+        <span class="c1"># self.d, sub2loss = self.Ista_run(self.d,np.eye(self.Reg.shape[0]),dataregs2,50,None) # ISTA方法</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_softThresh</span><span class="p">(</span><span class="n">lamb</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span> <span class="n">dataregs2</span><span class="p">)</span>  <span class="c1"># TODO lambda 应该怎么确定</span>
+
+        <span class="n">residual</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">calculate_residual</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">))</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">residual</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">b_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">b_</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">tau</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Reg</span> <span class="o">@</span> <span class="n">x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">d</span><span class="p">)</span>
+        <span class="n">iiter</span> <span class="o">=</span> <span class="n">iiter</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Split Bregman Loss curve(final loss = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">loss</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iters&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;res&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">loss</span>
+</code></pre></div>
+<p><strong>对于二阶TV反问题</strong></p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\min_m\sum_i\sqrt{(\nabla_x m)^2_i+(\nabla_y m)^2_i}+\frac{\mu}{2}||Gm-d||^2_2
+</div>
+<script type="math/tex; mode=display">
+\min_m\sum_i\sqrt{(\nabla_x m)^2_i+(\nabla_y m)^2_i}+\frac{\mu}{2}||Gm-d||^2_2
+</script>
+</div>
+<p>令<span class="arithmatex"><span class="MathJax_Preview">d_x=\nabla_x m, d_y=\nabla_y m</span><script type="math/tex">d_x=\nabla_x m, d_y=\nabla_y m</script></span></p>
+<p>进行分裂L1,L2项后，反问题化为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\min_{u,d_k,d_y}\left|\left|\left(d_x,d_y\right)\right|\right|_2+\frac{\mu}{2}||Gm-d||^2_2+\frac{\lambda}{2}||d_x-\nabla_xm-b_x||^2_2+\frac{\lambda}{2}||d_y-\nabla_y m-b_y||^2_2
+</div>
+<script type="math/tex; mode=display">
+\min_{u,d_k,d_y}\left|\left|\left(d_x,d_y\right)\right|\right|_2+\frac{\mu}{2}||Gm-d||^2_2+\frac{\lambda}{2}||d_x-\nabla_xm-b_x||^2_2+\frac{\lambda}{2}||d_y-\nabla_y m-b_y||^2_2
+</script>
+</div>
+<p>其中</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\left|\left|\left(d_x,d_y\right)\right|\right|_2=\sum_{i,j}\sqrt{|d_{x,i,j}|^2+|d_{y,i,j}|^2}
+</div>
+<script type="math/tex; mode=display">
+\left|\left|\left(d_x,d_y\right)\right|\right|_2=\sum_{i,j}\sqrt{|d_{x,i,j}|^2+|d_{y,i,j}|^2}
+</script>
+</div>
+<p>两个子问题分别为</p>
+<p>子问题一</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+m^{k+1}=\min_m\frac{\mu}{2}||Gm-d||^2_2+\frac{\lambda}{2}||d_x-\nabla_xm-b_x||^2_2+\frac{\lambda}{2}||d_y-\nabla_y m-b_y||^2_2
+</div>
+<script type="math/tex; mode=display">
+m^{k+1}=\min_m\frac{\mu}{2}||Gm-d||^2_2+\frac{\lambda}{2}||d_x-\nabla_xm-b_x||^2_2+\frac{\lambda}{2}||d_y-\nabla_y m-b_y||^2_2
+</script>
+</div>
+<p>化为岭回归问题</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\min\left|\left|\begin{bmatrix}G
+ \\ \sqrt[]{\frac{\lambda}{2}} \nabla_x
+ \\ \sqrt[]{\frac{\lambda}{2}} \nabla_y
+\end{bmatrix}m - 
+\begin{bmatrix}d
+ \\\sqrt[]{\frac{\lambda}{2}}(d_x-b_x)
+ \\\sqrt[]{\frac{\lambda}{2}}(d_y-b_y)
+\end{bmatrix}\right|\right|_2</div>
+<script type="math/tex; mode=display">\min\left|\left|\begin{bmatrix}G
+ \\ \sqrt[]{\frac{\lambda}{2}} \nabla_x
+ \\ \sqrt[]{\frac{\lambda}{2}} \nabla_y
+\end{bmatrix}m - 
+\begin{bmatrix}d
+ \\\sqrt[]{\frac{\lambda}{2}}(d_x-b_x)
+ \\\sqrt[]{\frac{\lambda}{2}}(d_y-b_y)
+\end{bmatrix}\right|\right|_2</script>
+</div>
+<p>或</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\begin{bmatrix}G
+ \\ \sqrt[]{\frac{\lambda}{2}} \nabla_x
+ \\ I
+\end{bmatrix}m =
+\begin{bmatrix}d
+ \\\sqrt[]{\frac{\lambda}{2}}(d_x-b_x)
+  \\\sqrt[]{\frac{\lambda}{2}}(d_y-b_y)\nabla_y^{-1}
+\end{bmatrix}</div>
+<script type="math/tex; mode=display">\begin{bmatrix}G
+ \\ \sqrt[]{\frac{\lambda}{2}} \nabla_x
+ \\ I
+\end{bmatrix}m =
+\begin{bmatrix}d
+ \\\sqrt[]{\frac{\lambda}{2}}(d_x-b_x)
+  \\\sqrt[]{\frac{\lambda}{2}}(d_y-b_y)\nabla_y^{-1}
+\end{bmatrix}</script>
+</div>
+<p>子问题二</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+(d_x^{k+1},d_y^{k+1})=\min_{d_x,d_y}\left|\left|\left(d_x,d_y\right)\right|\right|_2+\frac{\lambda}{2}||d_x-\nabla_xm-b_x||^2_2+\frac{\lambda}{2}||d_y-\nabla_y m-b_y||^2_2
+</div>
+<script type="math/tex; mode=display">
+(d_x^{k+1},d_y^{k+1})=\min_{d_x,d_y}\left|\left|\left(d_x,d_y\right)\right|\right|_2+\frac{\lambda}{2}||d_x-\nabla_xm-b_x||^2_2+\frac{\lambda}{2}||d_y-\nabla_y m-b_y||^2_2
+</script>
+</div>
+<p>可以通过<strong>广义阈值函数</strong>求解，参考论文<a href="https://www.researchgate.net/profile/Yilun-Wang-3/publication/250043278_A_Fast_Algorithm_for_Image_Deblurring_with_Total_Variation_Regularization/links/00b7d52b446aa74347000000/A-Fast-Algorithm-for-Image-Deblurring-with-Total-Variation-Regularization.pdf">A Fast Algorithm for Image Deblurring with Total Variation Regularization</a></p>
+<p>迭代过程为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+d^{k+1}_x=\max\left(s^k-\frac{1}{\lambda},0\right)\frac{\nabla_xm^k+b^k_x}{s^k} \\
+d^{k+1}_y=\max\left(s^k-\frac{1}{\lambda},0\right)\frac{\nabla_ym^k+b^k_y}{s^k} \\
+s^k=\sqrt{|\nabla_xm^k+b^k_x|^2+|\nabla_ym^k+b^k_y|^2}
+</div>
+<script type="math/tex; mode=display">
+d^{k+1}_x=\max\left(s^k-\frac{1}{\lambda},0\right)\frac{\nabla_xm^k+b^k_x}{s^k} \\
+d^{k+1}_y=\max\left(s^k-\frac{1}{\lambda},0\right)\frac{\nabla_ym^k+b^k_y}{s^k} \\
+s^k=\sqrt{|\nabla_xm^k+b^k_x|^2+|\nabla_ym^k+b^k_y|^2}
+</script>
+</div>
+<h3 id="_7">拟牛顿法<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p><a href="https://zhuanlan.zhihu.com/p/29672873">深入机器学习系列17-BFGS &amp; L-BFGS</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/514576143">数值优化（六）——拟牛顿法之LBFGS理论与实战</a></p>
+<p><a href="https://www.jianshu.com/p/6cf95ad7a5b0">机器学习基础·L-BFGS算法</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/144736223">数值优化（6）——拟牛顿法：SR1，BFGS，DFP，DM条件</a></p>
+<h3 id="bfgs">BFGS算法<a class="headerlink" href="#bfgs" title="Permanent link">&para;</a></h3>
+<h3 id="l-bfgs">L-BFGS算法<a class="headerlink" href="#l-bfgs" title="Permanent link">&para;</a></h3>
+<h3 id="_8">蒙特卡洛<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h2 id="_9">目标泛函构建<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="_10">贝叶斯理论<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h2 id="_11">正则化项构建<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="cv">CV交叉验证<a class="headerlink" href="#cv" title="Permanent link">&para;</a></h3>
+<h3 id="_12">广义交叉验证<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h3 id="_13">多道反演<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>以上的优化方法都只针对于单道，但地震数据往往需要多道进行处理</p>
+<p>目前本人实现的方法只是循环进行不同道的单道反演，未完待续。。。</p>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../PaperNotes/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 碎片" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              碎片
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../Learning/" class="md-footer__link md-footer__link--next" aria-label="下一页: 专栏介绍" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              专栏介绍
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      
+        <script src="../../js/tongji.js"></script>
+      
+        <script src="../../js/google.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdnjs.loli.net/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

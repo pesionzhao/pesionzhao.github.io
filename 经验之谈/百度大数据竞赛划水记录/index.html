@@ -1,0 +1,1951 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>百度车载影像检测与分割 - ZPSXJTU</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.472b142f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.08040f6c.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#546d78">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-8Q77YBREF9"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-8Q77YBREF9",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-8Q77YBREF9",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="Slate" data-md-color-primary="Blue-Grey" data-md-color-accent="red">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="ZPSXJTU" class="md-header__button md-logo" aria-label="ZPSXJTU" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ZPSXJTU
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              百度车载影像检测与分割
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        经验之谈
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" class="md-tabs__link">
+        论文笔记
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="md-tabs__link">
+        踩坑记录
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../SeismicInversion/" class="md-tabs__link">
+        地震反演
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Learning/" class="md-tabs__link">
+        学习文档
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ZPSXJTU" class="md-nav__button md-logo" aria-label="ZPSXJTU" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+
+    </a>
+    ZPSXJTU
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          经验之谈
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="经验之谈" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          经验之谈
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8D%95%E7%9B%B8%E6%9C%BA%E5%8F%8C%E5%85%89%E6%BA%90%E8%A7%86%E7%BA%BF%E4%BC%B0%E8%AE%A1/" class="md-nav__link">
+        基于单相机双光源的眼动交互
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%8D%A7%E5%85%89%E9%98%B5%E5%88%97%E7%9F%AB%E6%AD%A3%E8%AE%A1%E6%95%B0/" class="md-nav__link">
+        蛋白质荧光阵列矫正与计数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../JLU%20Captcha/" class="md-nav__link">
+        吉林大学教务管理系统验证码识别
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../robomaster%E5%B7%A5%E7%A8%8B%E7%9F%BF%E7%9F%B3%E8%AF%86%E5%88%AB/" class="md-nav__link">
+        robomaster工程矿石识别
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          百度车载影像检测与分割
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        百度车载影像检测与分割
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-yolov5" class="md-nav__link">
+    目标检测--YOLOV5
+  </a>
+  
+    <nav class="md-nav" aria-label="目标检测--YOLOV5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    数据处理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    训练
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    评估
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-deeplabv3" class="md-nav__link">
+    语义分割 -- deeplabv3+
+  </a>
+  
+    <nav class="md-nav" aria-label="语义分割 -- deeplabv3+">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    前言
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    数据处理
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mutilyolov5" class="md-nav__link">
+    大佬开源：mutilyolov5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    最终效果
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%BF%90%E8%90%A5%E5%95%86%E6%A0%85%E6%A0%BC%E6%B4%BB%E8%B7%83%E5%BA%A6%E9%A2%84%E6%B5%8B/" class="md-nav__link">
+        运营商栅格预测
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          论文笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="论文笔记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          论文笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          网络解读
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="网络解读" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          网络解读
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/Transformer/" class="md-nav__link">
+        屠榜的transformer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%90%8A%E6%89%93%E4%B8%80%E5%88%87%E7%9A%84yolox/" class="md-nav__link">
+        吊打一切的yoloX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/CascadeRCNN/" class="md-nav__link">
+        CascadeRCNN永远滴神
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/HR-Net%20%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/" class="md-nav__link">
+        高分辨网络HR-Net
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%B0%8F%E7%9B%AE%E6%A0%87%E5%B0%81%E7%A5%9ETPH-YOLOV5/" class="md-nav__link">
+        小目标检测王者TPH-YOLOV5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/YOLOP/" class="md-nav__link">
+        嵌入式同时完成三大视觉任务YOLOP
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          理论基础
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="理论基础" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          理论基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%9F%BA%E7%A1%80%E7%90%86%E8%A7%A3/Soft%20label/" class="md-nav__link">
+        从标签平滑和知识蒸馏看Soft Label
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          即插即用
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="即插即用" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          即插即用
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%8D%B3%E6%8F%92%E5%8D%B3%E7%94%A8/UMOP/" class="md-nav__link">
+        百度开源UMOP解决特征层gt不匹配
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          踩坑记录
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="踩坑记录" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          踩坑记录
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/nano%E9%83%A8%E7%BD%B2yolov5/" class="md-nav__link">
+        nano部署yolov5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/LibtorchInWindows/" class="md-nav__link">
+        windows下配置libtorch(vs/cmake)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/vscode%E9%85%8D%E7%BD%AEopencv/" class="md-nav__link">
+        windows+vscode配置opencv4.1.1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/%E6%96%B0%E7%94%B5%E8%84%91%E9%85%8D%E7%8E%AF%E5%A2%83/" class="md-nav__link">
+        windows配置深度学习环境
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD/" class="md-nav__link">
+        win11+ubuntu双系统的安装与卸载
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/WSL%E4%B8%8B%E9%85%8D%E7%BD%AEdocker%E7%8E%AF%E5%A2%83/" class="md-nav__link">
+        WSL下GPU配置与docker安装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/vscode%E5%AE%B9%E5%99%A8%E4%B8%AD%E5%BC%80%E5%8F%91/" class="md-nav__link">
+        vscode+devcontainer+docker容器开发
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/dockerlize%20GUI%20in%20wsl/" class="md-nav__link">
+        docker容器中图形化界面开发环境配置
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          地震反演
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="地震反演" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          地震反演
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Basic/" class="md-nav__link">
+        反演概念
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Util/" class="md-nav__link">
+        反演基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/BasicMath/" class="md-nav__link">
+        数学基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5">
+          论文笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="论文笔记" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          论文笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_1" type="checkbox" id="__nav_5_5_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_1">
+          反射率法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="反射率法" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          反射率法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/RM.md" class="md-nav__link">
+        概括
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/CoupleWave.md" class="md-nav__link">
+        chapter2耦合波
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/Appendix.md" class="md-nav__link">
+        chapter4震源
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/ch5.md" class="md-nav__link">
+        chapter5反射与透射
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/ch6.md" class="md-nav__link">
+        chapter6递归求解反射系数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/Source.md" class="md-nav__link">
+        chapter7层状半空间响应
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/Response.md" class="md-nav__link">
+        chapter7求解地震记录
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/PaperNotes/" class="md-nav__link">
+        碎片
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/DTV.md" class="md-nav__link">
+        DTV
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/Gan.md" class="md-nav__link">
+        生成对抗网络
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/unet.md" class="md-nav__link">
+        Unet迁移学习
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/Review.md" class="md-nav__link">
+        Review
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Optimization/" class="md-nav__link">
+        优化方法笔记
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          学习文档
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="学习文档" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          学习文档
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Learning/" class="md-nav__link">
+        专栏介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Learning/Algorithm/" class="md-nav__link">
+        算法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Learning/DP/" class="md-nav__link">
+        动态规划
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Learning/Structure/" class="md-nav__link">
+        数据结构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Learning/c%2B%2B11/" class="md-nav__link">
+        c++特性杂记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Learning/ToolDoc/" class="md-nav__link">
+        工具使用文档
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Learning/PythonDoc/" class="md-nav__link">
+        python使用文档
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Learning/CUDA/" class="md-nav__link">
+        CUDA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Learning/LinearAlgebra/" class="md-nav__link">
+        线性代数理论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Learning/Propagation/" class="md-nav__link">
+        波在介质中的传播学习笔记
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-yolov5" class="md-nav__link">
+    目标检测--YOLOV5
+  </a>
+  
+    <nav class="md-nav" aria-label="目标检测--YOLOV5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    数据处理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    训练
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    评估
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-deeplabv3" class="md-nav__link">
+    语义分割 -- deeplabv3+
+  </a>
+  
+    <nav class="md-nav" aria-label="语义分割 -- deeplabv3+">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    前言
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    数据处理
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mutilyolov5" class="md-nav__link">
+    大佬开源：mutilyolov5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    最终效果
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">百度大数据竞赛划水记录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p><em>所用代码均为主流深度学习模型架构，只是简单调参，故没有开源</em></p>
+<p>赛题为车载影像</p>
+<p>aistudio 平台，所以我最先使用paddle框架进行尝试，baseline给的模型为<strong>ppyolo</strong>,尝试的跑了一天，结果ap惊人的才0.02，交流群里很多人也是这样，所以我果断放弃，后来发现可能是因为锚框的大小选取有问题，先进行<strong>autoAnchor聚类</strong>得到最佳锚框可能会获得更好的结果，但是我没有进行尝试</p>
+<p>之后转战<strong>faster-rcnn</strong> 因为提交结果对模型的大小有限制，必须在200m以内，而我这个还单单只是检测的模型，故我选用<strong>resnet-18</strong>作为骨干，head使用<strong>fpn</strong>提高感受野，验证集ap能达到0.18！此时提交f=0.2瞬间升到了前十</p>
+<p>之后便开始了无脑调参之旅。。。大无语事件接连发生</p>
+<ul>
+<li>拿默认配置文件训练一晚上直接报错，报错原因好像是验证的时候tensor出现了-1的情况，所以无法计算ap，程序就直接停止了，这个错误在相同代码第二次跑的时候就消失了，玄学<img alt="😅" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f605.svg" title=":sweat_smile:" /></li>
+<li>默认学习率进行训练时，几个batch过后loss直接变为nan，只能降低学习率0.001<img alt="😅" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f605.svg" title=":sweat_smile:" /></li>
+<li><strong>cascade rcnn</strong> 的ap倒是可以稳步上升，但是模型导出超过了200m，paddle暂不支持rcnn模型的压缩<img alt="💔" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f494.svg" title=":broken_heart:" /></li>
+</ul>
+<p>所以就这样一次训练不如一次，干脆放弃了，如果有幸进复赛再好好搞</p>
+<hr />
+<p>就这一个草率的模型居然以30多名的成绩进了复赛（好水），复赛就不一样了</p>
+<p>复赛我毅然决然的放弃了paddle，用最火的yolov5尝试一下，因为之间经常跑yolov5，其性能和速度都是很不错的，接下来就开始跑了</p>
+<hr />
+<h2 id="-yolov5">目标检测--YOLOV5<a class="headerlink" href="#-yolov5" title="Permanent link">&para;</a></h2>
+<h3 id="_2">数据处理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>本次比赛所用数据格式为coco格式(但不完全是)，标注数据只有图像名称，bbox坐标，连通域信息</p>
+<p>所以如果要用主流网络训练的话建议先将次数据转为coco数据格式，yolov5官方给出了各种数据转为yolo格式代码</p>
+<p>我更改以后如下</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">def</span> <span class="nf">convert_coco_json</span><span class="p">(</span><span class="n">json_dir</span><span class="o">=</span><span class="s1">&#39;../coco/annotations/&#39;</span><span class="p">,</span> <span class="n">use_segments</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cls91to80</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">save_dir</span> <span class="o">=</span> <span class="n">make_dirs</span><span class="p">()</span>  <span class="c1"># output directory</span>
+    <span class="n">coco80</span> <span class="o">=</span> <span class="n">coco91_to_coco80_class</span><span class="p">()</span>
+
+    <span class="c1"># Import json</span>
+    <span class="k">for</span> <span class="n">json_file</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">json_dir</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.json&#39;</span><span class="p">)):</span>
+        <span class="n">fn</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">save_dir</span><span class="p">)</span> <span class="o">/</span> <span class="s1">&#39;labels&#39;</span> <span class="c1"># / json_file.stem.replace(&#39;instances_&#39;, &#39;&#39;)  # folder name</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">json_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+        <span class="c1"># Create image dict</span>
+        <span class="c1"># images = {&#39;%g&#39; % x[&#39;id&#39;]: x for x in data[&#39;images&#39;]}</span>
+
+        <span class="c1"># Write labels file</span>
+        <span class="c1"># if x[&#39;iscrowd&#39;]:</span>
+        <span class="c1">#     continue</span>
+        <span class="n">img_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;../train (1)/train/image/&#39;</span><span class="p">,</span> <span class="n">json_file</span><span class="o">.</span><span class="n">stem</span><span class="p">)</span>
+        <span class="n">frame</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">img_path</span> <span class="o">+</span> <span class="s1">&#39;.jpg&#39;</span><span class="p">)</span>
+        <span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">frame</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">json_file</span><span class="o">.</span><span class="n">stem</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+
+            <span class="c1"># img = images[&#39;%g&#39; % x[&#39;image_id&#39;]]</span>
+            <span class="c1"># h, w, f = img[&#39;height&#39;], img[&#39;width&#39;], img[&#39;file_name&#39;]</span>
+
+
+            <span class="c1"># The COCO box format is [top left x, top left y, width, height]</span>
+            <span class="n">box</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;width&#39;</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+            <span class="n">box</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="n">box</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">/</span> <span class="mi">2</span>  <span class="c1"># xy top-left corner to center</span>
+            <span class="n">box</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span> <span class="o">/=</span> <span class="n">w</span>  <span class="c1"># normalize x</span>
+            <span class="n">box</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span> <span class="o">/=</span> <span class="n">h</span>  <span class="c1"># normalize y</span>
+
+            <span class="c1"># Segments</span>
+            <span class="k">if</span> <span class="n">use_segments</span><span class="p">:</span>
+                <span class="n">segments</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;segmentation&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">i</span><span class="p">]</span>  <span class="c1"># all segments concatenated</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">segments</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">]))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+            <span class="c1"># Write</span>
+            <span class="k">if</span> <span class="n">box</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">box</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># if w &gt; 0 and h &gt; 0</span>
+                <span class="bp">cls</span> <span class="o">=</span> <span class="n">coco80</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">cls91to80</span> <span class="k">else</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># class</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">s</span> <span class="k">if</span> <span class="n">use_segments</span> <span class="k">else</span> <span class="n">box</span><span class="p">)</span>  <span class="c1"># cls, box or segments</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">((</span><span class="n">fn</span> <span class="o">/</span> <span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s1">&#39;.txt&#39;</span><span class="p">),</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+                    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="s1">&#39;</span><span class="si">%g</span><span class="s1"> &#39;</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">))</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span> <span class="o">%</span> <span class="n">line</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="s1">&#39;COCO&#39;</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;..</span><span class="se">\\</span><span class="s1">train (1)</span><span class="se">\\</span><span class="s1">train</span><span class="se">\\</span><span class="s1">label&#39;</span>
+    <span class="k">if</span> <span class="n">source</span> <span class="o">==</span> <span class="s1">&#39;COCO&#39;</span><span class="p">:</span>
+        <span class="n">convert_coco_json</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>  <span class="c1"># directory with *.json</span>
+
+    <span class="c1"># zip results</span>
+    <span class="c1"># os.system(&#39;zip -r ../coco.zip ../coco&#39;)</span>
+</code></pre></div>
+<p>由此可在new_dir中得到yolo数据集标签格式 *.txt，并将其分成训练集和测试集，图像文件和标签文件放入对应文件夹。</p>
+<h3 id="_3">训练<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>参考yolov5官方readme，最近yolov5更新到5.0，看评测标准性能又有了飞跃，正好借着这次比赛尝试一下</p>
+<p>修改cfg.yml data.yml，更改为自己的路径</p>
+<p>前期有点虚，只训练了50个epoch，一天以后，ap便达到了0.4，</p>
+<h3 id="_4">评估<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>这次和其他比赛不一样，官方并没有给出测试集，所以只训练完还不可以，提交结果要求提交代码，并在其服务器环境下顺利运行，并生成所要求的json文件</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">random</span>
+
+<span class="kn">from</span> <span class="nn">env.experimental</span> <span class="kn">import</span> <span class="n">attempt_load</span>
+<span class="kn">from</span> <span class="nn">env.datasets</span> <span class="kn">import</span> <span class="n">LoadImages</span>
+<span class="kn">from</span> <span class="nn">env.general</span> <span class="kn">import</span> <span class="n">check_img_size</span><span class="p">,</span> <span class="n">non_max_suppression</span><span class="p">,</span> <span class="n">apply_classifier</span><span class="p">,</span> \
+    <span class="n">scale_coords</span><span class="p">,</span>  <span class="n">set_logging</span>
+<span class="kn">from</span> <span class="nn">env.torch_utils</span> <span class="kn">import</span> <span class="n">select_device</span><span class="p">,</span> <span class="n">load_classifier</span><span class="p">,</span> <span class="n">time_synchronized</span>
+
+
+<span class="k">def</span> <span class="nf">detect</span><span class="p">(</span><span class="n">datatxt</span><span class="p">,</span> <span class="n">resultjson</span><span class="p">,</span> <span class="n">save_img</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">augment</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">conf_thres</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="n">iou_thres</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="n">weights</span><span class="p">,</span> <span class="n">imgsz</span> <span class="o">=</span> <span class="s1">&#39;./weights/yolov5m6.pt&#39;</span><span class="p">,</span> <span class="mi">1280</span>
+    <span class="n">save_img</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># save inference images</span>
+    <span class="n">view_img</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">save_txt</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">webcam</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">device</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="n">datatxt</span>
+
+    <span class="c1"># Initialize</span>
+    <span class="n">set_logging</span><span class="p">()</span>
+    <span class="n">device</span> <span class="o">=</span> <span class="n">select_device</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">half</span> <span class="o">=</span> <span class="n">device</span><span class="o">.</span><span class="n">type</span> <span class="o">!=</span> <span class="s1">&#39;cpu&#39;</span>  <span class="c1"># half precision only supported on CUDA</span>
+
+    <span class="c1"># Load model</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">attempt_load</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">map_location</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>  <span class="c1"># load FP32 model</span>
+    <span class="n">stride</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">stride</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>  <span class="c1"># model stride</span>
+    <span class="n">imgsz</span> <span class="o">=</span> <span class="n">check_img_size</span><span class="p">(</span><span class="n">imgsz</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">stride</span><span class="p">)</span>  <span class="c1"># check img_size</span>
+    <span class="k">if</span> <span class="n">half</span><span class="p">:</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">half</span><span class="p">()</span>  <span class="c1"># to FP16</span>
+
+    <span class="c1"># Second-stage classifier</span>
+    <span class="n">classify</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">classify</span><span class="p">:</span>
+        <span class="n">modelc</span> <span class="o">=</span> <span class="n">load_classifier</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;resnet101&#39;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># initialize</span>
+        <span class="n">modelc</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;weights/resnet101.pt&#39;</span><span class="p">,</span> <span class="n">map_location</span><span class="o">=</span><span class="n">device</span><span class="p">)[</span><span class="s1">&#39;model&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+
+    <span class="c1"># Set Dataloader</span>
+    <span class="n">vid_path</span><span class="p">,</span> <span class="n">vid_writer</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">webcam</span><span class="p">:</span>
+        <span class="n">dataset</span> <span class="o">=</span> <span class="n">LoadImages</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">img_size</span><span class="o">=</span><span class="n">imgsz</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="n">stride</span><span class="p">)</span>
+
+    <span class="n">jdict</span><span class="p">,</span> <span class="n">stats</span><span class="p">,</span> <span class="n">ap</span><span class="p">,</span> <span class="n">ap_class</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">result</span><span class="p">[</span><span class="s2">&quot;result&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">det_dic</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">:</span><span class="mi">7</span><span class="p">}</span>
+
+    <span class="c1"># Get names and colors</span>
+    <span class="n">names</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">module</span><span class="o">.</span><span class="n">names</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;module&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="n">model</span><span class="o">.</span><span class="n">names</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="p">[[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">names</span><span class="p">]</span>
+
+    <span class="c1"># Run inference</span>
+    <span class="k">if</span> <span class="n">device</span><span class="o">.</span><span class="n">type</span> <span class="o">!=</span> <span class="s1">&#39;cpu&#39;</span><span class="p">:</span>
+        <span class="n">model</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">imgsz</span><span class="p">,</span> <span class="n">imgsz</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span><span class="o">.</span><span class="n">type_as</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">())))</span>  <span class="c1"># run once</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">path</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">im0s</span><span class="p">,</span> <span class="n">vid_cap</span> <span class="ow">in</span> <span class="n">dataset</span><span class="p">:</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">img</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">half</span><span class="p">()</span> <span class="k">if</span> <span class="n">half</span> <span class="k">else</span> <span class="n">img</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>  <span class="c1"># uint8 to fp16/32</span>
+        <span class="n">img</span> <span class="o">/=</span> <span class="mf">255.0</span>  <span class="c1"># 0 - 255 to 0.0 - 1.0</span>
+        <span class="k">if</span> <span class="n">img</span><span class="o">.</span><span class="n">ndimension</span><span class="p">()</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="c1"># Inference</span>
+        <span class="n">t1</span> <span class="o">=</span> <span class="n">time_synchronized</span><span class="p">()</span>
+        <span class="n">pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">augment</span><span class="o">=</span><span class="n">augment</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="c1"># Apply NMS</span>
+        <span class="n">pred</span> <span class="o">=</span> <span class="n">non_max_suppression</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">conf_thres</span><span class="p">,</span> <span class="n">iou_thres</span><span class="p">)</span>
+        <span class="n">t2</span> <span class="o">=</span> <span class="n">time_synchronized</span><span class="p">()</span>
+
+        <span class="c1"># Apply Classifier</span>
+        <span class="k">if</span> <span class="n">classify</span><span class="p">:</span>
+            <span class="n">pred</span> <span class="o">=</span> <span class="n">apply_classifier</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">modelc</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">im0s</span><span class="p">)</span>
+
+        <span class="c1"># Process detections</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">det</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pred</span><span class="p">):</span>  <span class="c1"># detections per image</span>
+            <span class="k">if</span> <span class="n">webcam</span><span class="p">:</span>  <span class="c1"># batch_size &gt;= 1</span>
+                <span class="n">p</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">im0</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">path</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s1">&#39;</span><span class="si">%g</span><span class="s1">: &#39;</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span> <span class="n">im0s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">dataset</span><span class="o">.</span><span class="n">count</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">p</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">im0</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">path</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">im0s</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="s1">&#39;frame&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+            <span class="n">p</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>  <span class="c1"># to Path</span>
+            <span class="n">s</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="si">%g</span><span class="s1">x</span><span class="si">%g</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>  <span class="c1"># print string</span>
+            <span class="n">gn</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">im0</span><span class="o">.</span><span class="n">shape</span><span class="p">)[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>  <span class="c1"># normalization gain whwh</span>
+            <span class="n">txt_path</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">stem</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">det</span><span class="p">):</span>
+                <span class="c1"># Rescale boxes from img_size to im0 size</span>
+                <span class="n">det</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">scale_coords</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">:],</span> <span class="n">det</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">4</span><span class="p">],</span> <span class="n">im0</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">()</span>
+
+                <span class="c1"># Print results</span>
+                <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">det</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+                    <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="n">det</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">c</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  <span class="c1"># detections per class</span>
+                    <span class="n">s</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">names</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">)]</span><span class="si">}{</span><span class="s1">&#39;s&#39;</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">, &quot;</span>  <span class="c1"># add to string</span>
+
+                <span class="c1"># Write results</span>
+                <span class="k">for</span> <span class="o">*</span><span class="n">xyxy</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">det</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">save_txt</span><span class="p">:</span>
+                        <span class="n">result_one</span> <span class="o">=</span> <span class="p">{}</span>
+                        <span class="n">result_one</span><span class="p">[</span><span class="s2">&quot;image_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">txt_path</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">item</span><span class="p">())</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">item</span><span class="p">())</span> <span class="o">!=</span> <span class="mi">1</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">item</span><span class="p">())</span> <span class="o">!=</span> <span class="mi">2</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span>
+                                <span class="bp">cls</span><span class="o">.</span><span class="n">item</span><span class="p">())</span> <span class="o">!=</span> <span class="mi">9</span><span class="p">:</span>
+                            <span class="k">continue</span>
+                        <span class="n">result_one</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">det_dic</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">item</span><span class="p">())]</span>
+                        <span class="n">result_one</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">xyxy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+                        <span class="n">result_one</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">xyxy</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+                        <span class="n">result_one</span><span class="p">[</span><span class="s2">&quot;width&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">xyxy</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="o">-</span> <span class="n">xyxy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+                        <span class="n">result_one</span><span class="p">[</span><span class="s2">&quot;height&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">xyxy</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="o">-</span> <span class="n">xyxy</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+                        <span class="n">result_one</span><span class="p">[</span><span class="s2">&quot;segmentation&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+                        <span class="n">result</span><span class="p">[</span><span class="s2">&quot;result&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result_one</span><span class="p">)</span>
+                        <span class="c1"># with open(txt_path + &#39;.txt&#39;, &#39;a&#39;) as f:</span>
+                        <span class="c1">#    f.write((&#39;%g &#39; * 5 + &#39;\n&#39;) % (cls, *xywh))  # label format</span>
+
+                    <span class="k">if</span> <span class="n">save_img</span> <span class="ow">or</span> <span class="n">view_img</span><span class="p">:</span>  <span class="c1"># Add bbox to image</span>
+                        <span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">names</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="bp">cls</span><span class="p">)]</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">conf</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span>
+                        <span class="c1"># plot_one_box(xyxy, im0, label=label, color=colors[int(cls)], line_thickness=3)</span>
+
+            <span class="c1"># Print time (inference + NMS)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s1">Done. (</span><span class="si">{</span><span class="n">t2</span> <span class="o">-</span> <span class="n">t1</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">s)&#39;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">resultjson</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Done. (</span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">s)&#39;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">abc</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">abc</span><span class="p">[</span><span class="s2">&quot;input&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">abc</span><span class="p">[</span><span class="s2">&quot;output&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="n">detect</span><span class="p">(</span><span class="n">abc</span><span class="p">[</span><span class="s2">&quot;input&quot;</span><span class="p">],</span> <span class="n">abc</span><span class="p">[</span><span class="s2">&quot;output&quot;</span><span class="p">])</span>
+</code></pre></div>
+<p>终端命令 </p>
+<div class="highlight"><pre><span></span><code>python predict.py data.txt result.json
+</code></pre></div>
+<h2 id="-deeplabv3">语义分割 -- deeplabv3+<a class="headerlink" href="#-deeplabv3" title="Permanent link">&para;</a></h2>
+<h3 id="_5">前言<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>因为前期并没有太多接触过语义分割，只跑过一个unet，所以真的可以算是零基础，教程也比较接地气</p>
+<h3 id="_6">数据处理<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>语义分割数据集分为</p>
+<ul>
+<li>COCO</li>
+<li>cityspace</li>
+</ul>
+<h2 id="mutilyolov5">大佬开源：mutilyolov5<a class="headerlink" href="#mutilyolov5" title="Permanent link">&para;</a></h2>
+<h2 id="_7">最终效果<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../img/cityspace.jpg" /></p>
+<hr />
+<p>ps:能力有限，最终获得了22名，没能进前十，未能进入决赛。第一次竞赛到这里就结束啦</p>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../robomaster%E5%B7%A5%E7%A8%8B%E7%9F%BF%E7%9F%B3%E8%AF%86%E5%88%AB/" class="md-footer__link md-footer__link--prev" aria-label="上一页: robomaster工程矿石识别" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              robomaster工程矿石识别
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../%E8%BF%90%E8%90%A5%E5%95%86%E6%A0%85%E6%A0%BC%E6%B4%BB%E8%B7%83%E5%BA%A6%E9%A2%84%E6%B5%8B/" class="md-footer__link md-footer__link--next" aria-label="下一页: 运营商栅格预测" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              运营商栅格预测
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      
+        <script src="../../js/tongji.js"></script>
+      
+        <script src="../../js/google.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdnjs.loli.net/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
