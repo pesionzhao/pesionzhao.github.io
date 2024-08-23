@@ -12,7 +12,7 @@
 - everything
 - PotPlayer
 - ToDesk
-- Rufus
+- Rufus 制作系统启动盘
 - [DiskGenius](https://www.diskgenius.cn/)
 
 ### 学习办公
@@ -33,7 +33,7 @@
 ### 插件
 
 - [lguana Tex](https://www.jonathanleroux.org/software/iguanatex/): 好用的PPT插入latex工具
-- [ncm转MP3](https://github.com/Majjcom/ncmppGui)
+- [ncmppGui](https://github.com/Majjcom/ncmppGui)： ncm转MP3
 
 
 ### 网站

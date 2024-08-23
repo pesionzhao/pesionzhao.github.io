@@ -79,6 +79,133 @@ devcontainer.json中各字段的命名规则及其作用 👇
 - `COPY` 复制文件: 将从构建上下文目录中 <源路径> 的文件/目录复制到新的一层的镜像内的 <目标路径> 位置
 - `CMD` 容器启动命令, 用于指定默认的容器主进程的启动命令, 比如，ubuntu 镜像默认的 CMD 是 `/bin/bash`
 
+### 远程连接容器
+#### 远程连接linux容器
+
+vscode通过ssh连接远程服务器
+
+远程资源管理器->打开ssh配置文件->添加配置->填写服务器ip->填写端口号->填写用户名
+
+```bash
+Host 10.184.17.64
+  HostName 10.184.17.64
+  User ubuntu
+```
+
+#### 远程连接wsl容器
+
+由于ssh无法直接连接到windows下的wsl，需要设置端口转发，也就是在连接主机某个端口时自动转发到wsl端口，假设端口为2222
+
+修改`sudo vim /etc/ssh/sshd_config`
+
+```bash
+sudo vim /etc/ssh/sshd_config
+```
+
+```config
+Port 2222
+ListenAddress 0.0.0.0
+PasswordAuthentication yes
+PermitEmptyPasswords no
+PermitRootLogin yes
+```
+
+重启ssh服务
+
+```bash
+sudo service ssh --full-restart
+```
+
+在windows上设置端口转发
+
+```powershell
+netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=22 connectaddress=172.30.71.0 connectport=22
+```
+
+`connectaddress`填wsl的ip地址,但是wsl每次启动ip都不一样,可以通过`wsl hostname -I`查看wsl的ip
+
+新建防火墙规则
+
+```powershell
+netsh advfirewall firewall add rule name=WSL2 dir=in action=allow protocol=TCP localport=22
+```
+
+查看端口转发
+
+```powershell
+netsh interface portproxy show all
+```
+
+删除转发规则
+
+```powershell
+netsh interface portproxy delete v4tov4 listenaddress=0.0.0.0 listenport=22
+```
+
+##### **脚本一键部署**
+
+```powershell
+notepad $PROFILE
+```
+
+更改内容如下
+
+```powershell
+wsl -e echo hello $Env:USERNAME # hello 后面的内容是你的用户名
+$wsl_ip = wsl hostname -I # 获取wsl的ip
+Write-Host "WSL Machine IP: ""$wsl_ip""" # 输出wsl的ip
+function ssh-set { # 设置端口转发
+    param (
+        [int]$port = 22
+    )
+    netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=$port connectaddress=$wsl_ip connectport=$port
+}
+function ssh-unset{ # 删除端口转发
+    param (
+        [int]$port = 22
+    )
+    netsh interface portproxy delete v4tov4 listenaddress=0.0.0.0 listenport=$port
+}
+function ssh-show{ # 查看端口转发
+netsh interface portproxy show all
+}
+ssh-set # 端口转发
+```
+
+即可完成开机自动设置端口转发
+
+#### 遇到的一些坑
+
+##### ssh localhost 端口拒绝
+
+可能是由于ssh服务没有打开
+
+检查ssh服务是否打开
+
+```powershell
+Get-Service -Name sshd
+```
+
+打开ssh服务
+
+```powershell
+Start-Service sshd
+```
+
+设置开机自启动
+
+```powershell
+Set-Service -Name sshd -StartupType 'Automatic'
+```
+
+##### ssh localhost 远程主机表示已更改
+
+删除localhost的主机表示即可
+
+```powershell
+ssh-keygen -R localhost
+```
+
 
 ## **Sample**
 

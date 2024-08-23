@@ -403,7 +403,7 @@ find [flags] [path] -name [expression]  # 正则匹配, -type f:文件 d:文件�
 
 - `du -sh` 查看所有子目录占的空间
 - `df -h` 查看剩余空间
-- `du -h --max-depth=1` 当前文件夹下的一级目录占用空间大小
+- `du -h --max-depth=1`等价于`du -h -d=1` 当前文件夹下的一级目录占用空间大小
 - `chmod`: change mode, [修改文件权限](https://www.runoob.com/linux/linux-comm-chmod.html)
 
 ### 脚本使用
@@ -457,7 +457,7 @@ Source是主机上的位置，Destination是容器内的位置
 - `docker inspect container`: 查看该容器的信息 Source是主机上的位置，Destination是容器内的位置
 - `docker images -a` 查看所有镜像id
 - `docker images -a | grep "mul" | awk '{print $3}'` 结合grep&awk进行查找 输出id
-- `docker ps -a` 查看容器
+- `docker ps -a` 查看容器, `--size` 查看空间占用
 - `docker ps -a -f status=exited -q` status有`created`, `restarting`, `running`, `paused`, or `exited` -f 表示 filter -q表示只显示ID
 - `docker volume ls -f dangling=true` 显示dangling状态的volume
 
