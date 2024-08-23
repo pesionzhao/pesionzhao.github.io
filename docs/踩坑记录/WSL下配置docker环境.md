@@ -121,6 +121,8 @@ make BlackScholes
 ```
 
 ### 安装nvidia-container-toolkit
+官方网址 https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
+
 首先，1. 确保nvcc -V可以正常输出，2. 确保docker安装成功
 
 在服务器bash中设置stable存储库和密钥：
@@ -205,7 +207,7 @@ docker info
 
 docker的具体使用方法,见其他文档~
 
-ps:
+**ps: 以下内容存在错误**
 
 WSL设置代理
 
@@ -250,10 +252,68 @@ alias unproxy='
 '
 ```
 
-```
+刷新配置
+
+```bash
 source .bashrc
 ```
 
-关闭防火墙
+### 配置局域网私有仓库
 
-crtl+shift+c打开终端
+参考 https://yeasy.gitbook.io/docker_practice/repository/registry
+
+官方 https://distribution.github.io/distribution/
+
+拉取registry用来构建私有仓库
+
+```bash
+docker run -d -p 5000:5000 --restart=always --name registry registry
+```
+
+修改`daemon.json`, wsl需要在docker desktop修改, 局域网中的其他linux主机直接在`/etc/docker/daemon.json`中修改
+
+docker desktop -> setting -> Docker Engine 增加如下内容
+
+```json
+"insecure-registries": [
+"10.180.73.62:5000"
+]
+```
+
+标记需要上传的镜像
+
+```bash
+docker tag ubuntu:latest 10.180.73.62:5000/ubuntu:latest
+```
+
+上传
+
+```bash
+docker push 10.180.73.62:5000/ubuntu:latest
+```
+
+查看私有仓库镜像
+
+```bash
+curl 10.180.73.62:5000/v2/_catalog
+```
+
+输出
+
+```bash
+>> {"repositories":["ubuntu"]}
+```
+
+如果显示不出来，可能是由于防火墙阻止了wsl和windows的通信，设置防火墙入站规则，允许访问特定端口5000即可
+
+在内网的其他电脑在配置好`daemon.json` 就可以进行pull了
+
+```bash
+docker pull 10.180.73.62:5000/ubuntu:latest
+```
+
+push的镜像默认存在`/var/lib/docker/registry` 目录下, 通过如下命令进入容器查看即可
+
+```bash
+docker exec -it registry /bin/sh
+```
