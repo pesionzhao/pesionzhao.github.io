@@ -2,6 +2,8 @@
   - [基础](#基础)
   - [本地仓库推送](#本地仓库推送)
   - [远程重命名仓库](#远程重命名仓库)
+  - [回退版本](#回退版本)
+  - [代理](#代理)
 - [C++](#c)
   - [Algorithms](#algorithms)
     - [ranges](#ranges)
@@ -45,8 +47,10 @@
 获取token方法->develop settings
 
 ```bash
-git remote add origin http://[Token]@github.pesionzhao/
+git init
+git remote add origin http://[Token]@github.pesionzhao/ # 绑定远程仓库
 git branch -M main # 重命名默认分支
+git checkout -d master1 # 创建新分支并转到
 git push -u origin main # -u 选项也可以写作 --set-upstream，关联本地与远程，之后不用指定分支
 ```
 
@@ -59,10 +63,25 @@ git branch -u origin/master master
 git remote set-head origin -a
 ```
 
+### 回退版本
+```bash
+git reset # 撤销add操作
+git log # 查看往期版本号和commit
+git reset --hard 64d3f4bccb4d00 # 回退到某一版本号
+git push -f origin master # 把回退完的上传
+```
 
+### 代理
+
+[一文让你了解如何为 Git 设置代理](https://ericclose.github.io/git-proxy-config.html)
+
+```bash
+git config --global http.proxy http://127.0.0.1:10809
+# unset
+git config --global --unset http.proxy
+```
 
 ## C++
-
 
 ### Algorithms
 
