@@ -103,7 +103,7 @@ sudo vim /etc/ssh/sshd_config
 ```
 
 ```config
-Port 2222
+Port 22
 ListenAddress 0.0.0.0
 PasswordAuthentication yes
 PermitEmptyPasswords no
@@ -167,7 +167,7 @@ function ssh-unset{ # 删除端口转发
     netsh interface portproxy delete v4tov4 listenaddress=0.0.0.0 listenport=$port
 }
 function ssh-show{ # 查看端口转发
-netsh interface portproxy show all
+ws
 }
 ssh-set # 端口转发
 ```
@@ -200,7 +200,7 @@ Set-Service -Name sshd -StartupType 'Automatic'
 
 ##### ssh localhost 远程主机表示已更改
 
-删除localhost的主机表示即可
+删除ip地址(我这里是localhost)的主机表示即可
 
 ```powershell
 ssh-keygen -R localhost
