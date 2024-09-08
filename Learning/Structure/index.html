@@ -1101,6 +1101,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/ZeroTier%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    内网穿透
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1242,7 +1262,7 @@
             
   
   <span class="md-ellipsis">
-    论文笔记
+    反射率法
   </span>
   
 
@@ -1251,40 +1271,6 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_5">
-            <span class="md-nav__icon md-icon"></span>
-            论文笔记
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5_1" >
-        
-          <label class="md-nav__link" for="__nav_5_5_1" id="__nav_5_5_1_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    反射率法
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_5_1">
             <span class="md-nav__icon md-icon"></span>
             反射率法
           </label>
@@ -1444,6 +1430,60 @@
   
   
     <li class="md-nav__item">
+      <a href="../../SeismicInversion/Optimization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    优化方法笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    论文笔记
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            论文笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../SeismicInversion/PaperNotes/" class="md-nav__link">
         
   
@@ -1541,26 +1581,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../SeismicInversion/Optimization/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    优化方法笔记
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -2146,7 +2166,15 @@
 <h4 id="_3">小根堆实现优先队列<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <p>队列每次弹出最小元素,可以用小根堆弹出根节点实现,之后再对堆进行排序即可,复杂度<code>O(logN)</code>,所以如果依次弹出队列,将会得到一个有序的数组,这也就是堆排序,但考虑到空间复杂度,希望不开辟额外的空间,可以使用大根堆排序</p>
 <p>每次将根节点与最后一个节点交换,之后重新构建堆,如此往复,会得到层序遍历为正序的小根堆</p>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="c1">//自定义比较函数的大根堆</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Comp</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">operator</span><span class="p">()(</span><span class="n">Point</span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">Point</span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">val</span><span class="o">&gt;</span><span class="n">b</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="n">priority_queue</span><span class="o">&lt;</span><span class="n">Point</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Point</span><span class="o">*&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">Comp</span><span class="o">&gt;</span><span class="w"> </span><span class="n">q</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="_4">并查集<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p><a href="https://www.zhihu.com/collection/945696876">算法学习笔记(1) : 并查集</a></p>
