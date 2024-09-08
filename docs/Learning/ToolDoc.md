@@ -17,6 +17,7 @@
     - [bitset](#bitset)
   - [map](#map)
   - [queue](#queue)
+    - [priority\_queue](#priority_queue)
 - [正则表达式](#正则表达式)
 - [Linux](#linux)
   - [常用命令](#常用命令)
@@ -48,9 +49,10 @@
 
 ```bash
 git init
-git remote add origin http://[Token]@github.pesionzhao/ # 绑定远程仓库
+git remote add origin http://[Token]@github.pesionzhao/ # 绑定将origin设置为远程仓库地址
+git remote set-url origin URL_ADDRESS # 更改远程地址
 git branch -M main # 重命名默认分支
-git checkout -d master1 # 创建新分支并转到
+git checkout -b master1 # 创建新分支并转到
 git push -u origin main # -u 选项也可以写作 --set-upstream，关联本地与远程，之后不用指定分支
 ```
 
@@ -315,6 +317,12 @@ q.push()
 q.front()
 q.pop();
 q.back();
+```
+
+#### priority_queue
+
+```c++
+priority_queue<pair<int,int>, vector<pair<int,int>>, greater<>> pq;//小根堆
 ```
 
 ## 正则表达式

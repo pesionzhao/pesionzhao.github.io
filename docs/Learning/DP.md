@@ -139,7 +139,7 @@ public:
 
 ##### 选或不选
 
-这两种方法已在回溯法->模板题 组合总和进行了总结
+这两种方法已在回溯法->模板题 组合总和进行了总结，详细解释可在[回溯法->模板题 组合总和](Algorithm.md#_4)浏览
 
 ```c++
 //0-1 背包递归+记忆化搜索
@@ -637,7 +637,7 @@ return j0;
 
 [【宫水三叶】详解两种状态压缩 DP 思路](https://leetcode.cn/problems/beautiful-arrangement/solutions/938214/gong-shui-san-xie-xiang-jie-liang-chong-vgsia/)
 
-#### 朴素解法
+##### 朴素解法
 
 
 ```c++
@@ -665,10 +665,10 @@ int countArrangement(int n) {
 }
 ```
 
-#### 空间优化
+##### 空间优化
 由于排列中的数字个数可以通过状态s中1的个数确定,所以可以省略第一个维度, 通过gcc内置函数`__builtin_popcount()`来统计1的个数来获得i
 
-##### 正着递归 入口dfs(0)
+###### 正着递归 入口dfs(0)
 
 ```c++
 int countArrangement(int n) {
@@ -696,7 +696,7 @@ int countArrangement(int n) {
 }
 ```
 
-##### 倒着递归 入口dfs(n)
+###### 倒着递归 入口dfs(n)
 
 ```c++
 int countArrangement(int n) {
@@ -723,9 +723,9 @@ int countArrangement(int n) {
 }
 ```
 
-#### 递推写法
+##### 递推写法
 
-题单
+##### 题单
 
 - [526. 优美的排列](https://leetcode.cn/problems/beautiful-arrangement/)
 - [2850. 将石头分散到网格图的最少移动次数](https://leetcode.cn/problems/minimum-moves-to-spread-stones-over-grid/description/?envType=daily-question&envId=2024-07-19)

@@ -52,7 +52,15 @@ void preorder(Tree* root, vector<int> res)
 每次将根节点与最后一个节点交换,之后重新构建堆,如此往复,会得到层序遍历为正序的小根堆
 
 ```c++
-
+//自定义比较函数的大根堆
+struct Comp
+{
+    bool operator()(Point* a, Point* b)
+    {
+        return a->val>b->val;
+    }
+}
+priority_queue<Point*, vector<Point*>, Comp> q;
 ```
 
 ### 并查集

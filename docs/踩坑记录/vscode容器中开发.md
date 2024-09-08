@@ -80,19 +80,19 @@ devcontainer.json中各字段的命名规则及其作用 👇
 - `CMD` 容器启动命令, 用于指定默认的容器主进程的启动命令, 比如，ubuntu 镜像默认的 CMD 是 `/bin/bash`
 
 ### 远程连接容器
-#### 远程连接linux容器
+#### 远程连接linux服务器
 
 vscode通过ssh连接远程服务器
 
 远程资源管理器->打开ssh配置文件->添加配置->填写服务器ip->填写端口号->填写用户名
 
 ```bash
-Host 10.184.17.64
-  HostName 10.184.17.64
-  User ubuntu
+Host 10.184.17.64 # 别名
+  HostName 10.184.17.64 # 服务器ip
+  User ubuntu # 用户名
 ```
 
-#### 远程连接wsl容器
+#### 远程连接wsl
 
 由于ssh无法直接连接到windows下的wsl，需要设置端口转发，也就是在连接主机某个端口时自动转发到wsl端口，假设端口为2222
 
@@ -103,7 +103,7 @@ sudo vim /etc/ssh/sshd_config
 ```
 
 ```config
-Port 22
+Port 2222
 ListenAddress 0.0.0.0
 PasswordAuthentication yes
 PermitEmptyPasswords no
@@ -119,7 +119,7 @@ sudo service ssh --full-restart
 在windows上设置端口转发
 
 ```powershell
-netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=22 connectaddress=172.30.71.0 connectport=22
+netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=2222 connectaddress=172.30.71.0 connectport=22
 ```
 
 `connectaddress`填wsl的ip地址,但是wsl每次启动ip都不一样,可以通过`wsl hostname -I`查看wsl的ip
@@ -127,7 +127,7 @@ netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=22 connect
 新建防火墙规则
 
 ```powershell
-netsh advfirewall firewall add rule name=WSL2 dir=in action=allow protocol=TCP localport=22
+netsh advfirewall firewall add rule name=WSL2 dir=in action=allow protocol=TCP localport=2222
 ```
 
 查看端口转发
@@ -139,7 +139,7 @@ netsh interface portproxy show all
 删除转发规则
 
 ```powershell
-netsh interface portproxy delete v4tov4 listenaddress=0.0.0.0 listenport=22
+netsh interface portproxy delete v4tov4 listenaddress=0.0.0.0 listenport=2222
 ```
 
 ##### **脚本一键部署**
@@ -156,13 +156,13 @@ $wsl_ip = wsl hostname -I # 获取wsl的ip
 Write-Host "WSL Machine IP: ""$wsl_ip""" # 输出wsl的ip
 function ssh-set { # 设置端口转发
     param (
-        [int]$port = 22
+        [int]$port = 2222
     )
     netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=$port connectaddress=$wsl_ip connectport=$port
 }
 function ssh-unset{ # 删除端口转发
     param (
-        [int]$port = 22
+        [int]$port = 2222
     )
     netsh interface portproxy delete v4tov4 listenaddress=0.0.0.0 listenport=$port
 }
@@ -173,6 +173,17 @@ ssh-set # 端口转发
 ```
 
 即可完成开机自动设置端口转发
+
+同样在vscode打开远程资源管理器->打开ssh配置文件->添加配置->填写服务器ip->填写端口号->填写用户名
+
+```bash
+Host PesionWorker # 别名
+  HostName 10.180.73.62 # 远程windows的ip
+  User pesion # wsl用户名
+  Port 2222 # 填写端口号
+```
+
+即可进行连接
 
 #### 遇到的一些坑
 
@@ -200,12 +211,27 @@ Set-Service -Name sshd -StartupType 'Automatic'
 
 ##### ssh localhost 远程主机表示已更改
 
-删除ip地址(我这里是localhost)的主机表示即可
+原因是该ip地址对应的远程主机标识和known_hosts中的标识不一样,可能由于之前我连的是这个ip地址下的wsl,这次连接windows的原因, 删除ip地址(我这里是localhost)的主机表示即可
 
 ```powershell
 ssh-keygen -R localhost
 ```
 
+##### ssh wsl_name@localhost 报错permission denied
+
+22号端口被sshd监听到并且占用了,无法转发到wsl,所以要换一个端口比如2222连接,并设置端口转发
+
+#### 进入容器
+
+在ssh连接成功后,在终端运行容器,并进行挂载目录
+
+```bash
+docker run --rm -it --gpus 1 --name pesion -v ./CUDA/:/workspace/  pytorch/pytorch:2.0.0-cuda11.7-cudnn8-devel
+```
+
+在docker插件下选择启动的容器->附加到vscode, 即可进入容器进行开发
+
+更改工作目录: `F1`->打开配置文件->`workspaceFolder`->`/workspace`
 
 ## **Sample**
 

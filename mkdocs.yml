@@ -39,26 +39,29 @@ nav:
         - WSL下GPU配置与docker安装: 踩坑记录\WSL下配置docker环境.md
         - vscode+devcontainer+docker容器开发: 踩坑记录\vscode容器中开发.md
         - docker容器中图形化界面开发环境配置: 踩坑记录\dockerlize GUI in wsl.md
+        - 内网穿透: 踩坑记录\ZeroTier内网穿透.md
+
     - 地震反演:
         - 专栏介绍: SeismicInversion\README.md
         - 反演概念: SeismicInversion\Basic.md
         - 反演基础: SeismicInversion\Util.md
         - 数学基础: SeismicInversion\BasicMath.md
+        - 反射率法:
+            - 概括: SeismicInversion\Paper\RM.md
+            - chapter2耦合波: SeismicInversion\Paper\CoupleWave.md
+            - chapter4震源: SeismicInversion\Paper\Appendix.md
+            - chapter5反射与透射: SeismicInversion\Paper\ch5.md
+            - chapter6递归求解反射系数: SeismicInversion\Paper\ch6.md 
+            - chapter7层状半空间响应: SeismicInversion\Paper\Source.md
+            - chapter7求解地震记录: SeismicInversion\Paper\Response.md
+        - 优化方法笔记: SeismicInversion\Optimization.md
+        # - 网络驱动反演概括: 
         - 论文笔记:
-            - 反射率法:
-                - 概括: SeismicInversion\Paper\RM.md
-                - chapter2耦合波: SeismicInversion\Paper\CoupleWave.md
-                - chapter4震源: SeismicInversion\Paper\Appendix.md
-                - chapter5反射与透射: SeismicInversion\Paper\ch5.md
-                - chapter6递归求解反射系数: SeismicInversion\Paper\ch6.md 
-                - chapter7层状半空间响应: SeismicInversion\Paper\Source.md
-                - chapter7求解地震记录: SeismicInversion\Paper\Response.md
             - 碎片: SeismicInversion\PaperNotes.md
             - DTV: SeismicInversion\Paper\DTV.md
             - 生成对抗网络: SeismicInversion\Paper\Gan.md
             - Unet迁移学习: SeismicInversion\Paper\unet.md
             - Review: SeismicInversion\Paper\Review.md
-        - 优化方法笔记: SeismicInversion\Optimization.md
     - 学习文档:
         - 专栏介绍: Learning/README.md
         - 算法: Learning/Algorithm.md
