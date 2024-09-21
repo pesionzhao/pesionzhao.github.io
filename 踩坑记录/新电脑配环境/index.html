@@ -1097,10 +1097,51 @@
     CUDA,CUDNN,PyTorch安装
   </a>
   
+    <nav class="md-nav" aria-label="CUDA,CUDNN,PyTorch安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuda" class="md-nav__link">
+    CUDA安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cudnn" class="md-nav__link">
+    下载cuDNN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytorch" class="md-nav__link">
+    安装PyTorch
+  </a>
+  
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    检查是否配置成功
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    大功告成咯~
+  </a>
   
 </li>
       
@@ -1997,10 +2038,51 @@
     CUDA,CUDNN,PyTorch安装
   </a>
   
+    <nav class="md-nav" aria-label="CUDA,CUDNN,PyTorch安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuda" class="md-nav__link">
+    CUDA安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cudnn" class="md-nav__link">
+    下载cuDNN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytorch" class="md-nav__link">
+    安装PyTorch
+  </a>
+  
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    检查是否配置成功
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    大功告成咯~
+  </a>
   
 </li>
       
@@ -2036,7 +2118,8 @@
 <p>这里说一下环境变量的问题，可根据上面的网址加入环境变量，加入之后可在（win+R）后输入cmd打开的终端窗口中进行conda操作 <strong>(需要先进行conda init!!!，否则无法进行conda activate)</strong> ，操作会方便，这里很建议加，不过不加也行，以后有需要了再加~</p>
 <p>安装结束可以看到多了很多软件，不用管他，“Anaconda Navigator”是图形化编辑窗口，我们最多只需要用Anaconda Prompt，甚至有了IDE之后什么都不会用到~</p>
 <p>这里先打开Anaconda Prompt输入conda info看一下信息，可以看到环境的保存地址，如果有需要修改的话,可以通过如下指令</p>
-<p>conda config --add envs_dirs D:\xxx\xxx\xx</p>
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>envs_dirs<span class="w"> </span>D:<span class="se">\x</span>xx<span class="se">\x</span>xx<span class="se">\x</span>x
+</code></pre></div>
 <p>之后再输入conda info就会看到envs directories的<strong>第一条</strong>为你所指定的路径 <strong>（注意，只有第一条是你环境默认的保存路径！！）</strong></p>
 <p>具体其他操作可以参考这些链接</p>
 <p><a href="https://blog.csdn.net/qq_54562136/article/details/128932352">Anaconda 安装及修改环境默认位置</a></p>
@@ -2064,7 +2147,30 @@
 <p>作为开发人员，Git当然是不可或缺的工具，优秀的版本管理功能会让开发效率大大提高，这次体验了新版git，更新了很多新功能！！</p>
 <p><a href="https://zhuanlan.zhihu.com/p/443527549?utm_id=0&amp;wd=&amp;eqid=fb9c4f4d00004e780000000564804069">Git下载安装教程：git安装步骤手把手图文【超详细】</a></p>
 <h3 id="cudacudnnpytorch">CUDA,CUDNN,PyTorch安装<a class="headerlink" href="#cudacudnnpytorch" title="Permanent link">&para;</a></h3>
-<p>下一期讲吧，累了</p>
+<h4 id="cuda">CUDA安装<a class="headerlink" href="#cuda" title="Permanent link">&para;</a></h4>
+<p>查看能支持的最大cuda版本</p>
+<p><code>ctrl+R</code>进入<code>cmd</code>, 输入<code>nvidia-smi</code>, 可以查看到cuda的版本,我们装小于等于这个版本号的cuda就行了,注意不是越新越好!!,很可能会导致和老版本的代码或者其他库不兼容</p>
+<p>在下面的官网中找到往期版本的cuda toolkit, 我使用的显卡为GTX 3060, 下载的cuda toolkit版本为11.1, 下载地址如下:</p>
+<p><a href="https://developer.nvidia.com/cuda-toolkit-archive">https://developer.nvidia.com/cuda-toolkit-archive</a></p>
+<p>依次选择操作系统<code>windows</code>-&gt;架构<code>x86_64</code>-&gt;windows版本<code>10</code>-&gt;下载方式(离线方式稳定一些)<code>exe(local)</code></p>
+<p>下载完成后安装就行, 选择临时文件保存位置-&gt;自定义安装(全选组件)-&gt;选择安装位置</p>
+<p>安装完成后在cmd中输入<code>nvcc -V</code>,如果能正确输出版本号,说明安装成功</p>
+<h4 id="cudnn">下载cuDNN<a class="headerlink" href="#cudnn" title="Permanent link">&para;</a></h4>
+<p>官网地址 ⬇️</p>
+<p><a href="https://developer.nvidia.com/rdp/cudnn-archive">https://developer.nvidia.com/rdp/cudnn-archive</a></p>
+<p>下载对应cuda版本的cudnn, 下载windows版本的,是一个zip文件,解压后将里面的文件复制到cuda安装目录下的对应文件夹中即D:\Program Files\NVIDIA CUDA\NVIDIA GPU Computing Toolkit\CUDA\v11.1目录下的三个对应文件夹下 <code>/bin, /include, /lib</code></p>
+<h4 id="pytorch">安装PyTorch<a class="headerlink" href="#pytorch" title="Permanent link">&para;</a></h4>
+<p>打开conda Prompt, 输入<code>conda create -n my_env python=3.8</code>, 创建一个名为my_env的环境, 并指定python版本为3.8, 输入<code>conda activate my_env</code>, 激活该环境,此时可以看到命令行前面多了一个<code>(my_env)</code>,之后进行的安装都会安装到这个环境中</p>
+<p>官网地址⬇️, 选择想安装的pytorch版本,对应cuda版本,复制命令到刚刚激活环境后的cmd中运行即可</p>
+<p><a href="https://pytorch.org/get-started/previous-versions/">https://pytorch.org/get-started/previous-versions/</a></p>
+<h3 id="_1">检查是否配置成功<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>在conda Prompt中进入<code>my_env</code>环境, 输入python进入python代码编辑器, , 输入<code>import torch</code>, 若没有报错, 则说明安装成功, 输入<code>torch.cuda.is_available()</code>, 若返回True, 则说明cuda安装成功</p>
+<div class="highlight"><pre><span></span><code>python
+&gt;&gt;&gt;<span class="w"> </span>import<span class="w"> </span>torch
+&gt;&gt;&gt;<span class="w"> </span>torch.cuda.is_available<span class="o">()</span>
+True
+</code></pre></div>
+<h2 id="_2">大功告成咯~<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 
 
   
