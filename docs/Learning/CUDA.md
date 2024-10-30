@@ -41,3 +41,29 @@ NVIDIA Compute Capability 9.0推出的新的层级结构--Thread Block Clusters:
 返回的pitch（stride）必须用于访问数组元素。
 
 
+# CUDA MODE
+
+## Lecture 1
+
+### 性能分析工具
+
+### load cuda in pytroch
+
+load in line
+
+pybind
+
+### Triton的特性
+
+- 有调试器,可以打点断点
+- 有缓存:包括PTX
+
+自动生成triton内核
+
+TORCH_LOGS="output_code"
+
+### 最有用的cuda分析器 NCU
+
+
+
+
