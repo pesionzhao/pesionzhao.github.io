@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../%E8%8D%A7%E5%85%89%E9%98%B5%E5%88%97%E7%9F%AB%E6%AD%A3%E8%AE%A1%E6%95%B0/">
+        <link rel="prev" href="../%E5%8D%95%E7%9B%B8%E6%9C%BA%E5%8F%8C%E5%85%89%E6%BA%90%E8%A7%86%E7%BA%BF%E4%BC%B0%E8%AE%A1/">
       
       
-        <link rel="next" href="../robomaster%E5%B7%A5%E7%A8%8B%E7%9F%BF%E7%9F%B3%E8%AF%86%E5%88%AB/">
+        <link rel="next" href="../JLU%20Captcha/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>吉林大学教务管理系统验证码识别 - ZPSXJTU</title>
+        <title>蛋白质荧光阵列矫正与计数 - ZPSXJTU</title>
       
     
     
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              吉林大学教务管理系统验证码识别
+              蛋白质荧光阵列矫正与计数
             
           </span>
         </div>
@@ -258,10 +258,10 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../SeismicInversion/" class="md-tabs__link">
+        <a href="../../Learning/" class="md-tabs__link">
           
   
-  地震反演
+  学习文档
 
         </a>
       </li>
@@ -276,10 +276,10 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../Learning/" class="md-tabs__link">
+        <a href="../../SeismicInversion/" class="md-tabs__link">
           
   
-  学习文档
+  地震反演
 
         </a>
       </li>
@@ -419,26 +419,6 @@
                 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../%E8%8D%A7%E5%85%89%E9%98%B5%E5%88%97%E7%9F%AB%E6%AD%A3%E8%AE%A1%E6%95%B0/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    蛋白质荧光阵列矫正与计数
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -454,7 +434,7 @@
           
   
   <span class="md-ellipsis">
-    吉林大学教务管理系统验证码识别
+    蛋白质荧光阵列矫正与计数
   </span>
   
 
@@ -465,7 +445,7 @@
         
   
   <span class="md-ellipsis">
-    吉林大学教务管理系统验证码识别
+    蛋白质荧光阵列矫正与计数
   </span>
   
 
@@ -488,36 +468,15 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    前言
+    前期准备
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    图像分析
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    思路
-  </a>
-  
-    <nav class="md-nav" aria-label="思路">
+    <nav class="md-nav" aria-label="前期准备">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    踩坑思路
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    最终方案
+  <a href="#_3" class="md-nav__link">
+    思路：深度学习（舍弃）
   </a>
   
 </li>
@@ -528,9 +487,111 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    最终效果
+  <a href="#_4" class="md-nav__link">
+    图像预处理（实操开始）
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    旋转矫正
+  </a>
+  
+    <nav class="md-nav" aria-label="旋转矫正">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#116" class="md-nav__link">
+    裁剪1/16
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    傅里叶变换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    计算旋转角
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    网格划分
+  </a>
+  
+    <nav class="md-nav" aria-label="网格划分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1 仅使用间隔线分割成的格子
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2 正六边形网格
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3 正方形网格
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    荧光检测与计数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    最终前后处理对比
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    注释
+  </a>
+  
+    <nav class="md-nav" aria-label="注释">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    傅里叶变换 （转载自各大网页原谅我记不清楚了）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -538,6 +599,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../JLU%20Captcha/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    吉林大学教务管理系统验证码识别
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1238,7 +1319,7 @@
             
   
   <span class="md-ellipsis">
-    地震反演
+    学习文档
   </span>
   
 
@@ -1247,471 +1328,6 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            地震反演
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../SeismicInversion/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    专栏介绍
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../SeismicInversion/Basic/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    反演概念
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../SeismicInversion/Util/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    反演基础
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../SeismicInversion/BasicMath/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    数学基础
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
-        
-          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    反射率法
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_5">
-            <span class="md-nav__icon md-icon"></span>
-            反射率法
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../SeismicInversion/Paper/RM/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    概括
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../SeismicInversion/Paper/CoupleWave/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    chapter2耦合波
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../SeismicInversion/Paper/Appendix/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    chapter4震源
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../SeismicInversion/Paper/ch5/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    chapter5反射与透射
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../SeismicInversion/Paper/ch6/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    chapter6递归求解反射系数
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../SeismicInversion/Paper/Source/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    chapter7层状半空间响应
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../SeismicInversion/Paper/Response/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    chapter7求解地震记录
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../SeismicInversion/Optimization/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    优化方法笔记
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
-        
-          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    论文笔记
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_7">
-            <span class="md-nav__icon md-icon"></span>
-            论文笔记
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../SeismicInversion/PaperNotes/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    碎片
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../SeismicInversion/Paper/DTV/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    DTV
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../SeismicInversion/Paper/Gan/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    生成对抗网络
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../SeismicInversion/Paper/unet/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Unet迁移学习
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../SeismicInversion/Paper/Review/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Review
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
-        
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    学习文档
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             学习文档
           </label>
@@ -1924,6 +1540,471 @@
   
 
     
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    地震反演
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            地震反演
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    专栏介绍
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Basic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    反演概念
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    反演基础
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/BasicMath/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数学基础
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
+        
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    反射率法
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            反射率法
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/RM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    概括
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/CoupleWave/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    chapter2耦合波
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/Appendix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    chapter4震源
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/ch5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    chapter5反射与透射
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/ch6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    chapter6递归求解反射系数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/Source/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    chapter7层状半空间响应
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/Response/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    chapter7求解地震记录
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Optimization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    优化方法笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" >
+        
+          <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    论文笔记
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_7">
+            <span class="md-nav__icon md-icon"></span>
+            论文笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/PaperNotes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    碎片
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/DTV/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DTV
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/Gan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    生成对抗网络
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/unet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unet迁移学习
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SeismicInversion/Paper/Review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1952,36 +2033,15 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    前言
+    前期准备
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    图像分析
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    思路
-  </a>
-  
-    <nav class="md-nav" aria-label="思路">
+    <nav class="md-nav" aria-label="前期准备">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    踩坑思路
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    最终方案
+  <a href="#_3" class="md-nav__link">
+    思路：深度学习（舍弃）
   </a>
   
 </li>
@@ -1992,9 +2052,111 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    最终效果
+  <a href="#_4" class="md-nav__link">
+    图像预处理（实操开始）
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    旋转矫正
+  </a>
+  
+    <nav class="md-nav" aria-label="旋转矫正">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#116" class="md-nav__link">
+    裁剪1/16
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    傅里叶变换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    计算旋转角
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    网格划分
+  </a>
+  
+    <nav class="md-nav" aria-label="网格划分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1 仅使用间隔线分割成的格子
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2 正六边形网格
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3 正方形网格
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    荧光检测与计数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    最终前后处理对比
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    注释
+  </a>
+  
+    <nav class="md-nav" aria-label="注释">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    傅里叶变换 （转载自各大网页原谅我记不清楚了）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2013,103 +2175,105 @@
                   
 
 
-<h1 id="_1">吉林大学教务系统验证码识别方案<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>verification code classification</p>
-<p>代码链接：<a href="https://gitee.com/cocoon-storage/jlu_-captcha">https://gitee.com/cocoon-storage/jlu_-captcha</a></p>
-<h2 id="_2">前言<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>每次登录吉林大学教务系统时，谷歌浏览器可以保存账号密码不用再次输入，可是验证码却每次都要输入一次，很麻烦，这我某个大佬学长网站的需求，我正好当时也在做视觉,就想着能不能做一个出来，然后他把数据集发给我，我开始了尝试</p>
-<h2 id="_3">图像分析<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="../img/7241.jpg" />   <img alt="" src="../img/4449.jpg" />   <img alt="" src="../img/6700.jpg" />   <img alt="" src="../img/7955.jpg" /></p>
-<p>首先观察图像特征：</p>
+<h1 id="_1">蛋白质荧光阵列矫正与识别计数方案<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>代码链接：<a href="https://gitee.com/cocoon-storage/spot_detect">https://gitee.com/cocoon-storage/spot_detect</a></p>
+<h2 id="_2">前期准备<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">思路：深度学习（舍弃）<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>目标特征：</p>
+<p>小目标，密集，图像分辩率高</p>
+<p>适用网络：yolov5</p>
+<p>1，该网络可以规定输入图像大小，可以保持高分辨率输入</p>
+<p>2，训练之前会进行kmeans对锚框聚类，荧光点大小变化不大</p>
+<p>3，有FPN,SPP多特征融合以防损失信息</p>
+<p>修改：</p>
+<p>预测时将原图分成256份送入网络进行预测，边缘点进行删除</p>
+<p>将训练时的mocias策略删除</p>
+<p>思路：</p>
+<p>1图像校正，使图像与固定模板匹配或者学习得到一个模板。同时得到一个变换矩阵，用于后期坐标映射</p>
+<p>2裁剪图像，模板匹配对齐，将每个网格化为5x5或3x3或1*1降低图像像素，转化方法可以考虑高斯均值</p>
+<p>3（1）如果为1*1则进行二值化，然后直接得到点的坐标和计数</p>
+<p>（2）如果为3*3可选择卷积学习</p>
+<p>图像校正:</p>
 <ul>
-<li>每个数字的高度都是一样的，且无形变。(很重要！！)</li>
-<li>每个数字颜色都一样</li>
-<li>背景噪声无序，放大观察后严重干扰数字的整体性</li>
+<li>radon变换（斜投影）</li>
+<li>FFT傅里叶转化到频域后求解</li>
 </ul>
-<h2 id="_4">思路<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<h3 id="_5">踩坑思路<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>借鉴之前学习opencv时的车牌识别思路：即将图像进行二值化-&gt;进行腐蚀，直到四个数字合并到一个连通域中，然后在原图等间隔分割出来，进行滤波去噪，最后遍历模板匹配得到数字</p>
-<p><strong>缺点</strong>
-数字仅仅高度相同，宽度却不相同，分割后的数字还会有很多噪声会导致模板匹配正确率下降，这里可能采取机器学习会更好，但是最麻烦的是标注，学长给我的数据集都是没有标注过的,所以我干脆放弃了这个方案<img alt="😂" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f602.svg" title=":joy:" /></p>
-<h3 id="_6">最终方案<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>既然标注不现实，我也就放弃了深度学习这个方案，这时候我发现了这些数字的字形是不变的！！也就是说我不需要电脑自己去学习这个模型，我可以自己把这个数字的模板构建出来，之后遍历进行匹配就可以的，我看<img alt="⭐️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/2b50.svg" title=":star:" /></p>
-<p>使用opencv自带的鼠标回调可以很方便的构建模板，接下来就是绘画环节</p>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">mark</span><span class="p">()</span><span class="c1">//抠图，左键变白右键变黑</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">onMouseCallBack</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">event</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">flags</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">pUserData</span><span class="p">);</span>
-<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">namedWindow</span><span class="p">(</span><span class="n">windowName</span><span class="p">,</span><span class="w"> </span><span class="n">WINDOW_NORMAL</span><span class="p">);</span>
-<span class="w">        </span><span class="n">imshow</span><span class="p">(</span><span class="n">windowName</span><span class="p">,</span><span class="w"> </span><span class="n">src</span><span class="p">);</span>
-<span class="w">        </span><span class="n">cv</span><span class="o">::</span><span class="n">setMouseCallback</span><span class="p">(</span><span class="n">windowName</span><span class="p">,</span><span class="w"> </span><span class="n">onMouseCallBack</span><span class="p">,</span><span class="w"> </span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">*&gt;</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">src</span><span class="p">));</span>
-<span class="w">        </span><span class="kt">char</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">q</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">27</span><span class="p">)</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">cv</span><span class="o">::</span><span class="n">destroyWindow</span><span class="p">(</span><span class="n">windowName</span><span class="p">);</span>
-<span class="w">            </span><span class="n">imwrite</span><span class="p">(</span><span class="s">&quot;H:</span><span class="se">\\</span><span class="s">深度学习源码学习</span><span class="se">\\</span><span class="s">moban</span><span class="se">\\</span><span class="s">8.jpg&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">src</span><span class="p">);</span><span class="c1">//保存抠图完成的模板</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">q</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;q&#39;</span><span class="p">)</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">cv</span><span class="o">::</span><span class="n">destroyWindow</span><span class="p">(</span><span class="n">windowName</span><span class="p">);</span><span class="c1">//不保存退出</span>
-<span class="w">            </span><span class="k">break</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">onMouseCallBack</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">event</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">flags</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">pUserData</span><span class="p">)</span><span class="c1">//鼠标事件回调</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="c1">//创建保存像素值的3字节容器</span>
-<span class="w">    </span><span class="n">cv</span><span class="o">::</span><span class="n">Vec3b</span><span class="w"> </span><span class="n">pixel</span><span class="p">;</span>
-<span class="w">    </span><span class="c1">//空指针强制类型装换成图片指针pMat</span>
-<span class="w">    </span><span class="n">cv</span><span class="o">::</span><span class="n">Mat</span><span class="o">*</span><span class="w"> </span><span class="n">pMat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">cv</span><span class="o">::</span><span class="n">Mat</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">pUserData</span><span class="p">);</span>
-
-<span class="w">    </span><span class="c1">//鼠标左键按下时，返回坐标和RGB值，将其变白</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">event</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">CV_EVENT_LBUTTONDOWN</span><span class="w"> </span><span class="p">)</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">channels</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">pixel1</span><span class="p">;</span>
-<span class="w">            </span><span class="c1">//获取像素值</span>
-<span class="w">            </span><span class="n">pixel1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pMat</span><span class="o">-&gt;</span><span class="n">at</span><span class="o">&lt;</span><span class="n">uchar</span><span class="o">&gt;</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="c1">//y是row，x是col</span>
-<span class="w">                                          </span><span class="c1">//输出像素值的（R，G，B）</span>
-<span class="w">                                          </span><span class="c1">//cv重载了&lt;&lt;运算符，可以输出Vec3b类型，但是按B,G,R输出</span>
-<span class="w">            </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;at(&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;,&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;)--&gt;pixel(1)=&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">pixel1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-<span class="w">            </span><span class="n">src</span><span class="p">.</span><span class="n">at</span><span class="o">&lt;</span><span class="n">uchar</span><span class="o">&gt;</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">255</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="c1">//鼠标右键按下时，返回坐标和RGB值，将其变黑</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">event</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">CV_EVENT_RBUTTONDOWN</span><span class="p">)</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">channels</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">pixel1</span><span class="p">;</span>
-<span class="w">            </span><span class="c1">//获取像素值</span>
-<span class="w">            </span><span class="n">pixel1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pMat</span><span class="o">-&gt;</span><span class="n">at</span><span class="o">&lt;</span><span class="n">uchar</span><span class="o">&gt;</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="c1">//y是row，x是col</span>
-<span class="w">                                          </span><span class="c1">//输出像素值的（R，G，B）</span>
-<span class="w">                                          </span><span class="c1">//cv重载了&lt;&lt;运算符，可以输出Vec3b类型，但是按B,G,R输出</span>
-<span class="w">            </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;at(&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;,&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;)--&gt;pixel(1)=&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">pixel1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-<span class="w">            </span><span class="n">src</span><span class="p">.</span><span class="n">at</span><span class="o">&lt;</span><span class="n">uchar</span><span class="o">&gt;</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>抠图结束后得到9个模板
-<img alt="" src="../img/o_template.png" /></p>
-<p>之后就是debug环节</p>
-<p>过程中我发现了数字的高度是一样的，而且在图像中的高度位置也是固定的，而且每个数字也有10像素左右的宽度，所以我缩小了循环范围，只在相同高度进行遍历，且识别到一个数字之后跳跃8个像素识别下一个数字</p>
-<p>匹配思路为：</p>
+<p>划分网格：</p>
 <ul>
-<li>将图像进行灰度处理，由于<strong>每个数字颜色都是一样的</strong>，所以在灰度图像中灰度级是连续的</li>
-<li>遍历套用模板，求在模板的位置像素的方差与极差，并以其作为阈值进行筛选，极差低于阈值就判定为该模板所代表的数字，极差高于阈值则继续遍历</li>
+<li>六边形网格，网格大小有细微差别，且为小数</li>
+<li>正方形网格，类似砖墙</li>
 </ul>
-<p>进过20张图左右的debug，对模板模板进行了一些改动</p>
-<p>以下为新的9个模板
-<img alt="" src="../img/n_template.png" /></p>
-<p>之后就是验证环节，对数据集一一验证，如果遇到问题就拿图进行debug，基本没什么大问题</p>
-<p>值得注意的是 <strong>3</strong> 和 <strong>8</strong> 字形有一半是相同的，因为我的遍历顺序是1-2-3-4-5-6-7-8-9-0，所以如果先拿3的模板去匹配8这个数字的话，很容易会误识别，我将模板的遍历顺序反转，以及就是先进行8的识别，如果匹配就认为该数字是8，不匹配的话再进行3的匹配</p>
-<p>最终大功告成，数据集进行了2000张验证都没有误识别或错识别的情况，我将源代码发给学长，学长整合了网站上获得了很丝滑的效果！！</p>
-<h2 id="_7">最终效果<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="../img/code.gif" /></p>
+<p>网格定位算法</p>
+<ul>
+<li>爬山法</li>
+<li>遗传算法</li>
+<li>数学形态学</li>
+<li>马尔科夫随机球场</li>
+<li>贝叶斯网格定位</li>
+<li>启发式规则算法</li>
+</ul>
+<p>修正像素</p>
+<p>问题：</p>
+<ul>
+<li>
+<p>旋转角度修正，得到6个角度怎么得到最佳旋转角度</p>
+</li>
+<li>
+<p>投影边界得到的分割线有问题，要怎么利用中间得到的间隔。a:求平均投影值</p>
+</li>
+<li>
+<p>分割后在小块内做自适应阈值处理</p>
+</li>
+</ul>
+<hr />
+<h2 id="_4">图像预处理（实操开始）<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>本身图片质量较高，采取预处理策略是<strong>中值滤波+otsu自适应阈值二值化</strong></p>
+<h2 id="_5">旋转矫正<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="116">裁剪1/16<a class="headerlink" href="#116" title="Permanent link">&para;</a></h3>
+<p>由于整张图尺寸过大，所以进行裁剪，选取最易识别的一小块进行旋转矫正，进而反应整张图像的倾斜角。</p>
+<h3 id="_6">傅里叶变换<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>矫正策略采取二维傅里叶变换，功率谱中<strong>最亮的点</strong>代表包含<strong>成分最多的平面波</strong>，<strong>与原点所构成的向量</strong>即为该平面<strong>波传播方向</strong>，<strong>与原点距离</strong>即为<strong>频率</strong>。频移后的功率谱呈中心对称</p>
+<p><img alt="img" src="../img/TTF.png" /> </p>
+<h3 id="_7">计算旋转角<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>由于噪声影响或者点分布影响会造成无法准确定位正确平面波位置，我采取了先归一化原图，后以60°为间隔，每个间隔找到最亮的点</p>
+<p><img alt="img" src="../img/%E6%89%BE%E5%88%B0%E4%BA%AE%E7%82%B9.png" /> </p>
+<p>但是我们要进行旋转就要挑选最小角度，所以我们把范围规定在中间六十度，找到的点，再以其自身为参考点，加入周围的一部分点<strong>求取质心位置</strong>进行修正。<strong>该点与原点构成的向量与y轴的夹角即为倾斜角</strong>。用<strong>最邻近插值法</strong>进行旋转</p>
+<p><img alt="img" src="../img/%E6%89%BE%E5%88%B0%E6%97%8B%E8%BD%AC%E8%A7%92%E5%BA%A6.png" /> </p>
+<p>校正后为：</p>
+<p><img alt="img" src="../img/%E6%A0%A1%E6%AD%A3%E5%90%8E.png" /> </p>
+<h2 id="_8">网格划分<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<ul>
+<li>使用间隔线分割成的格子</li>
+<li>正六边形网格</li>
+<li>正方形网格</li>
+</ul>
+<h3 id="1">1 仅使用间隔线分割成的格子<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>分割：图像点呈正六边形蜂窝状排布，我们规定他有3条轴，将原图进行旋转到3个轴的方向沿轴的方向进行投影，由于点间隔很小，利用二阶导数找出峰谷即可判定其为分割线，</p>
+<p><img alt="img" src="../img/peak.png" />画出并进行逆旋转到原图（边缘的处理还有待处理)</p>
+<p><img alt="img" src="../img/line_grid.png" /> </p>
+<h3 id="2">2 正六边形网格<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>因为<strong>功率谱的频率可反应出周期</strong>，又因为点的间隔很小，所以可以采取<strong>定值计算</strong>的方法，</p>
+<p>根据功率谱所含频率最高的6个点求得<strong>周期</strong>，计算平均值，此值固定为<strong>网格间距</strong>。并根据<strong>投影法</strong>找到一个基准点定为原点，根据正六边形几何关系，画出网格。</p>
+<p><img alt="img" src="../img/hex_grid.png" /> </p>
+<h3 id="3">3 正方形网格<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>水平投影一次找到横向间隔，<strong>奇数偶数行分开</strong>重新合并，再进行开操作去除分割瑕疵，纵向投影找到纵向分割线。根据几何关系映射到原图后画出网格即可</p>
+<p><img alt="img" src="../img/square_grid.png" /> </p>
+<h2 id="_9">荧光检测与计数<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>本方法采用分割以后的检测每个子格进行荧光检测，因为正方形网格易分割，所以检测基于都基于正方形网格。</p>
+<p>将网格分割成每个子格，因为分割采取的遍历投影，可能分割线会偏小，所以划分子格时分别向下和向右延伸一个像素，并对每个子格基于大津算法求出自适应阈值和最大类间方差，以最大类间方差为阈值进行第一次的筛选，方差小的认为无荧光，之后进行二值化，再在网格中央3*3区域进行白色检测，并规定阈值，如果小于阈值就判定为发生此格被串扰，无荧光。（之后为了提高精度应该要加更多判断条件，如连通域面积和连通域质心等等...）</p>
+<p>下图为识别效果：（蓝色划线代表此网格有荧光）</p>
+<p><img alt="img" src="../img/final.png" /> </p>
+<h2 id="_10">最终前后处理对比<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../img/dot.jpg" /></p>
+<h2 id="_11">注释<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="_12">傅里叶变换 （转载自各大网页原谅我记不清楚了<img alt="😢" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f622.svg" title=":cry:" />）<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>傅立叶变换使我们能通过频率成分来分析一个函数。图像傅立叶变换的物理意义图像的频率是表征<strong>图像中灰度变化剧烈程度的指标</strong>，是灰度在平面空间上的梯度。如：大面积的沙漠在图像中是一片灰度变化缓慢的区域，对应的频率值很低；而对于地表属性变换剧烈的边缘区域在图像中是一片灰度变化剧烈的区域，对应的频率值较高。</p>
+<p>傅立叶变换在实际中有非常明显的物理意义，设f是一个能量有限的模拟信号，则其傅立叶变换就表示f的谱。从纯粹的数学意义上看，傅立叶变换是将一个函数转换为一系列周期函数来处理的。从物理效果看，傅立叶变换是将图像从空间域转换到频率域，其逆变换是将图像从频率域转换到空间域。换句话说，<strong>傅立叶变换的物理意义是将图像的灰度分布函数变换为图像的频率分布函数，傅立叶逆变换是将图像的频率分布函数变换为灰度分布函数傅立叶变换以前</strong>，图像（未压缩的位图）是由对在连续空间（现实空间）上的采样得到一系列点的集合，我们习惯用一个二维矩阵表示空间上各点，则图像可由z=f(x,y)来表示。</p>
+<p>由于空间是三维的，图像是二维的，因此空间中物体在另一个维度上的关系就由梯度来表示，这样我们可以通过观察图像得知物体在三维空间中的对应关系。为什么要提梯度？因为实际上对图像进行二维傅立叶变换得到频谱图，就是图像梯度的分布图，当然频谱图上的各点与图像上各点并不存在一一对应的关系，即使在不移频的情况下也是没有。<strong>傅立叶频谱图上我们看到的明暗不一的亮点，实际上图像上某一点与邻域点差异的强弱，即梯度的大小，也即该点的频率的大小（可以这么理解，图像中的低频部分指低梯度的点，高频部分相反）</strong>。一般来讲，<strong>梯度大则该点的亮度强，否则该点亮度弱</strong>。</p>
+<p>这样通过观察傅立叶变换后的频谱图，也叫功率图，我们首先就可以看出，图像的能量分布。<strong>如果频谱图中暗的点数更多，那么实际图像是比较柔和的（因为各点与邻域差异都不大，梯度相对较小），反之，如果频谱图中亮的点数多，那么实际图像一定是尖锐的，边界分明且边界两边像素差异较大的。</strong>对频谱移频到原点以后，可以看出图像的频率分布是以原点为圆心，对称分布的。将频谱移频到圆心除了可以清晰地看出图像频率分布以外，还有一个好处，<strong>它可以分离出有周期性规律的干扰信号</strong>，比如正弦干扰，一副带有正弦干扰，移频到原点的频谱图上可以看出除了中心以外还存在以某一点为中心，对称分布的亮点集合，这个集合就是干扰噪音产生的，这时可以很直观的通过在该位置放置带阻滤波器消除干扰</p>
+<p>另外我还想说明以下几点：1、图像经过二维傅立叶变换后，其变换系数矩阵表明：若变换矩阵Fn原点设在中心，其频谱能量集中分布在变换系数短阵的中心附近(图中阴影区)。若所用的二维傅立叶变换矩阵Fn的原点设在左上角，那么图像信号能量将集中在系数矩阵的四个角上。这是由二维傅立叶变换本身性质决定的。同时也表明一股图像能量集中低频区域。2 、变换之后的图像在原点平移之前四角是低频，最亮，平移之后中间部分是低频，最亮，亮度大说明低频的能量大（幅角比较大）</p>
+<p>类比一维中，幅度和相位可以用一个复数表示，它可以作为我们存储的内容。但是还有两个：<strong>频率和方向</strong>。这时想到向量是有方向的，也是有长度的。所以我们用一个二维的矩阵的来保存分解之后得到的信息。这个矩阵就是K空间。（一般用k来表示空间频率，单位是1/m）</p>
+<p>什么意思呢？<strong>就是说一个二维矩阵点代表这个平面波的法向量，这个向量的模代表这个平面波的频率，这个点里面保存的内容复数就是此平面波的幅度和相位。</strong></p>
 
 
   
