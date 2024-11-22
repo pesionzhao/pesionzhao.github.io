@@ -50,6 +50,23 @@ cmd中输入
 wsl -l -v
 ```
 
+### 设置代理
+
+解决"wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理"
+
+在Windows中的C:\Users\<your_username>目录下创建一个.wslconfig文件，然后在文件中写入如下内容
+
+```
+[experimental]
+autoMemoryReclaim=gradual  # gradual  | dropcache | disabled
+networkingMode=mirrored
+dnsTunneling=true
+firewall=true
+autoProxy=true
+```
+
+之后重启wsl
+
 即可看到是否安装成功
 
 ### 安装docker
@@ -99,7 +116,7 @@ vim ~/.bashrc
 
 ```shell
  export PATH=/usr/local/cuda/bin:$PATH
- export LD_LIBRARY_PATH=/usr/local/cuda-11.1/lib64:$LD_LIBRARY_PAT
+ export LD_LIBRARY_PATH=/usr/local/cuda-11.1/lib64:$LD_LIBRARY_PATH
  ```
 
  esc输入:wq进行保存退出

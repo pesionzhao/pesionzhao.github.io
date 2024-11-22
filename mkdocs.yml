@@ -2,13 +2,13 @@ site_name: ZPSXJTU
 nav:
     - Home: index.md
     - 经验之谈: 
-        - 专栏介绍: 经验之谈\README.md
-        - 基于单相机双光源的眼动交互: 经验之谈\单相机双光源视线估计.md
-        - 蛋白质荧光阵列矫正与计数: 经验之谈\荧光阵列矫正计数.md
-        - 吉林大学教务管理系统验证码识别: 经验之谈\JLU Captcha.md
-        - robomaster工程矿石识别: 经验之谈\robomaster工程矿石识别.md
-        - 百度车载影像检测与分割: 经验之谈\百度大数据竞赛划水记录.md
-        - 运营商栅格预测: 经验之谈\运营商栅格活跃度预测.md
+        - 专栏介绍: project\README.md
+        - 基于单相机双光源的眼动交互: project\单相机双光源视线估计.md
+        - 蛋白质荧光阵列矫正与计数: project\荧光阵列矫正计数.md
+        - 吉林大学教务管理系统验证码识别: project\JLU Captcha.md
+        - robomaster工程矿石识别: project\robomaster工程矿石识别.md
+        - 百度车载影像检测与分割: project\百度大数据竞赛划水记录.md
+        - 运营商栅格预测: project\运营商栅格活跃度预测.md
         # - 力扣每日一练: 经验之谈\编程每日一练.md
         # - 头部姿态估计: 经验之谈\头部姿态估计.md
     # - 碎碎念:
@@ -31,16 +31,27 @@ nav:
     - 踩坑记录:
         - 专栏介绍: 踩坑记录\README.md
         - 基础: 踩坑记录\基础.md
+        - windows配置深度学习环境: 踩坑记录\新电脑配环境.md
         - nano部署yolov5: 踩坑记录\nano部署yolov5.md
         - windows下配置libtorch(vs/cmake): 踩坑记录\LibtorchInWindows.md
         - windows+vscode配置opencv4.1.1: 踩坑记录\vscode配置opencv.md
-        - windows配置深度学习环境: 踩坑记录\新电脑配环境.md
         - win11+ubuntu双系统的安装与卸载: 踩坑记录\ubuntu双系统安装与卸载.md
         - WSL下GPU配置与docker安装: 踩坑记录\WSL下配置docker环境.md
         - vscode+devcontainer+docker容器开发: 踩坑记录\vscode容器中开发.md
         - docker容器中图形化界面开发环境配置: 踩坑记录\dockerlize GUI in wsl.md
         - 内网穿透: 踩坑记录\ZeroTier内网穿透.md
 
+    - 学习文档:
+        - 专栏介绍: Learning/README.md
+        - 算法: Learning/Algorithm.md
+        - 动态规划: Learning/DP.md
+        - 数据结构: Learning/Structure.md
+        - c++特性杂记:  Learning/c++11.md
+        - 工具使用文档: Learning/ToolDoc.md
+        - python使用文档: Learning/PythonDoc.md
+        - CUDA: Learning/CUDA.md
+        - 线性代数理论: Learning\LinearAlgebra.md
+        - 波在介质中的传播学习笔记: Learning\Propagation.md
     - 地震反演:
         - 专栏介绍: SeismicInversion\README.md
         - 反演概念: SeismicInversion\Basic.md
@@ -62,17 +73,18 @@ nav:
             - 生成对抗网络: SeismicInversion\Paper\Gan.md
             - Unet迁移学习: SeismicInversion\Paper\unet.md
             - Review: SeismicInversion\Paper\Review.md
-    - 学习文档:
-        - 专栏介绍: Learning/README.md
-        - 算法: Learning/Algorithm.md
-        - 动态规划: Learning/DP.md
-        - 数据结构: Learning/Structure.md
-        - c++特性杂记:  Learning/c++11.md
-        - 工具使用文档: Learning/ToolDoc.md
-        - python使用文档: Learning/PythonDoc.md
-        - CUDA: Learning/CUDA.md
-        - 线性代数理论: Learning\LinearAlgebra.md
-        - 波在介质中的传播学习笔记: Learning\Propagation.md
+    - CUDA:
+        - 专栏介绍: CUDA\README.md
+        - 《CUDA编程-基础与实战》笔记:
+            - CUDA中的线程组织: CUDA\BookNotes\c2.md
+            - CUDA程序基本框架: CUDA\BookNotes\c3.md
+            - 共享内存的合理使用: CUDA\BookNotes\c8.md
+            - 原子函数的合理使用: CUDA\BookNotes\c9.md
+            - 线程束基本函数与协作组: CUDA\BookNotes\c10.md
+            - CUDA流: CUDA\BookNotes\c11.md
+        - Reduce: CUDA\Reduce.md
+        - GEMM: CUDA\Matrix.md
+
     # - Rule for ZPS:
     #     - Rule918: Rule\Rule.md
 # Theme
