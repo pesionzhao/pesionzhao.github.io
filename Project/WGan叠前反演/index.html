@@ -16,7 +16,7 @@
     
     
       
-        <title>头部姿态估计 - ZPSXJTU</title>
+        <title>WGan叠前反演 - ZPSXJTU</title>
       
     
     
@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#wgan" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -106,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              头部姿态估计
+              WGan叠前反演
             
           </span>
         </div>
@@ -2057,6 +2062,66 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CUDA/Reduce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reduce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CUDA/Matrix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GEMM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CUDA/SoftMax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SoftMax
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2082,6 +2147,21 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wgan" class="md-nav__link">
+    WGan反演三参数
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2095,9 +2175,23 @@
                   
 
 
-  <h1>头部姿态估计</h1>
+  <h1>WGan叠前反演</h1>
 
-
+<h2 id="wgan">WGan反演三参数<a class="headerlink" href="#wgan" title="Permanent link">&para;</a></h2>
+<p><a href="https://zhuanlan.zhihu.com/p/564784629">生成对抗网络（GANs）—— WGAN 介绍</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/58260684">WGAN的来龙去脉</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/25071913">令人拍案叫绝的Wasserstein GAN</a></p>
+<p>WGAN在实践中有一个重要的限制，即判别器有一个重要限制需满足K-Lipschitz条件（一阶导数处处不大于K）。通常来说有两种方法迫使WGAN满足条件，一是权重剪裁（Weight Clipping），二是梯度惩罚（Gradient Penalty）。</p>
+<p>正由于WGAN需要满足K-Lipschitz条件，因此WGAN模型中不能使用Sigmoid函数作为激活函数，所以网络不应对输出值进行 0～1 的限制，且由于判别器的损失函数加入了梯度惩罚项，且梯度惩罚项对每一个输入样本的梯度进行限制，因此在判别器的网络结构中不应该加入Batch-Normalization（批归一化，简称BN）层，BN会将同一批其他样本的信息融入到对单个样本的梯度计算中，破坏样本间的独立性，此时算出来的梯度并不是真实的判别器对单个样本的梯度。</p>
+<p>D的输出不再是概率，我们不在D的输出处应用sigmoid。</p>
+<p>开源代码</p>
+<p>官方代码</p>
+<p><a href="https://github.com/martinarjovsky/WassersteinGAN/tree/master">https://github.com/martinarjovsky/WassersteinGAN/tree/master</a></p>
+<p><a href="https://github.com/caogang/wgan-gp/tree/master">https://github.com/caogang/wgan-gp/tree/master</a></p>
+<p><a href="https://github.com/Zeleni9/pytorch-wgan/tree/master">https://github.com/Zeleni9/pytorch-wgan/tree/master</a></p>
+<p><a href="https://necromuralist.github.io/Neurotic-Networking/posts/gans/wasserstein-gan-with-gradient-penalty/index.html">https://necromuralist.github.io/Neurotic-Networking/posts/gans/wasserstein-gan-with-gradient-penalty/index.html</a></p>
+<p>博客</p>
+<p><a href="https://www.qixinbo.info/2021/10/21/gan/">https://www.qixinbo.info/2021/10/21/gan/</a></p>
 
 
   

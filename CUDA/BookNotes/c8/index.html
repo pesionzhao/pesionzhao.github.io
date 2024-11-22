@@ -202,7 +202,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../project/" class="md-tabs__link">
+        <a href="../../../Project/" class="md-tabs__link">
           
   
   经验之谈
@@ -397,7 +397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../project/" class="md-nav__link">
+      <a href="../../../Project/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -417,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../project/%E5%8D%95%E7%9B%B8%E6%9C%BA%E5%8F%8C%E5%85%89%E6%BA%90%E8%A7%86%E7%BA%BF%E4%BC%B0%E8%AE%A1/" class="md-nav__link">
+      <a href="../../../Project/%E5%8D%95%E7%9B%B8%E6%9C%BA%E5%8F%8C%E5%85%89%E6%BA%90%E8%A7%86%E7%BA%BF%E4%BC%B0%E8%AE%A1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -437,7 +437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../project/%E8%8D%A7%E5%85%89%E9%98%B5%E5%88%97%E7%9F%AB%E6%AD%A3%E8%AE%A1%E6%95%B0/" class="md-nav__link">
+      <a href="../../../Project/%E8%8D%A7%E5%85%89%E9%98%B5%E5%88%97%E7%9F%AB%E6%AD%A3%E8%AE%A1%E6%95%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -457,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../project/JLU%20Captcha/" class="md-nav__link">
+      <a href="../../../Project/JLU%20Captcha/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -477,7 +477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../project/robomaster%E5%B7%A5%E7%A8%8B%E7%9F%BF%E7%9F%B3%E8%AF%86%E5%88%AB/" class="md-nav__link">
+      <a href="../../../Project/robomaster%E5%B7%A5%E7%A8%8B%E7%9F%BF%E7%9F%B3%E8%AF%86%E5%88%AB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -497,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../project/%E7%99%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9B%E5%88%92%E6%B0%B4%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+      <a href="../../../Project/%E7%99%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9B%E5%88%92%E6%B0%B4%E8%AE%B0%E5%BD%95/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -517,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../project/%E8%BF%90%E8%90%A5%E5%95%86%E6%A0%85%E6%A0%BC%E6%B4%BB%E8%B7%83%E5%BA%A6%E9%A2%84%E6%B5%8B/" class="md-nav__link">
+      <a href="../../../Project/%E8%BF%90%E8%90%A5%E5%95%86%E6%A0%85%E6%A0%BC%E6%B4%BB%E8%B7%83%E5%BA%A6%E9%A2%84%E6%B5%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2182,6 +2182,66 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reduce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reduce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Matrix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GEMM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SoftMax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SoftMax
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2535,7 +2595,7 @@
 </code></pre></div>
 <p>注意不能简单地用<code>d_y[ny1*N+nx1]=s_x[threadIdx.x][threadIdx.y];</code>,这样会使每个block分别转置,与答案不符</p>
 <h3 id="bank">消除bank冲突<a class="headerlink" href="#bank" title="Permanent link">&para;</a></h3>
-<p>共享内存在物理上被分为32个相同宽度,又能被同时访问的bank, 可以对其进行0<sub>31编号,每个bank又可以对其分为不同层,开普勒架构之后,每个bank宽度为4字节,所以第一层的32个bank占用字节为0</sub>32*4也就是0~127字节, 第二层开始地址128字节处</p>
+<p>共享内存在物理上被分为32个相同宽度,又能被同时访问的bank, 可以对其进行<code>0~31</code>编号,每个bank又可以对其分为不同层,开普勒架构之后,每个bank宽度为4字节,所以第一层的32个bank占用字节为<code>0~32*4</code>也就是<code>0~127</code>字节, 第二层开始地址128字节处</p>
 <p><strong>何为bank冲突?</strong></p>
 <p>只要同一个线程束(相邻32个线程)内多个线程不同时访问同一个bank中的不同层的数据,该线程束对共享内存的方位就只需要一次内存事务,换言之,如果一个线程束中多个线程试图访问一个bank的不同层数据,就会发生bank冲突</p>
 <p>在我们之前的例子中,声明了一个<code>TILE_SIZE*TILE_SIZE</code>的单精度浮点型共享内存数组(32*32),我们在转置时<code>d_y[nx2*N+ny2]=s_x[threadIdx.x][threadIdx.y]</code>可以看出在一个线程束内的线程(相邻threadIdx.x)会访问<code>s_x[threadIdx.x][threadIdx.y]</code>也就是相同bank的不同层,所以会引发bank冲突</p>

@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../Reduce/">
+      
+      
+        <link rel="next" href="../SoftMax/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>Matrix - ZPSXJTU</title>
+        <title>GEMM - ZPSXJTU</title>
       
     
     
@@ -76,6 +80,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#gemm" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -106,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Matrix
+              GEMM
             
           </span>
         </div>
@@ -193,7 +202,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../project/" class="md-tabs__link">
+        <a href="../../Project/" class="md-tabs__link">
           
   
   经验之谈
@@ -279,10 +288,12 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../" class="md-tabs__link">
           
   
@@ -386,7 +397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/" class="md-nav__link">
+      <a href="../../Project/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -406,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/%E5%8D%95%E7%9B%B8%E6%9C%BA%E5%8F%8C%E5%85%89%E6%BA%90%E8%A7%86%E7%BA%BF%E4%BC%B0%E8%AE%A1/" class="md-nav__link">
+      <a href="../../Project/%E5%8D%95%E7%9B%B8%E6%9C%BA%E5%8F%8C%E5%85%89%E6%BA%90%E8%A7%86%E7%BA%BF%E4%BC%B0%E8%AE%A1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -426,7 +437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/%E8%8D%A7%E5%85%89%E9%98%B5%E5%88%97%E7%9F%AB%E6%AD%A3%E8%AE%A1%E6%95%B0/" class="md-nav__link">
+      <a href="../../Project/%E8%8D%A7%E5%85%89%E9%98%B5%E5%88%97%E7%9F%AB%E6%AD%A3%E8%AE%A1%E6%95%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -446,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/JLU%20Captcha/" class="md-nav__link">
+      <a href="../../Project/JLU%20Captcha/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -466,7 +477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/robomaster%E5%B7%A5%E7%A8%8B%E7%9F%BF%E7%9F%B3%E8%AF%86%E5%88%AB/" class="md-nav__link">
+      <a href="../../Project/robomaster%E5%B7%A5%E7%A8%8B%E7%9F%BF%E7%9F%B3%E8%AF%86%E5%88%AB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -486,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/%E7%99%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9B%E5%88%92%E6%B0%B4%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+      <a href="../../Project/%E7%99%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9B%E5%88%92%E6%B0%B4%E8%AE%B0%E5%BD%95/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -506,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/%E8%BF%90%E8%90%A5%E5%95%86%E6%A0%85%E6%A0%BC%E6%B4%BB%E8%B7%83%E5%BA%A6%E9%A2%84%E6%B5%8B/" class="md-nav__link">
+      <a href="../../Project/%E8%BF%90%E8%90%A5%E5%95%86%E6%A0%85%E6%A0%BC%E6%B4%BB%E8%B7%83%E5%BA%A6%E9%A2%84%E6%B5%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1845,17 +1856,19 @@
       
   
   
+    
+  
   
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
@@ -1868,7 +1881,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             CUDA
@@ -2057,6 +2070,169 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Reduce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reduce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    GEMM
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    GEMM
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#v1-native" class="md-nav__link">
+    v1 native
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v2" class="md-nav__link">
+    v2 使用共享内存并分块
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v3" class="md-nav__link">
+    v3 一个线程处理多个元素
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v4" class="md-nav__link">
+    v4 索引重排
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v5-float4" class="md-nav__link">
+    v5 float4类型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v6-bank" class="md-nav__link">
+    v6 减少bank冲突
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v7" class="md-nav__link">
+    v7 减小共享内存的读取
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v8" class="md-nav__link">
+    v8 流水并行
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v9" class="md-nav__link">
+    v9 最终版
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SoftMax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SoftMax
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2081,6 +2257,79 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#v1-native" class="md-nav__link">
+    v1 native
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v2" class="md-nav__link">
+    v2 使用共享内存并分块
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v3" class="md-nav__link">
+    v3 一个线程处理多个元素
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v4" class="md-nav__link">
+    v4 索引重排
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v5-float4" class="md-nav__link">
+    v5 float4类型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v6-bank" class="md-nav__link">
+    v6 减少bank冲突
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v7" class="md-nav__link">
+    v7 减小共享内存的读取
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v8" class="md-nav__link">
+    v8 流水并行
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v9" class="md-nav__link">
+    v9 最终版
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2095,22 +2344,399 @@
                   
 
 
-  <h1>Matrix</h1>
+<h1 id="gemm">GEMM<a class="headerlink" href="#gemm" title="Permanent link">&para;</a></h1>
+<p>General Matrix num_per_threadply</p>
+<p>本文将从最朴素的版本一步步优化，且有详细注释，方便大家学习与理解，可以更好的入门！！！</p>
+<p>参考连接: </p>
+<p><a href="https://www.bilibili.com/video/BV1Mi421a7cZ/?vd_source=c43347ef375755d298da8f0c05cfe444">cuda实现matmul的重新解读</a></p>
+<p><strong>A@B=C</strong>, A的维度为<code>M*K</code>, B的维度为<code>K*N</code>, C的维度为<code>M*N</code></p>
+<h2 id="v1-native">v1 native<a class="headerlink" href="#v1-native" title="Permanent link">&para;</a></h2>
+<p>最native的版本, 每个线程计算C一个点的值，访存比 &frac12;K</p>
+<div class="highlight"><pre><span></span><code><span class="n">__global__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">matrix_mul</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">da</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">db</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">dc</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">K</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">//结果矩阵的一个点的计算</span>
+<span class="w">    </span><span class="c1">//x对应列，y对应行</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">blockIdx</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">blockDim</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">blockIdx</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">blockDim</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">sum</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">//边界判断</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">row</span><span class="o">&lt;</span><span class="n">M</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">col</span><span class="o">&lt;</span><span class="n">N</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">//内积，a矩阵的行和b矩阵的列每个元素相乘相加</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">K</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">sum</span><span class="o">+=</span><span class="n">da</span><span class="p">[</span><span class="n">row</span><span class="o">*</span><span class="n">K</span><span class="o">+</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">db</span><span class="p">[</span><span class="n">col</span><span class="o">+</span><span class="n">i</span><span class="o">*</span><span class="n">N</span><span class="p">];</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">dc</span><span class="p">[</span><span class="n">row</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="n">col</span><span class="p">]</span><span class="o">=</span><span class="n">sum</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="v2">v2 使用共享内存并分块<a class="headerlink" href="#v2" title="Permanent link">&para;</a></h2>
+<p>v1的算法中一个线程中重复访问2k个全局内存(A的一行和B的一列),共享内存的读写速度要快于全局内存，我们可以借助共享内存而减少对全局内存的访问</p>
+<p>共享内存是对整个线程块可见的区域,对于每个线程都有一个副本(同一线程块数据共享，不同线程块之间数据不共享)。生命周期在核函数内,所以在核函数结束之前必须把其保存到全局内存中</p>
+<p>因为共享内存是对线程块共享的，所以应该存整个线程块(block_size)中都会使用到的数据, 由于v1中一个线程就要访问2k个元素， 所以对于一个线程块来说，就需要2k*block_size个元素，也就是说我们的目标是要计算线程块内的全部元素，需要a的block_size行和b的block_size列，由于k可能会很大，共享内存存不下，我们就要采用分块的办法</p>
+<p>a按行b按列把k分成block_size大小的块，依次计算先计算两个块的结果，相加就得到了线程块的输出，至于为什么是block_size大小的块，是因为正好可以以一个线程存一个数，方便写代码，当然之后我们也会改它的大小，访存比 1/(2k/BLOCK_SIZE)</p>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">BLOCK_SIZE</span><span class="o">&gt;</span>
+<span class="n">__global__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">matrix_mul</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">da</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">db</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">dc</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">K</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">//共享内存维度为[blockDim.x, blockDim.y], 这里都为BLOCK_SIZE， 所以大小为BLOCK_SIZE*BLOCK_SIZE</span>
+<span class="w">    </span><span class="n">__shared__</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">sa</span><span class="p">[</span><span class="n">BLOCK_SIZE</span><span class="o">*</span><span class="n">BLOCK_SIZE</span><span class="p">];</span>
+<span class="w">    </span><span class="n">__shared__</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">sb</span><span class="p">[</span><span class="n">BLOCK_SIZE</span><span class="o">*</span><span class="n">BLOCK_SIZE</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">num_packs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">K</span><span class="o">+</span><span class="w"> </span><span class="n">BLOCK_SIZE</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">BLOCK_SIZE</span><span class="p">;</span><span class="c1">//上取整计算分块的个数</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">blockIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">blockDim</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">blockIdx</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="n">blockDim</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">//计算每个块</span>
+<span class="w">    </span><span class="c1">//要注意对于A矩阵是在列方向分块，对于B是在行方向分块，所以计算索引是不同的</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">num_packs</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">s_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">BLOCK_SIZE</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="p">;</span><span class="c1">//共享内存块内索引</span>
+<span class="w">        </span><span class="c1">//给sa赋值, 对该线程块在中的共享内存， 要确定当前sa是来自da的哪个位置, 也就是全局索引</span>
+<span class="w">        </span><span class="c1">//da_col = i*BLOCK_SIZE+threadIdx.x</span>
+<span class="w">        </span><span class="c1">//da_row = blockIdx.y*blockDim.y+threadIdx.y</span>
+<span class="w">        </span><span class="n">sa</span><span class="p">[</span><span class="n">s_id</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">row</span><span class="o">&lt;</span><span class="n">M</span><span class="o">&amp;&amp;</span><span class="n">i</span><span class="o">*</span><span class="n">BLOCK_SIZE</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="o">&lt;</span><span class="n">K</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">da</span><span class="p">[</span><span class="n">row</span><span class="o">*</span><span class="n">K</span><span class="o">+</span><span class="n">i</span><span class="o">*</span><span class="n">BLOCK_SIZE</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="p">]</span><span class="o">:</span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">//给sb赋值</span>
+<span class="w">        </span><span class="c1">//db_col = threadIdx.x + blockIdx.x*blockDim.x;</span>
+<span class="w">        </span><span class="c1">//db_row = i*BLOCK_SIZE+threadIdx.y</span>
+<span class="w">        </span><span class="n">sb</span><span class="p">[</span><span class="n">s_id</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="o">*</span><span class="n">BLOCK_SIZE</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">&lt;</span><span class="n">K</span><span class="o">&amp;&amp;</span><span class="n">col</span><span class="o">&lt;</span><span class="n">N</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">db</span><span class="p">[(</span><span class="n">i</span><span class="o">*</span><span class="n">BLOCK_SIZE</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="n">col</span><span class="p">]</span><span class="o">:</span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">        </span><span class="n">__syncthreads</span><span class="p">();</span><span class="c1">//保证数据全都载入</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">&lt;</span><span class="w"> </span><span class="n">BLOCK_SIZE</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="c1">//相当于v1中的k</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">//sa的行和sb的列计算内积</span>
+<span class="w">            </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">sa</span><span class="p">[</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">BLOCK_SIZE</span><span class="o">+</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">sb</span><span class="p">[</span><span class="n">j</span><span class="o">*</span><span class="n">BLOCK_SIZE</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="p">];</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">__syncthreads</span><span class="p">();</span><span class="c1">//这个块计算完在进行下个块的计算，要不然没计算完共享内存就被更改了</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">row</span><span class="o">&lt;</span><span class="n">M</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">col</span><span class="o">&lt;</span><span class="n">N</span><span class="p">)</span>
+<span class="w">        </span><span class="n">dc</span><span class="p">[</span><span class="n">row</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="n">col</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span><span class="c1">//转移到全局内存</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="v3">v3 一个线程处理多个元素<a class="headerlink" href="#v3" title="Permanent link">&para;</a></h2>
+<p>访存比 (2T/num_per_thread^2) * (1/(k/TILE)), num_per_thread=1时和v2一样， T为一个线程处理的元素个数</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//TILE为分块的大小， num_per_thread为每个线程处理的元素个数， 默认为4</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">TILE</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">num_per_thread</span><span class="o">=</span><span class="mi">4</span><span class="o">&gt;</span>
+<span class="n">__global__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">matrix_mul</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">da</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">db</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">dc</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">K</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">//一个线程，对da处理num_per_thread行， 对db处理num_per_thread列, 所以要扩充共享内存的大小</span>
+<span class="w">    </span><span class="n">__shared__</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">sa</span><span class="p">[</span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="n">TILE</span><span class="p">];</span><span class="c1">//sa shape: [num_per_thread*TILE, TILE]</span>
+<span class="w">    </span><span class="n">__shared__</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">sb</span><span class="p">[</span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="n">TILE</span><span class="p">];</span><span class="c1">//sb shape: [TILE, num_per_thread*TILE]</span>
+<span class="w">    </span><span class="c1">//当前行列</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">blockIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">blockDim</span><span class="p">.</span><span class="n">y</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">num_per_thread</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">blockIdx</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="n">blockDim</span><span class="p">.</span><span class="n">x</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="n">num_per_thread</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">//结果数组，shape: [num_per_thread, num_per_thread]</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">tmp</span><span class="p">[</span><span class="n">num_per_thread</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">num_per_thread</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0f</span><span class="p">};</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">num_packs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">K</span><span class="o">+</span><span class="n">TILE</span><span class="mi">-1</span><span class="p">)</span><span class="o">/</span><span class="n">TILE</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">//依次计算每个块</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">num_packs</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">//一个线程要循环计算num_per_thread个元素</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">&lt;</span><span class="n">num_per_thread</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">//以下只是一种共享内存的存数据的顺序，不唯一！！当时写完之后发现有点复杂，但是也是一种思路，就没有删，之后的还会有其他排列方式，如果不理解可以跳过，不影响之后的进程</span>
+<span class="w">            </span><span class="c1">//因为一个线程同时计算A的num_per_thread行和B的num_per_thread列</span>
+<span class="w">            </span><span class="c1">//所以对于sa来说每个threadIdx.y要存num_per_thread个元素， 对于sb来说每个threadIdx.x要存num_per_thread个元素</span>
+<span class="w">            </span><span class="c1">//所以要分别计算sa和sb的块内索引</span>
 
-<ol>
-<li>矩阵乘法为什么要Tile</li>
-</ol>
-<p>对于<code>n*n</code>的矩阵来说，输出矩阵的一个点需要<code>2*n</code>个输入数据计算得到, 而每个输出点要被使用n次, 这个重复的过程如果每次都是从显存中读取,会非常低效</p>
+<span class="w">            </span><span class="c1">//对于sa, y方向连续存num_per_thread个值</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">sa_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="o">+</span><span class="p">(</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="n">TILE</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">//对于sb, x方向连续存num_per_thread个值</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">sb_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="p">)</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="n">num_per_thread</span><span class="p">;</span>
+
+<span class="w">            </span><span class="c1">//共享内存载入数据， </span>
+<span class="w">            </span><span class="c1">//对于da来说: row = row+j, col = i*TILE + threadIdx.x</span>
+<span class="w">            </span><span class="n">sa</span><span class="p">[</span><span class="n">sa_id</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">row</span><span class="o">+</span><span class="n">j</span><span class="o">&lt;</span><span class="n">M</span><span class="o">&amp;&amp;</span><span class="n">i</span><span class="o">*</span><span class="n">TILE</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="o">&lt;</span><span class="n">K</span><span class="o">?</span><span class="w"> </span><span class="n">da</span><span class="p">[(</span><span class="n">row</span><span class="o">+</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="n">K</span><span class="o">+</span><span class="n">i</span><span class="o">*</span><span class="n">TILE</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="p">]</span><span class="o">:</span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">//对于db来说: row = i*TILE+threadIdx.y, col = col+j</span>
+<span class="w">            </span><span class="n">sb</span><span class="p">[</span><span class="n">sb_id</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="o">*</span><span class="n">TILE</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">&lt;</span><span class="n">K</span><span class="o">&amp;&amp;</span><span class="n">col</span><span class="o">+</span><span class="n">j</span><span class="o">&lt;</span><span class="n">N</span><span class="o">?</span><span class="w"> </span><span class="n">db</span><span class="p">[(</span><span class="n">i</span><span class="o">*</span><span class="n">TILE</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="n">col</span><span class="o">+</span><span class="n">j</span><span class="p">]</span><span class="o">:</span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">__syncthreads</span><span class="p">();</span>
+<span class="w">        </span><span class="c1">//当前的sa 和 sb 会计算出一个大小为[num_per_thread * num_per_thread]的临时结果</span>
+<span class="w">        </span><span class="c1">//这里也可以选择使用二重循环</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">&lt;</span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">num_per_thread</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">&lt;</span><span class="n">TILE</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">k</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">//行优先, 所以要优先改变sb的列才能得到下一个tmp的值</span>
+<span class="w">                </span><span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">sa</span><span class="p">[</span><span class="n">k</span><span class="o">+</span><span class="p">(</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="o">/</span><span class="n">num_per_thread</span><span class="p">)</span><span class="o">*</span><span class="n">TILE</span><span class="p">]</span><span class="o">*</span><span class="n">sb</span><span class="p">[</span><span class="n">k</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="o">%</span><span class="n">num_per_thread</span><span class="p">];</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">__syncthreads</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">row</span><span class="o">&lt;</span><span class="n">M</span><span class="o">&amp;&amp;</span><span class="n">col</span><span class="o">&lt;</span><span class="n">N</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">&lt;</span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">num_per_thread</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="p">((</span><span class="n">row</span><span class="o">+</span><span class="n">j</span><span class="o">/</span><span class="n">num_per_thread</span><span class="o">&lt;</span><span class="n">M</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">col</span><span class="o">+</span><span class="n">j</span><span class="o">%</span><span class="n">num_per_thread</span><span class="o">&lt;</span><span class="n">N</span><span class="p">))</span>
+<span class="w">                </span><span class="n">dc</span><span class="p">[(</span><span class="n">row</span><span class="o">+</span><span class="n">j</span><span class="o">/</span><span class="n">num_per_thread</span><span class="p">)</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="n">col</span><span class="o">+</span><span class="n">j</span><span class="o">%</span><span class="n">num_per_thread</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="v4">v4 索引重排<a class="headerlink" href="#v4" title="Permanent link">&para;</a></h2>
+<p>和v3类似，只不过将共享内存设置为和线程块一样的大小</p>
+<p>比如线程块为<code>32*32</code>， 需要计算的大小为<code>32*num_per_thread*32*num_per_thread</code>, v3的sa和sb共享内存的大小为<code>32*32*num_per_thread</code>, v4的共享内存大小设置为和线程块一样的大小，这样一个线程只用存一个数据，设置大小为<code>32*32</code>=<code>32/num_per_thread*32*num_per_thread</code>, 缩短分块(TILE)的长度用来扩大一个线程处理的数据个数</p>
+<p>简单来说v3中一个线程要存4个共享内存， v4一个线程只需要存1个共享内存，只不过增加了分块的数量</p>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">BLOCK_SIZE</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">num_per_thread</span><span class="o">=</span><span class="mi">4</span><span class="o">&gt;</span>
+<span class="n">__global__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">matrix_mul</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">da</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">db</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">dc</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">K</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">//num_per_thread必须时BLOCK_SIZE的因子</span>
+<span class="w">    </span><span class="n">__shared__</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">sa</span><span class="p">[</span><span class="n">BLOCK_SIZE</span><span class="o">*</span><span class="n">BLOCK_SIZE</span><span class="p">];</span><span class="c1">//sa shape: [BLOCK_SIZE*num_per_thread, BLOCK_SIZE/num_per_thread]</span>
+<span class="w">    </span><span class="n">__shared__</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">sb</span><span class="p">[</span><span class="n">BLOCK_SIZE</span><span class="o">*</span><span class="n">BLOCK_SIZE</span><span class="p">];</span><span class="c1">//sb shape: [BLOCK_SIZE/num_per_thread, BLOCK_SIZE*num_per_thread]</span>
+<span class="w">    </span><span class="c1">//这里由于sa的列数和sb的行数为B/num_per_thread, 所以共享内存的索引要重新计算</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">blockIdx</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="n">blockDim</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">blockIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">blockDim</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">TILE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BLOCK_SIZE</span><span class="o">/</span><span class="n">num_per_thread</span><span class="p">;</span><span class="c1">// 分块大小 例如：32/4 = 8</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">LEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BLOCK_SIZE</span><span class="o">*</span><span class="n">num_per_thread</span><span class="p">;</span><span class="w"> </span><span class="c1">// 共享内存的(在计算num_per_thread个数据的方向)另一个维度， 例如：32*4 = 128</span>
+<span class="w">    </span><span class="c1">//线程块内索引</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">tid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">blockDim</span><span class="p">.</span><span class="n">x</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">//对应的sa,sb索引</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sa_row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tid</span><span class="o">/</span><span class="n">TILE</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sa_col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tid</span><span class="o">%</span><span class="n">TILE</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sb_row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tid</span><span class="o">/</span><span class="n">LEN</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sb_col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tid</span><span class="o">%</span><span class="n">LEN</span><span class="p">;;</span>
+<span class="w">    </span><span class="c1">//结果数组，shape: [num_per_thread, num_per_thread]</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">tmp</span><span class="p">[</span><span class="n">num_per_thread</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">num_per_thread</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0f</span><span class="p">};</span>
+<span class="w">    </span><span class="c1">//依次计算每个块</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="p">(</span><span class="n">K</span><span class="o">+</span><span class="n">TILE</span><span class="mi">-1</span><span class="p">)</span><span class="o">/</span><span class="n">TILE</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">//共享内存载入数据， </span>
+<span class="w">        </span><span class="c1">//这里的共享内存访问顺序不像v3一个线程要存num_per_thread个数据，而且块内索引一样和v2一样，代码简洁</span>
+<span class="w">        </span><span class="n">sa</span><span class="p">[</span><span class="n">tid</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">row</span><span class="o">+</span><span class="n">sa_row</span><span class="o">&lt;</span><span class="n">M</span><span class="o">&amp;&amp;</span><span class="n">i</span><span class="o">*</span><span class="n">TILE</span><span class="o">+</span><span class="n">sa_col</span><span class="o">&lt;</span><span class="n">K</span><span class="o">?</span><span class="w"> </span><span class="n">da</span><span class="p">[(</span><span class="n">row</span><span class="o">+</span><span class="n">sa_row</span><span class="p">)</span><span class="o">*</span><span class="n">K</span><span class="o">+</span><span class="n">i</span><span class="o">*</span><span class="n">TILE</span><span class="o">+</span><span class="n">sa_col</span><span class="p">]</span><span class="o">:</span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">        </span><span class="n">sb</span><span class="p">[</span><span class="n">tid</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="o">*</span><span class="n">TILE</span><span class="o">+</span><span class="n">sb_row</span><span class="o">&lt;</span><span class="n">K</span><span class="o">&amp;&amp;</span><span class="n">col</span><span class="o">+</span><span class="n">sb_col</span><span class="o">&lt;</span><span class="n">N</span><span class="o">?</span><span class="w"> </span><span class="n">db</span><span class="p">[(</span><span class="n">i</span><span class="o">*</span><span class="n">TILE</span><span class="o">+</span><span class="n">sb_row</span><span class="p">)</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="n">col</span><span class="o">+</span><span class="n">sb_col</span><span class="p">]</span><span class="o">:</span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">        </span><span class="n">__syncthreads</span><span class="p">();</span>
+<span class="w">        </span><span class="c1">//当前的sa 和 sb 会计算出一个大小为[num_per_thread * num_per_thread]的临时结果</span>
+<span class="w">        </span><span class="c1">//这里也可以选择使用二重循环</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">&lt;</span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">num_per_thread</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">&lt;</span><span class="n">TILE</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">k</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">//行优先, 所以要优先改变sb的列才能得到下一个tmp的值</span>
+<span class="w">                </span><span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">sa</span><span class="p">[</span><span class="n">k</span><span class="o">+</span><span class="p">(</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="o">/</span><span class="n">num_per_thread</span><span class="p">)</span><span class="o">*</span><span class="n">TILE</span><span class="p">]</span><span class="o">*</span><span class="n">sb</span><span class="p">[</span><span class="n">k</span><span class="o">*</span><span class="n">LEN</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="o">%</span><span class="n">num_per_thread</span><span class="p">];</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">__syncthreads</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">row</span><span class="o">&lt;</span><span class="n">M</span><span class="o">&amp;&amp;</span><span class="n">col</span><span class="o">&lt;</span><span class="n">N</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">&lt;</span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">num_per_thread</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="p">((</span><span class="n">row</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="o">/</span><span class="n">num_per_thread</span><span class="o">&lt;</span><span class="n">M</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">col</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="o">%</span><span class="n">num_per_thread</span><span class="o">&lt;</span><span class="n">N</span><span class="p">))</span>
+<span class="w">                </span><span class="n">dc</span><span class="p">[(</span><span class="n">row</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="o">/</span><span class="n">num_per_thread</span><span class="p">)</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="n">col</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="o">%</span><span class="n">num_per_thread</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="v5-float4">v5 float4类型<a class="headerlink" href="#v5-float4" title="Permanent link">&para;</a></h2>
+<p>使用内置cuda类型float4, 一次读取4个元素, 优化数据读取， 也就是一个线程读取四个数据，
+与v4不同的是， v4每个线程会存到一次共享内存，共享内存一位是一个数据， 而v5每个线程会存到4个数据，共享内存一位4个数据, 这里就和v3梦幻联动了，我们的v3实现的不就是朴素的float4访存吗！但是float4数据是按行优先存的，也就是没法像v3一样对sb的列方向同时存num_per_thread个数字，只能对行进行存，所以需要v4线程重排的技巧</p>
+<p>由于一个线程直接存四个元素，省略for循环，共享内存大小就成了之前的四倍，由于对行进行float4访存，所以列数要乘4，</p>
+<p>所以sa的shape为<code>[TILE*num_per_thread, TILE*4/num_per_thread]</code>，sb的shape为<code>[TILE*4/num_per_thread, TILE*num_per_thread]</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">TILE</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">num_per_thread</span><span class="o">=</span><span class="mi">4</span><span class="o">&gt;</span>
+<span class="n">__global__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">matrix_mul</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">da</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">db</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">dc</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">K</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">//行方向</span>
+<span class="w">    </span><span class="n">__shared__</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">sa</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="n">TILE</span><span class="p">];</span><span class="c1">//sa shape: [TILE*num_per_thread, TILE*4/num_per_thread]</span>
+<span class="w">    </span><span class="n">__shared__</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">sb</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="n">TILE</span><span class="p">];</span><span class="c1">//sb shape: [TILE*4/num_per_thread, TILE*num_per_thread]</span>
+<span class="w">    </span><span class="c1">//索引重排</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">blockIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">blockDim</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">blockIdx</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="n">blockDim</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">num_packs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">K</span><span class="o">+</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="n">num_per_thread</span><span class="mi">-1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="n">num_per_thread</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">//线程块索引</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">tid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">blockDim</span><span class="p">.</span><span class="n">x</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sa_row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tid</span><span class="o">/</span><span class="p">(</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="n">num_per_thread</span><span class="o">/</span><span class="mi">4</span><span class="p">);</span><span class="c1">//由于每个线程处理四个元素，所以要除以4，下面的都同理</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sa_col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tid</span><span class="o">%</span><span class="p">(</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="n">num_per_thread</span><span class="o">/</span><span class="mi">4</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sb_row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tid</span><span class="o">/</span><span class="p">(</span><span class="n">TILE</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">/</span><span class="mi">4</span><span class="p">);</span><span class="c1">//由于每个线程处理四个元素，所以要除以4</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sb_col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tid</span><span class="o">%</span><span class="p">(</span><span class="n">TILE</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">/</span><span class="mi">4</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">tmp</span><span class="p">[</span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">num_per_thread</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0f</span><span class="p">};</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">patch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">patch</span><span class="o">&lt;</span><span class="n">num_packs</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">patch</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">//使用float4直接存4个元素，所以tid要*4</span>
+<span class="w">        </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">sa</span><span class="p">[</span><span class="n">tid</span><span class="o">*</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">da</span><span class="p">[(</span><span class="n">row</span><span class="o">+</span><span class="n">sa_row</span><span class="p">)</span><span class="o">*</span><span class="n">K</span><span class="o">+</span><span class="n">patch</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">sa_col</span><span class="o">*</span><span class="mi">4</span><span class="p">];</span>
+<span class="w">        </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">sb</span><span class="p">[</span><span class="n">tid</span><span class="o">*</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">db</span><span class="p">[(</span><span class="n">patch</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">sb_row</span><span class="p">)</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="n">sb_col</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="n">col</span><span class="p">];</span>
+<span class="w">        </span><span class="c1">//边界判断</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">row</span><span class="o">+</span><span class="n">sa_row</span><span class="o">&gt;=</span><span class="n">M</span><span class="o">||</span><span class="n">patch</span><span class="o">*</span><span class="n">TILE</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">sa_col</span><span class="o">+</span><span class="n">i</span><span class="o">&gt;=</span><span class="n">K</span><span class="p">)</span>
+<span class="w">                </span><span class="n">sa</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">tid</span><span class="o">+</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">patch</span><span class="o">*</span><span class="n">TILE</span><span class="o">+</span><span class="n">sb_row</span><span class="o">&gt;=</span><span class="n">K</span><span class="o">||</span><span class="n">col</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">sb_col</span><span class="o">+</span><span class="n">i</span><span class="o">&gt;=</span><span class="n">N</span><span class="p">)</span>
+<span class="w">                </span><span class="n">sb</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">tid</span><span class="o">+</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">__syncthreads</span><span class="p">();</span>
+<span class="w">        </span><span class="c1">//计算元素，和之前一样</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">&lt;</span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">num_per_thread</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">&lt;</span><span class="p">(</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="n">num_per_thread</span><span class="p">);</span><span class="w"> </span><span class="o">++</span><span class="n">k</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">sa</span><span class="p">[</span><span class="n">k</span><span class="o">+</span><span class="p">(</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="o">/</span><span class="n">num_per_thread</span><span class="p">)</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="n">num_per_thread</span><span class="p">]</span><span class="o">*</span><span class="n">sb</span><span class="p">[</span><span class="n">k</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">TILE</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="o">%</span><span class="n">num_per_thread</span><span class="p">];</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">__syncthreads</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">//赋值</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">&lt;</span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">num_per_thread</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">((</span><span class="n">row</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="o">/</span><span class="n">num_per_thread</span><span class="o">&lt;</span><span class="n">M</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">col</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="o">%</span><span class="n">num_per_thread</span><span class="o">&lt;</span><span class="n">N</span><span class="p">))</span>
+<span class="w">            </span><span class="n">dc</span><span class="p">[(</span><span class="n">row</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="o">/</span><span class="n">num_per_thread</span><span class="p">)</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="n">col</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="o">%</span><span class="n">num_per_thread</span><span class="p">]</span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="v6-bank">v6 减少bank冲突<a class="headerlink" href="#v6-bank" title="Permanent link">&para;</a></h2>
+<p>共享内存在物理上被分为32个bank, 除开普勒架构外每个bank的一层宽度为4字节，一个线程束内(相邻32个线程)访问同一个bank的不同层级会造成bank冲突，也就是说线程束中的每个线程只访问共享内存的一个bank, 对于v5来说，可以观察到对sb访问时有<code>threadIdx.x*num_per_thread+j%num_per_thread</code>，也就是说同一个线程访问了相邻的num_per_thread个bank, 这必然导致bank冲突，所以优化策略为修改sb的存储顺序<code>(float4 &amp;)sb[tid*4]</code>为<code>sb[tid]</code>,<code>sb[tid+TILE*TILE]</code>,<code>sb[tid+2*TILE*TILE]</code>,<code>sb[tid+3*TILE*TILE]</code></p>
+<h2 id="v7">v7 减小共享内存的读取<a class="headerlink" href="#v7" title="Permanent link">&para;</a></h2>
+<p>共享内存的访存速度不如寄存器，在计算内积时需要不断访问共享内存，可以更改循环次序，将循环利用的数存到寄存器中
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">TILE</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">num_per_thread</span><span class="o">=</span><span class="mi">4</span><span class="o">&gt;</span>
+<span class="n">__global__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">matrix_mul</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">da</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">db</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">dc</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">K</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">__shared__</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">sa</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="n">TILE</span><span class="p">];</span><span class="c1">//sa shape: [TILE*num_per_thread, TILE*4/num_per_thread]</span>
+<span class="w">    </span><span class="n">__shared__</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">sb</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="n">TILE</span><span class="p">];</span><span class="c1">//sb shape: [TILE*4/num_per_thread, TILE*num_per_thread]</span>
+<span class="w">    </span><span class="c1">//索引重排</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">blockIdx</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="n">blockDim</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">blockIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">blockDim</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">num_packs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">K</span><span class="o">+</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="n">num_per_thread</span><span class="mi">-1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="n">num_per_thread</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">//线程块索引</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">tid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">blockDim</span><span class="p">.</span><span class="n">x</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sa_row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tid</span><span class="o">/</span><span class="p">(</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="n">num_per_thread</span><span class="o">/</span><span class="mi">4</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sa_col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tid</span><span class="o">%</span><span class="p">(</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="n">num_per_thread</span><span class="o">/</span><span class="mi">4</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sb_row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tid</span><span class="o">/</span><span class="p">(</span><span class="n">TILE</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">/</span><span class="mi">4</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sb_col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tid</span><span class="o">%</span><span class="p">(</span><span class="n">TILE</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">/</span><span class="mi">4</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">tmp</span><span class="p">[</span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">num_per_thread</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0f</span><span class="p">};</span>
+<span class="w">    </span><span class="c1">//寄存器，用于减小共享内存的读取</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">com_a</span><span class="p">[</span><span class="n">num_per_thread</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">com_b</span><span class="p">[</span><span class="n">num_per_thread</span><span class="p">];</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">patch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">patch</span><span class="o">&lt;</span><span class="n">num_packs</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">patch</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">sa</span><span class="p">[</span><span class="n">tid</span><span class="o">*</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">da</span><span class="p">[(</span><span class="n">row</span><span class="o">+</span><span class="n">sa_row</span><span class="p">)</span><span class="o">*</span><span class="n">K</span><span class="o">+</span><span class="n">patch</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">sa_col</span><span class="o">*</span><span class="mi">4</span><span class="p">];</span>
+<span class="w">        </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">sb</span><span class="p">[</span><span class="n">tid</span><span class="o">*</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">db</span><span class="p">[(</span><span class="n">patch</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">sb_row</span><span class="p">)</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="n">sb_col</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="n">col</span><span class="p">];</span>
+<span class="w">        </span><span class="c1">//边界判断</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">row</span><span class="o">+</span><span class="n">sa_row</span><span class="o">&gt;=</span><span class="n">M</span><span class="o">||</span><span class="n">patch</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="n">num_per_thread</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">sa_col</span><span class="o">+</span><span class="n">i</span><span class="o">&gt;=</span><span class="n">K</span><span class="p">)</span>
+<span class="w">                </span><span class="n">sa</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">tid</span><span class="o">+</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">patch</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">sb_row</span><span class="o">&gt;=</span><span class="n">K</span><span class="o">||</span><span class="n">col</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">sb_col</span><span class="o">+</span><span class="n">i</span><span class="o">&gt;=</span><span class="n">N</span><span class="p">)</span>
+<span class="w">                </span><span class="n">sb</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">tid</span><span class="o">+</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">__syncthreads</span><span class="p">();</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">&lt;</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="n">num_per_thread</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">k</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">//将共享内存的数据移到寄存器中</span>
+<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">id</span><span class="o">&lt;</span><span class="n">num_per_thread</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">+=</span><span class="mi">4</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">com_a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sa</span><span class="p">[</span><span class="n">k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="n">num_per_thread</span><span class="p">];</span>
+<span class="w">                </span><span class="n">com_a</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sa</span><span class="p">[</span><span class="n">k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="n">num_per_thread</span><span class="p">];</span>
+<span class="w">                </span><span class="n">com_a</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sa</span><span class="p">[</span><span class="n">k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="n">num_per_thread</span><span class="p">];</span>
+<span class="w">                </span><span class="n">com_a</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sa</span><span class="p">[</span><span class="n">k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="n">num_per_thread</span><span class="p">];</span>
+<span class="w">                </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">com_b</span><span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">sb</span><span class="p">[</span><span class="n">k</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">TILE</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="n">num_per_thread</span><span class="p">];</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">&lt;</span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">num_per_thread</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// tmp[j] += sa[k+(threadIdx.y*num_per_thread+j/num_per_thread)*TILE]*sb[k*num_per_thread*TILE+threadIdx.x*num_per_thread+j%num_per_thread];</span>
+<span class="w">                </span><span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">com_a</span><span class="p">[</span><span class="n">j</span><span class="o">/</span><span class="n">num_per_thread</span><span class="p">]</span><span class="o">*</span><span class="n">com_b</span><span class="p">[</span><span class="n">j</span><span class="o">%</span><span class="n">num_per_thread</span><span class="p">];</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">__syncthreads</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">&lt;</span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">num_per_thread</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">((</span><span class="n">row</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="o">/</span><span class="n">num_per_thread</span><span class="o">&lt;</span><span class="n">M</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">col</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="o">%</span><span class="n">num_per_thread</span><span class="o">&lt;</span><span class="n">N</span><span class="p">))</span>
+<span class="w">            </span><span class="n">dc</span><span class="p">[(</span><span class="n">row</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="o">/</span><span class="n">num_per_thread</span><span class="p">)</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="n">col</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="o">%</span><span class="n">num_per_thread</span><span class="p">]</span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="v8">v8 流水并行<a class="headerlink" href="#v8" title="Permanent link">&para;</a></h2>
+<p>在循环<code>for(int patch = 0; patch&lt;num_packs; ++patch)</code>中，要做两次同步，一次是确保共享内存赋值完成可以进行计算，一次是确保计算完成确保共享内存可以进行更改，我们可以使用流水并行，减小一次同步，也就是不同线程之间可以计算或者赋值同时进行，需要扩大一倍共享内存，赋值新的数据，计算旧的数据，之后做一次同步就可以，要多处理一次起始的赋值和结束的计算，代码如下~</p>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">TILE</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">num_per_thread</span><span class="o">=</span><span class="mi">8</span><span class="o">&gt;</span>
+<span class="n">__global__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">matrix_mul</span><span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">da</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">db</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">dc</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">K</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">//原始TILE SIZE = [TILE/num_per_thread, TILE*num_per_thread]</span>
+<span class="w">    </span><span class="c1">//扩大了一倍是流水并行需要存上一时刻和当前时刻的，4是float4能一次写4个元素</span>
+<span class="w">    </span><span class="n">__shared__</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">sa</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="n">TILE</span><span class="p">];</span><span class="w"> </span><span class="c1">//sa shape: [TILE*num_per_thread, TILE*4/num_per_thread]</span>
+<span class="w">    </span><span class="n">__shared__</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">sb</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="n">TILE</span><span class="p">];</span><span class="w"> </span><span class="c1">//sb shape: [TILE*4/num_per_thread, TILE*num_per_thread]</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">tid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">blockDim</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">blockIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">blockDim</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">blockIdx</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="n">blockDim</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">//假设num_per_thread=8</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sa_row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tid</span><span class="o">/</span><span class="p">(</span><span class="n">TILE</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="mi">4</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sa_col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tid</span><span class="o">%</span><span class="p">(</span><span class="n">TILE</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="mi">4</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sb_row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tid</span><span class="o">/</span><span class="p">(</span><span class="n">TILE</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="mi">4</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sb_col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tid</span><span class="o">%</span><span class="p">(</span><span class="n">TILE</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="mi">4</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">tmp</span><span class="p">[</span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">num_per_thread</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0f</span><span class="p">};</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+<span class="w">    </span><span class="cm">/*================第一次只存数据================*/</span>
+<span class="w">    </span><span class="c1">//转置sa， 方便使用float4读取纵向排布的四个数据</span>
+<span class="w">    </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">da</span><span class="p">[(</span><span class="n">row</span><span class="o">+</span><span class="n">sa_row</span><span class="p">)</span><span class="o">*</span><span class="n">K</span><span class="o">+</span><span class="n">sa_col</span><span class="o">*</span><span class="mi">4</span><span class="p">];</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">id</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="n">id</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">sa</span><span class="p">[(</span><span class="n">sa_col</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="n">id</span><span class="p">)</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="n">sa_row</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">id</span><span class="p">];</span><span class="c1">//sa转置的情况</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">//寄存器，用于减小共享内存的读取</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">com_a</span><span class="p">[</span><span class="n">num_per_thread</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">com_b</span><span class="p">[</span><span class="n">num_per_thread</span><span class="p">];</span>
+<span class="w">    </span><span class="c1">// (float4 &amp;)sa[tid*4] = (float4 &amp;)da[(row+sa_row)*K+sa_col*4]; //sa没有转置的情况</span>
+<span class="w">    </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">sb</span><span class="p">[</span><span class="n">tid</span><span class="o">*</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">db</span><span class="p">[(</span><span class="n">sb_row</span><span class="p">)</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="n">col</span><span class="o">+</span><span class="n">sb_col</span><span class="o">*</span><span class="mi">4</span><span class="p">];</span>
+<span class="w">    </span><span class="c1">//分块的数量， 块宽度为TILE*4/num_per_thread， num_per_thread=8时，即为TILE/2</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">num_packs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">K</span><span class="o">+</span><span class="n">TILE</span><span class="o">/</span><span class="mi">2-1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">TILE</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
+<span class="w">    </span><span class="n">__syncthreads</span><span class="p">();</span>
+<span class="w">    </span><span class="cm">/*================流水并行================*/</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">ph</span><span class="o">&lt;</span><span class="p">(</span><span class="n">K</span><span class="o">+</span><span class="n">TILE</span><span class="o">/</span><span class="mi">2-1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">TILE</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="o">++</span><span class="n">ph</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">da</span><span class="p">[(</span><span class="n">row</span><span class="o">+</span><span class="n">sa_row</span><span class="p">)</span><span class="o">*</span><span class="n">K</span><span class="o">+</span><span class="n">ph</span><span class="o">*</span><span class="p">(</span><span class="n">TILE</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">sa_col</span><span class="o">*</span><span class="mi">4</span><span class="p">];</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">id</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="n">id</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">sa</span><span class="p">[</span><span class="n">TILE</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="n">ph</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">sa_col</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="n">id</span><span class="p">)</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="n">sa_row</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">id</span><span class="p">];</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="c1">// (float4 &amp;)sa[TILE*TILE*4*(ph&amp;1)+tid*4] = (float4 &amp;)da[(row+sa_row)*K+ph*(TILE/2)+sa_col*4];</span>
+<span class="w">        </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">sb</span><span class="p">[</span><span class="n">TILE</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="n">ph</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">tid</span><span class="o">*</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">db</span><span class="p">[(</span><span class="n">ph</span><span class="o">*</span><span class="p">(</span><span class="n">TILE</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">sb_row</span><span class="p">)</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="n">col</span><span class="o">+</span><span class="n">sb_col</span><span class="o">*</span><span class="mi">4</span><span class="p">];</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">&lt;</span><span class="n">TILE</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">k</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">//转置sa之后可以类似sb一样使用float4读取，减小代码量，但是速度不一定会块</span>
+<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">idx</span><span class="o">&lt;</span><span class="n">num_per_thread</span><span class="o">/</span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">idx</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">com_a</span><span class="p">[</span><span class="n">idx</span><span class="o">*</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">sa</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="p">((</span><span class="n">ph</span><span class="mi">-1</span><span class="p">)</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">k</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">idx</span><span class="o">*</span><span class="mi">4</span><span class="p">];</span>
+<span class="w">                </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">com_b</span><span class="p">[</span><span class="n">idx</span><span class="o">*</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">sb</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="p">((</span><span class="n">ph</span><span class="mi">-1</span><span class="p">)</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">idx</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="n">k</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="mi">2</span><span class="p">];</span><span class="w">   </span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">&lt;</span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">num_per_thread</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// tmp[j] += sa[4*TILE*TILE*((ph-1)&amp;1)+k+(threadIdx.y*num_per_thread+j/num_per_thread)*TILE/2]*sb[4*TILE*TILE*((ph-1)&amp;1)+threadIdx.x*num_per_thread+j%num_per_thread+k*TILE*4*2];</span>
+<span class="w">                </span><span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">com_a</span><span class="p">[</span><span class="n">j</span><span class="o">/</span><span class="n">num_per_thread</span><span class="p">]</span><span class="o">*</span><span class="n">com_b</span><span class="p">[</span><span class="n">j</span><span class="o">%</span><span class="n">num_per_thread</span><span class="p">];</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">__syncthreads</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="cm">/*================最后一次只计算================*/</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">K</span><span class="o">+</span><span class="n">TILE</span><span class="o">/</span><span class="mi">2-1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">TILE</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">&lt;</span><span class="n">TILE</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">k</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">idx</span><span class="o">&lt;</span><span class="n">num_per_thread</span><span class="o">/</span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">idx</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">com_a</span><span class="p">[</span><span class="n">idx</span><span class="o">*</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">sa</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="p">((</span><span class="n">ph</span><span class="mi">-1</span><span class="p">)</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">k</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">idx</span><span class="o">*</span><span class="mi">4</span><span class="p">];</span>
+<span class="w">            </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">com_b</span><span class="p">[</span><span class="n">idx</span><span class="o">*</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">float4</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="n">sb</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="p">((</span><span class="n">ph</span><span class="mi">-1</span><span class="p">)</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">idx</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="n">k</span><span class="o">*</span><span class="n">TILE</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="mi">2</span><span class="p">];</span><span class="w">   </span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">&lt;</span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">num_per_thread</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// tmp[j] += sa[TILE*TILE*4*((ph-1)&amp;1)+k+(threadIdx.y*num_per_thread+j/num_per_thread)*TILE/2]*sb[4*TILE*TILE*((ph-1)&amp;1)+threadIdx.x*num_per_thread+j%num_per_thread+k*TILE*4*2];</span>
+<span class="w">            </span><span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">com_a</span><span class="p">[</span><span class="n">j</span><span class="o">/</span><span class="n">num_per_thread</span><span class="p">]</span><span class="o">*</span><span class="n">com_b</span><span class="p">[</span><span class="n">j</span><span class="o">%</span><span class="n">num_per_thread</span><span class="p">];</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">&lt;</span><span class="n">num_per_thread</span><span class="o">*</span><span class="n">num_per_thread</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">((</span><span class="n">row</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="o">/</span><span class="n">num_per_thread</span><span class="o">&lt;</span><span class="n">M</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">col</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="o">%</span><span class="n">num_per_thread</span><span class="o">&lt;</span><span class="n">N</span><span class="p">))</span>
+<span class="w">            </span><span class="n">dc</span><span class="p">[(</span><span class="n">row</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="o">/</span><span class="n">num_per_thread</span><span class="p">)</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="n">col</span><span class="o">+</span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="n">num_per_thread</span><span class="o">+</span><span class="n">j</span><span class="o">%</span><span class="n">num_per_thread</span><span class="p">]</span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span><span class="w">  </span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="v9">v9 最终版<a class="headerlink" href="#v9" title="Permanent link">&para;</a></h2>
+<p>大方向</p>
 <ul>
-<li>v1: native</li>
-<li>v2: shared memory存一些Tile</li>
-<li>v3: 一个线程计算若干个点</li>
-<li>v4: 优化load进shared memory的过程， 重排至合并？</li>
-<li>v5: float4类型，连续访存4个浮点数</li>
-<li>v6: 减小bank冲突</li>
-<li>v7: 降低shared memory的读取</li>
-<li>v8：流水并行，计算和读取同时进行</li>
-<li>v9: float4循环展开</li>
+<li>减小对全局内存读取的次数</li>
+<li>能优先使用寄存器就使用寄存器</li>
+<li>共享内存要避免bank冲突</li>
+<li>全局内存合并访问和合并写入</li>
+</ul>
+<p>小技巧：</p>
+<ul>
+<li>能用float4都用float4</li>
+<li>循环展开，减小指令使用</li>
 </ul>
 
 

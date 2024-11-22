@@ -2185,6 +2185,66 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CUDA/Reduce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reduce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CUDA/Matrix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GEMM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CUDA/SoftMax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SoftMax
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2308,7 +2368,7 @@
                   
 
 
-<h1 id="_1">百度大数据竞赛划水记录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_1">百度大数据竞赛记录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p><em>所用代码均为主流深度学习模型架构，只是简单调参，故没有开源</em></p>
 <p>赛题为车载影像</p>
 <p>aistudio 平台，所以我最先使用paddle框架进行尝试，baseline给的模型为<strong>ppyolo</strong>,尝试的跑了一天，结果ap惊人的才0.02，交流群里很多人也是这样，所以我果断放弃，后来发现可能是因为锚框的大小选取有问题，先进行<strong>autoAnchor聚类</strong>得到最佳锚框可能会获得更好的结果，但是我没有进行尝试</p>
@@ -2541,7 +2601,7 @@
 </code></pre></div>
 <h2 id="-deeplabv3">语义分割 -- deeplabv3+<a class="headerlink" href="#-deeplabv3" title="Permanent link">&para;</a></h2>
 <h3 id="_5">前言<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>因为前期并没有太多接触过语义分割，只跑过一个unet，所以真的可以算是零基础，教程也比较接地气</p>
+<p>因为前期并没有太多接触过语义分割，只跑过一个unet，所以真的可以算是零基础，就简单做了数据集跑了跑开源的模型</p>
 <h3 id="_6">数据处理<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>语义分割数据集分为</p>
 <ul>
@@ -2549,6 +2609,7 @@
 <li>cityspace</li>
 </ul>
 <h2 id="mutilyolov5">大佬开源：mutilyolov5<a class="headerlink" href="#mutilyolov5" title="Permanent link">&para;</a></h2>
+<p>修改yolov5的检测头以同时完成检测和分割任务</p>
 <h2 id="_7">最终效果<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="../img/cityspace.jpg" /></p>
 <hr />
