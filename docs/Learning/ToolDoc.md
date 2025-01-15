@@ -10,6 +10,7 @@
   - [iterator](#iterator)
   - [lambda表达式](#lambda表达式)
   - [gcc](#gcc)
+  - [initializer\_list](#initializer_list)
   - [string](#string)
   - [vector](#vector)
   - [Set](#set)
@@ -182,6 +183,9 @@ lambda表达式语法
 
 - `__builtin_parity(x)`: x中1个数的奇偶性,返回1为奇,返回0为偶
 
+### initializer_list
+
+其中元素不可更改
 
 ### string
 
