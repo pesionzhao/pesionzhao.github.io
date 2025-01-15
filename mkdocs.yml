@@ -2,13 +2,13 @@ site_name: ZPSXJTU
 nav:
     - Home: index.md
     - 经验之谈: 
-        - 专栏介绍: project\README.md
-        - 基于单相机双光源的眼动交互: project\单相机双光源视线估计.md
-        - 蛋白质荧光阵列矫正与计数: project\荧光阵列矫正计数.md
-        - 吉林大学教务管理系统验证码识别: project\JLU Captcha.md
-        - robomaster工程矿石识别: project\robomaster工程矿石识别.md
-        - 百度车载影像检测与分割: project\百度大数据竞赛划水记录.md
-        - 运营商栅格预测: project\运营商栅格活跃度预测.md
+        - 专栏介绍: Project\README.md
+        - 基于单相机双光源的眼动交互: Project\单相机双光源视线估计.md
+        - 蛋白质荧光阵列矫正与计数: Project\荧光阵列矫正计数.md
+        - 吉林大学教务管理系统验证码识别: Project\JLU Captcha.md
+        - robomaster工程矿石识别: Project\robomaster工程矿石识别.md
+        - 百度车载影像检测与分割: Project\百度大数据竞赛划水记录.md
+        - 运营商栅格预测: Project\运营商栅格活跃度预测.md
         # - 力扣每日一练: 经验之谈\编程每日一练.md
         # - 头部姿态估计: 经验之谈\头部姿态估计.md
     # - 碎碎念:
@@ -49,7 +49,7 @@ nav:
         - c++特性杂记:  Learning/c++11.md
         - 工具使用文档: Learning/ToolDoc.md
         - python使用文档: Learning/PythonDoc.md
-        - CUDA: Learning/CUDA.md
+        # - CUDA: Learning/CUDA.md
         - 线性代数理论: Learning\LinearAlgebra.md
         - 波在介质中的传播学习笔记: Learning\Propagation.md
     - 地震反演:
@@ -84,6 +84,7 @@ nav:
             - CUDA流: CUDA\BookNotes\c11.md
         - Reduce: CUDA\Reduce.md
         - GEMM: CUDA\Matrix.md
+        - SoftMax: CUDA\SoftMax.md
 
     # - Rule for ZPS:
     #     - Rule918: Rule\Rule.md

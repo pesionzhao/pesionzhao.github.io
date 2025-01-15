@@ -2,7 +2,7 @@
 
 verification code classification
 
-代码链接：[https://gitee.com/cocoon-storage/jlu_-captcha](https://gitee.com/cocoon-storage/jlu_-captcha)
+代码链接：[https://gitee.com/pesionzhao/jlu_-captcha](https://gitee.com/cocoon-storage/jlu_-captcha)
 
 ## 前言
 每次登录吉林大学教务系统时，谷歌浏览器可以保存账号密码不用再次输入，可是验证码却每次都要输入一次，很麻烦，这我某个大佬学长网站的需求，我正好当时也在做视觉,就想着能不能做一个出来，然后他把数据集发给我，我开始了尝试

@@ -269,3 +269,73 @@ __global__ void softmax_shared_kernel(const real* input, real* output, int M, in
 - 如果一个block线程超过32个，所有线程访问同一个值就需要使用共享内存，同时要注意同步线程
 - 对分块有了更深刻的理解
 - 共享内存的赋值可以任意分配，不必按照分块时方法分配，要保证优先避免bank冲突!! 同一个线程束中的不同线程尽量不访问同一个bank
+
+## 适用于flashattention的softmax
+
+根据flashattention的思路，要分块计算softmax(q@k.T)@V, 但是softmax需要全局的结果才能计算，根据前面的代码也可得知，计算softmax只需要一个block, 所以这里并不是让softmax分块，**而是让softmax在blockIdx.y相等的block中重复计算归约结果， 也就是blockIdx.y=0的block就已经可以得到TILE行的全局的归约结果**
+
+参考矩阵乘法的策略，因为对于矩阵乘法来说，输出矩阵一个元素是由输入矩阵的一行和一列计算而来的，所以也可以看成归约，所以我们可以借鉴其思路，使用多个block覆盖输出矩阵，并使用TILE对输入矩阵进行分块，通过循环得到归约结果，这样做适用于FlashAttention
+
+在遍历tile时，计算每个tile的局部最大值和局部和，也就是`tile_max`和`tile_sum`, 并维护`per_max`和`per_max`保存计算过的所有tile的全局归约结果，每次在计算完当前的`tile_max`和`tile_sum`，都要对`per_max`和`per_max`进行更新才能进入下一次循环，
+
+- 对于`per_max`的更新很简单，就是取`max(per_max, tile_max)`
+- 对于`per_sum`的更新， 根据softmax公式，这个值是与`per_max`有关的，如果`per_max`没有更新，说明最大值是`per_max`而不是`tile_max`, 则需要把当前`tile_sum`结果更新为以`per_max`计算得到的，然后加`per_sum`, 如果`per_max`发生了更新，说明最大值是`tile_max`而不是`per_max`, 则要把`per_sum`先更新为以`tile_max`计算得到的，然后加`tile_sum`， 归根结底就是以下的公式
+
+$$
+\sum e^{x_i-C} = (\sum e^{x_i-C_{old}})*e^{C_{old}-C}
+$$
+
+```c++
+template<int TILE>
+__global__ void softmax_kernel(const real* input, real* output, int M, int N)
+{
+    __shared__ real tile_max[TILE*TILE];
+    __shared__ real tile_sum[TILE*TILE];
+    __shared__ real per_max[TILE];//之前所有TILE的最大值
+    __shared__ real per_sum[TILE];//之前所有TILE的和
+    int num_pack = (N+TILE-1)/TILE;
+    int tid = threadIdx.x+threadIdx.y*blockDim.x;//块内索引
+    int row = blockDim.y*blockIdx.y+threadIdx.y;//全局索引
+    int col = blockDim.x*blockIdx.x+threadIdx.x;
+    per_max[threadIdx.y] = -__FLT_MAX__;//初始化
+    per_sum[threadIdx.y] = 1;//初始化
+    //类似矩阵乘法一样的分块
+    for(int pack = 0; pack<num_pack; pack++)
+    {
+        int global_index = pack*TILE+threadIdx.x+row*N;
+        tile_max[tid] = input[global_index];
+        tile_sum[tid] = 1;
+        __syncthreads();//为共享内存赋值
+        //最大值和求和同时进行
+        for(int offset=TILE>>1; offset>0; offset>>=1)
+        {
+            if(threadIdx.x<offset)
+            {
+                if(tile_max[tid]<tile_max[tid+offset])
+                {
+                    tile_sum[tid] = tile_sum[tid+offset]+tile_sum[tid]*__expf(tile_max[tid]-tile_max[tid+offset]);
+                    tile_max[tid] = tile_max[tid+offset];
+                }
+                else
+                {
+                    tile_sum[tid] += tile_sum[tid+offset]*__expf(tile_max[tid+offset]-tile_max[tid]);
+                }
+            }
+            __syncthreads();
+        }
+        //此时只是得到了一个TILE的归约结果，要通过循环num_pack才能得到全局最大值
+        if(per_max[threadIdx.y]>tile_max[threadIdx.y*blockDim.x])
+        {
+            per_sum[threadIdx.y] += tile_sum[threadIdx.y*blockDim.x]*__expf(tile_max[threadIdx.y*blockDim.x]-per_max[threadIdx.y]);
+        }
+        else
+        {
+            per_sum[threadIdx.y] = tile_sum[threadIdx.y*blockDim.x]+per_sum[threadIdx.y]*__expf(per_max[threadIdx.y]-tile_max[threadIdx.y*blockDim.x]);
+            per_max[threadIdx.y] = tile_max[threadIdx.y*blockDim.x];
+        }
+    }
+    //此时per_max和per_max为全局的归约结果，且同一blockIdx.y的线程块规约结果一样
+    int out_index = row*N+col;
+    output[out_index] = __expf(input[out_index]-per_max[threadIdx.y])/per_sum[threadIdx.y];
+}
+```

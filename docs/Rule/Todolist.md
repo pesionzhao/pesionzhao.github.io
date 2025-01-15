@@ -175,3 +175,24 @@
 
 - [ ] 线段树
 - [ ] 分治总结， 三道题 打家劫舍， 数组和， 线段树+分治
+
+11.28
+
+这个阶段急需完成的
+- [ ] 二叉树所有函数复习，非递归实现
+- [ ] 链表所有函数的复习
+- [ ] multiyolov5复习
+- [ ] 数位DP, 状压DP, dijkstra复习
+- [ ] 反射率法代码总结
+- [ ] [111 数列变换](https://www.marscode.cn/practice/lnx2n6ojwjpod3?problem_id=7414004855077158956)： 差分数组
+
+12.18
+
+- 每日一题Z函数
+- 质数筛在哪？
+- lru
+
+12.23
+
+- 推理框架
+- [使用mnist数据集利用cuda训练一个简单的神经网络](https://github.com/Phoenix8215/BuildCudaNeuralNetworkFromScratch/tree/master)

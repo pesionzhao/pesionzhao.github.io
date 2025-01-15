@@ -1,6 +1,6 @@
 # GEMM
 
-General Matrix num_per_threadply
+General Matrix Multiplication
 
 本文将从最朴素的版本一步步优化，且有详细注释，方便大家学习与理解，可以更好的入门！！！
 
@@ -82,7 +82,7 @@ __global__ void matrix_mul(float *da, float *db, float *dc, int M, int N, int K)
 
 ## v3 一个线程处理多个元素
 
-访存比 (2T/num_per_thread^2) * (1/(k/TILE)), num_per_thread=1时和v2一样， T为一个线程处理的元素个数
+访存比 (2*num_per_thread/num_per_thread^2) * (1/(k/TILE)), num_per_thread=1时和v2一样， num_per_thread为一个线程处理的元素个数
 
 ```c++
 //TILE为分块的大小， num_per_thread为每个线程处理的元素个数， 默认为4
@@ -153,7 +153,7 @@ __global__ void matrix_mul(float *da, float *db, float *dc, int M, int N, int K)
 简单来说v3中一个线程要存4个共享内存， v4一个线程只需要存1个共享内存，只不过增加了分块的数量
 
 ```c++
-template<int BLOCK_SIZE=32, int num_per_thread=4>
+template<int BLOCK_SIZE, int num_per_thread=4>
 __global__ void matrix_mul(float *da, float *db, float *dc, int M, int N, int K)
 {
     //num_per_thread必须时BLOCK_SIZE的因子
@@ -213,7 +213,7 @@ __global__ void matrix_mul(float *da, float *db, float *dc, int M, int N, int K)
 所以sa的shape为`[TILE*num_per_thread, TILE*4/num_per_thread]`，sb的shape为`[TILE*4/num_per_thread, TILE*num_per_thread]`
 
 ```c++
-template<int TILE=32, int num_per_thread=4>
+template<int TILE, int num_per_thread=4>
 __global__ void matrix_mul(float *da, float *db, float *dc, int M, int N, int K)
 {
     //行方向
@@ -270,7 +270,7 @@ __global__ void matrix_mul(float *da, float *db, float *dc, int M, int N, int K)
 ## v7 减小共享内存的读取
 共享内存的访存速度不如寄存器，在计算内积时需要不断访问共享内存，可以更改循环次序，将循环利用的数存到寄存器中
 ```c++
-template<int TILE=32, int num_per_thread=4>
+template<int TILE, int num_per_thread=4>
 __global__ void matrix_mul(float *da, float *db, float *dc, int M, int N, int K)
 {
     __shared__ float sa[4*TILE*TILE];//sa shape: [TILE*num_per_thread, TILE*4/num_per_thread]
@@ -335,7 +335,7 @@ __global__ void matrix_mul(float *da, float *db, float *dc, int M, int N, int K)
 在循环`for(int patch = 0; patch<num_packs; ++patch)`中，要做两次同步，一次是确保共享内存赋值完成可以进行计算，一次是确保计算完成确保共享内存可以进行更改，我们可以使用流水并行，减小一次同步，也就是不同线程之间可以计算或者赋值同时进行，需要扩大一倍共享内存，赋值新的数据，计算旧的数据，之后做一次同步就可以，要多处理一次起始的赋值和结束的计算，代码如下~
 
 ```c++
-template<int TILE=16,  int num_per_thread=8>
+template<int TILE,  int num_per_thread=8>
 __global__ void matrix_mul(float* da, float* db, float* dc, int M, int N, int K)
 {
     //原始TILE SIZE = [TILE/num_per_thread, TILE*num_per_thread]

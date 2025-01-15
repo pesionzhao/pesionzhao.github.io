@@ -79,7 +79,24 @@ max(res, static_cast<int>(strs[i].size()));
 - `==`运算优先级大于`&`, 所以要`(s&1)==0` 
 
 
-### 编程思维
+### 算法思路与技巧
+
+- [小M的光明之魂速通挑战](https://www.marscode.cn/practice/lnx2n6ojwjpod3?problem_id=7414004855077093420)： 构建哈希表用于回溯，构建vis数组判断是否用过该武器
+- [79翻转增益的最大子数组和](https://www.marscode.cn/practice/lnx2n6ojwjpod3?problem_id=7414004855075979308): 将翻转问题转化为删除问题
+- [LC102. 二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/description/): 带有深度的层序遍历，先序遍历实现层序遍历的结果
+- [55. 跳跃游戏](https://leetcode.cn/problems/jump-game/description/), 贪心维护最远距离或者反向模拟,  [45. 跳跃游戏 II](https://leetcode.cn/problems/jump-game-ii/description/)  贪心维护当前最大值和之前经过的点能到的最大值
+
+有点绕
+
+- [688. 骑士在棋盘上的概率](https://leetcode.cn/problems/knight-probability-in-chessboard/description/): dp数组要存概率， 要注意什么问题可以记忆化， 马可以通过不同的策略跳相同的步数到相同的位置，所以可以记忆化
+
+常识
+
+- 质数筛
+- 离线查找 [1847. 最近的房间](https://leetcode.cn/problems/closest-room/description/), 小面积是大面积的子集，所以要先算小面积，离线查找：维护一个数组存查找顺序
+- 矩阵快速幂
+- lcp，z函数 [3292. 形成目标字符串需要的最少字符串数 II](https://leetcode.cn/problems/minimum-number-of-valid-strings-to-form-target-ii/description/)
+- 
 
 #### 最小堆
 
