@@ -2174,6 +2174,60 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cuda-mode" class="md-nav__link">
+    CUDA MODE
+  </a>
+  
+    <nav class="md-nav" aria-label="CUDA MODE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lecture-1" class="md-nav__link">
+    Lecture 1
+  </a>
+  
+    <nav class="md-nav" aria-label="Lecture 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    性能分析工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-cuda-in-pytroch" class="md-nav__link">
+    load cuda in pytroch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triton" class="md-nav__link">
+    Triton的特性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuda-ncu" class="md-nav__link">
+    最有用的cuda分析器 NCU
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2188,8 +2242,6 @@
                 
                   
 
-
-  <h1>CUDA</h1>
 
 <h2 id="cuda-programming-guide">CUDA Programming Guide<a class="headerlink" href="#cuda-programming-guide" title="Permanent link">&para;</a></h2>
 <p>首先要先理解thread, block和grid的关系</p>
@@ -2214,6 +2266,20 @@
 <p>异步操作被定义为由CUDA thread 发起并由另一个thread 异步执行的操作。</p>
 <h3 id="trick">trick<a class="headerlink" href="#trick" title="Permanent link">&para;</a></h3>
 <p>返回的pitch（stride）必须用于访问数组元素。</p>
+<h1 id="cuda-mode">CUDA MODE<a class="headerlink" href="#cuda-mode" title="Permanent link">&para;</a></h1>
+<h2 id="lecture-1">Lecture 1<a class="headerlink" href="#lecture-1" title="Permanent link">&para;</a></h2>
+<h3 id="_1">性能分析工具<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h3 id="load-cuda-in-pytroch">load cuda in pytroch<a class="headerlink" href="#load-cuda-in-pytroch" title="Permanent link">&para;</a></h3>
+<p>load in line</p>
+<p>pybind</p>
+<h3 id="triton">Triton的特性<a class="headerlink" href="#triton" title="Permanent link">&para;</a></h3>
+<ul>
+<li>有调试器,可以打点断点</li>
+<li>有缓存:包括PTX</li>
+</ul>
+<p>自动生成triton内核</p>
+<p>TORCH_LOGS="output_code"</p>
+<h3 id="cuda-ncu">最有用的cuda分析器 NCU<a class="headerlink" href="#cuda-ncu" title="Permanent link">&para;</a></h3>
 
 
   

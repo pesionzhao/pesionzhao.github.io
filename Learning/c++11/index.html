@@ -2403,10 +2403,10 @@
 <h3 id="_2">智能指针<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>用来解决内存泄漏, RAII思想</p>
 <h4 id="unique_ptr">unique_ptr<a class="headerlink" href="#unique_ptr" title="Permanent link">&para;</a></h4>
-<p>独占智能指针,不允许通过赋值将 一个unique_ptr赋值给另一个unique_ptr,但可以通过函数返回给其他的unique_ptr，还可以通过std::move来转移到其 他的unique_ptr，这样它本身就不再拥有原来指针的所有权了。</p>
+<p>独占智能指针,不允许通过赋值将一个unique_ptr赋值给另一个unique_ptr,但可以通过函数返回给其他的unique_ptr，还可以通过std::move来转移到其他的unique_ptr，这样它本身就不再拥有原来指针的所有权了。</p>
 <h4 id="shared_ptr">shared_ptr<a class="headerlink" href="#shared_ptr" title="Permanent link">&para;</a></h4>
 <p>比智能指针多了一个引用计数,也就是说一个指针有多个引用对象时,当最后一个shared_ptr析构时,其内存才会被释放</p>
-<p>shared_ptr和unique_ptr的使用场景是要根据实际应用需求来选择。如果希望只有一个智能指针管 理资源或者管理数组就用unique_ptr，如果希望多个智能指针管理同一个资源就用shared_ptr。</p>
+<p>shared_ptr和unique_ptr的使用场景是要根据实际应用需求来选择。如果希望只有一个智能指针管理资源或者管理数组就用unique_ptr，如果希望多个智能指针管理同一个资源就用shared_ptr。</p>
 <h4 id="weak_ptr">weak_ptr<a class="headerlink" href="#weak_ptr" title="Permanent link">&para;</a></h4>
 <p>有一点share_ptr智能指针还是有内存泄露的情况，当两个对象相互 使用一个shared_ptr成员变量指向对方，会造成循环引用，使引用计数失效，从而导致内存泄漏。</p>
 <blockquote>
@@ -2454,6 +2454,16 @@
 <p><code>(params list)</code>函数参数列表</p>
 <p><code>mutable</code>指示符：用来说用是否可以修改捕获的变量</p>
 <p><code>exception</code>：异常设定</p>
+<p>多态与虚函数</p>
+<p><a href="https://www.runoob.com/w3cnote/cpp-virtual-functions.html">C++ 虚函数和纯虚函数的区别</a></p>
+<ul>
+<li>
+<p>简单来说,有纯虚函数的类为抽象类,不能实例化,他的派生类需要给出该纯虚函数的实现方法才能进行实例化</p>
+</li>
+<li>
+<p>对于虚函数来说，父类和子类都有各自的版本。由多态方式调用的时候动态绑定。</p>
+</li>
+</ul>
 
 
   
