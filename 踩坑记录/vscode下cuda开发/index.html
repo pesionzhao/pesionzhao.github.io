@@ -2160,6 +2160,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cmake" class="md-nav__link">
+    CMake构建
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2214,6 +2221,7 @@ make<span class="w"> </span>BlackScholes
 <p>此时cuda环境已经安装好</p>
 <h2 id="vscode">vscode配置<a class="headerlink" href="#vscode" title="Permanent link">&para;</a></h2>
 <p>下载插件Nsight Visual Studio Code Edition用于调试</p>
+<p><a href="https://blog.csdn.net/dzxxbj/article/details/135684839">vscode使用nsight调试cuda代码</a></p>
 <p>task.json： 用于编译, </p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
@@ -2261,6 +2269,19 @@ make<span class="w"> </span>BlackScholes
 </code></pre></div>
 <p>launch.json： 用于调试</p>
 <p>c_cpp_properties.json： 用于自动补全、代码提示、跳转等</p>
+<h2 id="cmake">CMake构建<a class="headerlink" href="#cmake" title="Permanent link">&para;</a></h2>
+<p><a href="https://fancyerii.github.io/2024/01/17/vscode-cuda-debug/#%E4%BF%AE%E6%94%B9cmakeliststxt">使用Vscode调试cuda代码</a></p>
+<p><a href="https://cloud.tencent.com/developer/article/2349772">Libtorch系列教程1：一个丝滑的C++ Tensor库</a></p>
+<div class="highlight"><pre><span></span><code><span class="c"># CMake 最低版本号要求</span>
+<span class="nb">cmake_minimum_required</span><span class="w"> </span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">3.15</span><span class="p">)</span>
+
+<span class="c"># 项目信息</span>
+<span class="nb">project</span><span class="w"> </span><span class="p">(</span><span class="s">Demo3</span><span class="w"> </span><span class="s">LANGUAGES</span><span class="w"> </span><span class="s">CUDA</span><span class="w"> </span><span class="s">CXX</span><span class="p">)</span>
+<span class="c"># set(CMAKE_BUILD_TYPE Debug)  # 启用调试模式</span>
+
+<span class="c"># 添加 NVCC 编译选项，启用调试模式</span>
+<span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_CUDA_FLAGS_DEBUG</span><span class="w"> </span><span class="s2">&quot;-G -g&quot;</span><span class="p">)</span>
+</code></pre></div>
 
 
   

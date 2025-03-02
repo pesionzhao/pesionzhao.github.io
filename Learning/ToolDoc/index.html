@@ -3274,6 +3274,39 @@ find<span class="w"> </span><span class="o">[</span>flags<span class="o">]</span
 <li><code>-w</code>: 设置容器工作目录</li>
 </ul>
 <h2 id="cmake">CMake<a class="headerlink" href="#cmake" title="Permanent link">&para;</a></h2>
+<p>常用的命令有：</p>
+<ul>
+<li>如何设置项目源码目录</li>
+<li>如何设置项目 include 目录</li>
+<li>如何设置依赖的库目录</li>
+<li>如何指定可执行程序的生成方式（包括可直接运行的和依赖库（.so 和 .a 文件））</li>
+<li>指定查找依赖的方式</li>
+<li>条件编译</li>
+<li>自定义变量以及如何执行 cmake 命令时给这些变量传递值。</li>
+</ul>
+<p>常用的功能基本上就这么多，其他的命令可以在用到的时候去查一下即可。</p>
+<div class="highlight"><pre><span></span><code><span class="c"># CMake 最低版本号要求</span>
+<span class="nb">cmake_minimum_required</span><span class="w"> </span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">2.8</span><span class="p">)</span>
+
+<span class="c"># 项目信息</span>
+<span class="nb">project</span><span class="w"> </span><span class="p">(</span><span class="s">Demo3</span><span class="p">)</span>
+
+<span class="c"># 查找当前目录下的所有源文件</span>
+<span class="c"># 并将名称保存到 DIR_SRCS 变量</span>
+<span class="nb">aux_source_directory</span><span class="p">(</span><span class="s">.</span><span class="w"> </span><span class="s">DIR_SRCS</span><span class="p">)</span>
+
+<span class="c"># 指定生成目标</span>
+<span class="nb">add_executable</span><span class="p">(</span><span class="s">Demo</span><span class="w"> </span><span class="o">${</span><span class="nv">DIR_SRCS</span><span class="o">}</span><span class="p">)</span>
+
+<span class="c"># 添加 math 子目录</span>
+<span class="nb">add_subdirectory</span><span class="p">(</span><span class="s">math</span><span class="p">)</span>
+
+<span class="c"># 指定生成目标 </span>
+<span class="nb">add_executable</span><span class="p">(</span><span class="s">Demo</span><span class="w"> </span><span class="s">main.cc</span><span class="p">)</span>
+
+<span class="c"># 添加链接库</span>
+<span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">Demo</span><span class="w"> </span><span class="s">MathFunctions</span><span class="p">)</span>
+</code></pre></div>
 
 
   
