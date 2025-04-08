@@ -2413,6 +2413,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../CUDA/Transpose/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transpose
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../CUDA/Reduce/" class="md-nav__link">
         
   
@@ -3307,6 +3327,29 @@ find<span class="w"> </span><span class="o">[</span>flags<span class="o">]</span
 <span class="c"># 添加链接库</span>
 <span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">Demo</span><span class="w"> </span><span class="s">MathFunctions</span><span class="p">)</span>
 </code></pre></div>
+<p>静态库生成</p>
+<div class="highlight"><pre><span></span><code><span class="c"># 生成静态库</span>
+<span class="nb">add_library</span><span class="p">(</span><span class="s">static_lib</span><span class="w"> </span><span class="s">test1.cpp</span><span class="p">)</span>
+</code></pre></div>
+<p>调用静态库</p>
+<div class="highlight"><pre><span></span><code><span class="nb">link_directories</span><span class="p">(</span><span class="o">${</span><span class="nv">CMAKE_SOURCE_DIR</span><span class="o">}</span><span class="s">/lib</span><span class="p">)</span>
+<span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">Demo</span><span class="w"> </span><span class="s">static_lib</span><span class="p">)</span>
+</code></pre></div>
+<p>动态库生成</p>
+<div class="highlight"><pre><span></span><code><span class="nb">add_library</span><span class="p">(</span><span class="s">static_lib</span><span class="w"> </span><span class="s">SHARED</span><span class="w"> </span><span class="s">test1.cpp</span><span class="p">)</span>
+</code></pre></div>
+<p>dll放在可执行文件目录下</p>
+<p>modern cmake</p>
+<p>头文件的包含</p>
+<p>为减轻依赖，废弃<code>incude_directories</code>, 改用<code>target_include_directories</code></p>
+<div class="highlight"><pre><span></span><code><span class="c"># 仅对当前目标可见，不会传播到依赖该目标的其他目标。</span>
+<span class="nb">target_include_directories</span><span class="p">(</span><span class="s">target</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">include_dir</span><span class="p">)</span>
+<span class="c"># 对当前目标以及所有依赖它的目标可见。</span>
+<span class="nb">target_include_directories</span><span class="p">(</span><span class="s">target</span><span class="w"> </span><span class="s">PUBLIC</span><span class="w"> </span><span class="s">include_dir</span><span class="p">)</span>
+<span class="c"># 对当前目标不可见，依赖该目标的其他目标可见，（如纯头文件库</span>
+<span class="nb">target_include_directories</span><span class="p">(</span><span class="s">target</span><span class="w"> </span><span class="s">INTERFACE</span><span class="w"> </span><span class="s">include_di</span><span class="p">)</span>
+</code></pre></div>
+<p><code>find_package</code>: 寻找<code>.cmake</code>文件, 可以在这个文件中找到各种依赖库的路径</p>
 
 
   

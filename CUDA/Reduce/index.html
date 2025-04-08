@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../BookNotes/c11/">
+        <link rel="prev" href="../Transpose/">
       
       
         <link rel="next" href="../Matrix/">
@@ -2054,6 +2054,26 @@
                 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../Transpose/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transpose
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -2103,21 +2123,41 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
+    前置知识
+  </a>
+  
+    <nav class="md-nav" aria-label="前置知识">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     交错归约
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     相邻归约
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    线程束内函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    线程束内函数
+  <a href="#_5" class="md-nav__link">
+    归约算子实现
   </a>
   
 </li>
@@ -2206,21 +2246,41 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
+    前置知识
+  </a>
+  
+    <nav class="md-nav" aria-label="前置知识">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     交错归约
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     相邻归约
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    线程束内函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    线程束内函数
+  <a href="#_5" class="md-nav__link">
+    归约算子实现
   </a>
   
 </li>
@@ -2241,9 +2301,11 @@
 
 
 <h1 id="reduce">Reduce<a class="headerlink" href="#reduce" title="Permanent link">&para;</a></h1>
+<p>完整实现：<a href="https://github.com/pesionzhao/Basic-GPU-Kernels/blob/master/reduce/reduce.cu">https://github.com/pesionzhao/Basic-GPU-Kernels/blob/master/reduce/reduce.cu</a></p>
 <p>归约在我的理解就是将多个元素合并成一个元素的过程，比如向量求和，向量求极值等。这篇博客以向量求和为例，总结了基本的归约方法</p>
+<h2 id="_1">前置知识<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>利用并行的思想进行归约可以有两种方法，交错归约和相邻归约</p>
-<h2 id="_1">交错归约<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">交错归约<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>交错归约，比如一个数组为<code>[1,2,3,4,5,6,7,8]</code>,第一次使用四个线程,相加为<code>[1+5, 2+6, 3+7, 4+8]</code>，第二次使用两个线程, 相加为<code>[1+5+3+7, 2+6+4+8]</code>, 第三次使用一个线程,相加为<code>[1+5+3+7+2+6+4+8]</code></p>
 <p>native版代码, 其中input大小为N, output大小为gridDim.x, 存着每个线程块的归约结果, 如果线程块个数大于1的话最终的全局归约结果还要对output进行归约!</p>
 <div class="highlight"><pre><span></span><code><span class="n">__global__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">reduce_kernel</span><span class="p">(</span><span class="n">real</span><span class="w"> </span><span class="o">*</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="o">*</span><span class="n">output</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">)</span>
@@ -2281,7 +2343,7 @@
 <span class="w">        </span><span class="n">output</span><span class="p">[</span><span class="n">bid</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sa</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="_2">相邻归约<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">相邻归约<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>比如一个数组为<code>[1,2,3,4,5,6,7,8]</code>,第一次使用四个线程,相加为<code>[1+2, 3+4, 5+6, 7+8]</code>，第二次使用两个线程, 相加为<code>[1+2+3+4, 5+6+7+8]</code>, 第三次使用一个线程,相加为<code>[1+2+3+4+5+6+7+8]</code>, 实现代码如下</p>
 <div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">BLOCK_SIZE</span><span class="o">&gt;</span>
 <span class="n">__global__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">reduce_kernel</span><span class="p">(</span><span class="n">real</span><span class="w"> </span><span class="o">*</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="o">*</span><span class="n">output</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">)</span>
@@ -2302,7 +2364,7 @@
 <span class="w">        </span><span class="n">output</span><span class="p">[</span><span class="n">bid</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sa</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="_3">线程束内函数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">线程束内函数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>block内线程数大于32的情况</p>
 <div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">BLOCK_SIZE</span><span class="o">&gt;</span>
 <span class="n">__global__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">reduce_kernel</span><span class="p">(</span><span class="n">real</span><span class="w"> </span><span class="o">*</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="o">*</span><span class="n">output</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">)</span>
@@ -2337,6 +2399,9 @@
 <span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">tid</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
 <span class="w">        </span><span class="n">output</span><span class="p">[</span><span class="n">bid</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="p">;</span>
 <span class="p">}</span>
+</code></pre></div>
+<h2 id="_5">归约算子实现<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
 
 
