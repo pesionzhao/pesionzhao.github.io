@@ -2181,8 +2181,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#flashattentionsoftmax" class="md-nav__link">
-    适用于flashattention的softmax
+  <a href="#flashattentionsoftmax-online-softmax-flashattention" class="md-nav__link">
+    适用于flashattention的softmax (online softmax) 完整实现请看flashattention
   </a>
   
 </li>
@@ -2251,8 +2251,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#flashattentionsoftmax" class="md-nav__link">
-    适用于flashattention的softmax
+  <a href="#flashattentionsoftmax-online-softmax-flashattention" class="md-nav__link">
+    适用于flashattention的softmax (online softmax) 完整实现请看flashattention
   </a>
   
 </li>
@@ -2529,7 +2529,7 @@
 - 如果一个block线程超过32个，所有线程访问同一个值就需要使用共享内存，同时要注意同步线程
 - 对分块有了更深刻的理解
 - 共享内存的赋值可以任意分配，不必按照分块时方法分配，要保证优先避免bank冲突!! 同一个线程束中的不同线程尽量不访问同一个bank</p>
-<h2 id="flashattentionsoftmax">适用于flashattention的softmax<a class="headerlink" href="#flashattentionsoftmax" title="Permanent link">&para;</a></h2>
+<h2 id="flashattentionsoftmax-online-softmax-flashattention">适用于flashattention的softmax (online softmax) 完整实现请看flashattention<a class="headerlink" href="#flashattentionsoftmax-online-softmax-flashattention" title="Permanent link">&para;</a></h2>
 <p>根据flashattention的思路，要分块计算softmax(<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#113;&#64;&#107;&#46;&#84;">&#113;&#64;&#107;&#46;&#84;</a>)@V, 但是softmax需要全局的结果才能计算，根据前面的代码也可得知，计算softmax只需要一个block, 所以这里并不是让softmax分块，<strong>而是让softmax在blockIdx.y相等的block中重复计算归约结果， 也就是blockIdx.y=0的block就已经可以得到TILE行的全局的归约结果</strong></p>
 <p>参考矩阵乘法的策略，因为对于矩阵乘法来说，输出矩阵一个元素是由输入矩阵的一行和一列计算而来的，所以也可以看成归约，所以我们可以借鉴其思路，使用多个block覆盖输出矩阵，并使用TILE对输入矩阵进行分块，通过循环得到归约结果，这样做适用于FlashAttention</p>
 <p>在遍历tile时，计算每个tile的局部最大值和局部和，也就是<code>tile_max</code>和<code>tile_sum</code>, 并维护<code>per_max</code>和<code>per_max</code>保存计算过的所有tile的全局归约结果，每次在计算完当前的<code>tile_max</code>和<code>tile_sum</code>，都要对<code>per_max</code>和<code>per_max</code>进行更新才能进入下一次循环，</p>
