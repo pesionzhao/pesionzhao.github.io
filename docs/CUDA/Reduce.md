@@ -1,11 +1,14 @@
 # Reduce
 
+完整实现：https://github.com/pesionzhao/Basic-GPU-Kernels/blob/master/reduce/reduce.cu
+
 归约在我的理解就是将多个元素合并成一个元素的过程，比如向量求和，向量求极值等。这篇博客以向量求和为例，总结了基本的归约方法
+
+## 前置知识
 
 利用并行的思想进行归约可以有两种方法，交错归约和相邻归约
 
-
-## 交错归约
+### 交错归约
 
 交错归约，比如一个数组为`[1,2,3,4,5,6,7,8]`,第一次使用四个线程,相加为`[1+5, 2+6, 3+7, 4+8]`，第二次使用两个线程, 相加为`[1+5+3+7, 2+6+4+8]`, 第三次使用一个线程,相加为`[1+5+3+7+2+6+4+8]`
 
@@ -50,7 +53,7 @@ __global__ void reduce_kernel(real *input, real *output, const int N)
         output[bid] = sa[0];
 }
 ```
-## 相邻归约
+### 相邻归约
 
 比如一个数组为`[1,2,3,4,5,6,7,8]`,第一次使用四个线程,相加为`[1+2, 3+4, 5+6, 7+8]`，第二次使用两个线程, 相加为`[1+2+3+4, 5+6+7+8]`, 第三次使用一个线程,相加为`[1+2+3+4+5+6+7+8]`, 实现代码如下
 
@@ -75,7 +78,7 @@ __global__ void reduce_kernel(real *input, real *output, const int N)
 }
 ```
 
-## 线程束内函数
+### 线程束内函数
 block内线程数大于32的情况
 
 ```c++
@@ -112,4 +115,10 @@ __global__ void reduce_kernel(real *input, real *output, const int N)
     if(tid==0)
         output[bid] = tmp;
 }
+```
+
+## 归约算子实现
+
+```c++
+
 ```

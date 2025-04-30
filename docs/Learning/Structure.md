@@ -35,6 +35,8 @@ void preorder(Tree* root, vector<int> res)
 ```
 
 ### 堆
+[【从堆的定义到优先队列、堆排序】 10分钟看懂必考的数据结构——堆](http://bilibili.com/video/BV1AF411G7cA/?spm_id_from=333.337.search-card.all.click&vd_source=c43347ef375755d298da8f0c05cfe444)
+
 堆是一颗完全二叉树,节点坐标为i时,左下节点坐标为`2*i+1`, 右下坐标为`2*i+2`
 
 根据堆序性可以将其分为大根堆和小根堆两种,大根堆即根节点大于其子节点,小根堆即根节点小于其子节点

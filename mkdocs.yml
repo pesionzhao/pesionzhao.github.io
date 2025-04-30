@@ -82,9 +82,11 @@ nav:
             - 原子函数的合理使用: CUDA\BookNotes\c9.md
             - 线程束基本函数与协作组: CUDA\BookNotes\c10.md
             - CUDA流: CUDA\BookNotes\c11.md
+        - Transpose: CUDA\Transpose.md
         - Reduce: CUDA\Reduce.md
         - GEMM: CUDA\Matrix.md
         - SoftMax: CUDA\SoftMax.md
+        - FlashAttention: CUDA\FlashAttention.md
 
     # - Rule for ZPS:
     #     - Rule918: Rule\Rule.md

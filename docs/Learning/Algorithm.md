@@ -1,4 +1,156 @@
 ## 算法
+### 排序
+排序的稳定性指的是在相同元素的情况下，排序后的结果是否保持不变。
+
+假定给一个数组，要求对其进行升序排序
+
+#### 选择排序：非稳定排序
+思路为每次选择最小的元素放到数组的起始位置，然后重复这个过程，直到数组结束，不稳定的例子`[4,2,4,1]`, 在第一次排序时会将第一个4和最后一个1交换，两个4的相对位置发生了变化
+
+#### 冒泡排序：稳定排序
+思路为相邻两个元素进行比较，如果发现一个元素比另一个元素大，就将两个元素交换位置，直到所有元素都按照升序排列。
+
+#### 归并排序：稳定排序
+利用分治的思想，将一个数组排序的问题转化为两个子数组分别排序后再合并排序的问题，利用递归思想，代码如下 
+
+```c++
+vector<int> sortArray(vector<int>& nums) {
+        int n = nums.size();
+        merge(nums, 0, n-1);
+        return nums;
+    }
+void merge(vector<int>& nums, int left, int right){
+    if(left==right){
+        return;
+    }
+    int mid = (left+right)/2;
+    merge(nums, left, mid);
+    merge(nums, mid+1, right);
+    vector<int> tmp(right - left + 1);
+    int i = left;
+    int j = mid+1;
+    int cnt = 0;
+    while(i<=mid&&j<=right){
+        if(nums[i]<nums[j]) tmp[cnt++] = nums[i++];
+        else tmp[cnt++] = nums[j++];
+    }
+    while(i<=mid) tmp[cnt++] = nums[i++];
+    while(j<=right) tmp[cnt++] = nums[j++];
+    for(int i = 0; i<tmp.size(); i++){
+        nums[left+i] = tmp[i];
+    }
+}
+```
+
+#### 快速排序：非稳定排序
+思路和分治排序一致，只不过分治是先解决子问题，自底向上排序，而快排是自顶向下，先解决大问题，也就是选择一个元素，找到他排序后的位置，这样将数组分为两段，每一段进行相同的操作，最终完成排序，代码如下
+
+```c++
+vector<int> sortArray(vector<int>& nums) {
+        int n = nums.size();
+        quicksort(nums, 0, n-1);
+        return nums;
+    }
+void quicksort(vector<int>& nums, int l, int r){
+    if(l<r){
+        //选第一个数为基准元素，也可以选择随机元素
+        int i = l, j = r, pivot = nums[l];
+        while (i < j){
+            while(i < j && nums[j]>= pivot) // 从右向左找第一个小于x的数
+                j--; 
+            if(i < j)
+                nums[i++] = nums[j];//第一次会覆盖掉s[i],也就是x
+            while(i < j && nums[i]< pivot) // 从左向右找第一个大于等于x的数
+                i++; 
+            if(i < j)
+                nums[j--] = nums[i];
+        }
+        nums[i] = pivot;//此时找到了pivot排序后的位置，i
+        quickSort(nums, l, i - 1); //处理子问题
+        quickSort(nums, i + 1, r);
+    }
+}
+```
+
+##### 快速选择
+不需要排序所有元素，只需要知道数组中的第k大元素
+
+```c++
+//快速选择
+int findKthLargest(vector<int>& nums, int k) {
+    int n = nums.size();
+    return quickSelect(nums, 0, n-1, k);
+}
+//快排降序
+int quickSelect(vector<int>& nums, int l, int r, int k){
+    int qivot = nums[l];
+    int i = l;
+    int j = r;
+    while(i<j){
+        while(i<j&&nums[j]<=qivot) j--;
+        if(i<j) nums[i++] = nums[j];
+        while(i<j&&nums[i]>=qivot) i++;
+        if(i<j) nums[j--] = nums[i];
+    }
+    nums[i] = qivot;
+    //第k大元素索引为k-1
+    if(i<k-1)
+        return quickSelect(nums, i+1, r, k);
+    else if(i>k-1)
+        return quickSelect(nums, l, i-1, k);
+    else
+        return nums[i];
+}
+```
+
+#### 堆排序：稳定排序
+构建大根堆，每次弹出堆顶（也就是最大值），重新调整堆，弹出的元素放在堆末尾，同时堆长度-1,这样可以避免额外空间的开辟
+
+```c++
+//堆排序
+vector<int> sortArray(vector<int>& nums) {
+    int len = nums.size()-1;
+    buildNaxHeap(nums, len);
+    //此时已构建好大根堆，堆顶弹出依次放到最后
+    for(int i = len; i>=1; --i){
+        swap(nums[i], nums[0]);
+        //i-1是因为每找一次最大值移动到堆尾,堆的长度就要减1
+        len -= 1;
+        maxHeap(nums, 0, len);
+    }
+    return nums;
+}
+//i的子节点都满足堆序性的情况下，添加i为父节点后的调整使满足堆序性
+void maxHeap(vector<int>& nums, int i, int len){
+    //子元素在len之内
+    for(; (i<<1)+1<=len;)
+    {
+        int l = (i<<1)+1; //左节点
+        int r = (i<<1)+2; //右节点
+        int large = i; //应该作为父节点的值的索引
+        if(l<=len&&nums[l]>nums[i]){
+            large = l;
+        }
+        if(r<=len&&nums[r]>nums[large]){
+            large = r;
+        }
+        if(large==i)//此时已经满足堆序性，不需要交换，也不会更改堆序性，之后就不用判断了
+            break;
+        else{
+            swap(nums[i], nums[large]);
+            i = large;//继续滤下一层的
+        }
+    }
+}
+void buildNaxHeap(vector<int>& nums, int len){
+    //自下向上建堆，每个父节点下滤
+    //从倒数第二层开始
+    for(int i = len/2; i>=0; --i){
+        maxHeap(nums, i, len);
+    }
+}
+```
+
 ### 回溯法
 
 [回溯算法套路③排列型回溯+N皇后【基础算法精讲 16】](https://www.bilibili.com/video/BV1mY411D7f6/?vd_source=c43347ef375755d298da8f0c05cfe444)
@@ -857,6 +1009,8 @@ int feibo(int n) { // 迭代法代码
 #### 递归算法
 
 #### 二分算法的时间复杂度为什么是O(logN)?
+
+假设数组长度为n, 计算次数为x, 由于二分法计算的长度都是前一次的一半，所以$2^x=n$, 即$x=\log_2n$
 
 #### 分治算法--牺牲空间复杂度换时间复杂度
 

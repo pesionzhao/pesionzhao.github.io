@@ -50,7 +50,7 @@
 
 ```bash
 git init
-git remote add origin http://[Token]@github.pesionzhao/ # 绑定将origin设置为远程仓库地址
+git remote add origin http://[Token]@github/pesionzhao/ # 绑定将origin设置为远程仓库地址
 git remote set-url origin URL_ADDRESS # 更改远程地址
 git branch -M main # 重命名默认分支
 git checkout -b master1 # 创建新分支并转到
@@ -514,3 +514,79 @@ Source是主机上的位置，Destination是容器内的位置
 
 
 ## CMake
+
+常用的命令有：
+
+- 如何设置项目源码目录
+- 如何设置项目 include 目录
+- 如何设置依赖的库目录
+- 如何指定可执行程序的生成方式（包括可直接运行的和依赖库（.so 和 .a 文件））
+- 指定查找依赖的方式
+- 条件编译
+- 自定义变量以及如何执行 cmake 命令时给这些变量传递值。
+
+常用的功能基本上就这么多，其他的命令可以在用到的时候去查一下即可。
+
+```cmake
+# CMake 最低版本号要求
+cmake_minimum_required (VERSION 2.8)
+
+# 项目信息
+project (Demo3)
+
+# 查找当前目录下的所有源文件
+# 并将名称保存到 DIR_SRCS 变量
+aux_source_directory(. DIR_SRCS)
+
+# 指定生成目标
+add_executable(Demo ${DIR_SRCS})
+
+# 添加 math 子目录
+add_subdirectory(math)
+
+# 指定生成目标 
+add_executable(Demo main.cc)
+
+# 添加链接库
+target_link_libraries(Demo MathFunctions)
+```
+
+静态库生成
+
+```cmake
+# 生成静态库
+add_library(static_lib test1.cpp)
+```
+
+调用静态库
+
+```cmake
+link_directories(${CMAKE_SOURCE_DIR}/lib)
+target_link_libraries(Demo static_lib)
+```
+
+动态库生成
+
+```cmake
+add_library(static_lib SHARED test1.cpp)
+```
+
+dll放在可执行文件目录下
+
+
+modern cmake
+
+头文件的包含
+
+为减轻依赖，废弃`incude_directories`, 改用`target_include_directories`
+
+```cmake
+# 仅对当前目标可见，不会传播到依赖该目标的其他目标。
+target_include_directories(target PRIVATE include_dir)
+# 对当前目标以及所有依赖它的目标可见。
+target_include_directories(target PUBLIC include_dir)
+# 对当前目标不可见，依赖该目标的其他目标可见，（如纯头文件库
+target_include_directories(target INTERFACE include_di)
+```
+
+`find_package`: 寻找`.cmake`文件, 可以在这个文件中找到各种依赖库的路径

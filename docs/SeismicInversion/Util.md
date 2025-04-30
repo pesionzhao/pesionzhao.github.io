@@ -235,7 +235,7 @@ $$
 - 射线参数假设 (变速度假设)
 - 射线追踪 (变速度)
 
-GPT的回答??
+GPT的回答如下
 
 1. 读取地震数据
 
@@ -623,7 +623,7 @@ def forward(self, wav_mtx, theta, nt0, show=False, t0=None):  # 目前只做单�
     return Rpp
 ```
 
-偏导数求解为
+偏导数求导模板为
 
 $$
 \frac{\partial R}{\partial\alpha_i} = \frac{8\sin^2(\theta) (\rho_{i+1} - \rho_{i}) (\beta_{i} + \beta_{i+1})^2}{((\rho_{i} + \rho_{i+1})(\alpha_{i} + \alpha_{i+1})^3)}+\frac{16\sin^2(\theta)(\beta_{i+1}^2 - \beta_{i}^2)}{(\alpha_{i}+ \alpha_{i+1})^3} -\frac{2\alpha_{i+1}} {(\alpha_{i}+ \alpha_{i+1})^2\cos^2(\theta)}

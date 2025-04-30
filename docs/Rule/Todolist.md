@@ -196,3 +196,25 @@
 
 - 推理框架
 - [使用mnist数据集利用cuda训练一个简单的神经网络](https://github.com/Phoenix8215/BuildCudaNeuralNetworkFromScratch/tree/master)
+
+2.10
+
+- cmake配置c++/CUDA文件
+
+2.13
+
+- [ ] 每个nn_layer要定义初始化
+- [ ] 每个nn_layer要添加成员变量  in_feature & in_feature
+- [ ] 对比随机数，是否可以转移到cuda上
+
+2.14
+
+- [ ] 归约时的row要加限制
+
+3.1
+
+- [ ] 岛屿数量
+- [ ] 第k大元素
+- [ ] 编辑距离，最长递增子序列，买卖股票
+- [ ] IRU, 用迭代法实现二叉树的先序遍历
+- [ ] transformer

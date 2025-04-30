@@ -1,4 +1,6 @@
-# SoftMax cuda算子解读
+# SoftMax cuda算子
+
+完整实现：https://github.com/pesionzhao/Basic-GPU-Kernels/blob/master/softmax/softmax.cuh
 
 参考链接
 
@@ -270,7 +272,7 @@ __global__ void softmax_shared_kernel(const real* input, real* output, int M, in
 - 对分块有了更深刻的理解
 - 共享内存的赋值可以任意分配，不必按照分块时方法分配，要保证优先避免bank冲突!! 同一个线程束中的不同线程尽量不访问同一个bank
 
-## 适用于flashattention的softmax
+## 适用于flashattention的softmax (online softmax) 完整实现请看flashattention
 
 根据flashattention的思路，要分块计算softmax(q@k.T)@V, 但是softmax需要全局的结果才能计算，根据前面的代码也可得知，计算softmax只需要一个block, 所以这里并不是让softmax分块，**而是让softmax在blockIdx.y相等的block中重复计算归约结果， 也就是blockIdx.y=0的block就已经可以得到TILE行的全局的归约结果**
 

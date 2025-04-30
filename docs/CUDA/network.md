@@ -48,6 +48,12 @@ $\frac{\partial L}{\partial x} = \frac{\partial L}{\partial y} \frac{\partial y}
 
 这里的左乘右乘可能会一头雾水，说白了就是要对应元素相乘，矩阵的元素用偏导数的形式写出来就会懂了。
 
+pytorch的线性层为什么不是`y=W*x+b` 而是 `y = x*W^T+b`?
+
+说白了就是把列向量当成行向量
+
+行优先符合主流的编程规范，比如sum, max, 所以pytorch将优先的行向量作为特征，行数为批次, 并且按道理存数据时，单个数据内存要连续，如果行数为特征，列数为批次的话，单个数据的不同特征内存不连续
+
 #### softmax
 [反向传播之一：softmax函数](https://zhuanlan.zhihu.com/p/37740860)
 [SoftMax反向传播推导，简单易懂，包教包会](https://www.bilibili.com/video/BV143411h7PQ/?spm_id_from=333.337.search-card.all.click&vd_source=c43347ef375755d298da8f0c05cfe444)

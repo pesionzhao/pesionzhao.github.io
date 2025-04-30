@@ -2,6 +2,8 @@
 
 General Matrix Multiplication
 
+部分代码: https://github.com/pesionzhao/Basic-GPU-Kernels/blob/master/gemm/gemm.cuh
+
 本文将从最朴素的版本一步步优化，且有详细注释，方便大家学习与理解，可以更好的入门！！！
 
 参考连接: 

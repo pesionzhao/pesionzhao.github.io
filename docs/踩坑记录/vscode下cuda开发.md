@@ -53,6 +53,8 @@ make BlackScholes
 
 下载插件Nsight Visual Studio Code Edition用于调试
 
+[vscode使用nsight调试cuda代码](https://blog.csdn.net/dzxxbj/article/details/135684839)
+
 task.json： 用于编译, 
 
 ```json
@@ -104,3 +106,21 @@ task.json： 用于编译,
 launch.json： 用于调试
 
 c_cpp_properties.json： 用于自动补全、代码提示、跳转等
+
+## CMake构建
+
+[使用Vscode调试cuda代码](https://fancyerii.github.io/2024/01/17/vscode-cuda-debug/#%E4%BF%AE%E6%94%B9cmakeliststxt)
+
+[Libtorch系列教程1：一个丝滑的C++ Tensor库](https://cloud.tencent.com/developer/article/2349772)
+
+```cmake
+# CMake 最低版本号要求
+cmake_minimum_required (VERSION 3.15)
+
+# 项目信息
+project (Demo3 LANGUAGES CUDA CXX)
+# set(CMAKE_BUILD_TYPE Debug)  # 启用调试模式
+
+# 添加 NVCC 编译选项，启用调试模式
+set(CMAKE_CUDA_FLAGS_DEBUG "-G -g")
+```
