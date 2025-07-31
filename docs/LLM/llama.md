@@ -4,7 +4,7 @@
 
 https://github.com/hkproj/pytorch-llama-notes/
 
-https://www.bilibili.com/video/BV18p421273J?spm_id_from=333.788.videopod.sections&vd_source=c43347ef375755d298da8f0c05cfe444
+[大模型量化部署 解析当前应用较广的几种量化部署方案！](https://www.bilibili.com/video/BV18p421273J?spm_id_from=333.788.videopod.sections&vd_source=c43347ef375755d298da8f0c05cfe444)
 
 [旋转式位置编码 (RoPE) 知识总结](https://zhuanlan.zhihu.com/p/662790439)
 
@@ -13,6 +13,10 @@ https://www.bilibili.com/video/BV18p421273J?spm_id_from=333.788.videopod.section
 [位置编码之路：SIN->ALiBi->RoPE ->PI->NKT->YARN](https://zhuanlan.zhihu.com/p/1894384438206505105)
 
 [【8】KV Cache 原理讲解](https://www.bilibili.com/video/BV17CPkeEEzk?spm_id_from=333.788.videopod.sections&vd_source=c43347ef375755d298da8f0c05cfe444)
+
+代码实现
+
+https://github.com/hkproj/pytorch-llama/blob/main/model.py
 
 
 结构图
@@ -24,7 +28,7 @@ https://www.bilibili.com/video/BV18p421273J?spm_id_from=333.788.videopod.section
 
 ### RMSNorm 用于加速训练
 
-$ \text{RMSNorm}(x) = \frac{x}{\sqrt{\frac{1}{d} \sum_{i=1}^{d} x_i^2 + \epsilon}} \cdot \gamma $
+$$ \text{RMSNorm}(x) = \frac{x}{\sqrt{\frac{1}{d} \sum_{i=1}^{d} x_i^2 + \epsilon}} \cdot \gamma $$
 
 ```python
 class RMSNorm(nn.Module):
@@ -57,25 +61,25 @@ $$\sigma(x) = \frac{1}{1 + e^{-x}}$$
 
 若叠加位置信息后的向量 \(q\)（位置 \(m\)）和 \(k\)（位置 \(n\)）的内积可以表示为它们之间距离差 \(m - n\) 的函数，则能体现它们的相对位置关系。即我们希望找到以下等式的一组解：
 
-\[
+$$
 \langle f(q, m), f(k, n) \rangle = g(q, k, m - n)
-\]
+$$
 
 RoPE为该等式提供了一组解：
 
-\[
+$$
 f(q, m) = q e^{i m \theta}, \quad f(k, n) = k e^{i n \theta}
-\]
+$$
 
 此时，两向量的内积（在复数域中转为共轭内积后取实部）会包含相对位置关系 \(m - n\)：
 
-\[
+$$
 \langle f(q, m), f(k, n) \rangle = \text{Re}\left[ q e^{i m \theta} \cdot k e^{-i n \theta} \right] = \text{Re}\left[ q \cdot k e^{i (m - n) \theta} \right]
-\]
+$$
 
 根据复数乘法的几何意义，此操作等价于向量的旋转，因此称为**旋转式位置编码**。其矩阵形式表示为$f(q, m) = \bold{R}_m \cdot q$：
 
-\[
+$$
 f(q, m) = 
 \begin{pmatrix}
 \cos m\theta & -\sin m\theta \\
@@ -85,7 +89,7 @@ f(q, m) =
 q_0 \\
 q_1
 \end{pmatrix}
-\]
+$$
 
 可以看到一个$\theta$可以对应一个复平面上的二维坐标 ( $q_0, q_1$ 分别代表实部和虚部), 如果q,k不是二维的呢，也就是head_dim > 2, RoPE 中的做法是: 对向量的维度进行分组操作, 相邻的两个维度作为一组, 一共可以分成$d / 2$组, 每组旋转$m \cdot \theta_i$度。此时, $R_m$变成:
 
@@ -98,13 +102,13 @@ $$ \theta_i = 10000^{-2i/d} \tag{4.3} $$
 #### 性质与扩展 By GPT
 1. **线性叠加性**：  
    矩阵形式的 \(f\) 满足线性叠加性质，即对任意位置 \(m_1, m_2\)，有：
-   \[
+   $$
    f(q, m_1 + m_2) = f(f(q, m_1), m_2)
-   \]
+   $$
 
 2. **高维扩展**：  
    对于高维向量 \((q_0, q_1, \dots, q_d)\)，可将其划分为多个二维子向量，并对每个子向量独立应用旋转操作：
-   \[
+   $$
    f(q, m) = \bigoplus_{k=1}^{d/2} 
    \begin{pmatrix}
    \cos m\theta_k & -\sin m\theta_k \\
@@ -114,7 +118,7 @@ $$ \theta_i = 10000^{-2i/d} \tag{4.3} $$
    q_{2k} \\
    q_{2k+1}
    \end{pmatrix}
-   \]
+   $$
    其中 \(\theta_k = 10000^{-2k/d}\)（类似 Sinusoidal 编码的频率衰减设计）。
 
 ---
